@@ -23,6 +23,14 @@ public class BorealCreativeTabs {
                             .build()
             );
 
+    public static RegistryObject<CreativeModeTab> BOREAL_BLOCKS_TAB =
+            CREATIVE_MODE_TABS.register("the_boreal_blocks_tab", () ->
+                    CreativeModeTab.builder()
+                            .icon(() -> new ItemStack(BorealBlocks.BOREAL_STONE.get()))
+                            .title(Component.literal("The Boreal Blocks"))
+                            .build()
+            );
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }

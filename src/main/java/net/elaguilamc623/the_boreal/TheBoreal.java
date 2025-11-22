@@ -3,6 +3,8 @@ package net.elaguilamc623.the_boreal;
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.registries.BorealCreativeTabs;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,7 +34,9 @@ public class TheBoreal
 
         BorealItems.register(modEventBus);
         BorealCreativeTabs.register(modEventBus);
+        BorealBlocks.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
+        BorealStructureGeneration.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::AddCreative);
@@ -45,9 +49,13 @@ public class TheBoreal
 
     private void AddCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTab() == BorealCreativeTabs.BOREAL_ITEMS_TAB.get()) {
-
             event.accept(BorealItems.ANCIENT_ICE_FRAGMENT);
             event.accept(BorealItems.ICE_ACTIVATOR);
+            event.accept(BorealItems.BOREAL_ROCK);
+        }
+
+        if(event.getTab() == BorealCreativeTabs.BOREAL_BLOCKS_TAB.get()) {
+            event.accept(BorealBlocks.BOREAL_STONE);
         }
     }
 

@@ -1,4 +1,6 @@
 {
   "item.the_boreal.ancient_ice_fragment": "Ancient Ice Fragment",
-  "item.the_boreal.ice_activator": "Ice Activator"
+  "item.the_boreal.ice_activator": "Ice Activator",
+  "item.the_boreal.boreal_rock": "Boreal Rock",
+  "block.the_boreal.boreal_stone": "Boreal Stone"
 }

@@ -18,6 +18,9 @@ public class BorealItems {
     public static final RegistryObject<Item> ICE_ACTIVATOR = ITEMS.register("ice_activator",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> BOREAL_ROCK = ITEMS.register("boreal_rock",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
