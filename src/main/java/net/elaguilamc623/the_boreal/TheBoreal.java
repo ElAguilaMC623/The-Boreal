@@ -2,10 +2,13 @@ package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.registries.BorealCreativeTabs;
+import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -35,6 +38,7 @@ public class TheBoreal
         BorealItems.register(modEventBus);
         BorealCreativeTabs.register(modEventBus);
         BorealBlocks.register(modEventBus);
+        BorealEntities.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
 
@@ -70,6 +74,8 @@ public class TheBoreal
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(BorealEntities.BOREAL_ROCK_ENTITY.get(), ThrownItemRenderer::new);
 
         }
     }
