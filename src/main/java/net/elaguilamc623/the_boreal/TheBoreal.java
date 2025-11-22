@@ -1,10 +1,7 @@
 package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
-import net.elaguilamc623.the_boreal.registries.BorealCreativeTabs;
-import net.elaguilamc623.the_boreal.registries.BorealEntities;
-import net.elaguilamc623.the_boreal.registries.BorealItems;
-import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -54,7 +51,7 @@ public class TheBoreal
     private void AddCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTab() == BorealCreativeTabs.BOREAL_ITEMS_TAB.get()) {
             event.accept(BorealItems.ANCIENT_ICE_FRAGMENT);
-            event.accept(BorealItems.ICE_ACTIVATOR);
+            event.accept(BorealItems.FROZEN_AMULET);
             event.accept(BorealItems.BOREAL_ROCK);
         }
 

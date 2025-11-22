@@ -1,6 +1,6 @@
 package net.elaguilamc623.the_boreal.registries.worldgen;
 
-import net.elaguilamc623.the_boreal.structures.AdvancedStructurePlacement;
+import net.elaguilamc623.the_boreal.worldgen.structures.AdvancedStructurePlacement;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.structure.placement.StructurePlacementType;
 import net.minecraftforge.registries.DeferredRegister;

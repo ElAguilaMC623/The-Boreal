@@ -1,10 +1,10 @@
-package net.elaguilamc623.the_boreal.structures;
+package net.elaguilamc623.the_boreal.worldgen.structures;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
-import net.elaguilamc623.the_boreal.structures.worldgen.ComplementJigsawAssembler;
+import net.elaguilamc623.the_boreal.worldgen.structures.utils.ComplementJigsawAssembler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.ChunkPos;

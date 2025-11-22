@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_boreal:item/ice_activator"
+    "layer0": "the_boreal:item/frozen_amulet"
   }
 }

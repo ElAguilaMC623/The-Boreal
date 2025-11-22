@@ -1,6 +1,6 @@
 package net.elaguilamc623.the_boreal.registries.worldgen;
 
-import net.elaguilamc623.the_boreal.structures.JigsawStructuresGenerationChecker;
+import net.elaguilamc623.the_boreal.worldgen.structures.JigsawStructuresGenerationChecker;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraftforge.registries.DeferredRegister;

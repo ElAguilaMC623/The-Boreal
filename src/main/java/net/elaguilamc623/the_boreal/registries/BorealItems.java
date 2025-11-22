@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.items.BorealRockItem;
+import net.elaguilamc623.the_boreal.items.FrozenAmuletItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,8 +17,8 @@ public class BorealItems {
     public static final RegistryObject<Item> ANCIENT_ICE_FRAGMENT = ITEMS.register("ancient_ice_fragment",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> ICE_ACTIVATOR = ITEMS.register("ice_activator",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_AMULET = ITEMS.register("frozen_amulet",
+            () -> new FrozenAmuletItem(new Item.Properties()));
 
     public static final RegistryObject<Item> BOREAL_ROCK = ITEMS.register("boreal_rock",
             () -> new BorealRockItem(new Item.Properties()));

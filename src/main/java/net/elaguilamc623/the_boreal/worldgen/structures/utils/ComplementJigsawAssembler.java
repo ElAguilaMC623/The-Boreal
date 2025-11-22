@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.structures.worldgen;
+package net.elaguilamc623.the_boreal.worldgen.structures.utils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;

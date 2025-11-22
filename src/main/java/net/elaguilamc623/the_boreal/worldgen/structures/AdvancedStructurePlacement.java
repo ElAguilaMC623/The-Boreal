@@ -1,13 +1,11 @@
-package net.elaguilamc623.the_boreal.structures;
+package net.elaguilamc623.the_boreal.worldgen.structures;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
-import net.elaguilamc623.the_boreal.structures.worldgen.CustomExclusionZone;
+import net.elaguilamc623.the_boreal.worldgen.structures.utils.CustomExclusionZone;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Vec3i;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
 import net.minecraft.world.level.levelgen.structure.StructureSet;

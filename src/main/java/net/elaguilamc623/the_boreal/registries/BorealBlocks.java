@@ -18,7 +18,7 @@ public class BorealBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, TheBoreal.MOD_ID);
 
     public static final RegistryObject<Block> BOREAL_STONE = registerBlock("boreal_stone",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

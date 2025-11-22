@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.structures.worldgen;
+package net.elaguilamc623.the_boreal.worldgen.structures.utils;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
