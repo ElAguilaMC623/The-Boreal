@@ -20,6 +20,12 @@ public class BorealBlocks {
     public static final RegistryObject<Block> BOREAL_STONE = registerBlock("boreal_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
 
+    public static final RegistryObject<Block> GLACIAL_GRASS_BLOCK = registerBlock("glacial_grass_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+
+    public static final RegistryObject<Block> GLACIAL_DIRT = registerBlock("glacial_dirt",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

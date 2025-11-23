@@ -57,6 +57,8 @@ public class TheBoreal
 
         if(event.getTab() == BorealCreativeTabs.BOREAL_BLOCKS_TAB.get()) {
             event.accept(BorealBlocks.BOREAL_STONE);
+            event.accept(BorealBlocks.GLACIAL_GRASS_BLOCK);
+            event.accept(BorealBlocks.GLACIAL_DIRT);
         }
     }
 

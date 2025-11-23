@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "the_boreal:block/glacial_grass_block_top",
+    "bottom": "the_boreal:block/glacial_dirt",
+    "side": "the_boreal:block/glacial_grass_block_side"
+  }
+}
