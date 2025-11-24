@@ -2,10 +2,10 @@
   "type": "the_boreal:boreal_type",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "minecraft:overworld",
+    "settings": "the_boreal:boreal_noise",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:snowy_taiga"
+      "biome": "the_boreal:glacial_tundra"
     }
   }
 }
