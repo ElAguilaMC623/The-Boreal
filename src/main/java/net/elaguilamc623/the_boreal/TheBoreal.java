@@ -2,12 +2,8 @@ package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.registries.*;
-import net.elaguilamc623.the_boreal.registries.worldgen.BorealBiomes;
-import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
-import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
-import net.elaguilamc623.the_boreal.worldgen.dimension.BorealDimension;
-import net.elaguilamc623.the_boreal.worldgen.dimension.BorealDimensionType;
-import net.elaguilamc623.the_boreal.worldgen.dimension.BorealNoiseSettings;
+import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
+import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -42,12 +38,6 @@ public class TheBoreal
         BorealEntities.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
-
-        modEventBus.addListener(BorealBiomes::bootstrap);
-        modEventBus.addListener(BorealNoiseSettings::bootstrap);
-        modEventBus.addListener(BorealDimensionType::bootstrap);
-        modEventBus.addListener(BorealDimension::bootstrap);
-
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::AddCreative);
