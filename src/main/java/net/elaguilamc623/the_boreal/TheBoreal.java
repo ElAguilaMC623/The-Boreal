@@ -1,12 +1,16 @@
 package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
+import net.elaguilamc623.the_boreal.client.render.BorealEffects;
 import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
+import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.DimensionSpecialEffectsManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -56,7 +60,22 @@ public class TheBoreal
         }
 
         if(event.getTab() == BorealCreativeTabs.BOREAL_BLOCKS_TAB.get()) {
+            event.accept(BorealBlocks.BOREAL_COBBLESTONE);
+            event.accept(BorealBlocks.BOREAL_COBBLESTONE_SLAB);
+            event.accept(BorealBlocks.BOREAL_COBBLESTONE_STAIRS);
             event.accept(BorealBlocks.BOREAL_STONE);
+            event.accept(BorealBlocks.BOREAL_STONE_SLAB);
+            event.accept(BorealBlocks.BOREAL_STONE_STAIRS);
+            event.accept(BorealBlocks.BOREAL_DEEP_STONE);
+            event.accept(BorealBlocks.BOREAL_DEEP_STONE_SLAB);
+            event.accept(BorealBlocks.BOREAL_DEEP_STONE_STAIRS);
+            event.accept(BorealBlocks.BOREAL_STONE_BRICKS);
+            event.accept(BorealBlocks.BOREAL_STONE_BRICKS_SLAB);
+            event.accept(BorealBlocks.BOREAL_STONE_BRICKS_STAIRS);
+            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS);
+            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB);
+            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS);
+            event.accept(BorealBlocks.BOREAL_CHISELED_STONE);
             event.accept(BorealBlocks.GLACIAL_GRASS_BLOCK);
             event.accept(BorealBlocks.GLACIAL_DIRT);
         }
@@ -73,7 +92,6 @@ public class TheBoreal
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
             EntityRenderers.register(BorealEntities.BOREAL_ROCK_ENTITY.get(), ThrownItemRenderer::new);
 
         }

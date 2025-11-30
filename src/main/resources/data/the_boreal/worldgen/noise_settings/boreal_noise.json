@@ -437,6 +437,25 @@
         {
           "type": "minecraft:block",
           "result_state": { "Name": "the_boreal:boreal_stone" }
+        },
+        {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:vertical_gradient",
+            "random_name": "boreal_deep_stone_layer",
+            "true_at_and_below": {
+              "absolute": -32
+            },
+            "false_at_and_above": {
+              "absolute": -24
+            }
+          },
+          "then_run": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "the_boreal:boreal_deep_stone"
+            }
+          }
         }
       ]
     }
