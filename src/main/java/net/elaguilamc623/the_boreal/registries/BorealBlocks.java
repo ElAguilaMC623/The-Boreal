@@ -1,12 +1,10 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.blocks.GlacialGrasPlantBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +26,9 @@ public class BorealBlocks {
             () -> new StairBlock(() -> BOREAL_COBBLESTONE.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_STAIRS)));
 
+    public static final RegistryObject<Block> BOREAL_COBBLESTONE_WALL = registerBlock("boreal_cobblestone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
+
     public static final RegistryObject<Block> BOREAL_STONE = registerBlock("boreal_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
@@ -48,6 +49,9 @@ public class BorealBlocks {
             () -> new StairBlock(() -> BOREAL_DEEP_STONE.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE_STAIRS)));
 
+    public static final RegistryObject<Block> BOREAL_DEEP_STONE_WALL = registerBlock("boreal_deep_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE_WALL)));
+
     public static final RegistryObject<Block> BOREAL_STONE_BRICKS = registerBlock("boreal_stone_bricks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
 
@@ -57,6 +61,9 @@ public class BorealBlocks {
     public static final RegistryObject<Block> BOREAL_STONE_BRICKS_STAIRS = registerBlock("boreal_stone_brick_stairs",
                     () -> new StairBlock(() -> BOREAL_STONE_BRICKS.get().defaultBlockState(),
                             BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
+
+    public static final RegistryObject<Block> BOREAL_STONE_BRICK_WALL = registerBlock("boreal_stone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
 
     public static final RegistryObject<Block> BOREAL_MOSSY_STONE_BRICKS = registerBlock("boreal_mossy_stone_bricks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)));
@@ -68,14 +75,20 @@ public class BorealBlocks {
             () -> new StairBlock(() -> BOREAL_MOSSY_STONE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICK_STAIRS)));
 
+    public static final RegistryObject<Block> BOREAL_MOSSY_STONE_BRICK_WALL = registerBlock("boreal_mossy_stone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICK_WALL)));
+
     public static final RegistryObject<Block> BOREAL_CHISELED_STONE = registerBlock("boreal_chiseled_stone",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_DEEPSLATE)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
 
     public static final RegistryObject<Block> GLACIAL_GRASS_BLOCK = registerBlock("glacial_grass_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 
     public static final RegistryObject<Block> GLACIAL_DIRT = registerBlock("glacial_dirt",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+
+    public static final RegistryObject<Block> GLACIAL_GRASS = registerBlock("glacial_grass",
+            () -> new GlacialGrasPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

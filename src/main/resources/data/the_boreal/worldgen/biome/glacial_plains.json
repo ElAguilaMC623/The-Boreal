@@ -39,7 +39,6 @@
     ]
   },
   "features": [
-    ["minecraft:freeze_top_layer"],
     ["minecraft:spring_water", "minecraft:spring_lava"],
     ["the_boreal:glacial_grass_patch"]
   ]

@@ -8,16 +8,21 @@
   "block.the_boreal.boreal_cobblestone": "Boreal Cobblestone",
   "block.the_boreal.boreal_cobblestone_slab": "Boreal Cobblestone Slab",
   "block.the_boreal.boreal_cobblestone_stairs": "Boreal Cobblestone Stairs",
+  "block.the_boreal.boreal_cobblestone_wall": "Boreal Cobblestone Wall",
   "block.the_boreal.boreal_deep_stone": "Boreal Deep Stone",
   "block.the_boreal.boreal_deep_stone_slab": "Boreal Deep Stone Slab",
   "block.the_boreal.boreal_deep_stone_stairs": "Boreal Deep Stone Stairs",
+  "block.the_boreal.boreal_deep_stone_wall": "Boreal Deep Stone Wall",
   "block.the_boreal.boreal_stone_bricks": "Boreal Stone Bricks",
   "block.the_boreal.boreal_stone_brick_slab": "Boreal Stone Brick Slab",
   "block.the_boreal.boreal_stone_brick_stairs": "Boreal Stone Brick Stairs",
+  "block.the_boreal.boreal_stone_brick_wall": "Boreal Stone Brick Wall",
   "block.the_boreal.boreal_mossy_stone_bricks": "Boreal Mossy Stone Bricks",
   "block.the_boreal.boreal_mossy_stone_brick_slab": "Boreal Mossy Stone Brick Slab",
   "block.the_boreal.boreal_mossy_stone_brick_stairs": "Boreal Mossy Stone Brick Stairs",
+  "block.the_boreal.boreal_mossy_stone_brick_wall": "Boreal Mossy Stone Brick Wall",
   "block.the_boreal.boreal_chiseled_stone": "Boreal Chiseled Stone",
   "block.the_boreal.glacial_dirt": "Glacial Dirt",
-  "block.the_boreal.glacial_grass_block": "Glacial Grass Block"
+  "block.the_boreal.glacial_grass_block": "Glacial Grass Block",
+  "block.the_boreal.glacial_grass": "Glacial Grass"
 }

@@ -4,8 +4,33 @@
     "type": "minecraft:noise",
     "settings": "the_boreal:boreal_noise",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "the_boreal:glacial_tundra"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "the_boreal:glacial_tundra",
+          "parameters": {
+            "temperature": 0.8,
+            "humidity": 0.4,
+            "continentalness": 0.5,
+            "erosion": 0.0,
+            "depth": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "the_boreal:glacial_plains",
+          "parameters": {
+            "temperature": -0.5,
+            "humidity": 0.8,
+            "continentalness": 0.5,
+            "erosion": 0.0,
+            "depth": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        }
+      ]
     }
   }
 }

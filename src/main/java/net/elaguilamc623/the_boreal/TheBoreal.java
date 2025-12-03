@@ -63,21 +63,26 @@ public class TheBoreal
             event.accept(BorealBlocks.BOREAL_COBBLESTONE);
             event.accept(BorealBlocks.BOREAL_COBBLESTONE_SLAB);
             event.accept(BorealBlocks.BOREAL_COBBLESTONE_STAIRS);
+            event.accept(BorealBlocks.BOREAL_COBBLESTONE_WALL);
             event.accept(BorealBlocks.BOREAL_STONE);
             event.accept(BorealBlocks.BOREAL_STONE_SLAB);
             event.accept(BorealBlocks.BOREAL_STONE_STAIRS);
             event.accept(BorealBlocks.BOREAL_DEEP_STONE);
             event.accept(BorealBlocks.BOREAL_DEEP_STONE_SLAB);
             event.accept(BorealBlocks.BOREAL_DEEP_STONE_STAIRS);
+            event.accept(BorealBlocks.BOREAL_DEEP_STONE_WALL);
             event.accept(BorealBlocks.BOREAL_STONE_BRICKS);
             event.accept(BorealBlocks.BOREAL_STONE_BRICKS_SLAB);
             event.accept(BorealBlocks.BOREAL_STONE_BRICKS_STAIRS);
+            event.accept(BorealBlocks.BOREAL_STONE_BRICK_WALL);
             event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS);
             event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB);
             event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS);
+            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL);
             event.accept(BorealBlocks.BOREAL_CHISELED_STONE);
             event.accept(BorealBlocks.GLACIAL_GRASS_BLOCK);
             event.accept(BorealBlocks.GLACIAL_DIRT);
+            event.accept(BorealBlocks.GLACIAL_GRASS);
         }
     }
 

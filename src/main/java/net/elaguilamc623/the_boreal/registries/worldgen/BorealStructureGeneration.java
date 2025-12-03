@@ -10,7 +10,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 public class BorealStructureGeneration {
 
     public static final DeferredRegister<StructureType<?>> STRUCTURES =
-            DeferredRegister.create(Registries.STRUCTURE_TYPE, "complementary_structures");
+            DeferredRegister.create(Registries.STRUCTURE_TYPE, "the_boreal");
 
     public static final RegistryObject<StructureType<JigsawStructuresGenerationChecker>> ADVANCED_STRUCTURE =
             STRUCTURES.register("jigsaw_generation_checker", () -> () -> JigsawStructuresGenerationChecker.CODEC.codec());

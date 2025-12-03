@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 
 public class BorealStructurePlacements {
     public static final DeferredRegister<StructurePlacementType<?>> PLACEMENTS =
-            DeferredRegister.create(Registries.STRUCTURE_PLACEMENT, "complementary_structures");
+            DeferredRegister.create(Registries.STRUCTURE_PLACEMENT, "the_boreal");
 
     public static final RegistryObject<StructurePlacementType<AdvancedStructurePlacement>> ADVANCED_PLACEMENT =
             PLACEMENTS.register("advanced_structure_placement", () -> () -> AdvancedStructurePlacement.CODEC);

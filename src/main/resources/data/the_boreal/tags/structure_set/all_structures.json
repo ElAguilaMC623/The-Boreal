@@ -1,0 +1,16 @@
+{
+  "structures": [
+    { "structure": "minecraft:villages" },
+    { "structure": "minecraft:ruined_portal" },
+    { "structure": "minecraft:mansion" },
+    { "structure": "minecraft:pillager_outpost" },
+    { "structure": "minecraft:trail_ruins" },
+    { "structure": "minecraft:igloo" }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 1,
+    "separation": 1,
+    "salt": 1
+  }
+}
