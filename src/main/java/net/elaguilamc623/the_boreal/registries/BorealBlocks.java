@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.GlacialGrasPlantBlock;
+import net.elaguilamc623.the_boreal.blocks.GlacialWheatBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -89,6 +90,9 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> GLACIAL_GRASS = registerBlock("glacial_grass",
             () -> new GlacialGrasPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+
+    public static final RegistryObject<Block> GLACIAL_WHEAT = BLOCKS.register("glacial_wheat",
+            () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
