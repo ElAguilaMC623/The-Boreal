@@ -11,10 +11,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class GlacialGrasPlantBlock extends BushBlock {
+public class GlacialGrassPlantBlock extends BushBlock {
     private static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 8, 13);
 
-    public GlacialGrasPlantBlock(BlockBehaviour.Properties properties) {
+    public GlacialGrassPlantBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 

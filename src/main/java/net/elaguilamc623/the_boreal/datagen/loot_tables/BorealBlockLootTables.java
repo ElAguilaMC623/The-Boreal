@@ -48,6 +48,14 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.add(BorealBlocks.GLACIAL_GRASS.get(), block ->
                 createSingleItemTableWithSilkTouch(block, BorealItems.GLACIAL_SEED.get()));
 
+        this.add(BorealBlocks.GLACIAL_FARMLAND.get(), block ->
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(BorealBlocks.GLACIAL_DIRT.get()))
+                        )
+        );
+
         this.add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(), block ->
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -56,7 +64,7 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
                         )
         );
 
-        this.add(BorealBlocks.GLACIAL_WHEAT.get(), block ->
+        this.add(BorealBlocks.GLACIAL_WHEAT_PLANT.get(), block ->
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))

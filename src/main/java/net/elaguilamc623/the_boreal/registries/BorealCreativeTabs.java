@@ -31,6 +31,14 @@ public class BorealCreativeTabs {
                             .build()
             );
 
+    public static RegistryObject<CreativeModeTab> BOREAL_ENTITIES_TAB =
+            CREATIVE_MODE_TABS.register("the_boreal_entities_tab", () ->
+                    CreativeModeTab.builder()
+                            .icon(() -> new ItemStack(BorealItems.GLACIAL_ZOMBIE_SPAWN_EGG.get()))
+                            .title(Component.literal("The Boreal Mobs"))
+                            .build()
+            );
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }

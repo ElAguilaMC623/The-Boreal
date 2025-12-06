@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "the_boreal:glacial_tundra",
+    "the_boreal:glacial_plains"
+  ],
+
+  "spawns": [
+    {
+      "type": "the_boreal:glacial_zombie",
+      "weight": 20,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

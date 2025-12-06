@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "moisture=0": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=1": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=2": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=3": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=4": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=5": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=6": { "model": "the_boreal:block/glacial_farmland_dry" },
+    "moisture=7": { "model": "the_boreal:block/glacial_farmland_wet" }
+  }
+}

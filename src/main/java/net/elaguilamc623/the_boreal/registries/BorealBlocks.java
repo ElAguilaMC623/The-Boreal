@@ -1,7 +1,9 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.blocks.GlacialGrasPlantBlock;
+import net.elaguilamc623.the_boreal.blocks.GlacialDirtBlock;
+import net.elaguilamc623.the_boreal.blocks.GlacialFarmlandBlock;
+import net.elaguilamc623.the_boreal.blocks.GlacialGrassPlantBlock;
 import net.elaguilamc623.the_boreal.blocks.GlacialWheatBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -86,12 +88,15 @@ public class BorealBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 
     public static final RegistryObject<Block> GLACIAL_DIRT = registerBlock("glacial_dirt",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+            () -> new GlacialDirtBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+
+    public static final RegistryObject<Block> GLACIAL_FARMLAND = registerBlock("glacial_farmland",
+            () -> new GlacialFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND)));
 
     public static final RegistryObject<Block> GLACIAL_GRASS = registerBlock("glacial_grass",
-            () -> new GlacialGrasPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new GlacialGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 
-    public static final RegistryObject<Block> GLACIAL_WHEAT = BLOCKS.register("glacial_wheat",
+    public static final RegistryObject<Block> GLACIAL_WHEAT_PLANT = BLOCKS.register("glacial_wheat_plant",
             () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

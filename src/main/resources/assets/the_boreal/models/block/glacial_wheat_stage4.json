@@ -1,0 +1,7 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "the_boreal:block/glacial_wheat_stage_4"
+  }
+}

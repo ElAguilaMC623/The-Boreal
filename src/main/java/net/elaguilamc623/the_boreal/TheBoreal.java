@@ -1,16 +1,12 @@
 package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
-import net.elaguilamc623.the_boreal.client.render.BorealEffects;
 import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealStructurePlacements;
-import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.DimensionSpecialEffectsManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -39,7 +35,7 @@ public class TheBoreal
         BorealItems.register(modEventBus);
         BorealCreativeTabs.register(modEventBus);
         BorealBlocks.register(modEventBus);
-        BorealEntities.register(modEventBus);
+        BorealEntities.ENTITY_TYPES.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
 
@@ -57,6 +53,9 @@ public class TheBoreal
             event.accept(BorealItems.ANCIENT_ICE_FRAGMENT);
             event.accept(BorealItems.FROZEN_AMULET);
             event.accept(BorealItems.BOREAL_ROCK);
+            event.accept(BorealItems.GLACIAL_SEED);
+            event.accept(BorealItems.GLACIAL_WHEAT);
+            event.accept(BorealItems.GLACIAL_BREAD);
         }
 
         if(event.getTab() == BorealCreativeTabs.BOREAL_BLOCKS_TAB.get()) {
@@ -84,6 +83,12 @@ public class TheBoreal
             event.accept(BorealBlocks.GLACIAL_DIRT);
             event.accept(BorealBlocks.GLACIAL_GRASS);
         }
+
+        if(event.getTab() == BorealCreativeTabs.BOREAL_ENTITIES_TAB.get()) {
+            event.accept(BorealItems.GLACIAL_ZOMBIE_SPAWN_EGG);
+            event.accept(BorealItems.GLACIAL_WOLF_SPAWN_EGG);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
