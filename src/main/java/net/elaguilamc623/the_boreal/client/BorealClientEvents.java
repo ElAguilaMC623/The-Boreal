@@ -1,9 +1,16 @@
 package net.elaguilamc623.the_boreal.client;
 
 import net.elaguilamc623.the_boreal.client.render.BorealEffects;
+import net.elaguilamc623.the_boreal.client.render.BorealModelLayers;
 import net.elaguilamc623.the_boreal.client.render.entities.GlacialWolfRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.GlacialZombieRenderer;
+import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
+import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -26,5 +33,17 @@ public class BorealClientEvents {
 
         event.registerEntityRenderer(BorealEntities.GLACIAL_WOLF.get(),
                 GlacialWolfRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_HANGING_SIGN.get(), HangingSignRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(BorealModelLayers.AURORAL_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(BorealModelLayers.AURORAL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
 }

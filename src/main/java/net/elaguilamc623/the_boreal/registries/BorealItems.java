@@ -1,10 +1,9 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
-import net.elaguilamc623.the_boreal.items.BorealRockItem;
-import net.elaguilamc623.the_boreal.items.FrozenAmuletItem;
-import net.elaguilamc623.the_boreal.items.GlacialSeedItem;
+import net.elaguilamc623.the_boreal.entities.custom.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.entities.custom.BorealChestBoatEntity;
+import net.elaguilamc623.the_boreal.items.*;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -49,6 +48,11 @@ public class BorealItems {
     public static final RegistryObject<Item> AURORAL_HANGING_SIGN = ITEMS.register("auroral_hanging_sign",
             () -> new HangingSignItem(BorealBlocks.AURORAL_HANGING_SIGN.get(), BorealBlocks.AURORAL_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
+    public static final RegistryObject<Item> AURORAL_BOAT = ITEMS.register("auroral_boat",
+            () -> new BorealBoatItem(false, BorealBoatEntity.Type.AURORAL, new Item.Properties()));
+
+    public static final RegistryObject<Item> AURORAL_CHEST_BOAT = ITEMS.register("auroral_chest_boat",
+            () -> new BorealBoatItem(true, BorealBoatEntity.Type.AURORAL, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -1,8 +1,8 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.entities.signs.BorealHangingSignBlockEntity;
-import net.elaguilamc623.the_boreal.entities.signs.BorealSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.entities.BorealHangingSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.entities.BorealSignBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

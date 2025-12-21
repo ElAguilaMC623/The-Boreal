@@ -5,6 +5,8 @@
   "item.the_boreal.glacial_seed": "Glacial Seed",
   "item.the_boreal.glacial_wheat": "Glacial Wheat",
   "item.the_boreal.glacial_bread": "Glacial Bread",
+  "item.the_boreal.auroral_boat": "Auroral Boat",
+  "item.the_boreal.auroral_chest_boat": "Auroral Chest Boat",
   "block.the_boreal.boreal_stone": "Boreal Stone",
   "block.the_boreal.boreal_stone_slab": "Boreal Stone Slab",
   "block.the_boreal.boreal_stone_stairs": "Boreal Stone Stairs",
@@ -38,10 +40,14 @@
   "block.the_boreal.auroral_stairs": "Auroral Stairs",
   "block.the_boreal.auroral_sign": "Auroral Sign",
   "block.the_boreal.auroral_hanging_sign": "Auroral Hanging Sign",
+  "block.the_boreal.auroral_button": "Auroral Button",
+  "block.the_boreal.auroral_pressure_plate": "Auroral Pressure Plate",
   "block.the_boreal.aurora_leaves": "Auroral Leaves",
   "block.the_boreal.aurora_sapling": "Auroral Sapling",
   "entity.the_boreal.glacial_zombie": "Glacial Zombie",
   "item.the_boreal.glacial_zombie_spawn_egg": "Glacial Zombie Spawn Egg",
   "entity.the_boreal.glacial_wolf": "Glacial Wolf",
-  "item.the_boreal.glacial_wolf_spawn_egg": "Glacial Wolf Spawn Egg"
+  "item.the_boreal.glacial_wolf_spawn_egg": "Glacial Wolf Spawn Egg",
+  "entity.the_boreal.auroral_boat": "Auroral Boat",
+  "entity.the_boreal.auroral_chest_boat": "Auroral Chest Boat"
 }

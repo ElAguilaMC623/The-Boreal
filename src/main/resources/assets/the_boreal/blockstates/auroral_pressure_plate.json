@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "the_boreal:block/auroral_pressure_plate" },
+    "powered=true":  { "model": "the_boreal:block/auroral_pressure_plate_down" }
+  }
+}

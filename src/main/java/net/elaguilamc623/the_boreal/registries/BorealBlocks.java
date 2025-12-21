@@ -12,6 +12,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,8 +30,7 @@ public class BorealBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_SLAB)));
 
     public static final RegistryObject<Block> BOREAL_COBBLESTONE_STAIRS = registerBlock("boreal_cobblestone_stairs",
-            () -> new StairBlock(() -> BOREAL_COBBLESTONE.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_STAIRS)));
+            () -> new StairBlock(() -> BOREAL_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_STAIRS)));
 
     public static final RegistryObject<Block> BOREAL_COBBLESTONE_WALL = registerBlock("boreal_cobblestone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)));
@@ -42,8 +42,7 @@ public class BorealBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)));
 
     public static final RegistryObject<Block> BOREAL_STONE_STAIRS = registerBlock("boreal_stone_stairs",
-            () -> new StairBlock(() -> BOREAL_STONE.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
+            () -> new StairBlock(() -> BOREAL_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
 
     public static final RegistryObject<Block> BOREAL_DEEP_STONE = registerBlock("boreal_deep_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
@@ -52,8 +51,7 @@ public class BorealBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE_SLAB)));
 
     public static final RegistryObject<Block> BOREAL_DEEP_STONE_STAIRS = registerBlock("boreal_deep_stone_stairs",
-            () -> new StairBlock(() -> BOREAL_DEEP_STONE.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE_STAIRS)));
+            () -> new StairBlock(() -> BOREAL_DEEP_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE_STAIRS)));
 
     public static final RegistryObject<Block> BOREAL_DEEP_STONE_WALL = registerBlock("boreal_deep_stone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE_WALL)));
@@ -65,8 +63,7 @@ public class BorealBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));
 
     public static final RegistryObject<Block> BOREAL_STONE_BRICKS_STAIRS = registerBlock("boreal_stone_brick_stairs",
-                    () -> new StairBlock(() -> BOREAL_STONE_BRICKS.get().defaultBlockState(),
-                            BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
+                    () -> new StairBlock(() -> BOREAL_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
 
     public static final RegistryObject<Block> BOREAL_STONE_BRICK_WALL = registerBlock("boreal_stone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
@@ -78,8 +75,7 @@ public class BorealBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICK_SLAB)));
 
     public static final RegistryObject<Block> BOREAL_MOSSY_STONE_BRICK_STAIRS = registerBlock("boreal_mossy_stone_brick_stairs",
-            () -> new StairBlock(() -> BOREAL_MOSSY_STONE_BRICKS.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICK_STAIRS)));
+            () -> new StairBlock(() -> BOREAL_MOSSY_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICK_STAIRS)));
 
     public static final RegistryObject<Block> BOREAL_MOSSY_STONE_BRICK_WALL = registerBlock("boreal_mossy_stone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICK_WALL)));
@@ -88,7 +84,7 @@ public class BorealBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
 
     public static final RegistryObject<Block> GLACIAL_GRASS_BLOCK = registerBlock("glacial_grass_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+            () -> new GlacialGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 
     public static final RegistryObject<Block> GLACIAL_DIRT = registerBlock("glacial_dirt",
             () -> new GlacialDirtBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
@@ -121,14 +117,13 @@ public class BorealBlocks {
             () -> new BorealLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     public static final RegistryObject<Block> AURORA_SAPLING = BLOCKS.register("aurora_sapling",
-                    () -> new AuroralSaplingBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
+            () -> new AuroralSaplingBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
 
     public static final RegistryObject<Block> AURORAL_SLAB = registerBlock("auroral_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 
     public static final RegistryObject<Block> AURORAL_STAIRS = registerBlock("auroral_stairs",
-            () -> new StairBlock(() -> AURORA_PLANKS.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+            () -> new StairBlock(() -> AURORA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
 
     public static final RegistryObject<Block> AURORAL_SIGN = BLOCKS.register("auroral_sign",
             () -> new BorealStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BorealWoodTypes.AURORAL));
@@ -142,6 +137,11 @@ public class BorealBlocks {
     public static final RegistryObject<Block> AURORAL_WALL_HANGING_SIGN = BLOCKS.register("auroral_wall_hanging_sign",
             () -> new BorealWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BorealWoodTypes.AURORAL));
 
+    public static final RegistryObject<Block> AURORAL_BUTTON = registerBlock("auroral_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
+
+    public static final RegistryObject<Block> AURORAL_PRESSURE_PLATE = registerBlock("auroral_pressure_plate",
+                    () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -1,0 +1,6 @@
+{
+  "parent": "block/button",
+  "textures": {
+    "texture": "the_boreal:block/auroral_planks"
+  }
+}

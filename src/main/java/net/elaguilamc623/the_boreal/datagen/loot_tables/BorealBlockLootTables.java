@@ -52,6 +52,10 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.AURORAL_HANGING_SIGN.get());
         this.dropSelf(BorealBlocks.AURORAL_WALL_HANGING_SIGN.get());
         this.dropSelf(BorealBlocks.AURORA_SAPLING.get());
+        this.dropSelf(BorealBlocks.AURORAL_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORAL_HANGING_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORAL_BUTTON.get());
+        this.dropSelf(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
 
 
         this.add(BorealBlocks.AURORA_LEAVES.get(),

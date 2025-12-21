@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
+import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.level.BorealFeatures;
 import net.elaguilamc623.the_boreal.registries.worldgen.level.BorealFoliagePlacers;
@@ -51,66 +52,11 @@ public class TheBoreal
 
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::AddCreative);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-    }
-
-    private void AddCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTab() == BorealCreativeTabs.BOREAL_ITEMS_TAB.get()) {
-            event.accept(BorealItems.ANCIENT_ICE_FRAGMENT.get());
-            event.accept(BorealItems.FROZEN_AMULET.get());
-            event.accept(BorealItems.BOREAL_ROCK.get());
-            event.accept(BorealItems.GLACIAL_SEED.get());
-            event.accept(BorealItems.GLACIAL_WHEAT.get());
-            event.accept(BorealItems.GLACIAL_BREAD.get());
-            // event.accept(BorealBlocks.AURORA_SAPLING.get());
-        }
-
-        if(event.getTab() == BorealCreativeTabs.BOREAL_BLOCKS_TAB.get()) {
-            event.accept(BorealBlocks.BOREAL_COBBLESTONE.get());
-            event.accept(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get());
-            event.accept(BorealBlocks.BOREAL_COBBLESTONE_STAIRS.get());
-            event.accept(BorealBlocks.BOREAL_COBBLESTONE_WALL.get());
-            event.accept(BorealBlocks.BOREAL_STONE.get());
-            event.accept(BorealBlocks.BOREAL_STONE_SLAB.get());
-            event.accept(BorealBlocks.BOREAL_STONE_STAIRS.get());
-            event.accept(BorealBlocks.BOREAL_DEEP_STONE.get());
-            event.accept(BorealBlocks.BOREAL_DEEP_STONE_SLAB.get());
-            event.accept(BorealBlocks.BOREAL_DEEP_STONE_STAIRS.get());
-            event.accept(BorealBlocks.BOREAL_DEEP_STONE_WALL.get());
-            event.accept(BorealBlocks.BOREAL_STONE_BRICKS.get());
-            event.accept(BorealBlocks.BOREAL_STONE_BRICKS_SLAB.get());
-            event.accept(BorealBlocks.BOREAL_STONE_BRICKS_STAIRS.get());
-            event.accept(BorealBlocks.BOREAL_STONE_BRICK_WALL.get());
-            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get());
-            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB.get());
-            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get());
-            event.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
-            event.accept(BorealBlocks.BOREAL_CHISELED_STONE.get());
-            event.accept(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
-            event.accept(BorealBlocks.GLACIAL_DIRT.get());
-            event.accept(BorealBlocks.GLACIAL_GRASS.get());
-            event.accept(BorealBlocks.AURORA_LOG.get());
-            event.accept(BorealBlocks.AURORA_WOOD.get());
-            event.accept(BorealBlocks.STRIPPED_AURORA_LOG.get());
-            event.accept(BorealBlocks.STRIPPED_AURORA_WOOD.get());
-            event.accept(BorealBlocks.AURORA_PLANKS.get());
-            event.accept(BorealBlocks.AURORAL_STAIRS.get());
-            event.accept(BorealBlocks.AURORAL_SLAB.get());
-            event.accept(BorealItems.AURORAL_SIGN.get());
-            event.accept(BorealItems.AURORAL_HANGING_SIGN.get());
-            event.accept(BorealBlocks.AURORA_LEAVES.get());
-        }
-
-        if(event.getTab() == BorealCreativeTabs.BOREAL_ENTITIES_TAB.get()) {
-            event.accept(BorealItems.GLACIAL_ZOMBIE_SPAWN_EGG.get());
-            event.accept(BorealItems.GLACIAL_WOLF_SPAWN_EGG.get());
-        }
-
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -126,7 +72,8 @@ public class TheBoreal
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(BorealWoodTypes.AURORAL);
             EntityRenderers.register(BorealEntities.BOREAL_ROCK_ENTITY.get(), ThrownItemRenderer::new);
-
+            EntityRenderers.register(BorealEntities.AURORAL_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, false));
+            EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
         }
     }
 }

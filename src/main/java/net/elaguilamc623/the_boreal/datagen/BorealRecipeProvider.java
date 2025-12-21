@@ -163,9 +163,25 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
+    private void buttonRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, output)
+                .requires(planks)
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+    private void pressurePlateRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, output)
+                .define('#', planks)
+                .pattern("##")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
     public BorealRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
+
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
@@ -294,6 +310,8 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
         signRecipe(consumer, BorealItems.AURORAL_SIGN.get(), BorealBlocks.AURORA_PLANKS.get());
         hangingSignRecipe(consumer, BorealItems.AURORAL_HANGING_SIGN.get(), BorealBlocks.STRIPPED_AURORA_LOG.get());
 
+        buttonRecipe(consumer, BorealBlocks.AURORAL_BUTTON.get(), BorealBlocks.AURORA_PLANKS.get());
+        pressurePlateRecipe(consumer, BorealBlocks.AURORAL_PRESSURE_PLATE.get(), BorealBlocks.AURORA_PLANKS.get());
     }
 
 
