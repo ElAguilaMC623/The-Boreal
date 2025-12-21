@@ -46,5 +46,22 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.GLACIAL_DIRT.get()
                 );
 
+        this.tag(BlockTags.WALLS)
+                .add(BorealBlocks.BOREAL_COBBLESTONE_WALL.get(),
+                        BorealBlocks.BOREAL_DEEP_STONE_WALL.get(),
+                        BorealBlocks.BOREAL_STONE_BRICK_WALL.get(),
+                        BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get()
+                        );
+
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(BorealBlocks.AURORA_LOG.get(),
+                        BorealBlocks.AURORA_WOOD.get(),
+                        BorealBlocks.STRIPPED_AURORA_LOG.get(),
+                        BorealBlocks.STRIPPED_AURORA_WOOD.get()
+                        );
+
+        this.tag(BlockTags.PLANKS)
+                .add(BorealBlocks.AURORA_PLANKS.get());
     }
 }

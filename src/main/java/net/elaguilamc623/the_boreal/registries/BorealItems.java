@@ -5,11 +5,9 @@ import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
 import net.elaguilamc623.the_boreal.items.BorealRockItem;
 import net.elaguilamc623.the_boreal.items.FrozenAmuletItem;
 import net.elaguilamc623.the_boreal.items.GlacialSeedItem;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -34,18 +32,23 @@ public class BorealItems {
             () -> new GlacialSeedItem(BorealBlocks.GLACIAL_WHEAT_PLANT.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> GLACIAL_WHEAT = ITEMS.register("glacial_wheat",
-                    () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GLACIAL_BREAD = ITEMS.register("glacial_bread",
-                    () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_BREAD)));
+            () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_BREAD)));
 
-    public static final RegistryObject<Item> GLACIAL_ZOMBIE_SPAWN_EGG =
-            ITEMS.register("glacial_zombie_spawn_egg",
-                    () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_ZOMBIE, 0x3A6BAF, 0xFFFFFFFF, new Item.Properties()));
+    public static final RegistryObject<Item> GLACIAL_ZOMBIE_SPAWN_EGG = ITEMS.register("glacial_zombie_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_ZOMBIE, 0x3A6BAF, 0xFFFFFFFF, new Item.Properties()));
 
-    public static final RegistryObject<Item> GLACIAL_WOLF_SPAWN_EGG =
-            ITEMS.register("glacial_wolf_spawn_egg",
-                    () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+    public static final RegistryObject<Item> GLACIAL_WOLF_SPAWN_EGG = ITEMS.register("glacial_wolf_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+
+    public static final RegistryObject<Item> AURORAL_SIGN = ITEMS.register("auroral_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), BorealBlocks.AURORAL_SIGN.get(), BorealBlocks.AURORAL_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> AURORAL_HANGING_SIGN = ITEMS.register("auroral_hanging_sign",
+            () -> new HangingSignItem(BorealBlocks.AURORAL_HANGING_SIGN.get(), BorealBlocks.AURORAL_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

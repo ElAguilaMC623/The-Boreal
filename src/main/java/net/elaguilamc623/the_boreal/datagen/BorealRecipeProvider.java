@@ -10,10 +10,12 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class BorealRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
@@ -91,6 +93,73 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .define('S', base)
                 .define('V', Items.VINE)
                 .unlockedBy(unlockName, has(Items.VINE))
+                .save(consumer);
+    }
+
+    private void simpleWoodFamilyRecipes(Consumer<FinishedRecipe> consumer,
+                                         Supplier<Block> log,
+                                         Supplier<Block> wood,
+                                         Supplier<Block> strippedLog,
+                                         Supplier<Block> strippedWood,
+                                         Supplier<Block> planks) {
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
+                .requires(log.get())
+                .group("planks")
+                .unlockedBy("has_log", has(log.get()))
+                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
+                .requires(wood.get())
+                .group("planks")
+                .unlockedBy("has_wood", has(wood.get()))
+                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_wood");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
+                .requires(strippedLog.get())
+                .group("planks")
+                .unlockedBy("has_stripped_log", has(strippedLog.get()))
+                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_stripped_log");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
+                .requires(strippedWood.get())
+                .group("planks")
+                .unlockedBy("has_stripped_wood", has(strippedWood.get()))
+                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_stripped_wood");
+    }
+
+    private void woodFromLogs(Consumer<FinishedRecipe> consumer,
+                              Supplier<Block> log,
+                              Supplier<Block> wood) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wood.get(), 3)
+                .define('#', log.get())
+                .pattern("##")
+                .pattern("##")
+                .group("boreal_wood")
+                .unlockedBy("has_log", has(log.get()))
+                .save(consumer);
+    }
+
+    private void signRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, output, 3)
+                .define('#', planks)
+                .define('X', Items.STICK)
+                .pattern("###")
+                .pattern("###")
+                .pattern(" X ")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+    private void hangingSignRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike strippedLog) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, output, 6)
+                .define('#', strippedLog)
+                .define('X', Items.CHAIN)
+                .pattern("###")
+                .pattern("XXX")
+                .pattern("###")
+                .unlockedBy("has_stripped_log", has(strippedLog))
                 .save(consumer);
     }
 
@@ -203,6 +272,27 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB.get(),
                 BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get(),
                 BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
+
+        simpleWoodFamilyRecipes(consumer,
+                BorealBlocks.AURORA_LOG,
+                BorealBlocks.AURORA_WOOD,
+                BorealBlocks.STRIPPED_AURORA_LOG,
+                BorealBlocks.STRIPPED_AURORA_WOOD,
+                BorealBlocks.AURORA_PLANKS
+        );
+
+        woodFromLogs(consumer,
+                BorealBlocks.AURORA_LOG,
+                BorealBlocks.AURORA_WOOD
+        );
+
+        woodFromLogs(consumer,
+                BorealBlocks.STRIPPED_AURORA_LOG,
+                BorealBlocks.STRIPPED_AURORA_WOOD
+        );
+
+        signRecipe(consumer, BorealItems.AURORAL_SIGN.get(), BorealBlocks.AURORA_PLANKS.get());
+        hangingSignRecipe(consumer, BorealItems.AURORAL_HANGING_SIGN.get(), BorealBlocks.STRIPPED_AURORA_LOG.get());
 
     }
 

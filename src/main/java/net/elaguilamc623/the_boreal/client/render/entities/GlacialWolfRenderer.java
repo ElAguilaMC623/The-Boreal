@@ -21,7 +21,7 @@ public class GlacialWolfRenderer extends WolfRenderer {
 
     @Override
     protected void scale(Wolf entity, PoseStack poseStack, float partialTickTime) {
-        poseStack.scale(1.2F, 1.2F, 1.2F);
+        poseStack.scale(1.4F, 1.4F, 1.4F);
         super.scale(entity, poseStack, partialTickTime);
     }
 

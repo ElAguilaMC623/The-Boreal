@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": { "model": "the_boreal:block/stripped_aurora_log" },
+    "axis=x": { "model": "the_boreal:block/stripped_aurora_log", "x": 90, "y": 90 },
+    "axis=z": { "model": "the_boreal:block/stripped_aurora_log", "x": 90 }
+  }
+}

@@ -40,24 +40,42 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.BOREAL_CHISELED_STONE.get());
         this.dropSelf(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
         this.dropSelf(BorealBlocks.GLACIAL_DIRT.get());
+        this.dropSelf(BorealBlocks.AURORA_LOG.get());
+        this.dropSelf(BorealBlocks.AURORA_WOOD.get());
+        this.dropSelf(BorealBlocks.STRIPPED_AURORA_LOG.get());
+        this.dropSelf(BorealBlocks.STRIPPED_AURORA_WOOD.get());
+        this.dropSelf(BorealBlocks.AURORA_PLANKS.get());
+        this.dropSelf(BorealBlocks.AURORAL_STAIRS.get());
+        this.dropSelf(BorealBlocks.AURORAL_SLAB.get());
+        this.dropSelf(BorealBlocks.AURORAL_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORAL_WALL_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORAL_HANGING_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORAL_WALL_HANGING_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORA_SAPLING.get());
+
+
+        this.add(BorealBlocks.AURORA_LEAVES.get(),
+                block -> createLeavesDrops(block,
+                        BorealBlocks.AURORA_PLANKS.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.add(BorealBlocks.BOREAL_STONE.get(),
                 block -> createSilkTouchDispatchTable(block,
                         LootItem.lootTableItem(BorealBlocks.BOREAL_COBBLESTONE.get())));
 
         this.add(BorealBlocks.GLACIAL_GRASS.get(), block ->
-                createSingleItemTableWithSilkTouch(block, BorealItems.GLACIAL_SEED.get()));
+                createSingleItemTableWithSilkTouch(block,
+                        BorealItems.GLACIAL_SEED.get()));
 
-        this.add(BorealBlocks.GLACIAL_FARMLAND.get(), block ->
-                LootTable.lootTable()
+        this.add(BorealBlocks.GLACIAL_FARMLAND.get(),
+                block -> LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(BorealBlocks.GLACIAL_DIRT.get()))
                         )
         );
 
-        this.add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(), block ->
-                LootTable.lootTable()
+        this.add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(),
+                block -> LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(BorealBlocks.GLACIAL_DIRT.get()))
@@ -71,8 +89,6 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
                                 .add(LootItem.lootTableItem(BorealItems.GLACIAL_SEED.get()))
                         )
         );
-
-
     }
 
     @Override

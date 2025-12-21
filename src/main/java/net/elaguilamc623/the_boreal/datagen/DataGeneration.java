@@ -4,14 +4,20 @@ import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.datagen.loot_tables.BorealLootTableProvider;
 import net.elaguilamc623.the_boreal.datagen.tags.BorealBlockTagGeneration;
 import net.elaguilamc623.the_boreal.datagen.tags.BorealItemTagGeneration;
+import net.elaguilamc623.the_boreal.worldgen.level.BorealConfiguredFeatures;
+import net.elaguilamc623.the_boreal.worldgen.level.BorealPlacedFeatures;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = TheBoreal.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -32,5 +38,15 @@ public class DataGeneration {
 
         generator.addProvider(event.includeServer(),
                 new BorealItemTagGeneration(packOutput, lookupProvider, blockTagGenerator.contentsGetter()));
+
+        RegistrySetBuilder builder = new RegistrySetBuilder();
+
+        builder.add(Registries.CONFIGURED_FEATURE, BorealConfiguredFeatures::bootstrap);
+        builder.add(Registries.PLACED_FEATURE, BorealPlacedFeatures::bootstrap);
+
+        generator.addProvider(event.includeServer(),
+                new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, builder, Set.of(TheBoreal.MOD_ID)));
     }
+
 }
+

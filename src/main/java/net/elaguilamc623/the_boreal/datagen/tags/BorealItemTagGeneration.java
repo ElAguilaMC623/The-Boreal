@@ -1,8 +1,10 @@
 package net.elaguilamc623.the_boreal.datagen.tags;
 
+import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
@@ -14,6 +16,14 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider p_256380_) {
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(BorealBlocks.AURORA_LOG.get().asItem())
+                .add(BorealBlocks.AURORA_WOOD.get().asItem())
+                .add(BorealBlocks.STRIPPED_AURORA_LOG.get().asItem())
+                .add(BorealBlocks.STRIPPED_AURORA_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(BorealBlocks.AURORA_PLANKS.get().asItem());
 
     }
 }

@@ -26,7 +26,7 @@ public class BorealEntityEvents {
         );
         event.put(BorealEntities.GLACIAL_WOLF.get(),
                 Wolf.createAttributes()
-                        .add(Attributes.MAX_HEALTH, 20.0D)
+                        .add(Attributes.MAX_HEALTH, 40.0D)
                         .add(Attributes.ATTACK_DAMAGE, 4.0D)
                         .add(Attributes.MOVEMENT_SPEED, 0.3D)
                         .build()

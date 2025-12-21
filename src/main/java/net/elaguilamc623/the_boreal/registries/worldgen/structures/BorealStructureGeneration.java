@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.registries.worldgen;
+package net.elaguilamc623.the_boreal.registries.worldgen.structures;
 
 import net.elaguilamc623.the_boreal.worldgen.structures.JigsawStructuresGenerationChecker;
 import net.minecraft.core.registries.Registries;

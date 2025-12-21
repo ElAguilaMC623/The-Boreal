@@ -1,10 +1,13 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.blocks.GlacialDirtBlock;
-import net.elaguilamc623.the_boreal.blocks.GlacialFarmlandBlock;
-import net.elaguilamc623.the_boreal.blocks.GlacialGrassPlantBlock;
-import net.elaguilamc623.the_boreal.blocks.GlacialWheatBlock;
+import net.elaguilamc623.the_boreal.blocks.*;
+import net.elaguilamc623.the_boreal.blocks.signs.BorealHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.BorealWallHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
+import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
+import net.elaguilamc623.the_boreal.worldgen.level.trees.auroral.AuroralTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -98,6 +101,47 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> GLACIAL_WHEAT_PLANT = BLOCKS.register("glacial_wheat_plant",
             () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> AURORA_LOG = registerBlock("aurora_log",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3F)));
+
+    public static final RegistryObject<Block> AURORA_WOOD = registerBlock("aurora_wood",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3F)));
+
+    public static final RegistryObject<Block> STRIPPED_AURORA_LOG = registerBlock("stripped_aurora_log",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3F)));
+
+    public static final RegistryObject<Block> STRIPPED_AURORA_WOOD = registerBlock("stripped_aurora_wood",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3F)));
+
+    public static final RegistryObject<Block> AURORA_PLANKS = registerBlock("aurora_planks",
+            () -> new BorealPlanksBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> AURORA_LEAVES = registerBlock("aurora_leaves",
+            () -> new BorealLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> AURORA_SAPLING = BLOCKS.register("aurora_sapling",
+                    () -> new AuroralSaplingBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
+
+    public static final RegistryObject<Block> AURORAL_SLAB = registerBlock("auroral_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> AURORAL_STAIRS = registerBlock("auroral_stairs",
+            () -> new StairBlock(() -> AURORA_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+
+    public static final RegistryObject<Block> AURORAL_SIGN = BLOCKS.register("auroral_sign",
+            () -> new BorealStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BorealWoodTypes.AURORAL));
+
+    public static final RegistryObject<Block> AURORAL_WALL_SIGN = BLOCKS.register("auroral_wall_sign",
+            () -> new BorealWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BorealWoodTypes.AURORAL));
+
+    public static final RegistryObject<Block> AURORAL_HANGING_SIGN = BLOCKS.register("auroral_hanging_sign",
+            () -> new BorealHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BorealWoodTypes.AURORAL));
+
+    public static final RegistryObject<Block> AURORAL_WALL_HANGING_SIGN = BLOCKS.register("auroral_wall_hanging_sign",
+            () -> new BorealWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BorealWoodTypes.AURORAL));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
