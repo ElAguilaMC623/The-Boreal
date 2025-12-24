@@ -4,6 +4,7 @@ import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.entities.custom.BorealChestBoatEntity;
 import net.elaguilamc623.the_boreal.items.*;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -41,6 +42,9 @@ public class BorealItems {
 
     public static final RegistryObject<Item> GLACIAL_WOLF_SPAWN_EGG = ITEMS.register("glacial_wolf_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+
+    public static final RegistryObject<Item> AURORA_SAPLING_ITEM = ITEMS.register("aurora_sapling",
+            () -> new BlockItem(BorealBlocks.AURORA_SAPLING.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> AURORAL_SIGN = ITEMS.register("auroral_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), BorealBlocks.AURORAL_SIGN.get(), BorealBlocks.AURORAL_WALL_SIGN.get()));

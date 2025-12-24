@@ -3,20 +3,14 @@ package net.elaguilamc623.the_boreal;
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.registries.*;
-import net.elaguilamc623.the_boreal.registries.worldgen.level.BorealFeatures;
-import net.elaguilamc623.the_boreal.registries.worldgen.level.BorealFoliagePlacers;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
-import net.elaguilamc623.the_boreal.worldgen.level.BorealConfiguredFeatures;
-import net.elaguilamc623.the_boreal.worldgen.level.BorealPlacedFeatures;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.core.registries.Registries;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -47,8 +41,6 @@ public class TheBoreal
         BorealBlockEntities.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
-        BorealFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
-        BorealFeatures.FEATURES.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);

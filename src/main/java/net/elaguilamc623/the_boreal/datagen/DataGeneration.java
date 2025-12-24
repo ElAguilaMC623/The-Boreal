@@ -4,8 +4,6 @@ import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.datagen.loot_tables.BorealLootTableProvider;
 import net.elaguilamc623.the_boreal.datagen.tags.BorealBlockTagGeneration;
 import net.elaguilamc623.the_boreal.datagen.tags.BorealItemTagGeneration;
-import net.elaguilamc623.the_boreal.worldgen.level.BorealConfiguredFeatures;
-import net.elaguilamc623.the_boreal.worldgen.level.BorealPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -40,9 +38,6 @@ public class DataGeneration {
                 new BorealItemTagGeneration(packOutput, lookupProvider, blockTagGenerator.contentsGetter()));
 
         RegistrySetBuilder builder = new RegistrySetBuilder();
-
-        builder.add(Registries.CONFIGURED_FEATURE, BorealConfiguredFeatures::bootstrap);
-        builder.add(Registries.PLACED_FEATURE, BorealPlacedFeatures::bootstrap);
 
         generator.addProvider(event.includeServer(),
                 new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, builder, Set.of(TheBoreal.MOD_ID)));

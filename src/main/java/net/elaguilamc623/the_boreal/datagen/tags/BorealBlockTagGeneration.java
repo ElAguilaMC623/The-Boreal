@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal.datagen.tags;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -63,5 +64,8 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
 
         this.tag(BlockTags.PLANKS)
                 .add(BorealBlocks.AURORA_PLANKS.get());
+
+        this.tag(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON)
+                .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
     }
 }

@@ -27,7 +27,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.GLACIAL_SEED.get());
                                 pOutput.accept(BorealItems.GLACIAL_WHEAT.get());
                                 pOutput.accept(BorealItems.GLACIAL_BREAD.get());
-                                // pOutput.accept(BorealBlocks.AURORA_SAPLING.get());
+                                pOutput.accept(BorealBlocks.AURORA_SAPLING.get());
                             })
                             .build()
             );

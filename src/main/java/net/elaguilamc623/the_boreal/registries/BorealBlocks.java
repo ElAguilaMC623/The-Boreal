@@ -7,7 +7,6 @@ import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
-import net.elaguilamc623.the_boreal.worldgen.level.trees.auroral.AuroralTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;

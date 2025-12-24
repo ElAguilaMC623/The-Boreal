@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "decorators": [],
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": { "Name": "the_boreal:aurora_log" }
+    },
+    "trunk_placer": {
+      "type": "minecraft:straight_trunk_placer",
+      "base_height": 5,
+      "height_rand_a": 2,
+      "height_rand_b": 1
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": { "Name": "the_boreal:aurora_leaves" }
+    },
+    "foliage_placer": {
+      "type": "minecraft:spruce_foliage_placer",
+      "radius": { "type": "minecraft:constant", "value": 2 },
+      "offset": { "type": "minecraft:constant", "value": 1 },
+      "trunk_height": 4
+    },
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 1
+    },
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": { "Name": "the_boreal:glacial_dirt" }
+    },
+    "force_dirt": false,
+    "ignore_vines": true
+  }
+}

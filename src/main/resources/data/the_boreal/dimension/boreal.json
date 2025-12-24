@@ -9,10 +9,10 @@
         {
           "biome": "the_boreal:glacial_tundra",
           "parameters": {
-            "temperature": 0.8,
-            "humidity": 0.4,
-            "continentalness": 0.5,
-            "erosion": 0.0,
+            "temperature": -0.9,
+            "humidity": 0.3,
+            "continentalness": -0.4,
+            "erosion": 0.1,
             "depth": 0.0,
             "weirdness": 0.0,
             "offset": 0.0
@@ -21,10 +21,34 @@
         {
           "biome": "the_boreal:glacial_plains",
           "parameters": {
+            "temperature": -0.6,
+            "humidity": 0.6,
+            "continentalness": -0.2,
+            "erosion": 0.1,
+            "depth": 0.0,
+            "weirdness": -0.1,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "the_boreal:auroral_forest",
+          "parameters": {
+            "temperature": -0.3,
+            "humidity": 0.7,
+            "continentalness": 0.6,
+            "erosion": 0.2,
+            "depth": 0.0,
+            "weirdness": 0.2,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "the_boreal:snowy_auroral_forest",
+          "parameters": {
             "temperature": -0.5,
             "humidity": 0.8,
-            "continentalness": 0.5,
-            "erosion": 0.0,
+            "continentalness": 0.6,
+            "erosion": 0.2,
             "depth": 0.0,
             "weirdness": 0.0,
             "offset": 0.0
