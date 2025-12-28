@@ -16,6 +16,14 @@
       "type": "minecraft:heightmap",
       "heightmap": "OCEAN_FLOOR"
     },
+
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:replaceable"
+      }
+    },
+
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
@@ -25,6 +33,7 @@
         }
       }
     },
+
     {
       "type": "minecraft:biome"
     }

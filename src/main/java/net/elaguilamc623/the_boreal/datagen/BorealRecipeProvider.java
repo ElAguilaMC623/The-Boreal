@@ -178,6 +178,48 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
+    private void fenceAndGateRecipes(Consumer<FinishedRecipe> consumer,
+                                     ItemLike planks,
+                                     ItemLike fence,
+                                     ItemLike fenceGate) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, fence, 3)
+                .define('#', planks)
+                .define('X', Items.STICK)
+                .pattern("#X#")
+                .pattern("#X#")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, fenceGate)
+                .define('#', planks)
+                .define('X', Items.STICK)
+                .pattern("X#X")
+                .pattern("X#X")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+    private void doorRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, output, 3)
+                .define('#', planks)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+    private void trapdoorRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, output, 2)
+                .define('#', planks)
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+
     public BorealRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -312,6 +354,16 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
 
         buttonRecipe(consumer, BorealBlocks.AURORAL_BUTTON.get(), BorealBlocks.AURORA_PLANKS.get());
         pressurePlateRecipe(consumer, BorealBlocks.AURORAL_PRESSURE_PLATE.get(), BorealBlocks.AURORA_PLANKS.get());
+
+        fenceAndGateRecipes(
+                consumer,
+                BorealBlocks.AURORA_PLANKS.get(),
+                BorealBlocks.AURORAL_FENCE.get(),
+                BorealBlocks.AURORAL_FENCE_GATE.get()
+        );
+
+        doorRecipe(consumer, BorealBlocks.AURORAL_DOOR.get(), BorealBlocks.AURORA_PLANKS.get());
+        trapdoorRecipe(consumer, BorealBlocks.AURORAL_TRAPDOOR.get(), BorealBlocks.AURORA_PLANKS.get());
     }
 
 

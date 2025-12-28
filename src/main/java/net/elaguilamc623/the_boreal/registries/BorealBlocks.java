@@ -7,6 +7,7 @@ import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -92,7 +93,7 @@ public class BorealBlocks {
             () -> new GlacialFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND)));
 
     public static final RegistryObject<Block> GLACIAL_GRASS = registerBlock("glacial_grass",
-            () -> new GlacialGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new GlacialGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).replaceable()));
 
     public static final RegistryObject<Block> GLACIAL_WHEAT_PLANT = BLOCKS.register("glacial_wheat_plant",
             () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
@@ -124,6 +125,18 @@ public class BorealBlocks {
     public static final RegistryObject<Block> AURORAL_STAIRS = registerBlock("auroral_stairs",
             () -> new StairBlock(() -> AURORA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
 
+    public static final RegistryObject<Block> AURORAL_FENCE = registerBlock("auroral_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+
+    public static final RegistryObject<Block> AURORAL_FENCE_GATE = registerBlock("auroral_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+
+    public static final RegistryObject<Block> AURORAL_DOOR = registerBlock("auroral_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> AURORAL_TRAPDOOR = registerBlock("auroral_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+
     public static final RegistryObject<Block> AURORAL_SIGN = BLOCKS.register("auroral_sign",
             () -> new BorealStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BorealWoodTypes.AURORAL));
 
@@ -140,7 +153,7 @@ public class BorealBlocks {
             () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 
     public static final RegistryObject<Block> AURORAL_PRESSURE_PLATE = registerBlock("auroral_pressure_plate",
-                    () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

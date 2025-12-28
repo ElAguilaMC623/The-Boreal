@@ -20,25 +20,19 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(BorealBlocks.BOREAL_COBBLESTONE.get());
-        this.dropSelf(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get());
         this.dropSelf(BorealBlocks.BOREAL_COBBLESTONE_STAIRS.get());
         this.dropSelf(BorealBlocks.BOREAL_COBBLESTONE_WALL.get());
-        this.dropSelf(BorealBlocks.BOREAL_STONE_SLAB.get());
         this.dropSelf(BorealBlocks.BOREAL_STONE_STAIRS.get());
         this.dropSelf(BorealBlocks.BOREAL_DEEP_STONE.get());
-        this.dropSelf(BorealBlocks.BOREAL_DEEP_STONE_SLAB.get());
         this.dropSelf(BorealBlocks.BOREAL_DEEP_STONE_STAIRS.get());
         this.dropSelf(BorealBlocks.BOREAL_DEEP_STONE_WALL.get());
         this.dropSelf(BorealBlocks.BOREAL_STONE_BRICKS.get());
-        this.dropSelf(BorealBlocks.BOREAL_STONE_BRICKS_SLAB.get());
         this.dropSelf(BorealBlocks.BOREAL_STONE_BRICKS_STAIRS.get());
         this.dropSelf(BorealBlocks.BOREAL_STONE_BRICK_WALL.get());
         this.dropSelf(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get());
-        this.dropSelf(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB.get());
         this.dropSelf(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get());
         this.dropSelf(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
         this.dropSelf(BorealBlocks.BOREAL_CHISELED_STONE.get());
-        this.dropSelf(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
         this.dropSelf(BorealBlocks.GLACIAL_DIRT.get());
         this.dropSelf(BorealBlocks.AURORA_LOG.get());
         this.dropSelf(BorealBlocks.AURORA_WOOD.get());
@@ -47,20 +41,32 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.AURORA_PLANKS.get());
         this.dropSelf(BorealBlocks.AURORAL_STAIRS.get());
         this.dropSelf(BorealBlocks.AURORAL_SLAB.get());
-        this.dropSelf(BorealBlocks.AURORAL_SIGN.get());
-        this.dropSelf(BorealBlocks.AURORAL_WALL_SIGN.get());
-        this.dropSelf(BorealBlocks.AURORAL_HANGING_SIGN.get());
-        this.dropSelf(BorealBlocks.AURORAL_WALL_HANGING_SIGN.get());
+        this.dropSelf(BorealBlocks.AURORAL_FENCE.get());
+        this.dropSelf(BorealBlocks.AURORAL_FENCE_GATE.get());
+        this.dropSelf(BorealBlocks.AURORAL_TRAPDOOR.get());
         this.dropSelf(BorealBlocks.AURORA_SAPLING.get());
-        this.dropSelf(BorealBlocks.AURORAL_SIGN.get());
-        this.dropSelf(BorealBlocks.AURORAL_HANGING_SIGN.get());
         this.dropSelf(BorealBlocks.AURORAL_BUTTON.get());
         this.dropSelf(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
 
 
+        this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(),
+                block -> createSlabItemTable(block));
+
+        this.add(BorealBlocks.BOREAL_STONE_SLAB.get(),
+                block -> createSlabItemTable(block));
+
+        this.add(BorealBlocks.BOREAL_DEEP_STONE_SLAB.get(),
+                block -> createSlabItemTable(block));
+
+        this.add(BorealBlocks.BOREAL_STONE_BRICKS_SLAB.get(),
+                block -> createSlabItemTable(block));
+
+        this.add(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(block));
+
         this.add(BorealBlocks.AURORA_LEAVES.get(),
                 block -> createLeavesDrops(block,
-                        BorealBlocks.AURORA_PLANKS.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+                        BorealBlocks.AURORA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.add(BorealBlocks.BOREAL_STONE.get(),
                 block -> createSilkTouchDispatchTable(block,
@@ -93,6 +99,20 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
                                 .add(LootItem.lootTableItem(BorealItems.GLACIAL_SEED.get()))
                         )
         );
+
+        this.add(BorealBlocks.AURORAL_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.AURORAL_SIGN.get()));
+        this.add(BorealBlocks.AURORAL_WALL_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.AURORAL_SIGN.get()));
+
+        this.add(BorealBlocks.AURORAL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.AURORAL_HANGING_SIGN.get()));
+        this.add(BorealBlocks.AURORAL_WALL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.AURORAL_HANGING_SIGN.get()));
+
+        this.add(BorealBlocks.AURORAL_DOOR.get(),
+                block -> createDoorTable(BorealBlocks.AURORAL_DOOR.get()));
+
     }
 
     @Override

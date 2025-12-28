@@ -38,9 +38,6 @@ public class DataGeneration {
                 new BorealItemTagGeneration(packOutput, lookupProvider, blockTagGenerator.contentsGetter()));
 
         RegistrySetBuilder builder = new RegistrySetBuilder();
-
-        generator.addProvider(event.includeServer(),
-                new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, builder, Set.of(TheBoreal.MOD_ID)));
     }
 
 }
