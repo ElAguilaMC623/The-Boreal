@@ -1,17 +1,19 @@
 package net.elaguilamc623.the_boreal.datagen.tags;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-
 import java.util.concurrent.CompletableFuture;
+import static net.elaguilamc623.the_boreal.registries.BorealTags.BOREAL_STICKS;
 
 public class BorealItemTagGeneration extends ItemTagsProvider {
-    public BorealItemTagGeneration(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_, CompletableFuture<TagLookup<Block>> p_275322_) {
-        super(p_275343_, p_275729_, p_275322_);
+    public BorealItemTagGeneration(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, CompletableFuture<TagLookup<Block>> pFuture) {
+        super(pOutput, pProvider, pFuture);
     }
 
     @Override
@@ -24,6 +26,14 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
 
         this.tag(ItemTags.PLANKS)
                 .add(BorealBlocks.AURORA_PLANKS.get().asItem());
+
+        tag(BorealTags.STICKS)
+                .replace(false)
+                .add(BorealItems.AURORAL_STICK.get());
+
+        tag(BOREAL_STICKS)
+                .add(BorealItems.AURORAL_STICK.get());
+
 
     }
 }

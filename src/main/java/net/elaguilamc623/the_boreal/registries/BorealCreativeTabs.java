@@ -24,6 +24,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.ANCIENT_ICE_FRAGMENT.get());
                                 pOutput.accept(BorealItems.FROZEN_AMULET.get());
                                 pOutput.accept(BorealItems.BOREAL_ROCK.get());
+                                pOutput.accept(BorealItems.AURORAL_STICK.get());
                                 pOutput.accept(BorealItems.RAW_TALISMANDIUM.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_INGOT.get());
                                 pOutput.accept(BorealItems.CHRODIUM.get());
@@ -31,6 +32,31 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.DIORIUM_INGOT.get());
                                 pOutput.accept(BorealItems.AURORAL_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
+                            })
+                            .build()
+            );
+
+    public static RegistryObject<CreativeModeTab> BOREAL_TOOLS_COMBAT_TAB =
+            CREATIVE_MODE_TABS.register("the_boreal_tools_combat_tab", () ->
+                    CreativeModeTab.builder()
+                            .icon(() -> new ItemStack(BorealItems.TALISMANDIUM_SWORD.get()))
+                            .title(Component.literal("The Boreal Tools and Combat"))
+                            .displayItems((pParameters, pOutput) -> {
+                                pOutput.accept(BorealItems.TALISMANDIUM_SWORD.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_PICKAXE.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_AXE.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_SHOVEL.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_HOE.get());
+                                pOutput.accept(BorealItems.CHRODIUM_SWORD.get());
+                                pOutput.accept(BorealItems.CHRODIUM_PICKAXE.get());
+                                pOutput.accept(BorealItems.CHRODIUM_AXE.get());
+                                pOutput.accept(BorealItems.CHRODIUM_SHOVEL.get());
+                                pOutput.accept(BorealItems.CHRODIUM_HOE.get());
+                                pOutput.accept(BorealItems.DIORIUM_SWORD.get());
+                                pOutput.accept(BorealItems.DIORIUM_PICKAXE.get());
+                                pOutput.accept(BorealItems.DIORIUM_AXE.get());
+                                pOutput.accept(BorealItems.DIORIUM_SHOVEL.get());
+                                pOutput.accept(BorealItems.DIORIUM_HOE.get());
                             })
                             .build()
             );

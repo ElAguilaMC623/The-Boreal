@@ -3,10 +3,7 @@ package net.elaguilamc623.the_boreal.registries;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.*;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -42,6 +39,9 @@ public class BorealItems {
     public static final RegistryObject<Item> GLACIAL_WOLF_SPAWN_EGG = ITEMS.register("glacial_wolf_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
 
+    public static final RegistryObject<Item> AURORAL_STICK = ITEMS.register("auroral_stick",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> AURORA_SAPLING_ITEM = ITEMS.register("aurora_sapling",
             () -> new BlockItem(BorealBlocks.AURORA_SAPLING.get(), new Item.Properties()));
 
@@ -71,6 +71,51 @@ public class BorealItems {
 
     public static final RegistryObject<Item> DIORIUM_INGOT = ITEMS.register("diorium_ingot",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_SWORD = ITEMS.register("talismandium_sword",
+            () -> new SwordItem(BorealTiers.TALISMANDIUM, 6, -2.4F, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_PICKAXE = ITEMS.register("talismandium_pickaxe",
+            () -> new PickaxeItem(BorealTiers.TALISMANDIUM, 4, -2.8F, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_AXE = ITEMS.register("talismandium_axe",
+            () -> new AxeItem(BorealTiers.TALISMANDIUM, 8, -3.0F, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_SHOVEL = ITEMS.register("talismandium_shovel",
+            () -> new ShovelItem(BorealTiers.TALISMANDIUM, 4.5F, -3.0F, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_HOE = ITEMS.register("talismandium_hoe",
+            () -> new HoeItem(BorealTiers.TALISMANDIUM, 0, 0, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_SWORD = ITEMS.register("chrodium_sword",
+            () -> new SwordItem(BorealTiers.CHRODIUM, 7, -2.4F, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_PICKAXE = ITEMS.register("chrodium_pickaxe",
+            () -> new PickaxeItem(BorealTiers.CHRODIUM, 5, -2.8F, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_AXE = ITEMS.register("chrodium_axe",
+            () -> new AxeItem(BorealTiers.CHRODIUM, 8.5F, -2.9F, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_SHOVEL = ITEMS.register("chrodium_shovel",
+            () -> new ShovelItem(BorealTiers.CHRODIUM, 6, -3.0F, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_HOE = ITEMS.register("chrodium_hoe",
+            () -> new HoeItem(BorealTiers.CHRODIUM, 0, 0, new Item.Properties()));
+
+    public static final RegistryObject<Item> DIORIUM_SWORD = ITEMS.register("diorium_sword",
+            () -> new SwordItem(BorealTiers.DIORIUM, 9, -2.4F, new Item.Properties().durability(-1)));
+
+    public static final RegistryObject<Item> DIORIUM_PICKAXE = ITEMS.register("diorium_pickaxe",
+            () -> new PickaxeItem(BorealTiers.DIORIUM, 7, -2.8F, new Item.Properties().durability(-1)));
+
+    public static final RegistryObject<Item> DIORIUM_AXE = ITEMS.register("diorium_axe",
+            () -> new AxeItem(BorealTiers.DIORIUM, 10, -2.9F, new Item.Properties().durability(-1)));
+
+    public static final RegistryObject<Item> DIORIUM_SHOVEL = ITEMS.register("diorium_shovel",
+            () -> new ShovelItem(BorealTiers.DIORIUM, 7.5F, -3.0F, new Item.Properties().durability(-1)));
+
+    public static final RegistryObject<Item> DIORIUM_HOE = ITEMS.register("diorium_hoe",
+            () -> new HoeItem(BorealTiers.DIORIUM, 0, 0, new Item.Properties().durability(-1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

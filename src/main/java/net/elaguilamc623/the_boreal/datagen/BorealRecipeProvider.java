@@ -3,8 +3,12 @@ package net.elaguilamc623.the_boreal.datagen;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -141,6 +145,20 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
+    public void stickRecipe(Consumer<FinishedRecipe> consumer,
+                            ItemLike plank,
+                            ItemLike stick,
+                            int count,
+                            String name) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, stick, count)
+                .pattern("A")
+                .pattern("A")
+                .define('A', plank)
+                .unlockedBy("has_" + name, has(plank))
+                .save(consumer, new ResourceLocation("the_boreal", name + "_stick"));
+    }
+
     private void signRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, output, 3)
                 .define('#', planks)
@@ -216,6 +234,25 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .pattern("###")
                 .pattern("###")
                 .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+    public void toolRecipe(Consumer<FinishedRecipe> consumer,
+                           ItemLike result,
+                           ItemLike material,
+                           TagKey<Item> stickTag,
+                           String pattern1,
+                           String pattern2,
+                           String pattern3,
+                           String name) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern(pattern1)
+                .pattern(pattern2)
+                .pattern(pattern3)
+                .define('X', material)
+                .define('#', stickTag)
+                .unlockedBy("has_" + name, has(material))
                 .save(consumer);
     }
 
@@ -349,6 +386,13 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 BorealBlocks.STRIPPED_AURORA_WOOD
         );
 
+        stickRecipe(consumer,
+                BorealBlocks.AURORA_PLANKS.get(),
+                BorealItems.AURORAL_STICK.get(),
+                4,
+                "auroral"
+        );
+
         signRecipe(consumer, BorealItems.AURORAL_SIGN.get(), BorealBlocks.AURORA_PLANKS.get());
         hangingSignRecipe(consumer, BorealItems.AURORAL_HANGING_SIGN.get(), BorealBlocks.STRIPPED_AURORA_LOG.get());
 
@@ -428,6 +472,96 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 BorealItems.DIORIUM_INGOT.get(),
                 0.9f, 100,
                 "diorium");
+
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_SWORD.get(),
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "X", "#",
+                "talismandium_sword");
+
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_PICKAXE.get(),
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "XXX", " # ", " # ",
+                "talismandium_pickaxe");
+
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_AXE.get(),
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", "X# ", " # ",
+                "talismandium_axe");
+
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_SHOVEL.get(),
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "#", "#",
+                "talismandium_shovel");
+
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_HOE.get(),
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", " # ", " # ",
+                "talismandium_hoe");
+
+        toolRecipe(consumer, BorealItems.CHRODIUM_SWORD.get(),
+                BorealItems.CHRODIUM.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "X", "#",
+                "chrodium_sword");
+
+        toolRecipe(consumer, BorealItems.CHRODIUM_PICKAXE.get(),
+                BorealItems.CHRODIUM.get(),
+                BorealTags.BOREAL_STICKS,
+                "XXX", " # ", " # ",
+                "chrodium_pickaxe");
+
+        toolRecipe(consumer, BorealItems.CHRODIUM_AXE.get(),
+                BorealItems.CHRODIUM.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", "X# ", " # ",
+                "chrodium_axe");
+
+        toolRecipe(consumer, BorealItems.CHRODIUM_SHOVEL.get(),
+                BorealItems.CHRODIUM.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "#", "#",
+                "chrodium_shovel");
+
+        toolRecipe(consumer, BorealItems.CHRODIUM_HOE.get(),
+                BorealItems.CHRODIUM.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", " # ", " # ",
+                "chrodium_hoe");
+
+        toolRecipe(consumer, BorealItems.DIORIUM_SWORD.get(),
+                BorealItems.DIORIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "X", "#",
+                "diorium_sword");
+
+        toolRecipe(consumer, BorealItems.DIORIUM_PICKAXE.get(),
+                BorealItems.DIORIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "XXX", " # ", " # ",
+                "diorium_pickaxe");
+
+        toolRecipe(consumer, BorealItems.DIORIUM_AXE.get(),
+                BorealItems.DIORIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", "X# ", " # ",
+                "diorium_axe");
+
+        toolRecipe(consumer, BorealItems.DIORIUM_SHOVEL.get(),
+                BorealItems.DIORIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "#", "#",
+                "diorium_shovel");
+
+        toolRecipe(consumer, BorealItems.DIORIUM_HOE.get(),
+                BorealItems.DIORIUM_INGOT.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", " # ", " # ",
+                "diorium_hoe");
     }
 
 

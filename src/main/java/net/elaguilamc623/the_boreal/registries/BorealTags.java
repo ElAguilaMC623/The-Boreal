@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class BorealTags {
@@ -16,4 +17,20 @@ public class BorealTags {
     public static final TagKey<Block> TREE_REPLACEABLE =
             TagKey.create(Registries.BLOCK, new ResourceLocation(TheBoreal.MOD_ID, "tree_replaceable")
     );
+
+    public static final TagKey<Item> STICKS =
+            TagKey.create(Registries.ITEM, new ResourceLocation("minecraft", "sticks"));
+
+    public static final TagKey<Item> BOREAL_STICKS =
+            TagKey.create(Registries.ITEM, new ResourceLocation("the_boreal", "boreal_sticks"));
+
+    public static final TagKey<Block> NEEDS_TALISMANDIUM_TOOL =
+            TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "needs_talismandium_tool"));
+
+    public static final TagKey<Block> NEEDS_CHRODIUM_TOOL =
+            TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "needs_chrodium_tool"));
+
+    public static final TagKey<Block> NEEDS_DIORIUM_TOOL =
+            TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "needs_diorium_tool"));
+
 }

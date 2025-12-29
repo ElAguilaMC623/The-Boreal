@@ -11,7 +11,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
-import static net.elaguilamc623.the_boreal.registries.BorealTags.TREE_REPLACEABLE;
+import static net.elaguilamc623.the_boreal.registries.BorealTags.*;
 
 public class BorealBlockTagGeneration extends BlockTagsProvider {
     public BorealBlockTagGeneration(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
@@ -70,19 +70,21 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.AURORAL_WALL_HANGING_SIGN.get()
                 );
 
-        this.tag(BlockTags.NEEDS_IRON_TOOL)
+
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(BorealBlocks.TALISMANDIUM_ORE.get(),
                         BorealBlocks.DEEP_TALISMANDIUM_ORE.get()
                 );
 
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
+        this.tag(BorealTags.NEEDS_TALISMANDIUM_TOOL)
                 .add(BorealBlocks.CHRODIUM_ORE.get(),
-                        BorealBlocks.DEEP_CHRODIUM_ORE.get(),
-                        BorealBlocks.DIORIUM_ORE.get(),
+                        BorealBlocks.DEEP_CHRODIUM_ORE.get()
+                );
+
+        this.tag(BorealTags.NEEDS_CHRODIUM_TOOL)
+                .add(BorealBlocks.DIORIUM_ORE.get(),
                         BorealBlocks.DEEP_DIORIUM_ORE.get()
-                        );
-
-
+                );
 
         this.tag(BlockTags.WALLS)
                 .add(BorealBlocks.BOREAL_COBBLESTONE_WALL.get(),

@@ -2,6 +2,8 @@ package net.elaguilamc623.the_boreal.datagen;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.datagen.loot_tables.BorealLootTableProvider;
+import net.elaguilamc623.the_boreal.datagen.models.BorealBlockStateProvider;
+import net.elaguilamc623.the_boreal.datagen.models.BorealItemModelProvider;
 import net.elaguilamc623.the_boreal.datagen.tags.BorealBlockTagGeneration;
 import net.elaguilamc623.the_boreal.datagen.tags.BorealItemTagGeneration;
 import net.minecraft.core.HolderLookup;
@@ -36,6 +38,14 @@ public class DataGeneration {
 
         generator.addProvider(event.includeServer(),
                 new BorealItemTagGeneration(packOutput, lookupProvider, blockTagGenerator.contentsGetter()));
+
+        generator.addProvider(event.includeClient(),
+                new BorealBlockStateProvider(packOutput, existingFileHelper));
+
+        generator.addProvider(event.includeClient(),
+                new BorealItemModelProvider(packOutput, existingFileHelper));
+
+
 
         RegistrySetBuilder builder = new RegistrySetBuilder();
     }
