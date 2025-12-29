@@ -41,7 +41,13 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB.get(),
                         BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get(),
                         BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get(),
-                        BorealBlocks.BOREAL_CHISELED_STONE.get()
+                        BorealBlocks.BOREAL_CHISELED_STONE.get(),
+                        BorealBlocks.TALISMANDIUM_ORE.get(),
+                        BorealBlocks.DEEP_TALISMANDIUM_ORE.get(),
+                        BorealBlocks.CHRODIUM_ORE.get(),
+                        BorealBlocks.DEEP_CHRODIUM_ORE.get(),
+                        BorealBlocks.DIORIUM_ORE.get(),
+                        BorealBlocks.DEEP_DIORIUM_ORE.get()
                         );
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -63,6 +69,18 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.AURORAL_HANGING_SIGN.get(),
                         BorealBlocks.AURORAL_WALL_HANGING_SIGN.get()
                 );
+
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(BorealBlocks.TALISMANDIUM_ORE.get(),
+                        BorealBlocks.DEEP_TALISMANDIUM_ORE.get()
+                );
+
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(BorealBlocks.CHRODIUM_ORE.get(),
+                        BorealBlocks.DEEP_CHRODIUM_ORE.get(),
+                        BorealBlocks.DIORIUM_ORE.get(),
+                        BorealBlocks.DEEP_DIORIUM_ORE.get()
+                        );
 
 
 

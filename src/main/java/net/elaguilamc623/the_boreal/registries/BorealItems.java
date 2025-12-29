@@ -2,7 +2,6 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.BorealBoatEntity;
-import net.elaguilamc623.the_boreal.entities.custom.BorealChestBoatEntity;
 import net.elaguilamc623.the_boreal.items.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HangingSignItem;
@@ -57,6 +56,21 @@ public class BorealItems {
 
     public static final RegistryObject<Item> AURORAL_CHEST_BOAT = ITEMS.register("auroral_chest_boat",
             () -> new BorealBoatItem(true, BorealBoatEntity.Type.AURORAL, new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_TALISMANDIUM = ITEMS.register("raw_talismandium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_INGOT = ITEMS.register("talismandium_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM = ITEMS.register("chrodium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_DIORIUM = ITEMS.register("raw_diorium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> DIORIUM_INGOT = ITEMS.register("diorium_ingot",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

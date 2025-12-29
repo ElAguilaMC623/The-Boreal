@@ -24,6 +24,11 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.ANCIENT_ICE_FRAGMENT.get());
                                 pOutput.accept(BorealItems.FROZEN_AMULET.get());
                                 pOutput.accept(BorealItems.BOREAL_ROCK.get());
+                                pOutput.accept(BorealItems.RAW_TALISMANDIUM.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_INGOT.get());
+                                pOutput.accept(BorealItems.CHRODIUM.get());
+                                pOutput.accept(BorealItems.RAW_DIORIUM.get());
+                                pOutput.accept(BorealItems.DIORIUM_INGOT.get());
                                 pOutput.accept(BorealItems.AURORAL_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                             })
@@ -74,6 +79,12 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get());
                                 pOutput.accept(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
                                 pOutput.accept(BorealBlocks.BOREAL_CHISELED_STONE.get());
+                                pOutput.accept(BorealBlocks.TALISMANDIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DEEP_TALISMANDIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.CHRODIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DEEP_CHRODIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DIORIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DEEP_DIORIUM_ORE.get());
                                 pOutput.accept(BorealBlocks.AURORA_LOG.get());
                                 pOutput.accept(BorealBlocks.AURORA_WOOD.get());
                                 pOutput.accept(BorealBlocks.STRIPPED_AURORA_LOG.get());

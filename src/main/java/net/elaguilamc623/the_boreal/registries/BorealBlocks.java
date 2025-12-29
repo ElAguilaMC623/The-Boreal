@@ -83,6 +83,24 @@ public class BorealBlocks {
     public static final RegistryObject<Block> BOREAL_CHISELED_STONE = registerBlock("boreal_chiseled_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
 
+    public static final RegistryObject<Block> TALISMANDIUM_ORE = registerBlock("talismandium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+
+    public static final RegistryObject<Block> DEEP_TALISMANDIUM_ORE = registerBlock("deep_talismandium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
+
+    public static final RegistryObject<Block> CHRODIUM_ORE = registerBlock("chrodium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
+
+    public static final RegistryObject<Block> DEEP_CHRODIUM_ORE = registerBlock("deep_chrodium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+
+    public static final RegistryObject<Block> DIORIUM_ORE = registerBlock("diorium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(22.0F, 900.0F)));
+
+    public static final RegistryObject<Block> DEEP_DIORIUM_ORE = registerBlock("deep_diorium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE).strength(27.0F, 1000.0F)));
+
     public static final RegistryObject<Block> GLACIAL_GRASS_BLOCK = registerBlock("glacial_grass_block",
             () -> new GlacialGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 

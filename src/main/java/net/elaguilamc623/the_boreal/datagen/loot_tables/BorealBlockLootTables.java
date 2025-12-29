@@ -113,6 +113,25 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.add(BorealBlocks.AURORAL_DOOR.get(),
                 block -> createDoorTable(BorealBlocks.AURORAL_DOOR.get()));
 
+        this.add(BorealBlocks.TALISMANDIUM_ORE.get(),
+                block -> createOreDrop(block, BorealItems.RAW_TALISMANDIUM.get()));
+
+        this.add(BorealBlocks.DEEP_TALISMANDIUM_ORE.get(),
+                block -> createOreDrop(block, BorealItems.RAW_TALISMANDIUM.get()));
+
+        this.add(BorealBlocks.CHRODIUM_ORE.get(),
+                block -> createOreDrop(block, BorealItems.CHRODIUM.get()));
+
+        this.add(BorealBlocks.DEEP_CHRODIUM_ORE.get(),
+                block -> createOreDrop(block, BorealItems.CHRODIUM.get()));
+
+        this.add(BorealBlocks.DIORIUM_ORE.get(),
+                block -> createOreDrop(block, BorealItems.RAW_DIORIUM.get()));
+
+        this.add(BorealBlocks.DEEP_DIORIUM_ORE.get(),
+                block -> createOreDrop(block, BorealItems.RAW_DIORIUM.get()));
+
+
     }
 
     @Override

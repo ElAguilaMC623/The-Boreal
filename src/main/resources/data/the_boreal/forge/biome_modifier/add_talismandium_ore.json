@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_boreal:boreal_biomes/is_boreal",
+  "features": "the_boreal:talismandium_ore_placed",
+  "step": "underground_ores"
+}

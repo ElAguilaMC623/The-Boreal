@@ -364,6 +364,70 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
 
         doorRecipe(consumer, BorealBlocks.AURORAL_DOOR.get(), BorealBlocks.AURORA_PLANKS.get());
         trapdoorRecipe(consumer, BorealBlocks.AURORAL_TRAPDOOR.get(), BorealBlocks.AURORA_PLANKS.get());
+
+        oreSmelting(consumer,
+                List.of(
+                        BorealItems.RAW_TALISMANDIUM.get(),
+                        BorealBlocks.TALISMANDIUM_ORE.get(),
+                        BorealBlocks.DEEP_TALISMANDIUM_ORE.get()
+                ),
+                RecipeCategory.MISC,
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                0.7f, 200,
+                "talismandium");
+
+        oreBlasting(consumer,
+                List.of(
+                        BorealItems.RAW_TALISMANDIUM.get(),
+                        BorealBlocks.TALISMANDIUM_ORE.get(),
+                        BorealBlocks.DEEP_TALISMANDIUM_ORE.get()
+                ),
+                RecipeCategory.MISC,
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                0.7f, 100,
+                "talismandium");
+
+        oreSmelting(consumer,
+                List.of(
+                        BorealBlocks.CHRODIUM_ORE.get(),
+                        BorealBlocks.DEEP_CHRODIUM_ORE.get()
+                ),
+                RecipeCategory.MISC,
+                BorealItems.CHRODIUM.get(),
+                0.5f, 200,
+                "chrodium");
+
+        oreBlasting(consumer,
+                List.of(
+                        BorealBlocks.CHRODIUM_ORE.get(),
+                        BorealBlocks.DEEP_CHRODIUM_ORE.get()
+                ),
+                RecipeCategory.MISC,
+                BorealItems.CHRODIUM.get(),
+                0.5f, 100,
+                "chrodium");
+
+        oreSmelting(consumer,
+                List.of(
+                        BorealItems.RAW_DIORIUM.get(),
+                        BorealBlocks.DIORIUM_ORE.get(),
+                        BorealBlocks.DEEP_DIORIUM_ORE.get()
+                ),
+                RecipeCategory.MISC,
+                BorealItems.DIORIUM_INGOT.get(),
+                0.9f, 200,
+                "diorium");
+
+        oreBlasting(consumer,
+                List.of(
+                        BorealItems.RAW_DIORIUM.get(),
+                        BorealBlocks.DIORIUM_ORE.get(),
+                        BorealBlocks.DEEP_DIORIUM_ORE.get()
+                ),
+                RecipeCategory.MISC,
+                BorealItems.DIORIUM_INGOT.get(),
+                0.9f, 100,
+                "diorium");
     }
 
 
