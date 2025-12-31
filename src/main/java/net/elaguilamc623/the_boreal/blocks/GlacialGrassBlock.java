@@ -46,6 +46,10 @@ public class GlacialGrassBlock extends SpreadingSnowyDirtBlock {
         BlockPos above = pos.above();
         BlockState aboveState = level.getBlockState(above);
 
+        if (aboveState.getFluidState().isSource()) {
+            return false;
+        }
+
         if (aboveState.is(Blocks.SNOW) && aboveState.getValue(SnowLayerBlock.LAYERS) == 1) {
             return true;
         }

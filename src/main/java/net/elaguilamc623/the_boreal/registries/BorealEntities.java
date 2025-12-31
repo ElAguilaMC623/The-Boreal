@@ -1,11 +1,14 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.entities.BorealRockEntity;
+import net.elaguilamc623.the_boreal.entities.FrozenBearEntity;
+import net.elaguilamc623.the_boreal.entities.boats.GlacialSkeletonEntity;
+import net.elaguilamc623.the_boreal.entities.projectiles.BorealRockEntity;
 import net.elaguilamc623.the_boreal.entities.GlacialWolf;
 import net.elaguilamc623.the_boreal.entities.GlacialZombie;
-import net.elaguilamc623.the_boreal.entities.custom.BorealBoatEntity;
-import net.elaguilamc623.the_boreal.entities.custom.BorealChestBoatEntity;
+import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.entities.boats.BorealChestBoatEntity;
+import net.elaguilamc623.the_boreal.entities.projectiles.GlacialSkeletonArrowEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,6 +33,26 @@ public class BorealEntities {
                     .of(GlacialWolf::new, MobCategory.CREATURE)
                     .sized(0.8f, 1.0f)
                     .build("glacial_wolf"));
+
+    public static final RegistryObject<EntityType<FrozenBearEntity>> FROZEN_BEAR =
+            ENTITY_TYPES.register("frozen_bear", () -> EntityType.Builder
+                    .of(FrozenBearEntity::new, MobCategory.CREATURE)
+                    .sized(1.6F, 1.6F)
+                    .build("frozen_bear"));
+
+    public static final RegistryObject<EntityType<GlacialSkeletonEntity>> GLACIAL_SKELETON =
+            ENTITY_TYPES.register("glacial_skeleton", () -> EntityType.Builder
+                    .of(GlacialSkeletonEntity::new, MobCategory.CREATURE)
+                    .sized(0.6F, 1.99F)
+                    .build("glacial_skeleton"));
+
+    public static final RegistryObject<EntityType<GlacialSkeletonArrowEntity>> GLACIAL_ARROW =
+            ENTITY_TYPES.register("glacial_arrow",
+                    () -> EntityType.Builder.<GlacialSkeletonArrowEntity>of(GlacialSkeletonArrowEntity::new, MobCategory.MISC)
+                            .sized(0.5F, 0.5F)
+                            .clientTrackingRange(4)
+                            .updateInterval(20)
+                            .build("glacial_arrow"));
 
     public static final RegistryObject<EntityType<BorealBoatEntity>> AURORAL_BOAT = ENTITY_TYPES.register("auroral_boat",
             () -> EntityType.Builder.<BorealBoatEntity>of(BorealBoatEntity::new, MobCategory.MISC).sized(

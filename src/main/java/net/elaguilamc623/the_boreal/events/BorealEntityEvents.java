@@ -4,6 +4,7 @@ import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
@@ -32,14 +33,63 @@ public class BorealEntityEvents {
                         .build()
         );
 
+        event.put(BorealEntities.FROZEN_BEAR.get(),
+                Wolf.createAttributes()
+                        .add(Attributes.MAX_HEALTH, 80.0D)
+                        .add(Attributes.ATTACK_DAMAGE, 8.0D)
+                        .add(Attributes.MOVEMENT_SPEED, 0.5D)
+                        .build()
+        );
+
+        event.put(BorealEntities.GLACIAL_SKELETON.get(),
+                Wolf.createAttributes()
+                        .add(Attributes.MAX_HEALTH, 50.0D)
+                        .add(Attributes.ATTACK_DAMAGE, 8.0D)
+                        .add(Attributes.MOVEMENT_SPEED, 0.32D)
+                        .add(Attributes.FOLLOW_RANGE, 30.0D)
+                        .build()
+        );
+
     }
 
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-        event.register(BorealEntities.GLACIAL_ZOMBIE.get(),
+        event.register(
+                BorealEntities.GLACIAL_ZOMBIE.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Monster::checkMonsterSpawnRules,
-                SpawnPlacementRegisterEvent.Operation.REPLACE);
+                (entityType, level, spawnType, pos, random) ->
+                        pos.getY() < 55 && Monster.checkMonsterSpawnRules(entityType, level, spawnType, pos, random),
+                SpawnPlacementRegisterEvent.Operation.REPLACE
+        );
+
+        event.register(
+                BorealEntities.GLACIAL_SKELETON.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                (entityType, level, spawnType, pos, random) ->
+                        pos.getY() < 55 && Monster.checkMonsterSpawnRules(entityType, level, spawnType, pos, random),
+                SpawnPlacementRegisterEvent.Operation.REPLACE
+        );
+
+        event.register(
+                BorealEntities.GLACIAL_WOLF.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                (entityType, level, spawnType, pos, random) ->
+                        pos.getY() > level.getSeaLevel() &&
+                                Animal.checkAnimalSpawnRules(entityType, level, spawnType, pos, random),
+                SpawnPlacementRegisterEvent.Operation.REPLACE
+        );
+
+        event.register(
+                BorealEntities.FROZEN_BEAR.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                (entityType, level, spawnType, pos, random) ->
+                        pos.getY() > level.getSeaLevel() &&
+                                Animal.checkAnimalSpawnRules(entityType, level, spawnType, pos, random),
+                SpawnPlacementRegisterEvent.Operation.REPLACE
+        );
     }
 }

@@ -79,6 +79,10 @@
   "item.the_boreal.glacial_zombie_spawn_egg": "Glacial Zombie Spawn Egg",
   "entity.the_boreal.glacial_wolf": "Glacial Wolf",
   "item.the_boreal.glacial_wolf_spawn_egg": "Glacial Wolf Spawn Egg",
+  "entity.the_boreal.frozen_bear": "Frozen Bear",
+  "item.the_boreal.frozen_bear_spawn_egg": "Frozen Bear Spawn Egg",
+  "entity.the_boreal.glacial_skeleton": "Glacial Skeleton",
+  "item.the_boreal.glacial_skeleton_spawn_egg": "Glacial Skeleton Spawn Egg",
   "entity.the_boreal.auroral_boat": "Auroral Boat",
   "entity.the_boreal.auroral_chest_boat": "Auroral Chest Boat"
 }

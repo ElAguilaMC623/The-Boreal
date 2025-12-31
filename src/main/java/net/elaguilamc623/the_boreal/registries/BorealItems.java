@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.entities.custom.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -38,6 +38,12 @@ public class BorealItems {
 
     public static final RegistryObject<Item> GLACIAL_WOLF_SPAWN_EGG = ITEMS.register("glacial_wolf_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROZEN_BEAR_SPAWN_EGG = ITEMS.register("frozen_bear_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.FROZEN_BEAR, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+
+    public static final RegistryObject<Item> GLACIAL_SKELETON_SPAWN_EGG = ITEMS.register("glacial_skeleton_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_SKELETON, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
 
     public static final RegistryObject<Item> AURORAL_STICK = ITEMS.register("auroral_stick",
             () -> new Item(new Item.Properties()));

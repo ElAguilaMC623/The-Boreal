@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.entities.custom;
+package net.elaguilamc623.the_boreal.entities.boats;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;

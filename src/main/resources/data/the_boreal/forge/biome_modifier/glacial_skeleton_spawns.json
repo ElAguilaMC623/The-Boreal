@@ -3,7 +3,7 @@
   "biomes": "#the_boreal:boreal_biomes/is_boreal",
   "spawners": [
     {
-      "type": "the_boreal:glacial_zombie",
+      "type": "the_boreal:glacial_skeleton",
       "weight": 13,
       "minCount": 1,
       "maxCount": 4,

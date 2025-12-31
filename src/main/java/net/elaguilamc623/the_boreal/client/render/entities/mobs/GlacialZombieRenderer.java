@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.client.render.entities;
+package net.elaguilamc623.the_boreal.client.render.entities.mobs;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
