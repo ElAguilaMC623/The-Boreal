@@ -256,6 +256,44 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
+    private void helmetRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
+                .define('#', mineral)
+                .pattern("###")
+                .pattern("# #")
+                .unlockedBy("has_mineral", has(mineral))
+                .save(consumer);
+    }
+
+    private void chestplateRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
+                .define('#', mineral)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_mineral", has(mineral))
+                .save(consumer);
+    }
+
+    private void leggingsRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
+                .define('#', mineral)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .unlockedBy("has_mineral", has(mineral))
+                .save(consumer);
+    }
+
+    private void bootsRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
+                .define('#', mineral)
+                .pattern("# #")
+                .pattern("# #")
+                .unlockedBy("has_mineral", has(mineral))
+                .save(consumer);
+    }
+
 
     public BorealRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -562,6 +600,22 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 BorealTags.BOREAL_STICKS,
                 "XX ", " # ", " # ",
                 "diorium_hoe");
+
+        helmetRecipe(consumer, BorealItems.TALISMANDIUM_HELMET.get(), BorealItems.TALISMANDIUM_INGOT.get());
+        helmetRecipe(consumer, BorealItems.CHRODIUM_HELMET.get(), BorealItems.CHRODIUM.get());
+        helmetRecipe(consumer, BorealItems.DIORIUM_HELMET.get(), BorealItems.DIORIUM_INGOT.get());
+
+        chestplateRecipe(consumer, BorealItems.TALISMANDIUM_CHESTPLATE.get(), BorealItems.TALISMANDIUM_INGOT.get());
+        chestplateRecipe(consumer, BorealItems.CHRODIUM_CHESTPLATE.get(), BorealItems.CHRODIUM.get());
+        chestplateRecipe(consumer, BorealItems.DIORIUM_CHESTPLATE.get(), BorealItems.DIORIUM_INGOT.get());
+
+        leggingsRecipe(consumer, BorealItems.TALISMANDIUM_LEGGINGS.get(), BorealItems.TALISMANDIUM_INGOT.get());
+        leggingsRecipe(consumer, BorealItems.CHRODIUM_LEGGINGS.get(), BorealItems.CHRODIUM.get());
+        leggingsRecipe(consumer, BorealItems.DIORIUM_LEGGINGS.get(), BorealItems.DIORIUM_INGOT.get());
+
+        bootsRecipe(consumer, BorealItems.TALISMANDIUM_BOOTS.get(), BorealItems.TALISMANDIUM_INGOT.get());
+        bootsRecipe(consumer, BorealItems.CHRODIUM_BOOTS.get(), BorealItems.CHRODIUM.get());
+        bootsRecipe(consumer, BorealItems.DIORIUM_BOOTS.get(), BorealItems.DIORIUM_INGOT.get());
     }
 
 

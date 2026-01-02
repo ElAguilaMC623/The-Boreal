@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.items;
+package net.elaguilamc623.the_boreal.items.custom;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

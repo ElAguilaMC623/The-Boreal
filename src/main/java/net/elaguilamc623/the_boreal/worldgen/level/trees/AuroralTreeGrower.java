@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.worldgen.level.trees.auroral;
+package net.elaguilamc623.the_boreal.worldgen.level.trees;
 
 import net.elaguilamc623.the_boreal.worldgen.level.BorealConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;

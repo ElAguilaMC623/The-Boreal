@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.blocks;
 
 import net.elaguilamc623.the_boreal.registries.BorealTags;
-import net.elaguilamc623.the_boreal.worldgen.level.trees.auroral.AuroralTreeGrower;
+import net.elaguilamc623.the_boreal.worldgen.level.trees.AuroralTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;

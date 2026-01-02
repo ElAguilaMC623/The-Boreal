@@ -17,7 +17,7 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider p_256380_) {
+    protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(ItemTags.LOGS_THAT_BURN)
                 .add(BorealBlocks.AURORA_LOG.get().asItem())
                 .add(BorealBlocks.AURORA_WOOD.get().asItem())
@@ -33,6 +33,21 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
 
         tag(BOREAL_STICKS)
                 .add(BorealItems.AURORAL_STICK.get());
+
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(BorealItems.TALISMANDIUM_HELMET.get(),
+                        BorealItems.TALISMANDIUM_CHESTPLATE.get(),
+                        BorealItems.TALISMANDIUM_LEGGINGS.get(),
+                        BorealItems.TALISMANDIUM_BOOTS.get(),
+                        BorealItems.CHRODIUM_HELMET.get(),
+                        BorealItems.CHRODIUM_CHESTPLATE.get(),
+                        BorealItems.CHRODIUM_LEGGINGS.get(),
+                        BorealItems.CHRODIUM_BOOTS.get(),
+                        BorealItems.DIORIUM_HELMET.get(),
+                        BorealItems.DIORIUM_CHESTPLATE.get(),
+                        BorealItems.DIORIUM_LEGGINGS.get(),
+                        BorealItems.DIORIUM_BOOTS.get()
+                );
 
 
     }

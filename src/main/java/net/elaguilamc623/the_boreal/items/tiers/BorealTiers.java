@@ -1,5 +1,7 @@
-package net.elaguilamc623.the_boreal.registries;
+package net.elaguilamc623.the_boreal.items.tiers;
 
+import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;

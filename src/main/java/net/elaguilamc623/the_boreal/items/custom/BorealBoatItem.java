@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.items;
+package net.elaguilamc623.the_boreal.items.custom;
 
 import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.entities.boats.BorealChestBoatEntity;
@@ -79,8 +79,8 @@ public class BorealBoatItem extends Item {
         }
     }
 
-    private Boat getBoat(Level p_220017_, HitResult p_220018_) {
-        return (Boat)(this.hasChest ? new BorealChestBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) :
-                new BorealBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z));
+    private Boat getBoat(Level pLevel, HitResult pResult) {
+        return (Boat)(this.hasChest ? new BorealChestBoatEntity(pLevel, pResult.getLocation().x, pResult.getLocation().y, pResult.getLocation().z) :
+                new BorealBoatEntity(pLevel, pResult.getLocation().x, pResult.getLocation().y, pResult.getLocation().z));
     }
 }

@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.items;
+package net.elaguilamc623.the_boreal.items.custom;
 
 import net.elaguilamc623.the_boreal.worldgen.dimension.BorealDimension;
 import net.minecraft.core.BlockPos;

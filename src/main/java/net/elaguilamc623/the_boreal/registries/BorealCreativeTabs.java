@@ -57,6 +57,18 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.DIORIUM_AXE.get());
                                 pOutput.accept(BorealItems.DIORIUM_SHOVEL.get());
                                 pOutput.accept(BorealItems.DIORIUM_HOE.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_HELMET.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_CHESTPLATE.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_LEGGINGS.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_BOOTS.get());
+                                pOutput.accept(BorealItems.CHRODIUM_HELMET.get());
+                                pOutput.accept(BorealItems.CHRODIUM_CHESTPLATE.get());
+                                pOutput.accept(BorealItems.CHRODIUM_LEGGINGS.get());
+                                pOutput.accept(BorealItems.CHRODIUM_BOOTS.get());
+                                pOutput.accept(BorealItems.DIORIUM_HELMET.get());
+                                pOutput.accept(BorealItems.DIORIUM_CHESTPLATE.get());
+                                pOutput.accept(BorealItems.DIORIUM_LEGGINGS.get());
+                                pOutput.accept(BorealItems.DIORIUM_BOOTS.get());
                             })
                             .build()
             );

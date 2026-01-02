@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.items;
+package net.elaguilamc623.the_boreal.items.custom;
 
 import net.elaguilamc623.the_boreal.entities.projectiles.BorealRockEntity;
 import net.minecraft.sounds.SoundEvents;

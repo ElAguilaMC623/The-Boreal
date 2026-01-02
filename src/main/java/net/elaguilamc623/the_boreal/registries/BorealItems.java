@@ -2,7 +2,11 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
-import net.elaguilamc623.the_boreal.items.*;
+import net.elaguilamc623.the_boreal.items.BorealItemProperties;
+import net.elaguilamc623.the_boreal.items.custom.*;
+import net.elaguilamc623.the_boreal.items.custom.weapons.*;
+import net.elaguilamc623.the_boreal.items.tiers.BorealArmorMaterials;
+import net.elaguilamc623.the_boreal.items.tiers.BorealTiers;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -11,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BorealItems {
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TheBoreal.MOD_ID);
 
@@ -109,19 +114,56 @@ public class BorealItems {
             () -> new HoeItem(BorealTiers.CHRODIUM, 0, 0, new Item.Properties()));
 
     public static final RegistryObject<Item> DIORIUM_SWORD = ITEMS.register("diorium_sword",
-            () -> new SwordItem(BorealTiers.DIORIUM, 9, -2.4F, new Item.Properties().durability(-1)));
+            () -> new BorealSwordItem(BorealTiers.DIORIUM, 9, -2.4F, new BorealItemProperties().unbreakable().stacksTo(1)));
 
     public static final RegistryObject<Item> DIORIUM_PICKAXE = ITEMS.register("diorium_pickaxe",
-            () -> new PickaxeItem(BorealTiers.DIORIUM, 7, -2.8F, new Item.Properties().durability(-1)));
+            () -> new BorealPickaxeItem(BorealTiers.DIORIUM, 7, -2.8F, new BorealItemProperties().unbreakable().stacksTo(1)));
 
     public static final RegistryObject<Item> DIORIUM_AXE = ITEMS.register("diorium_axe",
-            () -> new AxeItem(BorealTiers.DIORIUM, 10, -2.9F, new Item.Properties().durability(-1)));
+            () -> new BorealAxeItem(BorealTiers.DIORIUM, 10, -2.9F, new BorealItemProperties().unbreakable().stacksTo(1)));
 
     public static final RegistryObject<Item> DIORIUM_SHOVEL = ITEMS.register("diorium_shovel",
-            () -> new ShovelItem(BorealTiers.DIORIUM, 7.5F, -3.0F, new Item.Properties().durability(-1)));
+            () -> new BorealShovelItem(BorealTiers.DIORIUM, 7.5F, -3.0F, new BorealItemProperties().unbreakable().stacksTo(1)));
 
     public static final RegistryObject<Item> DIORIUM_HOE = ITEMS.register("diorium_hoe",
-            () -> new HoeItem(BorealTiers.DIORIUM, 0, 0, new Item.Properties().durability(-1)));
+            () -> new BorealHoeItem(BorealTiers.DIORIUM, 0, 0, new BorealItemProperties().unbreakable().stacksTo(1)));
+
+    public static final RegistryObject<Item> TALISMANDIUM_HELMET = ITEMS.register("talismandium_helmet",
+            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_CHESTPLATE = ITEMS.register("talismandium_chestplate",
+            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_LEGGINGS = ITEMS.register("talismandium_leggings",
+            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_BOOTS = ITEMS.register("talismandium_boots",
+            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_HELMET = ITEMS.register("chrodium_helmet",
+            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_CHESTPLATE = ITEMS.register("chrodium_chestplate",
+            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_LEGGINGS = ITEMS.register("chrodium_leggings",
+            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> CHRODIUM_BOOTS = ITEMS.register("chrodium_boots",
+            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> DIORIUM_HELMET = ITEMS.register("diorium_helmet",
+            () -> new BorealArmorItem(BorealArmorMaterials.DIORIUM, ArmorItem.Type.HELMET, new BorealItemProperties().unbreakable().stacksTo(1)));
+
+    public static final RegistryObject<Item> DIORIUM_CHESTPLATE = ITEMS.register("diorium_chestplate",
+            () -> new BorealArmorItem(BorealArmorMaterials.DIORIUM, ArmorItem.Type.CHESTPLATE, new BorealItemProperties().unbreakable().stacksTo(1)));
+
+    public static final RegistryObject<Item> DIORIUM_LEGGINGS = ITEMS.register("diorium_leggings",
+            () -> new BorealArmorItem(BorealArmorMaterials.DIORIUM, ArmorItem.Type.LEGGINGS, new BorealItemProperties().unbreakable().stacksTo(1)));
+
+    public static final RegistryObject<Item> DIORIUM_BOOTS = ITEMS.register("diorium_boots",
+            () -> new BorealArmorItem(BorealArmorMaterials.DIORIUM, ArmorItem.Type.BOOTS, new BorealItemProperties().unbreakable().stacksTo(1)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
