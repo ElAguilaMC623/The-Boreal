@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.events;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -50,6 +51,10 @@ public class BorealEntityEvents {
                         .build()
         );
 
+        event.put(BorealEntities.NIGHT_DEER.get(),
+                Wolf.createAttributes().build()
+        );
+
     }
 
     @SubscribeEvent
@@ -77,8 +82,8 @@ public class BorealEntityEvents {
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 (entityType, level, spawnType, pos, random) ->
-                        pos.getY() > level.getSeaLevel() &&
-                                Animal.checkAnimalSpawnRules(entityType, level, spawnType, pos, random),
+                        pos.getY() > level.getSeaLevel() - 5 &&
+                                level.getBlockState(pos.below()).is(BorealBlocks.GLACIAL_GRASS.get()),
                 SpawnPlacementRegisterEvent.Operation.REPLACE
         );
 
@@ -87,8 +92,8 @@ public class BorealEntityEvents {
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 (entityType, level, spawnType, pos, random) ->
-                        pos.getY() > level.getSeaLevel() &&
-                                Animal.checkAnimalSpawnRules(entityType, level, spawnType, pos, random),
+                        pos.getY() > level.getSeaLevel() - 5 &&
+                                level.getBlockState(pos.below()).is(BorealBlocks.GLACIAL_GRASS.get()),
                 SpawnPlacementRegisterEvent.Operation.REPLACE
         );
     }

@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.entities.projectiles;
+package net.elaguilamc623.the_boreal.entities.custom.projectiles;
 
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.registries.BorealItems;

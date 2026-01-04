@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.items.custom;
 
-import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
-import net.elaguilamc623.the_boreal.entities.boats.BorealChestBoatEntity;
+import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.entities.custom.boats.BorealChestBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
+import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
 import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
@@ -39,6 +40,7 @@ public class TheBoreal
         BorealBlocks.register(modEventBus);
         BorealEntities.ENTITY_TYPES.register(modEventBus);
         BorealBlockEntities.register(modEventBus);
+        BorealSounds.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
 
@@ -66,6 +68,7 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.BOREAL_ROCK_ENTITY.get(), ThrownItemRenderer::new);
             EntityRenderers.register(BorealEntities.AURORAL_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, false));
             EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
+            EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
         }
     }
 }

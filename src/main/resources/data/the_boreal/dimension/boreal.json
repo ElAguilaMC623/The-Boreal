@@ -9,48 +9,48 @@
         {
           "biome": "the_boreal:glacial_tundra",
           "parameters": {
-            "temperature": -0.9,
-            "humidity": 0.3,
-            "continentalness": -0.4,
-            "erosion": 0.1,
+            "temperature": { "min": -1.0, "max": -0.7 },
+            "humidity": { "min": 0.2, "max": 0.6 },
+            "continentalness": { "min": -1.0, "max": -0.4 },
+            "erosion": { "min": 0.0, "max": 0.3 },
             "depth": 0.0,
-            "weirdness": 0.0,
+            "weirdness": { "min": -0.2, "max": 0.2 },
             "offset": 0.0
           }
         },
         {
           "biome": "the_boreal:glacial_plains",
           "parameters": {
-            "temperature": -0.6,
-            "humidity": 0.6,
-            "continentalness": -0.2,
-            "erosion": 0.1,
+            "temperature": { "min": -0.6, "max": -0.2 },
+            "humidity": { "min": -0.2, "max": 0.3 },
+            "continentalness": { "min": -0.5, "max": -0.1 },
+            "erosion": { "min": 0.1, "max": 0.4 },
             "depth": 0.0,
-            "weirdness": -0.1,
+            "weirdness": { "min": -0.3, "max": 0.1 },
             "offset": 0.0
           }
         },
         {
           "biome": "the_boreal:auroral_forest",
           "parameters": {
-            "temperature": -0.3,
-            "humidity": 0.7,
-            "continentalness": 0.6,
-            "erosion": 0.2,
+            "temperature": { "min": -0.5, "max": -0.2 },
+            "humidity": { "min": 0.2, "max": 0.7 },
+            "continentalness": { "min": 0.2, "max": 0.6 },
+            "erosion": { "min": 0.2, "max": 0.5 },
             "depth": 0.0,
-            "weirdness": 0.2,
+            "weirdness": { "min": -0.1, "max": 0.2 },
             "offset": 0.0
           }
         },
         {
           "biome": "the_boreal:snowy_auroral_forest",
           "parameters": {
-            "temperature": -0.6,
-            "humidity": 0.9,
-            "continentalness": 0.4,
-            "erosion": 0.2,
+            "temperature": { "min": -0.8, "max": -0.5 },
+            "humidity": { "min": 0.0, "max": 0.4 },
+            "continentalness": { "min": 0.3, "max": 0.8 },
+            "erosion": { "min": 0.2, "max": 0.5 },
             "depth": 0.0,
-            "weirdness": 0.1,
+            "weirdness": { "min": 0.0, "max": 0.3 },
             "offset": 0.0
           }
         }

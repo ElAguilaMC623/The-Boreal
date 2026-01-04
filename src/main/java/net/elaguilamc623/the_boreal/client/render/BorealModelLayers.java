@@ -11,4 +11,7 @@ public class BorealModelLayers {
 
     public static final ModelLayerLocation AURORAL_CHEST_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(TheBoreal.MOD_ID,"chest_boat/auroral"), "main");
+
+    public static final ModelLayerLocation NIGHT_DEER_LAYER = new ModelLayerLocation(
+            new ResourceLocation(TheBoreal.MOD_ID,"night_deer_layer"), "main");
 }

@@ -75,6 +75,11 @@ public class BorealItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(BorealItems.DIORIUM_LEGGINGS);
         trimmedArmorItem(BorealItems.DIORIUM_BOOTS);
 
+        withExistingParent(BorealItems.GLACIAL_ZOMBIE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.GLACIAL_SKELETON_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.GLACIAL_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.FROZEN_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.NIGHT_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

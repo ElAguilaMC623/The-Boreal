@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.entities;
+package net.elaguilamc623.the_boreal.entities.custom;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

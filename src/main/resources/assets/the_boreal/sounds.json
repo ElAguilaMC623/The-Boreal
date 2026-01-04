@@ -1,0 +1,16 @@
+{
+  "night_deer_ambience": {
+    "subtitles": "sounds.the_boreal.night_deer_ambience",
+    "sounds": [
+      "the_boreal:night_deer_ambience"
+    ]
+  },
+  "night_deer_hurt": {
+    "subtitles": "sounds.the_boreal.night_deer_hurt",
+    "sounds": [
+      "the_boreal:night_deer_hurt_1",
+      "the_boreal:night_deer_hurt_2",
+      "the_boreal:night_deer_hurt_3"
+    ]
+  }
+}

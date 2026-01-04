@@ -1,6 +1,5 @@
-package net.elaguilamc623.the_boreal.entities.projectiles;
+package net.elaguilamc623.the_boreal.entities.custom.projectiles;
 
-import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;

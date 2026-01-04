@@ -1,6 +1,6 @@
-package net.elaguilamc623.the_boreal.entities.boats;
+package net.elaguilamc623.the_boreal.entities.custom.boats;
 
-import net.elaguilamc623.the_boreal.entities.projectiles.GlacialSkeletonArrowEntity;
+import net.elaguilamc623.the_boreal.entities.custom.projectiles.GlacialSkeletonArrowEntity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;

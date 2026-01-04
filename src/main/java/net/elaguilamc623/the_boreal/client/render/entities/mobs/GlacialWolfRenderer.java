@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.client.render.entities.mobs;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.elaguilamc623.the_boreal.entities.GlacialWolf;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialWolf;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.WolfRenderer;
 import net.minecraft.resources.ResourceLocation;

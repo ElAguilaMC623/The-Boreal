@@ -1,14 +1,15 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.entities.FrozenBearEntity;
-import net.elaguilamc623.the_boreal.entities.boats.GlacialSkeletonEntity;
-import net.elaguilamc623.the_boreal.entities.projectiles.BorealRockEntity;
-import net.elaguilamc623.the_boreal.entities.GlacialWolf;
-import net.elaguilamc623.the_boreal.entities.GlacialZombie;
-import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
-import net.elaguilamc623.the_boreal.entities.boats.BorealChestBoatEntity;
-import net.elaguilamc623.the_boreal.entities.projectiles.GlacialSkeletonArrowEntity;
+import net.elaguilamc623.the_boreal.entities.custom.FrozenBearEntity;
+import net.elaguilamc623.the_boreal.entities.custom.NightDeerEntity;
+import net.elaguilamc623.the_boreal.entities.custom.boats.GlacialSkeletonEntity;
+import net.elaguilamc623.the_boreal.entities.custom.projectiles.BorealRockEntity;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialWolf;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialZombie;
+import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.entities.custom.boats.BorealChestBoatEntity;
+import net.elaguilamc623.the_boreal.entities.custom.projectiles.GlacialSkeletonArrowEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -45,6 +46,12 @@ public class BorealEntities {
                     .of(GlacialSkeletonEntity::new, MobCategory.CREATURE)
                     .sized(0.6F, 1.99F)
                     .build("glacial_skeleton"));
+
+    public static final RegistryObject<EntityType<NightDeerEntity>> NIGHT_DEER =
+            ENTITY_TYPES.register("night_deer", () -> EntityType.Builder
+                    .of(NightDeerEntity::new, MobCategory.CREATURE)
+                    .sized(1.0F, 2.0F)
+                    .build("night_deer"));
 
     public static final RegistryObject<EntityType<GlacialSkeletonArrowEntity>> GLACIAL_ARROW =
             ENTITY_TYPES.register("glacial_arrow",

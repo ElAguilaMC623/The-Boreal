@@ -1,6 +1,6 @@
 package net.elaguilamc623.the_boreal.client.render.entities;
 
-import net.elaguilamc623.the_boreal.entities.projectiles.GlacialSkeletonArrowEntity;
+import net.elaguilamc623.the_boreal.entities.custom.projectiles.GlacialSkeletonArrowEntity;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;

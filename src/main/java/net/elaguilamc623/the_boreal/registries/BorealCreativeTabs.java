@@ -152,6 +152,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.GLACIAL_WOLF_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.FROZEN_BEAR_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.GLACIAL_SKELETON_SPAWN_EGG.get());
+                                pOutput.accept(BorealItems.NIGHT_DEER_SPAWN_EGG.get());
                             })
                             .build()
             );

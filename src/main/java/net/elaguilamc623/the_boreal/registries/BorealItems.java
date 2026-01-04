@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.entities.boats.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.BorealItemProperties;
 import net.elaguilamc623.the_boreal.items.custom.*;
 import net.elaguilamc623.the_boreal.items.custom.weapons.*;
@@ -42,13 +42,16 @@ public class BorealItems {
             () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_ZOMBIE, 0x3A6BAF, 0xFFFFFFFF, new Item.Properties()));
 
     public static final RegistryObject<Item> GLACIAL_WOLF_SPAWN_EGG = ITEMS.register("glacial_wolf_spawn_egg",
-            () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_WOLF, 0xFFFFFFFF, 0x007dff, new Item.Properties()));
 
     public static final RegistryObject<Item> FROZEN_BEAR_SPAWN_EGG = ITEMS.register("frozen_bear_spawn_egg",
-            () -> new ForgeSpawnEggItem(BorealEntities.FROZEN_BEAR, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(BorealEntities.FROZEN_BEAR, 0x00a972, 0xa94289, new Item.Properties()));
 
     public static final RegistryObject<Item> GLACIAL_SKELETON_SPAWN_EGG = ITEMS.register("glacial_skeleton_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_SKELETON, 0xFFFFFFFF, 0x40E0D0, new Item.Properties()));
+
+    public static final RegistryObject<Item> NIGHT_DEER_SPAWN_EGG = ITEMS.register("night_deer_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.NIGHT_DEER, 0x5d296f, 0x26d2d6, new Item.Properties()));
 
     public static final RegistryObject<Item> AURORAL_STICK = ITEMS.register("auroral_stick",
             () -> new Item(new Item.Properties()));
