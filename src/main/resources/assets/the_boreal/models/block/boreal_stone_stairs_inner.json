@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "the_boreal:block/boreal_stone",
-    "top": "the_boreal:block/boreal_stone",
-    "side": "the_boreal:block/boreal_stone"
-  }
-}

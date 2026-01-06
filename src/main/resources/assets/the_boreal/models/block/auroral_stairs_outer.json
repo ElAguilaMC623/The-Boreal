@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "the_boreal:block/auroral_planks",
-    "top": "the_boreal:block/auroral_planks",
-    "side": "the_boreal:block/auroral_planks"
-  }
-}

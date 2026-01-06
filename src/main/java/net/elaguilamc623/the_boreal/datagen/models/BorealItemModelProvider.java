@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.datagen.models;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -10,10 +11,12 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.LinkedHashMap;
@@ -24,6 +27,7 @@ public class BorealItemModelProvider extends ItemModelProvider {
     }
 
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
+
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
         trimMaterials.put(TrimMaterials.IRON, 0.2F);
@@ -39,11 +43,24 @@ public class BorealItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(BorealItems.ANCIENT_ICE_FRAGMENT);
+        simpleItem(BorealItems.FROZEN_AMULET);
+        simpleItem(BorealItems.BOREAL_ROCK);
+        simpleItem(BorealItems.GLACIAL_SEED);
+        simpleItem(BorealItems.GLACIAL_WHEAT);
+        simpleItem(BorealItems.GLACIAL_BREAD);
+        simpleItem(BorealItems.GLACIAL_ROTTEN_FLESH);
+        simpleItem(BorealItems.GLACIAL_BONE);
         simpleItem(BorealItems.RAW_TALISMANDIUM);
         simpleItem(BorealItems.TALISMANDIUM_INGOT);
         simpleItem(BorealItems.CHRODIUM);
         simpleItem(BorealItems.RAW_DIORIUM);
         simpleItem(BorealItems.DIORIUM_INGOT);
+        simpleItem(BorealItems.DIORIUM_GEM);
+        simpleItem(BorealItems.AURORAL_SIGN);
+        simpleItem(BorealItems.AURORAL_HANGING_SIGN);
+        simpleItem(BorealItems.AURORAL_BOAT);
+        simpleItem(BorealItems.AURORAL_CHEST_BOAT);
 
         handheldItem(BorealItems.AURORAL_STICK);
         handheldItem(BorealItems.TALISMANDIUM_SWORD);
@@ -80,6 +97,32 @@ public class BorealItemModelProvider extends ItemModelProvider {
         withExistingParent(BorealItems.GLACIAL_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.FROZEN_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.NIGHT_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        wallItem(BorealBlocks.BOREAL_COBBLESTONE_WALL, BorealBlocks.BOREAL_COBBLESTONE);
+        wallItem(BorealBlocks.BOREAL_DEEP_STONE_WALL, BorealBlocks.BOREAL_DEEP_STONE);
+        wallItem(BorealBlocks.BOREAL_STONE_BRICK_WALL, BorealBlocks.BOREAL_STONE_BRICKS);
+        wallItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL, BorealBlocks.BOREAL_MOSSY_STONE_BRICKS);
+
+        evenSimplerBlockItem(BorealBlocks.BOREAL_COBBLESTONE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_COBBLESTONE_SLAB);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_STONE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_STONE_SLAB);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_DEEP_STONE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_DEEP_STONE_SLAB);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_STONE_BRICKS_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_STONE_BRICKS_SLAB);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB);
+        evenSimplerBlockItem(BorealBlocks.AURORAL_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.AURORAL_SLAB);
+        evenSimplerBlockItem(BorealBlocks.AURORAL_FENCE_GATE);
+        evenSimplerBlockItem(BorealBlocks.AURORAL_PRESSURE_PLATE);
+
+        simpleBlockItem(BorealBlocks.AURORAL_DOOR);
+
+        fenceItem(BorealBlocks.AURORAL_FENCE, BorealBlocks.AURORA_PLANKS);
+        buttonItem(BorealBlocks.AURORAL_BUTTON, BorealBlocks.AURORA_PLANKS);
+        trapdoorItem(BorealBlocks.AURORAL_TRAPDOOR);
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
@@ -88,7 +131,7 @@ public class BorealItemModelProvider extends ItemModelProvider {
         withExistingParent(itemRegistryObject.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", new ResourceLocation(MOD_ID, "item/" + itemRegistryObject.getId().getPath()));
 
-        if(itemRegistryObject.get() instanceof ArmorItem armorItem) {
+        if (itemRegistryObject.get() instanceof ArmorItem armorItem) {
             trimMaterials.entrySet().forEach(entry -> {
 
                 ResourceKey<TrimMaterial> trimMaterial = entry.getKey();
@@ -131,12 +174,44 @@ public class BorealItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(TheBoreal.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(TheBoreal.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(TheBoreal.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(TheBoreal.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    public void evenSimplerBlockItem(RegistryObject<Block> block) {
+        this.withExistingParent(TheBoreal.MOD_ID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
+    }
+
+    public void trapdoorItem(RegistryObject<Block> block) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath() + "_bottom"));
+    }
+
+    public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture", new ResourceLocation(TheBoreal.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
+                .texture("texture", new ResourceLocation(TheBoreal.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall", new ResourceLocation(TheBoreal.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TheBoreal.MOD_ID, "item/" + item.getId().getPath()));
+
     }
 }

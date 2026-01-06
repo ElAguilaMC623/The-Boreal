@@ -10,7 +10,8 @@ import java.util.Set;
 public class BorealLootTableProvider {
     public static LootTableProvider create (PackOutput output) {
         return new LootTableProvider(output, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(BorealBlockLootTables::new, LootContextParamSets.BLOCK)
+                new LootTableProvider.SubProviderEntry(BorealBlockLootTables::new, LootContextParamSets.BLOCK),
+                new LootTableProvider.SubProviderEntry(BorealChestLootTables::new, LootContextParamSets.CHEST)
         ));
     }
 }

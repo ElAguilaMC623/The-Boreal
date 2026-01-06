@@ -30,6 +30,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.CHRODIUM.get());
                                 pOutput.accept(BorealItems.RAW_DIORIUM.get());
                                 pOutput.accept(BorealItems.DIORIUM_INGOT.get());
+                                pOutput.accept(BorealItems.DIORIUM_GEM.get());
                                 pOutput.accept(BorealItems.AURORAL_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                             })
@@ -87,6 +88,8 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.GLACIAL_BREAD.get());
                                 pOutput.accept(BorealBlocks.AURORA_SAPLING.get());
                                 pOutput.accept(BorealBlocks.AURORA_LEAVES.get());
+                                pOutput.accept(BorealItems.GLACIAL_ROTTEN_FLESH.get());
+                                pOutput.accept(BorealItems.GLACIAL_BONE.get());
                             })
                             .build()
             );

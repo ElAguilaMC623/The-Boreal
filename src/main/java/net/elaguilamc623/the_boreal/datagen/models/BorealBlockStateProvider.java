@@ -3,9 +3,12 @@ package net.elaguilamc623.the_boreal.datagen.models;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BorealBlockStateProvider extends BlockStateProvider {
@@ -15,15 +18,73 @@ public class BorealBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        blockWithItem(BorealBlocks.BOREAL_COBBLESTONE);
+        blockWithItem(BorealBlocks.BOREAL_STONE);
+        blockWithItem(BorealBlocks.BOREAL_DEEP_STONE);
+        blockWithItem(BorealBlocks.BOREAL_STONE_BRICKS);
+        blockWithItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS);
+        blockWithItem(BorealBlocks.BOREAL_CHISELED_STONE);
         blockWithItem(BorealBlocks.TALISMANDIUM_ORE);
         blockWithItem(BorealBlocks.DEEP_TALISMANDIUM_ORE);
         blockWithItem(BorealBlocks.CHRODIUM_ORE);
         blockWithItem(BorealBlocks.DEEP_CHRODIUM_ORE);
         blockWithItem(BorealBlocks.DIORIUM_ORE);
         blockWithItem(BorealBlocks.DEEP_DIORIUM_ORE);
+        blockWithItem(BorealBlocks.AURORA_PLANKS);
+        blockWithItem(BorealBlocks.GLACIAL_DIRT);
+
+        stairsBlock(((StairBlock)BorealBlocks.BOREAL_COBBLESTONE_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) BorealBlocks.BOREAL_COBBLESTONE_SLAB.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
+        wallBlock(((WallBlock) BorealBlocks.BOREAL_COBBLESTONE_WALL.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
+        stairsBlock(((StairBlock)BorealBlocks.BOREAL_STONE_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_STONE.get()));
+        slabBlock(((SlabBlock) BorealBlocks.BOREAL_STONE_SLAB.get()), blockTexture(BorealBlocks.BOREAL_STONE.get()), blockTexture(BorealBlocks.BOREAL_STONE.get()));
+        stairsBlock(((StairBlock)BorealBlocks.BOREAL_DEEP_STONE_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_DEEP_STONE.get()));
+        slabBlock(((SlabBlock)BorealBlocks.BOREAL_DEEP_STONE_SLAB.get()), blockTexture(BorealBlocks.BOREAL_DEEP_STONE.get()), blockTexture(BorealBlocks.BOREAL_DEEP_STONE.get()));
+        wallBlock(((WallBlock) BorealBlocks.BOREAL_DEEP_STONE_WALL.get()), blockTexture(BorealBlocks.BOREAL_DEEP_STONE.get()));
+        stairsBlock(((StairBlock)BorealBlocks.BOREAL_STONE_BRICKS_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock)BorealBlocks.BOREAL_STONE_BRICKS_SLAB.get()), blockTexture(BorealBlocks.BOREAL_STONE_BRICKS.get()), blockTexture(BorealBlocks.BOREAL_STONE_BRICKS.get()));
+        wallBlock(((WallBlock) BorealBlocks.BOREAL_STONE_BRICK_WALL.get()), blockTexture(BorealBlocks.BOREAL_STONE_BRICKS.get()));
+        stairsBlock(((StairBlock)BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock)BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB.get()), blockTexture(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()), blockTexture(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()));
+        wallBlock(((WallBlock) BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get()), blockTexture(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()));
+        stairsBlock(((StairBlock)BorealBlocks.AURORAL_STAIRS.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        slabBlock(((SlabBlock)BorealBlocks.AURORAL_SLAB.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+
+        buttonBlock(((ButtonBlock)BorealBlocks.AURORAL_BUTTON.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock)BorealBlocks.AURORAL_PRESSURE_PLATE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+
+        fenceBlock(((FenceBlock)BorealBlocks.AURORAL_FENCE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) BorealBlocks.AURORAL_FENCE_GATE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+
+        doorBlockWithRenderType(((DoorBlock)BorealBlocks.AURORAL_DOOR.get()), modLoc("block/auroral_door_bottom"), modLoc("block/auroral_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) BorealBlocks.AURORAL_TRAPDOOR.get()), modLoc("block/auroral_trapdoor"), true, "cutout");
+
+        logBlock(((RotatedPillarBlock) BorealBlocks.AURORA_LOG.get()));
+        axisBlock(((RotatedPillarBlock) BorealBlocks.AURORA_WOOD.get()), blockTexture(BorealBlocks.AURORA_LOG.get()), blockTexture(BorealBlocks.AURORA_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) BorealBlocks.STRIPPED_AURORA_LOG.get()), blockTexture(BorealBlocks.STRIPPED_AURORA_LOG.get()), new ResourceLocation(TheBoreal.MOD_ID, "block/stripped_auroral_log_top"));
+        axisBlock(((RotatedPillarBlock) BorealBlocks.STRIPPED_AURORA_WOOD.get()), blockTexture(BorealBlocks.STRIPPED_AURORA_LOG.get()), blockTexture(BorealBlocks.STRIPPED_AURORA_LOG.get()));
+
+        blockItem(BorealBlocks.AURORA_LOG);
+        blockItem(BorealBlocks.AURORA_WOOD);
+        blockItem(BorealBlocks.STRIPPED_AURORA_LOG);
+        blockItem(BorealBlocks.STRIPPED_AURORA_WOOD);
+
+        leavesBlock(BorealBlocks.AURORA_LEAVES);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(TheBoreal.MOD_ID +
+                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 }

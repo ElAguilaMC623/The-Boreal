@@ -1,8 +1,0 @@
-{
-  "render_type": "minecraft:cutout",
-  "parent": "minecraft:block/door_bottom_left_open",
-  "textures": {
-    "bottom": "the_boreal:block/auroral_door_bottom",
-    "top": "the_boreal:block/auroral_door_top"
-  }
-}

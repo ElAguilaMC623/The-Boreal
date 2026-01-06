@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "the_boreal:block/boreal_deep_stone",
-    "top": "the_boreal:block/boreal_deep_stone",
-    "side": "the_boreal:block/boreal_deep_stone"
-  }
-}

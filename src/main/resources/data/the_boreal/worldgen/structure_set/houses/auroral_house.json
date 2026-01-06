@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "the_boreal:houses/auroral_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 421749084,
+    "custom_exclusion_zone": {
+      "sets": ["#the_boreal:all_structures"],
+      "radius": 5
+    },
+    "spacing": 45,
+    "separation": 22,
+    "type": "the_boreal:advanced_structure_placement",
+    "frequency": 1.0
+  }
+}

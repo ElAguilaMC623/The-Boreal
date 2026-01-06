@@ -256,6 +256,41 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
+    private void dioriumToolRecipe(Consumer<FinishedRecipe> consumer,
+                                   ItemLike result,
+                                   String p1, String p2, String p3) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern(p1)
+                .pattern(p2)
+                .pattern(p3)
+                .define('A', BorealItems.DIORIUM_INGOT.get())
+                .define('B', BorealItems.DIORIUM_GEM.get())
+                .define('C', BorealItems.AURORAL_STICK.get())
+                .unlockedBy("has_diorium_ingot", has(BorealItems.DIORIUM_INGOT.get()))
+                .save(consumer);
+    }
+
+    private void dioriumArmorRecipe(Consumer<FinishedRecipe> consumer,
+                                    ItemLike result,
+                                    String p1, String p2, String p3) {
+
+        ShapedRecipeBuilder builder = ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern(p1)
+                .pattern(p2);
+
+        if (p3 == null) {
+            builder.pattern("   ");
+        } else {
+            builder.pattern(p3);
+        }
+
+        builder.define('A', BorealItems.DIORIUM_INGOT.get())
+                .define('B', BorealItems.DIORIUM_GEM.get())
+                .unlockedBy("has_diorium_ingot", has(BorealItems.DIORIUM_INGOT.get()))
+                .save(consumer);
+    }
+
     private void helmetRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
                 .define('#', mineral)
@@ -571,51 +606,67 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 "XX ", " # ", " # ",
                 "chrodium_hoe");
 
-        toolRecipe(consumer, BorealItems.DIORIUM_SWORD.get(),
-                BorealItems.DIORIUM_INGOT.get(),
-                BorealTags.BOREAL_STICKS,
-                "X", "X", "#",
-                "diorium_sword");
+        dioriumToolRecipe(consumer, BorealItems.DIORIUM_SWORD.get(),
+                " A ",
+                "BAB",
+                " C ");
 
-        toolRecipe(consumer, BorealItems.DIORIUM_PICKAXE.get(),
-                BorealItems.DIORIUM_INGOT.get(),
-                BorealTags.BOREAL_STICKS,
-                "XXX", " # ", " # ",
-                "diorium_pickaxe");
+        dioriumToolRecipe(consumer, BorealItems.DIORIUM_PICKAXE.get(),
+                "BAB",
+                " C ",
+                " C ");
 
-        toolRecipe(consumer, BorealItems.DIORIUM_AXE.get(),
-                BorealItems.DIORIUM_INGOT.get(),
-                BorealTags.BOREAL_STICKS,
-                "XX ", "X# ", " # ",
-                "diorium_axe");
+        dioriumToolRecipe(consumer, BorealItems.DIORIUM_AXE.get(),
+                "AB ",
+                "AC ",
+                " C ");
 
-        toolRecipe(consumer, BorealItems.DIORIUM_SHOVEL.get(),
-                BorealItems.DIORIUM_INGOT.get(),
-                BorealTags.BOREAL_STICKS,
-                "X", "#", "#",
-                "diorium_shovel");
+        dioriumToolRecipe(consumer, BorealItems.DIORIUM_SHOVEL.get(),
+                " A ",
+                " B ",
+                " C ");
 
-        toolRecipe(consumer, BorealItems.DIORIUM_HOE.get(),
-                BorealItems.DIORIUM_INGOT.get(),
-                BorealTags.BOREAL_STICKS,
-                "XX ", " # ", " # ",
-                "diorium_hoe");
+        dioriumToolRecipe(consumer, BorealItems.DIORIUM_HOE.get(),
+                "AB ",
+                " C ",
+                " C ");
+
+        dioriumArmorRecipe(consumer, BorealItems.DIORIUM_HELMET.get(),
+                "ABA",
+                "A A",
+                null);
+
+        dioriumArmorRecipe(consumer, BorealItems.DIORIUM_CHESTPLATE.get(),
+                "A A",
+                "ABA",
+                "BAB");
+
+        dioriumArmorRecipe(consumer, BorealItems.DIORIUM_LEGGINGS.get(),
+                "ABA",
+                "A A",
+                "B B");
+
+        dioriumArmorRecipe(consumer, BorealItems.DIORIUM_BOOTS.get(),
+                "B B",
+                "A A",
+                null);
 
         helmetRecipe(consumer, BorealItems.TALISMANDIUM_HELMET.get(), BorealItems.TALISMANDIUM_INGOT.get());
         helmetRecipe(consumer, BorealItems.CHRODIUM_HELMET.get(), BorealItems.CHRODIUM.get());
-        helmetRecipe(consumer, BorealItems.DIORIUM_HELMET.get(), BorealItems.DIORIUM_INGOT.get());
 
         chestplateRecipe(consumer, BorealItems.TALISMANDIUM_CHESTPLATE.get(), BorealItems.TALISMANDIUM_INGOT.get());
         chestplateRecipe(consumer, BorealItems.CHRODIUM_CHESTPLATE.get(), BorealItems.CHRODIUM.get());
-        chestplateRecipe(consumer, BorealItems.DIORIUM_CHESTPLATE.get(), BorealItems.DIORIUM_INGOT.get());
 
         leggingsRecipe(consumer, BorealItems.TALISMANDIUM_LEGGINGS.get(), BorealItems.TALISMANDIUM_INGOT.get());
         leggingsRecipe(consumer, BorealItems.CHRODIUM_LEGGINGS.get(), BorealItems.CHRODIUM.get());
-        leggingsRecipe(consumer, BorealItems.DIORIUM_LEGGINGS.get(), BorealItems.DIORIUM_INGOT.get());
 
         bootsRecipe(consumer, BorealItems.TALISMANDIUM_BOOTS.get(), BorealItems.TALISMANDIUM_INGOT.get());
         bootsRecipe(consumer, BorealItems.CHRODIUM_BOOTS.get(), BorealItems.CHRODIUM.get());
-        bootsRecipe(consumer, BorealItems.DIORIUM_BOOTS.get(), BorealItems.DIORIUM_INGOT.get());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+                .requires(BorealItems.GLACIAL_BONE.get())
+                .unlockedBy("has_glacial_bone", has(BorealItems.GLACIAL_BONE.get()))
+                .save(consumer);
     }
 
 

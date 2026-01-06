@@ -1,0 +1,15 @@
+{
+  "name": "the_boreal:ruins/glacial_ruins_1/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "the_boreal:glacial_ruins_1",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

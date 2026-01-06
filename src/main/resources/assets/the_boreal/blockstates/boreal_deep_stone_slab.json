@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "type=bottom": { "model": "the_boreal:block/boreal_deep_stone_slab" },
-    "type=top":    { "model": "the_boreal:block/boreal_deep_stone_slab_top" },
-    "type=double": { "model": "the_boreal:block/boreal_deep_stone" }
-  }
-}

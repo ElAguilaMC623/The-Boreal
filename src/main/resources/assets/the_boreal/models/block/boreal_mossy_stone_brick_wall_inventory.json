@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "the_boreal:block/boreal_mossy_stone_bricks"
-  }
-}

@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "the_boreal:ruins/glacial_ruins_1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 421749085,
+    "custom_exclusion_zone": {
+      "sets": ["#the_boreal:all_structures"],
+      "radius": 3
+    },
+    "spacing": 32,
+    "separation": 16,
+    "type": "the_boreal:advanced_structure_placement",
+    "frequency": 1.0
+  }
+}

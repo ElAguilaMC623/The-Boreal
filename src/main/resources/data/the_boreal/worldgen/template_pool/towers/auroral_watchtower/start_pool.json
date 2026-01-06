@@ -1,0 +1,15 @@
+{
+  "name": "the_boreal:towers/auroral_watchtower/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "the_boreal:auroral_watchtower",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

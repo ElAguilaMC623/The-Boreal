@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "the_boreal:block/stripped_auroral_log",
-    "side": "the_boreal:block/stripped_auroral_log"
-  }
-}

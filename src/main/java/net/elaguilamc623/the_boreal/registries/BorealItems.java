@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
+import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
 import net.elaguilamc623.the_boreal.items.BorealItemProperties;
 import net.elaguilamc623.the_boreal.items.custom.*;
 import net.elaguilamc623.the_boreal.items.custom.weapons.*;
@@ -53,6 +54,12 @@ public class BorealItems {
     public static final RegistryObject<Item> NIGHT_DEER_SPAWN_EGG = ITEMS.register("night_deer_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.NIGHT_DEER, 0x5d296f, 0x26d2d6, new Item.Properties()));
 
+    public static final RegistryObject<Item> GLACIAL_ROTTEN_FLESH = ITEMS.register("glacial_rotten_flesh",
+            () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_ROTTEN_FLESH)));
+
+    public static final RegistryObject<Item> GLACIAL_BONE = ITEMS.register("glacial_bone",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> AURORAL_STICK = ITEMS.register("auroral_stick",
             () -> new Item(new Item.Properties()));
 
@@ -84,6 +91,9 @@ public class BorealItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> DIORIUM_INGOT = ITEMS.register("diorium_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> DIORIUM_GEM = ITEMS.register("diorium_gem",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TALISMANDIUM_SWORD = ITEMS.register("talismandium_sword",

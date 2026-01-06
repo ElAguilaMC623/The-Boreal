@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "the_boreal:others/abandoned_boreal_well",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 421749080,
+    "custom_exclusion_zone": {
+      "sets": ["#the_boreal:all_structures"],
+      "radius": 3
+    },
+    "spacing": 32,
+    "separation": 16,
+    "type": "the_boreal:advanced_structure_placement",
+    "frequency": 1.0
+  }
+}

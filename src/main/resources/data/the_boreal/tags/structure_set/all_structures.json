@@ -5,7 +5,15 @@
     { "structure": "minecraft:mansion" },
     { "structure": "minecraft:pillager_outpost" },
     { "structure": "minecraft:trail_ruins" },
-    { "structure": "minecraft:igloo" }
+    { "structure": "minecraft:igloo" },
+    { "structure": "the_boreal:altars/ancient_snow_altar" },
+    { "structure": "the_boreal:towers/glacial_tower" },
+    { "structure": "the_boreal:towers/auroral_watchtower" },
+    { "structure": "the_boreal:houses/auroral_house" },
+    { "structure": "the_boreal:houses/abandoned_auroral_house" },
+    { "structure": "the_boreal:ruins/glacial_ruins_1" },
+    { "structure": "the_boreal:spawners/glacial_skeleton_dungeon" },
+    { "structure": "the_boreal:spawners/glacial_zombie_dungeon" }
   ],
   "placement": {
     "type": "minecraft:random_spread",
