@@ -1,11 +1,14 @@
 package net.elaguilamc623.the_boreal.entities.custom;
 
+import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class GlacialZombieEntity extends Zombie {
@@ -28,5 +31,15 @@ public class GlacialZombieEntity extends Zombie {
 
     @Override
     protected void doUnderWaterConversion() {
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
+        super.dropCustomDeathLoot(source, looting, recentlyHit);
+
+        int amount = this.random.nextInt(2 + looting); // 0–1 + looting
+        if (amount > 0) {
+            this.spawnAtLocation(new ItemStack(BorealItems.GLACIAL_ROTTEN_FLESH.get(), amount));
+        }
     }
 }

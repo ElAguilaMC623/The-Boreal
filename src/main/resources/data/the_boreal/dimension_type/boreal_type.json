@@ -3,7 +3,7 @@
   "has_skylight": true,
   "has_ceiling": false,
   "ultrawarm": false,
-  "natural": false,
+  "natural": true,
   "coordinate_scale": 1.0,
   "piglin_safe": false,
   "bed_works": false,
@@ -21,7 +21,7 @@
     "type": "uniform",
     "value": {
       "min_inclusive": 0,
-      "max_inclusive": 0
+      "max_inclusive": 7
     }
   }
 }

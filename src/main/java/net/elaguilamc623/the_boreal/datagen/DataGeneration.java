@@ -45,8 +45,6 @@ public class DataGeneration {
         generator.addProvider(event.includeClient(),
                 new BorealItemModelProvider(packOutput, existingFileHelper));
 
-
-
         RegistrySetBuilder builder = new RegistrySetBuilder();
     }
 

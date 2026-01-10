@@ -147,8 +147,9 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         );
 
         this.tag(BorealTags.MOBS_SPAWNABLE_ON)
-                .add(BorealBlocks.GLACIAL_GRASS.get(),
+                .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(),
                         BorealBlocks.GLACIAL_DIRT.get(),
+                        BorealBlocks.GLACIAL_GRASS.get(),
                         Blocks.SNOW
                 );
     }

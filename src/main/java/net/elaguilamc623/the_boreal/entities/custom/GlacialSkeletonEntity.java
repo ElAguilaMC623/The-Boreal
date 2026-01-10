@@ -1,8 +1,10 @@
-package net.elaguilamc623.the_boreal.entities.custom.boats;
+package net.elaguilamc623.the_boreal.entities.custom;
 
 import net.elaguilamc623.the_boreal.entities.custom.projectiles.GlacialSkeletonArrowEntity;
+import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -55,5 +57,15 @@ public class GlacialSkeletonEntity extends Skeleton {
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
+        super.dropCustomDeathLoot(source, looting, recentlyHit);
+
+        int amount = this.random.nextInt(2 + looting);
+        if (amount > 0) {
+            this.spawnAtLocation(new ItemStack(BorealItems.GLACIAL_BONE.get(), amount));
+        }
     }
 }

@@ -3,7 +3,7 @@ package net.elaguilamc623.the_boreal.registries;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.FrozenBearEntity;
 import net.elaguilamc623.the_boreal.entities.custom.NightDeerEntity;
-import net.elaguilamc623.the_boreal.entities.custom.boats.GlacialSkeletonEntity;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialSkeletonEntity;
 import net.elaguilamc623.the_boreal.entities.custom.projectiles.BorealRockEntity;
 import net.elaguilamc623.the_boreal.entities.custom.GlacialWolfEntity;
 import net.elaguilamc623.the_boreal.entities.custom.GlacialZombieEntity;
