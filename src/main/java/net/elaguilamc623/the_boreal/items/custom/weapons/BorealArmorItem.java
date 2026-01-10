@@ -1,9 +1,16 @@
 package net.elaguilamc623.the_boreal.items.custom.weapons;
 
 import net.elaguilamc623.the_boreal.items.BorealItemProperties;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class BorealArmorItem extends ArmorItem {
 
@@ -34,4 +41,8 @@ public class BorealArmorItem extends ArmorItem {
         return unbreakable || super.isEnchantable(stack);
     }
 
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.the_boreal.diorium_armor").withStyle(ChatFormatting.AQUA));
+    }
 }

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_boreal:boreal_biomes/is_boreal",
+  "features": "the_boreal:ore_tarnite",
+  "step": "underground_ores"
+}

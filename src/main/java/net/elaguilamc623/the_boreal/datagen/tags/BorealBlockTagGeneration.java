@@ -47,7 +47,21 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.CHRODIUM_ORE.get(),
                         BorealBlocks.DEEP_CHRODIUM_ORE.get(),
                         BorealBlocks.DIORIUM_ORE.get(),
-                        BorealBlocks.DEEP_DIORIUM_ORE.get()
+                        BorealBlocks.DEEP_DIORIUM_ORE.get(),
+                        BorealBlocks.VERNITE.get(),
+                        BorealBlocks.VERNITE_SLAB.get(),
+                        BorealBlocks.VERNITE_STAIRS.get(),
+                        BorealBlocks.VERNITE_WALL.get(),
+                        BorealBlocks.POLISHED_VERNITE.get(),
+                        BorealBlocks.POLISHED_VERNITE_SLAB.get(),
+                        BorealBlocks.POLISHED_VERNITE_STAIRS.get(),
+                        BorealBlocks.TARNITE.get(),
+                        BorealBlocks.TARNITE_SLAB.get(),
+                        BorealBlocks.TARNITE_STAIRS.get(),
+                        BorealBlocks.TARNITE_WALL.get(),
+                        BorealBlocks.POLISHED_TARNITE.get(),
+                        BorealBlocks.POLISHED_TARNITE_SLAB.get(),
+                        BorealBlocks.POLISHED_TARNITE_STAIRS.get()
                         );
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -64,6 +78,12 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.AURORA_PLANKS.get(),
                         BorealBlocks.AURORAL_STAIRS.get(),
                         BorealBlocks.AURORAL_SLAB.get(),
+                        BorealBlocks.AURORAL_FENCE.get(),
+                        BorealBlocks.AURORAL_FENCE_GATE.get(),
+                        BorealBlocks.AURORAL_BUTTON.get(),
+                        BorealBlocks.AURORAL_PRESSURE_PLATE.get(),
+                        BorealBlocks.AURORAL_DOOR.get(),
+                        BorealBlocks.AURORAL_TRAPDOOR.get(),
                         BorealBlocks.AURORAL_SIGN.get(),
                         BorealBlocks.AURORAL_WALL_SIGN.get(),
                         BorealBlocks.AURORAL_HANGING_SIGN.get(),
@@ -90,7 +110,9 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.BOREAL_COBBLESTONE_WALL.get(),
                         BorealBlocks.BOREAL_DEEP_STONE_WALL.get(),
                         BorealBlocks.BOREAL_STONE_BRICK_WALL.get(),
-                        BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get()
+                        BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get(),
+                        BorealBlocks.VERNITE_WALL.get(),
+                        BorealBlocks.TARNITE_WALL.get()
                         );
 
 
@@ -118,5 +140,16 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.AURORAL_FENCE.get());
         this.tag(BlockTags.FENCE_GATES)
                 .add(BorealBlocks.AURORAL_FENCE_GATE.get());
+
+        this.tag(BlockTags.STONE_ORE_REPLACEABLES)
+                .add(BorealBlocks.BOREAL_STONE.get(),
+                        BorealBlocks.BOREAL_DEEP_STONE.get()
+                        );
+
+        this.tag(BorealTags.MOBS_SPAWNABLE_ON)
+                .add(BorealBlocks.GLACIAL_GRASS.get(),
+                        BorealBlocks.GLACIAL_DIRT.get(),
+                        Blocks.SNOW
+                );
     }
 }

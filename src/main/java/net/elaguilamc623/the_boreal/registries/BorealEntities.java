@@ -5,8 +5,8 @@ import net.elaguilamc623.the_boreal.entities.custom.FrozenBearEntity;
 import net.elaguilamc623.the_boreal.entities.custom.NightDeerEntity;
 import net.elaguilamc623.the_boreal.entities.custom.boats.GlacialSkeletonEntity;
 import net.elaguilamc623.the_boreal.entities.custom.projectiles.BorealRockEntity;
-import net.elaguilamc623.the_boreal.entities.custom.GlacialWolf;
-import net.elaguilamc623.the_boreal.entities.custom.GlacialZombie;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialWolfEntity;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialZombieEntity;
 import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.entities.custom.boats.BorealChestBoatEntity;
 import net.elaguilamc623.the_boreal.entities.custom.projectiles.GlacialSkeletonArrowEntity;
@@ -25,31 +25,31 @@ public class BorealEntities {
             ENTITY_TYPES.register("boreal_rock_projectile", () -> EntityType.Builder.<BorealRockEntity>of(BorealRockEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("boreal_rock_projectile"));
 
-    public static final RegistryObject<EntityType<GlacialZombie>> GLACIAL_ZOMBIE =
-            ENTITY_TYPES.register("glacial_zombie", () -> EntityType.Builder.of(GlacialZombie::new, MobCategory.MONSTER)
+    public static final RegistryObject<EntityType<GlacialZombieEntity>> GLACIAL_ZOMBIE =
+            ENTITY_TYPES.register("glacial_zombie", () -> EntityType.Builder.of(GlacialZombieEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.95f).build("glacial_zombie"));
 
-    public static final RegistryObject<EntityType<GlacialWolf>> GLACIAL_WOLF =
+    public static final RegistryObject<EntityType<GlacialWolfEntity>> GLACIAL_WOLF =
             ENTITY_TYPES.register("glacial_wolf", () -> EntityType.Builder
-                    .of(GlacialWolf::new, MobCategory.CREATURE)
+                    .of(GlacialWolfEntity::new, MobCategory.MONSTER)
                     .sized(0.8f, 1.0f)
                     .build("glacial_wolf"));
 
     public static final RegistryObject<EntityType<FrozenBearEntity>> FROZEN_BEAR =
             ENTITY_TYPES.register("frozen_bear", () -> EntityType.Builder
-                    .of(FrozenBearEntity::new, MobCategory.CREATURE)
+                    .of(FrozenBearEntity::new, MobCategory.MONSTER)
                     .sized(1.6F, 1.6F)
                     .build("frozen_bear"));
 
     public static final RegistryObject<EntityType<GlacialSkeletonEntity>> GLACIAL_SKELETON =
             ENTITY_TYPES.register("glacial_skeleton", () -> EntityType.Builder
-                    .of(GlacialSkeletonEntity::new, MobCategory.CREATURE)
+                    .of(GlacialSkeletonEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.99F)
                     .build("glacial_skeleton"));
 
     public static final RegistryObject<EntityType<NightDeerEntity>> NIGHT_DEER =
             ENTITY_TYPES.register("night_deer", () -> EntityType.Builder
-                    .of(NightDeerEntity::new, MobCategory.CREATURE)
+                    .of(NightDeerEntity::new, MobCategory.MONSTER)
                     .sized(1.0F, 2.0F)
                     .build("night_deer"));
 

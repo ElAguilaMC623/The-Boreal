@@ -83,6 +83,48 @@ public class BorealBlocks {
     public static final RegistryObject<Block> BOREAL_CHISELED_STONE = registerBlock("boreal_chiseled_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
 
+    public static final RegistryObject<Block> VERNITE = registerBlock("vernite",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+
+    public static final RegistryObject<Block> VERNITE_SLAB = registerBlock("vernite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE_SLAB)));
+
+    public static final RegistryObject<Block> VERNITE_STAIRS = registerBlock("vernite_stairs",
+            () -> new StairBlock(() -> VERNITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE_STAIRS)));
+
+    public static final RegistryObject<Block> VERNITE_WALL = registerBlock("vernite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE_WALL)));
+
+    public static final RegistryObject<Block> POLISHED_VERNITE = registerBlock("polished_vernite",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
+
+    public static final RegistryObject<Block> POLISHED_VERNITE_SLAB = registerBlock("polished_vernite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE_SLAB)));
+
+    public static final RegistryObject<Block> POLISHED_VERNITE_STAIRS = registerBlock("polished_vernite_stairs",
+            () -> new StairBlock(() -> POLISHED_VERNITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE_SLAB)));
+
+    public static final RegistryObject<Block> TARNITE = registerBlock("tarnite",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+
+    public static final RegistryObject<Block> TARNITE_SLAB = registerBlock("tarnite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE_SLAB)));
+
+    public static final RegistryObject<Block> TARNITE_STAIRS = registerBlock("tarnite_stairs",
+            () -> new StairBlock(() -> TARNITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE_STAIRS)));
+
+    public static final RegistryObject<Block> TARNITE_WALL = registerBlock("tarnite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE_WALL)));
+
+    public static final RegistryObject<Block> POLISHED_TARNITE = registerBlock("polished_tarnite",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
+
+    public static final RegistryObject<Block> POLISHED_TARNITE_SLAB = registerBlock("polished_tarnite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE_SLAB)));
+
+    public static final RegistryObject<Block> POLISHED_TARNITE_STAIRS = registerBlock("polished_tarnite_stairs",
+            () -> new StairBlock(() -> POLISHED_TARNITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE_SLAB)));
+
     public static final RegistryObject<Block> TALISMANDIUM_ORE = registerBlock("talismandium_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 

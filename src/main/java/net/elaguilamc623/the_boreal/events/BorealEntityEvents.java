@@ -3,17 +3,24 @@ package net.elaguilamc623.the_boreal.events;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
+import net.elaguilamc623.the_boreal.worldgen.spawns.BorealSpawnRules;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod.EventBusSubscriber(modid = TheBoreal.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BorealEntityEvents {
@@ -58,43 +65,38 @@ public class BorealEntityEvents {
     }
 
     @SubscribeEvent
-    public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-        event.register(
-                BorealEntities.GLACIAL_ZOMBIE.get(),
-                SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                (entityType, level, spawnType, pos, random) ->
-                        pos.getY() < 55 && Monster.checkMonsterSpawnRules(entityType, level, spawnType, pos, random),
-                SpawnPlacementRegisterEvent.Operation.REPLACE
-        );
+    public static void commonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            SpawnPlacements.register(
+                    BorealEntities.GLACIAL_ZOMBIE.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    (type, level, spawnType, pos, random) ->
+                            pos.getY() < 140 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
+            );
 
-        event.register(
-                BorealEntities.GLACIAL_SKELETON.get(),
-                SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                (entityType, level, spawnType, pos, random) ->
-                        pos.getY() < 55 && Monster.checkMonsterSpawnRules(entityType, level, spawnType, pos, random),
-                SpawnPlacementRegisterEvent.Operation.REPLACE
-        );
+            SpawnPlacements.register(
+                    BorealEntities.GLACIAL_SKELETON.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    (type, level, spawnType, pos, random) ->
+                            pos.getY() < 140 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
+            );
 
-        event.register(
-                BorealEntities.GLACIAL_WOLF.get(),
-                SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                (entityType, level, spawnType, pos, random) ->
-                        pos.getY() > level.getSeaLevel() - 5 &&
-                                level.getBlockState(pos.below()).is(BorealBlocks.GLACIAL_GRASS.get()),
-                SpawnPlacementRegisterEvent.Operation.REPLACE
-        );
+            SpawnPlacements.register(
+                    BorealEntities.GLACIAL_WOLF.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    BorealSpawnRules::borealWolfRules
+            );
 
-        event.register(
-                BorealEntities.FROZEN_BEAR.get(),
-                SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                (entityType, level, spawnType, pos, random) ->
-                        pos.getY() > level.getSeaLevel() - 5 &&
-                                level.getBlockState(pos.below()).is(BorealBlocks.GLACIAL_GRASS.get()),
-                SpawnPlacementRegisterEvent.Operation.REPLACE
-        );
+            SpawnPlacements.register(
+                    BorealEntities.FROZEN_BEAR.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    BorealSpawnRules::borealWolfRules
+            );
+        });
     }
+
 }

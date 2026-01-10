@@ -24,6 +24,10 @@ public class BorealBlockStateProvider extends BlockStateProvider {
         blockWithItem(BorealBlocks.BOREAL_STONE_BRICKS);
         blockWithItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS);
         blockWithItem(BorealBlocks.BOREAL_CHISELED_STONE);
+        blockWithItem(BorealBlocks.VERNITE);
+        blockWithItem(BorealBlocks.POLISHED_VERNITE);
+        blockWithItem(BorealBlocks.TARNITE);
+        blockWithItem(BorealBlocks.POLISHED_TARNITE);
         blockWithItem(BorealBlocks.TALISMANDIUM_ORE);
         blockWithItem(BorealBlocks.DEEP_TALISMANDIUM_ORE);
         blockWithItem(BorealBlocks.CHRODIUM_ORE);
@@ -49,6 +53,16 @@ public class BorealBlockStateProvider extends BlockStateProvider {
         wallBlock(((WallBlock) BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get()), blockTexture(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()));
         stairsBlock(((StairBlock)BorealBlocks.AURORAL_STAIRS.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
         slabBlock(((SlabBlock)BorealBlocks.AURORAL_SLAB.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        stairsBlock(((StairBlock)BorealBlocks.VERNITE_STAIRS.get()), blockTexture(BorealBlocks.VERNITE.get()));
+        slabBlock(((SlabBlock)BorealBlocks.VERNITE_SLAB.get()), blockTexture(BorealBlocks.VERNITE.get()), blockTexture(BorealBlocks.VERNITE.get()));
+        wallBlock(((WallBlock) BorealBlocks.VERNITE_WALL.get()), blockTexture(BorealBlocks.VERNITE.get()));
+        stairsBlock(((StairBlock)BorealBlocks.POLISHED_VERNITE_STAIRS.get()), blockTexture(BorealBlocks.POLISHED_VERNITE.get()));
+        slabBlock(((SlabBlock)BorealBlocks.POLISHED_VERNITE_SLAB.get()), blockTexture(BorealBlocks.POLISHED_VERNITE.get()), blockTexture(BorealBlocks.POLISHED_VERNITE.get()));
+        stairsBlock(((StairBlock)BorealBlocks.TARNITE_STAIRS.get()), blockTexture(BorealBlocks.TARNITE.get()));
+        slabBlock(((SlabBlock)BorealBlocks.TARNITE_SLAB.get()), blockTexture(BorealBlocks.TARNITE.get()), blockTexture(BorealBlocks.TARNITE.get()));
+        wallBlock(((WallBlock) BorealBlocks.TARNITE_WALL.get()), blockTexture(BorealBlocks.TARNITE.get()));
+        stairsBlock(((StairBlock)BorealBlocks.POLISHED_TARNITE_STAIRS.get()), blockTexture(BorealBlocks.POLISHED_TARNITE.get()));
+        slabBlock(((SlabBlock)BorealBlocks.POLISHED_TARNITE_SLAB.get()), blockTexture(BorealBlocks.POLISHED_TARNITE.get()), blockTexture(BorealBlocks.POLISHED_TARNITE.get()));
 
         buttonBlock(((ButtonBlock)BorealBlocks.AURORAL_BUTTON.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
         pressurePlateBlock(((PressurePlateBlock)BorealBlocks.AURORAL_PRESSURE_PLATE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));

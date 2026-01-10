@@ -3,11 +3,11 @@
   "biomes": "#the_boreal:boreal_biomes/is_boreal",
   "spawners": [
     {
-      "type": "the_boreal:frozen_bear",
-      "weight": 6,
+      "type": "the_boreal:frozen_wolf",
+      "weight": 100,
       "minCount": 1,
-      "maxCount": 2,
-      "category": "animal"
+      "maxCount": 4,
+      "category": "monster"
     }
   ]
 }

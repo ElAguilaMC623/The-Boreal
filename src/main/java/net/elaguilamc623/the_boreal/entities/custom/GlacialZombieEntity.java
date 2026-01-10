@@ -8,8 +8,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 
-public class GlacialZombie extends Zombie {
-    public GlacialZombie(EntityType<? extends Zombie> type, Level level) {
+public class GlacialZombieEntity extends Zombie {
+    public GlacialZombieEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
     }
 

@@ -33,4 +33,7 @@ public class BorealTags {
     public static final TagKey<Block> NEEDS_DIORIUM_TOOL =
             TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "needs_diorium_tool"));
 
+    public static final TagKey<Block> MOBS_SPAWNABLE_ON =
+            TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "mobs_spawnable_on"));
+
 }

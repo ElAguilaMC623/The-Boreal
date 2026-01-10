@@ -102,6 +102,8 @@ public class BorealItemModelProvider extends ItemModelProvider {
         wallItem(BorealBlocks.BOREAL_DEEP_STONE_WALL, BorealBlocks.BOREAL_DEEP_STONE);
         wallItem(BorealBlocks.BOREAL_STONE_BRICK_WALL, BorealBlocks.BOREAL_STONE_BRICKS);
         wallItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL, BorealBlocks.BOREAL_MOSSY_STONE_BRICKS);
+        wallItem(BorealBlocks.VERNITE_WALL, BorealBlocks.VERNITE);
+        wallItem(BorealBlocks.TARNITE_WALL, BorealBlocks.TARNITE);
 
         evenSimplerBlockItem(BorealBlocks.BOREAL_COBBLESTONE_STAIRS);
         evenSimplerBlockItem(BorealBlocks.BOREAL_COBBLESTONE_SLAB);
@@ -117,6 +119,14 @@ public class BorealItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BorealBlocks.AURORAL_SLAB);
         evenSimplerBlockItem(BorealBlocks.AURORAL_FENCE_GATE);
         evenSimplerBlockItem(BorealBlocks.AURORAL_PRESSURE_PLATE);
+        evenSimplerBlockItem(BorealBlocks.VERNITE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.VERNITE_SLAB);
+        evenSimplerBlockItem(BorealBlocks.POLISHED_VERNITE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.POLISHED_VERNITE_SLAB);
+        evenSimplerBlockItem(BorealBlocks.TARNITE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.TARNITE_SLAB);
+        evenSimplerBlockItem(BorealBlocks.POLISHED_TARNITE_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.POLISHED_TARNITE_SLAB);
 
         simpleBlockItem(BorealBlocks.AURORAL_DOOR);
 

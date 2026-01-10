@@ -1,0 +1,26 @@
+package net.elaguilamc623.the_boreal.worldgen.spawns;
+
+import net.elaguilamc623.the_boreal.registries.BorealTags;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.level.LevelAccessor;
+
+public class BorealSpawnRules {
+    public static boolean borealWolfRules(EntityType<? extends Mob> type,
+                                          LevelAccessor level,
+                                          MobSpawnType spawnType,
+                                          BlockPos pos,
+                                          RandomSource random) {
+
+        if (level.getRawBrightness(pos, 0) > 7) return false;
+
+        if (!level.getBlockState(pos.below()).is(BorealTags.MOBS_SPAWNABLE_ON)) return false;
+
+        if (!level.getBlockState(pos).getCollisionShape(level, pos).isEmpty()) return false;
+
+        return true;
+    }
+}

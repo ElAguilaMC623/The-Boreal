@@ -23,7 +23,20 @@
     "axolotls": [],
     "creature": [],
     "misc": [],
-    "monster": [],
+    "monster": [
+      {
+        "type": "the_boreal:glacial_wolf",
+        "weight": 1000,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "the_boreal:night_deer",
+        "weight": 8,
+        "minCount": 3,
+        "maxCount": 5
+      }
+    ],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []

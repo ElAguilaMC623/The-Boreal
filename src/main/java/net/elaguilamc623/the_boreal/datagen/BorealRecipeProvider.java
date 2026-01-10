@@ -441,6 +441,59 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS.get(),
                 BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
 
+        slabRecipe(consumer, BorealBlocks.VERNITE.get(), BorealBlocks.VERNITE_SLAB.get());
+        stairsRecipe(consumer, BorealBlocks.VERNITE.get(), BorealBlocks.VERNITE_STAIRS.get());
+        wallRecipe(consumer, BorealBlocks.VERNITE.get(), BorealBlocks.VERNITE_WALL.get());
+
+        bricksRecipe(consumer,
+                BorealBlocks.VERNITE.get(),
+                BorealBlocks.POLISHED_VERNITE.get(),
+                getHasName(BorealBlocks.VERNITE.get()));
+
+        slabRecipe(consumer, BorealBlocks.POLISHED_VERNITE.get(), BorealBlocks.POLISHED_VERNITE_SLAB.get());
+        stairsRecipe(consumer, BorealBlocks.POLISHED_VERNITE.get(), BorealBlocks.POLISHED_VERNITE_STAIRS.get());
+
+        generateStonecutterRecipes(consumer,
+                BorealBlocks.VERNITE.get(),
+                BorealBlocks.VERNITE_SLAB.get(),
+                BorealBlocks.VERNITE_STAIRS.get(),
+                BorealBlocks.VERNITE_WALL.get(),
+                BorealBlocks.POLISHED_VERNITE.get()
+        );
+
+        generateStonecutterRecipes(consumer,
+                BorealBlocks.POLISHED_VERNITE.get(),
+                BorealBlocks.POLISHED_VERNITE_SLAB.get(),
+                BorealBlocks.POLISHED_VERNITE_STAIRS.get()
+        );
+
+        slabRecipe(consumer, BorealBlocks.TARNITE.get(), BorealBlocks.TARNITE_SLAB.get());
+        stairsRecipe(consumer, BorealBlocks.TARNITE.get(), BorealBlocks.TARNITE_STAIRS.get());
+        wallRecipe(consumer, BorealBlocks.TARNITE.get(), BorealBlocks.TARNITE_WALL.get());
+
+        bricksRecipe(consumer,
+                BorealBlocks.TARNITE.get(),
+                BorealBlocks.POLISHED_TARNITE.get(),
+                getHasName(BorealBlocks.TARNITE.get()));
+
+        slabRecipe(consumer, BorealBlocks.POLISHED_TARNITE.get(), BorealBlocks.POLISHED_TARNITE_SLAB.get());
+        stairsRecipe(consumer, BorealBlocks.POLISHED_TARNITE.get(), BorealBlocks.POLISHED_TARNITE_STAIRS.get());
+
+        generateStonecutterRecipes(consumer,
+                BorealBlocks.TARNITE.get(),
+                BorealBlocks.TARNITE_SLAB.get(),
+                BorealBlocks.TARNITE_STAIRS.get(),
+                BorealBlocks.TARNITE_WALL.get(),
+                BorealBlocks.POLISHED_TARNITE.get()
+        );
+
+        generateStonecutterRecipes(consumer,
+                BorealBlocks.POLISHED_TARNITE.get(),
+                BorealBlocks.POLISHED_TARNITE_SLAB.get(),
+                BorealBlocks.POLISHED_TARNITE_STAIRS.get()
+        );
+
+
         simpleWoodFamilyRecipes(consumer,
                 BorealBlocks.AURORA_LOG,
                 BorealBlocks.AURORA_WOOD,

@@ -1,20 +1,25 @@
 package net.elaguilamc623.the_boreal.entities.custom;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Wolf;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 
 import java.util.List;
 
-public class GlacialWolf extends Wolf {
-    public GlacialWolf(EntityType<? extends Wolf> type, Level level) {
+public class GlacialWolfEntity extends Wolf {
+    public GlacialWolfEntity(EntityType<? extends Wolf> type, Level level) {
         super(type, level);
     }
 
@@ -58,6 +63,16 @@ public class GlacialWolf extends Wolf {
     public void tick() {
         super.tick();
 
+        if (this.level().isClientSide && this.tickCount == 20) {
+            Player player = this.level().getNearestPlayer(this, 20);
+            if (player != null) {
+                System.out.println("Mob category is "+ this.getType().getCategory());
+                player.sendSystemMessage(
+                        Component.literal("Categoría real del GlacialWolf: " + this.getType().getCategory())
+                );
+            }
+        }
+
         Player nearest = this.level().getNearestPlayer(this, 10.0D);
         if (nearest != null && !this.isTame()) {
 
@@ -65,12 +80,12 @@ public class GlacialWolf extends Wolf {
                 this.setCustomAngry(true);
                 this.setTarget(nearest);
 
-                List<GlacialWolf> nearbyWolves = this.level().getEntitiesOfClass(
-                        GlacialWolf.class,
+                List<GlacialWolfEntity> nearbyWolves = this.level().getEntitiesOfClass(
+                        GlacialWolfEntity.class,
                         this.getBoundingBox().inflate(30.0D)
                 );
 
-                for (GlacialWolf wolf : nearbyWolves) {
+                for (GlacialWolfEntity wolf : nearbyWolves) {
                     if (!wolf.isTame()) {
                         wolf.setCustomAngry(true);
                         wolf.setTarget(nearest);
@@ -80,5 +95,10 @@ public class GlacialWolf extends Wolf {
         } else {
             this.setCustomAngry(false);
         }
+    }
+
+    @Override
+    public MobCategory getClassification(boolean forSpawnCount) {
+        return MobCategory.MONSTER;
     }
 }
