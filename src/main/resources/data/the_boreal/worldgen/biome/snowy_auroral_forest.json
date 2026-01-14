@@ -53,9 +53,9 @@
   },
 
   "features": [
-    ["minecraft:freeze_top_layer"],
     ["minecraft:spring_water", "minecraft:spring_lava"],
+    ["the_boreal:auroral_tree_small_placed", "the_boreal:auroral_tree_large_placed"],
     ["the_boreal:glacial_grass_patch"],
-    ["the_boreal:auroral_tree_small_placed", "the_boreal:auroral_tree_large_placed"]
+    ["minecraft:freeze_top_layer"]
   ]
 }

@@ -53,6 +53,7 @@
   },
   "features": [
     ["minecraft:spring_water", "minecraft:spring_lava"],
+    ["the_boreal:auroral_bush_spread"],
     ["the_boreal:glacial_grass_patch"]
   ]
 }

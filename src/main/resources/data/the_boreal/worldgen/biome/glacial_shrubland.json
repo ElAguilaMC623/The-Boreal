@@ -32,7 +32,7 @@
       },
       {
         "type": "the_boreal:frozen_bear",
-        "weight": 5,
+        "weight": 7,
         "minCount": 1,
         "maxCount": 2
       }
@@ -53,8 +53,7 @@
   },
   "features": [
     ["minecraft:spring_water", "minecraft:spring_lava"],
-    ["the_boreal:auroral_bush_spread"],
-    ["the_boreal:glacial_grass_patch"],
-    ["minecraft:freeze_top_layer"]
+    ["the_boreal:auroral_bush_dense"],
+    ["the_boreal:glacial_grass_patch"]
   ]
 }

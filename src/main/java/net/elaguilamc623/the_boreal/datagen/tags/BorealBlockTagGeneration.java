@@ -132,7 +132,11 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
         this.tag(TREE_REPLACEABLE)
                 .add(Blocks.SNOW)
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get())
-                .add(BorealBlocks.GLACIAL_DIRT.get());
+                .add(BorealBlocks.GLACIAL_DIRT.get())
+                .add(BorealBlocks.GLACIAL_GRASS.get());
+        this.tag(BlockTags.REPLACEABLE_BY_TREES)
+                .add(Blocks.SNOW)
+                .add(BorealBlocks.GLACIAL_GRASS.get());
 
         this.tag(BlockTags.FENCES)
                 .add(BorealBlocks.AURORAL_FENCE.get());
