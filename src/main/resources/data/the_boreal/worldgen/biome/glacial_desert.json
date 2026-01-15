@@ -1,0 +1,52 @@
+{
+  "temperature": 0.05,
+  "downfall": 0.8,
+  "has_precipitation": false,
+
+  "effects": {
+    "sky_color": 1980488,
+    "fog_color": 2507703,
+    "water_color": 5718385,
+    "water_fog_color": 2561575,
+    "grass_color": 9794291,
+    "foliage_color": 9794291,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "the_boreal:frozen_bear",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+
+  "spawn_costs": {},
+
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    ["minecraft:spring_water", "minecraft:spring_lava"],
+    ["the_boreal:glacial_crystal_spike_placed"]
+  ]
+}

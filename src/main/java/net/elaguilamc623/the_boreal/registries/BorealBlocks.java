@@ -158,6 +158,12 @@ public class BorealBlocks {
     public static final RegistryObject<Block> GLACIAL_WHEAT_PLANT = BLOCKS.register("glacial_wheat_plant",
             () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
+    public static final RegistryObject<Block> PERMAFROST = registerBlock("permafrost",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)));
+
+    public static final RegistryObject<Block> GLACIAL_CRYSTAL = registerBlock("glacial_crystal",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN)));
+
     public static final RegistryObject<Block> AURORA_LOG = registerBlock("aurora_log",
             () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3F)));
 

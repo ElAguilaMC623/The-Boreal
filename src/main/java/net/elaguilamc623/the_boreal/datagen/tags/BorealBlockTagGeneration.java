@@ -61,7 +61,9 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.TARNITE_WALL.get(),
                         BorealBlocks.POLISHED_TARNITE.get(),
                         BorealBlocks.POLISHED_TARNITE_SLAB.get(),
-                        BorealBlocks.POLISHED_TARNITE_STAIRS.get()
+                        BorealBlocks.POLISHED_TARNITE_STAIRS.get(),
+                        BorealBlocks.PERMAFROST.get(),
+                        BorealBlocks.GLACIAL_CRYSTAL.get()
                         );
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)

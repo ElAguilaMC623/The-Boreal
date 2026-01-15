@@ -36,6 +36,8 @@ public class BorealBlockStateProvider extends BlockStateProvider {
         blockWithItem(BorealBlocks.DEEP_DIORIUM_ORE);
         blockWithItem(BorealBlocks.AURORA_PLANKS);
         blockWithItem(BorealBlocks.GLACIAL_DIRT);
+        blockWithItem(BorealBlocks.PERMAFROST);
+        blockWithItem(BorealBlocks.GLACIAL_CRYSTAL);
 
         stairsBlock(((StairBlock)BorealBlocks.BOREAL_COBBLESTONE_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
         slabBlock(((SlabBlock) BorealBlocks.BOREAL_COBBLESTONE_SLAB.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));

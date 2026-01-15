@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
 import net.elaguilamc623.the_boreal.registries.*;
+import net.elaguilamc623.the_boreal.registries.worldgen.BorealFeatures;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
@@ -43,6 +44,7 @@ public class TheBoreal
         BorealSounds.register(modEventBus);
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
+        BorealFeatures.FEATURES.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);

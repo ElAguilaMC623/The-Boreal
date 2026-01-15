@@ -1,6 +1,6 @@
-package net.elaguilamc623.the_boreal.worldgen.level.trees;
+package net.elaguilamc623.the_boreal.worldgen.features.custom;
 
-import net.elaguilamc623.the_boreal.worldgen.level.BorealConfiguredFeatures;
+import net.elaguilamc623.the_boreal.worldgen.features.BorealConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;

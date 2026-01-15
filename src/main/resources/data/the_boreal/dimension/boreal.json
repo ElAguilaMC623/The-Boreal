@@ -65,6 +65,18 @@
             "weirdness": { "min": -1.0, "max": 1.0 },
             "offset": 0.0
           }
+        },
+        {
+          "biome": "the_boreal:glacial_desert",
+          "parameters": {
+            "temperature": { "min": 0.1, "max": 0.25 },
+            "humidity": { "min": 0.0, "max": 0.2 },
+            "continentalness": { "min": 0.2, "max": 0.6 },
+            "erosion": { "min": 0.2, "max": 0.6 },
+            "depth": 0.0,
+            "weirdness": { "min": -1.0, "max": 1.0 },
+            "offset": 0.0
+          }
         }
       ]
     }

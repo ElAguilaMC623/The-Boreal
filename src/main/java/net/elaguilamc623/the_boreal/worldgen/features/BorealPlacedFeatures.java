@@ -1,14 +1,10 @@
-package net.elaguilamc623.the_boreal.worldgen.level;
+package net.elaguilamc623.the_boreal.worldgen.features;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.placement.*;
-
-import java.util.List;
-
-import static net.elaguilamc623.the_boreal.worldgen.level.BorealConfiguredFeatures.*;
 
 public class BorealPlacedFeatures {
 

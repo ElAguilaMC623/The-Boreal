@@ -516,6 +516,120 @@
             }
           ]
         }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:biome",
+          "biome_is": [
+            "the_boreal:glacial_desert"
+          ]
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+
+            {
+              "type": "minecraft:condition",
+              "if_true": { "type": "minecraft:above_preliminary_surface" },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "offset": 0,
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": { "type": "minecraft:above_preliminary_surface" },
+                          "then_run": {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:y_above",
+                              "anchor": { "absolute": 12 },
+                              "surface_depth_multiplier": 1,
+                              "add_stone_depth": false
+                            },
+                            "then_run": {
+                              "type": "minecraft:sequence",
+                              "sequence": [
+                                {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "the_boreal:permafrost",
+                                    "Properties": { "snowy": "false" }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+
+            {
+              "type": "minecraft:condition",
+              "if_true": { "type": "minecraft:above_preliminary_surface" },
+              "then_run": {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:stone_depth",
+                  "offset": -1,
+                  "surface_type": "floor",
+                  "add_surface_depth": true,
+                  "secondary_depth_range": 0
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "the_boreal:permafrost",
+                    "Properties": { "taint": "1" }
+                  }
+                }
+              }
+            },
+
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "minecraft:surface",
+                "min_threshold": 0.1818,
+                "max_threshold": 0.2018
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": { "Name": "the_boreal:boreal_stone" }
+              }
+            },
+
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:vertical_gradient",
+                "random_name": "boreal_deep_stone_layer",
+                "true_at_and_below": { "absolute": 3 },
+                "false_at_and_above": { "absolute": -2 }
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": { "Name": "the_boreal:boreal_deep_stone" }
+              }
+            }
+          ]
+        }
       }
     ]
   }

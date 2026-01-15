@@ -40,6 +40,8 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
         this.dropSelf(BorealBlocks.BOREAL_CHISELED_STONE.get());
         this.dropSelf(BorealBlocks.GLACIAL_DIRT.get());
+        this.dropSelf(BorealBlocks.PERMAFROST.get());
+        this.dropSelf(BorealBlocks.GLACIAL_CRYSTAL.get());
         this.dropSelf(BorealBlocks.AURORA_LOG.get());
         this.dropSelf(BorealBlocks.AURORA_WOOD.get());
         this.dropSelf(BorealBlocks.STRIPPED_AURORA_LOG.get());
