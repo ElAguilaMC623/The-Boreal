@@ -1,0 +1,7 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/template_hanging_lantern",
+  "textures": {
+    "lantern": "the_boreal:block/glacial_lantern"
+  }
+}

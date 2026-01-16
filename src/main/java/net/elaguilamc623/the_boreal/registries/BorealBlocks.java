@@ -7,6 +7,8 @@ import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -220,6 +222,15 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> AURORAL_PRESSURE_PLATE = registerBlock("auroral_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> GLACIAL_TORCH = BLOCKS.register("glacial_torch",
+            () -> new TorchBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).noOcclusion(), ParticleTypes.SOUL_FIRE_FLAME));
+
+    public static final RegistryObject<Block> GLACIAL_WALL_TORCH = BLOCKS.register("glacial_wall_torch",
+            () -> new WallTorchBlock(BlockBehaviour.Properties.copy(Blocks.WALL_TORCH).noOcclusion(), ParticleTypes.SOUL_FIRE_FLAME));
+
+    public static final RegistryObject<Block> GLACIAL_LANTERN = registerBlock("glacial_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 15).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

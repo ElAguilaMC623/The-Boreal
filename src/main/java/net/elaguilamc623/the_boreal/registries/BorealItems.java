@@ -8,6 +8,7 @@ import net.elaguilamc623.the_boreal.items.custom.*;
 import net.elaguilamc623.the_boreal.items.custom.weapons.*;
 import net.elaguilamc623.the_boreal.items.tiers.BorealArmorMaterials;
 import net.elaguilamc623.the_boreal.items.tiers.BorealTiers;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -82,6 +83,9 @@ public class BorealItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TALISMANDIUM_INGOT = ITEMS.register("talismandium_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TALISMANDIUM_NUGGET = ITEMS.register("talismandium_nugget",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CHRODIUM = ITEMS.register("chrodium",
@@ -177,6 +181,11 @@ public class BorealItems {
     public static final RegistryObject<Item> DIORIUM_BOOTS = ITEMS.register("diorium_boots",
             () -> new BorealArmorItem(BorealArmorMaterials.DIORIUM, ArmorItem.Type.BOOTS, new BorealItemProperties().unbreakable().stacksTo(1)));
 
+    public static final RegistryObject<Item> GLACIAL_TORCH_ITEM = ITEMS.register("glacial_torch",
+            () -> new StandingAndWallBlockItem(BorealBlocks.GLACIAL_TORCH.get(), BorealBlocks.GLACIAL_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> GLACIAL_CRYSTAL_SHARD = ITEMS.register("glacial_crystal_shard",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

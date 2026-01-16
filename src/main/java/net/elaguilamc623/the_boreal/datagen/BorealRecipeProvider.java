@@ -329,12 +329,55 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
+    private void torchRecipe(Consumer<FinishedRecipe> consumer,
+                                 ItemLike result,
+                                 ItemLike top,
+                                 ItemLike bottom,
+                                 int count,
+                                 String unlockName) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result, count)
+                .pattern("C")
+                .pattern("S")
+                .define('C', top)
+                .define('S', bottom)
+                .unlockedBy(unlockName, has(top))
+                .save(consumer);
+    }
+
+    private void lanternRecipe(Consumer<FinishedRecipe> consumer,
+                                   ItemLike result,
+                                   ItemLike center,
+                                   ItemLike nugget,
+                                   String unlockName) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result)
+                .pattern("NNN")
+                .pattern("NTN")
+                .pattern("NNN")
+                .define('N', nugget)
+                .define('T', center)
+                .unlockedBy(unlockName, has(center))
+                .save(consumer);
+    }
+
+    private void nuggetFromIngotRecipe(Consumer<FinishedRecipe> consumer,
+                                       ItemLike nugget,
+                                       ItemLike ingot,
+                                       String unlockName) {
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, nugget, 9)
+                .requires(ingot)
+                .unlockedBy(unlockName, has(ingot))
+                .save(consumer);
+    }
+
 
     public BorealRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
 
-
+    
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BorealItems.FROZEN_AMULET.get())
@@ -720,6 +763,30 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .requires(BorealItems.GLACIAL_BONE.get())
                 .unlockedBy("has_glacial_bone", has(BorealItems.GLACIAL_BONE.get()))
                 .save(consumer);
+        
+        torchRecipe(
+                consumer,
+                BorealItems.GLACIAL_TORCH_ITEM.get(),   
+                BorealItems.GLACIAL_CRYSTAL_SHARD.get(),  
+                BorealItems.AURORAL_STICK.get(),          
+                4,                                     
+                "has_glacial_shard"                     
+        );
+
+        lanternRecipe(
+                consumer,
+                BorealBlocks.GLACIAL_LANTERN.get(),
+                BorealItems.GLACIAL_TORCH_ITEM.get(),    
+                BorealItems.TALISMANDIUM_NUGGET.get(),    
+                "has_glacial_torch"                     
+        );
+
+        nuggetFromIngotRecipe(
+                consumer,
+                BorealItems.TALISMANDIUM_NUGGET.get(),
+                BorealItems.TALISMANDIUM_INGOT.get(),
+                "has_talismandium_ingot"
+        );
     }
 
 

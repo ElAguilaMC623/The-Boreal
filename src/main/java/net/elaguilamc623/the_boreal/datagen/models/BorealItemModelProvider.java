@@ -46,6 +46,7 @@ public class BorealItemModelProvider extends ItemModelProvider {
         simpleItem(BorealItems.ANCIENT_ICE_FRAGMENT);
         simpleItem(BorealItems.FROZEN_AMULET);
         simpleItem(BorealItems.BOREAL_ROCK);
+        simpleItem(BorealItems.GLACIAL_CRYSTAL_SHARD);
         simpleItem(BorealItems.GLACIAL_SEED);
         simpleItem(BorealItems.GLACIAL_WHEAT);
         simpleItem(BorealItems.GLACIAL_BREAD);
@@ -53,6 +54,7 @@ public class BorealItemModelProvider extends ItemModelProvider {
         simpleItem(BorealItems.GLACIAL_BONE);
         simpleItem(BorealItems.RAW_TALISMANDIUM);
         simpleItem(BorealItems.TALISMANDIUM_INGOT);
+        simpleItem(BorealItems.TALISMANDIUM_NUGGET);
         simpleItem(BorealItems.CHRODIUM);
         simpleItem(BorealItems.RAW_DIORIUM);
         simpleItem(BorealItems.DIORIUM_INGOT);
@@ -63,6 +65,7 @@ public class BorealItemModelProvider extends ItemModelProvider {
         simpleItem(BorealItems.AURORAL_CHEST_BOAT);
 
         handheldItem(BorealItems.AURORAL_STICK);
+        handheldItem(BorealItems.GLACIAL_TORCH_ITEM);
         handheldItem(BorealItems.TALISMANDIUM_SWORD);
         handheldItem(BorealItems.TALISMANDIUM_PICKAXE);
         handheldItem(BorealItems.TALISMANDIUM_AXE);
@@ -223,5 +226,10 @@ public class BorealItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(TheBoreal.MOD_ID, "item/" + item.getId().getPath()));
 
+    }
+
+    public void torchItem(Block torch) {
+        String name = ForgeRegistries.BLOCKS.getKey(torch).getPath();
+        withExistingParent(name, modLoc("block/" + name));
     }
 }

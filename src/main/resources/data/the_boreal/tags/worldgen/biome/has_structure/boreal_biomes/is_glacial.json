@@ -1,6 +1,8 @@
 {
   "values": [
     "the_boreal:glacial_plains",
-    "the_boreal:glacial_tundra"
+    "the_boreal:glacial_tundra",
+    "the_boreal:glacial_shrubland",
+    "the_boreal:glacial_desert"
   ]
 }

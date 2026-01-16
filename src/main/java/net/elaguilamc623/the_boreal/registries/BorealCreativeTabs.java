@@ -24,15 +24,16 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.ANCIENT_ICE_FRAGMENT.get());
                                 pOutput.accept(BorealItems.FROZEN_AMULET.get());
                                 pOutput.accept(BorealItems.BOREAL_ROCK.get());
+                                pOutput.accept(BorealItems.GLACIAL_CRYSTAL_SHARD.get());
                                 pOutput.accept(BorealItems.AURORAL_STICK.get());
+                                pOutput.accept(BorealItems.GLACIAL_BREAD.get());
                                 pOutput.accept(BorealItems.RAW_TALISMANDIUM.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_INGOT.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_NUGGET.get());
                                 pOutput.accept(BorealItems.CHRODIUM.get());
                                 pOutput.accept(BorealItems.RAW_DIORIUM.get());
                                 pOutput.accept(BorealItems.DIORIUM_INGOT.get());
                                 pOutput.accept(BorealItems.DIORIUM_GEM.get());
-                                pOutput.accept(BorealItems.AURORAL_BOAT.get());
-                                pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                             })
                             .build()
             );
@@ -87,7 +88,16 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.PERMAFROST.get());
                                 pOutput.accept(BorealItems.GLACIAL_SEED.get());
                                 pOutput.accept(BorealItems.GLACIAL_WHEAT.get());
-                                pOutput.accept(BorealItems.GLACIAL_BREAD.get());
+                                pOutput.accept(BorealBlocks.BOREAL_STONE.get());
+                                pOutput.accept(BorealBlocks.TARNITE.get());
+                                pOutput.accept(BorealBlocks.VERNITE.get());
+                                pOutput.accept(BorealBlocks.TALISMANDIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DEEP_TALISMANDIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.CHRODIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DEEP_CHRODIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DIORIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.DEEP_DIORIUM_ORE.get());
+                                pOutput.accept(BorealBlocks.AURORA_LOG.get());
                                 pOutput.accept(BorealBlocks.AURORA_SAPLING.get());
                                 pOutput.accept(BorealBlocks.AURORA_LEAVES.get());
                                 pOutput.accept(BorealItems.GLACIAL_ROTTEN_FLESH.get());
@@ -96,10 +106,10 @@ public class BorealCreativeTabs {
                             .build()
             );
 
-    public static RegistryObject<CreativeModeTab> BOREAL_BLOCKS_TAB =
+    public static RegistryObject<CreativeModeTab> BOREAL_BUILDING_BLOCKS_TAB =
             CREATIVE_MODE_TABS.register("the_boreal_blocks_tab", () ->
                     CreativeModeTab.builder()
-                            .icon(() -> new ItemStack(BorealBlocks.BOREAL_STONE.get()))
+                            .icon(() -> new ItemStack(BorealBlocks.BOREAL_STONE_BRICKS.get()))
                             .title(Component.literal("The Boreal Blocks"))
                             .displayItems((pParameters, pOutput) -> {
                                 pOutput.accept(BorealBlocks.BOREAL_COBBLESTONE.get());
@@ -136,12 +146,6 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.POLISHED_TARNITE.get());
                                 pOutput.accept(BorealBlocks.POLISHED_TARNITE_SLAB.get());
                                 pOutput.accept(BorealBlocks.POLISHED_TARNITE_STAIRS.get());
-                                pOutput.accept(BorealBlocks.TALISMANDIUM_ORE.get());
-                                pOutput.accept(BorealBlocks.DEEP_TALISMANDIUM_ORE.get());
-                                pOutput.accept(BorealBlocks.CHRODIUM_ORE.get());
-                                pOutput.accept(BorealBlocks.DEEP_CHRODIUM_ORE.get());
-                                pOutput.accept(BorealBlocks.DIORIUM_ORE.get());
-                                pOutput.accept(BorealBlocks.DEEP_DIORIUM_ORE.get());
                                 pOutput.accept(BorealBlocks.AURORA_LOG.get());
                                 pOutput.accept(BorealBlocks.AURORA_WOOD.get());
                                 pOutput.accept(BorealBlocks.STRIPPED_AURORA_LOG.get());
@@ -155,8 +159,22 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.AURORAL_TRAPDOOR.get());
                                 pOutput.accept(BorealBlocks.AURORAL_BUTTON.get());
                                 pOutput.accept(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
+                            })
+                            .build()
+            );
+
+    public static RegistryObject<CreativeModeTab> BOREAL_FUNCTIONAL_BLOCKS_TAB =
+            CREATIVE_MODE_TABS.register("the_boreal_functional_blocks_tab", () ->
+                    CreativeModeTab.builder()
+                            .icon(() -> new ItemStack(BorealItems.AURORAL_HANGING_SIGN.get()))
+                            .title(Component.literal("The Boreal Functional Blocks"))
+                            .displayItems((pParameters, pOutput) -> {
+                                pOutput.accept(BorealItems.AURORAL_BOAT.get());
+                                pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_SIGN.get());
                                 pOutput.accept(BorealItems.AURORAL_HANGING_SIGN.get());
+                                pOutput.accept(BorealItems.GLACIAL_TORCH_ITEM.get());
+                                pOutput.accept(BorealBlocks.GLACIAL_LANTERN.get());
                             })
                             .build()
             );

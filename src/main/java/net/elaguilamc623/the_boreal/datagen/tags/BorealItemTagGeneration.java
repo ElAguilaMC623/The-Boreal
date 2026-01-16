@@ -48,7 +48,5 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
                         BorealItems.DIORIUM_LEGGINGS.get(),
                         BorealItems.DIORIUM_BOOTS.get()
                 );
-
-
     }
 }

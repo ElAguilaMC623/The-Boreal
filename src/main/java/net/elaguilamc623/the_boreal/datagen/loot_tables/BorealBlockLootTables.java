@@ -7,11 +7,14 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -64,6 +67,7 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.TARNITE_WALL.get());
         this.dropSelf(BorealBlocks.POLISHED_TARNITE.get());
         this.dropSelf(BorealBlocks.POLISHED_TARNITE_STAIRS.get());
+        dropSelf(BorealBlocks.GLACIAL_LANTERN.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.BOREAL_STONE_SLAB.get(), block -> createSlabItemTable(block));
@@ -104,6 +108,22 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
                         )
         );
 
+        this.add(BorealBlocks.GLACIAL_TORCH.get(),
+                block -> LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(BorealItems.GLACIAL_TORCH_ITEM.get()))
+                        )
+        );
+
+        this.add(BorealBlocks.GLACIAL_WALL_TORCH.get(),
+                block -> LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(BorealItems.GLACIAL_TORCH_ITEM.get()))
+                        )
+        );
+
         this.add(BorealBlocks.AURORAL_SIGN.get(),
                 block -> createSingleItemTable(BorealItems.AURORAL_SIGN.get()));
         this.add(BorealBlocks.AURORAL_WALL_SIGN.get(),
@@ -137,6 +157,24 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
 
         this.add(BorealBlocks.GLACIAL_WHEAT_PLANT.get(),
                 block -> createGlacialWheatLoot(block));
+
+        dropGlacialCrystal(
+                BorealBlocks.GLACIAL_CRYSTAL.get(),
+                BorealItems.GLACIAL_CRYSTAL_SHARD.get()
+        );
+
+    }
+
+    private void dropGlacialCrystal(Block block, ItemLike shard) {
+        this.add(block,
+                createSilkTouchDispatchTable(block,
+                        applyExplosionDecay(block,
+                                LootItem.lootTableItem(shard)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))
+                        )
+                )
+        );
     }
 
     private LootTable.Builder createGlacialWheatLoot(Block cropBlock) {

@@ -103,4 +103,15 @@ public class BorealBlockStateProvider extends BlockStateProvider {
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
+
+    private void torchBlock(TorchBlock torch, WallTorchBlock wallTorch) {
+        String name = ForgeRegistries.BLOCKS.getKey(torch).getPath();
+
+        simpleBlock(torch,
+                models().torch(name, modLoc("block/" + name)));
+
+        horizontalBlock(wallTorch,
+                models().torchWall(name + "_wall", modLoc("block/" + name)),
+                90);
+    }
 }
