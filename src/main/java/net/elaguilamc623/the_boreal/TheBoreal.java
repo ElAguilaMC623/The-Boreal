@@ -3,11 +3,13 @@ package net.elaguilamc623.the_boreal;
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
+import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealFeatures;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -36,6 +38,7 @@ public class TheBoreal
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
+        BorealMenus.MENUS.register(modEventBus);
         BorealItems.register(modEventBus);
         BorealCreativeTabs.register(modEventBus);
         BorealBlocks.register(modEventBus);
@@ -45,6 +48,7 @@ public class TheBoreal
         BorealStructurePlacements.register(modEventBus);
         BorealStructureGeneration.register(modEventBus);
         BorealFeatures.FEATURES.register(modEventBus);
+        BorealEnchantments.ENCHANTMENTS.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -71,6 +75,7 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.AURORAL_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, false));
             EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
+            MenuScreens.register(BorealMenus.BOREAL_ESSENCE_TABLE.get(), BorealEssenceTableScreen::new);
         }
     }
 }

@@ -9,8 +9,11 @@ import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialWolfRende
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialZombieRenderer;
 import net.elaguilamc623.the_boreal.entities.custom.NightDeerEntity;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
+import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
+import net.elaguilamc623.the_boreal.registries.BorealMenus;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;

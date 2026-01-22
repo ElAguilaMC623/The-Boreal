@@ -1,6 +1,6 @@
 package net.elaguilamc623.the_boreal.datagen.loot_tables;
 
-import net.elaguilamc623.the_boreal.blocks.GlacialWheatBlock;
+import net.elaguilamc623.the_boreal.blocks.custom.GlacialWheatBlock;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -11,7 +11,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
@@ -67,7 +66,8 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.TARNITE_WALL.get());
         this.dropSelf(BorealBlocks.POLISHED_TARNITE.get());
         this.dropSelf(BorealBlocks.POLISHED_TARNITE_STAIRS.get());
-        dropSelf(BorealBlocks.GLACIAL_LANTERN.get());
+        this.dropSelf(BorealBlocks.GLACIAL_LANTERN.get());
+        this.dropSelf(BorealBlocks.BOREAL_ESSENCE_TABLE.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.BOREAL_STONE_SLAB.get(), block -> createSlabItemTable(block));

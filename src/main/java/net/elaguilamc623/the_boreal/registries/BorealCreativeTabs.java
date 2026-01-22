@@ -34,6 +34,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.RAW_DIORIUM.get());
                                 pOutput.accept(BorealItems.DIORIUM_INGOT.get());
                                 pOutput.accept(BorealItems.DIORIUM_GEM.get());
+                                pOutput.accept(BorealItems.BOREAL_ESSENCE.get());
                             })
                             .build()
             );
@@ -166,9 +167,10 @@ public class BorealCreativeTabs {
     public static RegistryObject<CreativeModeTab> BOREAL_FUNCTIONAL_BLOCKS_TAB =
             CREATIVE_MODE_TABS.register("the_boreal_functional_blocks_tab", () ->
                     CreativeModeTab.builder()
-                            .icon(() -> new ItemStack(BorealItems.AURORAL_HANGING_SIGN.get()))
+                            .icon(() -> new ItemStack(BorealBlocks.BOREAL_ESSENCE_TABLE.get()))
                             .title(Component.literal("The Boreal Functional Blocks"))
                             .displayItems((pParameters, pOutput) -> {
+                                pOutput.accept(BorealBlocks.BOREAL_ESSENCE_TABLE.get());
                                 pOutput.accept(BorealItems.AURORAL_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_SIGN.get());

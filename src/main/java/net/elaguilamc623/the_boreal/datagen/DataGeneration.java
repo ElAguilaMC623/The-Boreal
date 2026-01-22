@@ -47,6 +47,5 @@ public class DataGeneration {
 
         RegistrySetBuilder builder = new RegistrySetBuilder();
     }
-
 }
 

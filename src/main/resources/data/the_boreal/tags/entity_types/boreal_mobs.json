@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "the_boreal:glacial_zombie",
+    "the_boreal:glacial_skeleton",
+    "the_boreal:glacial_wolf",
+    "the_boreal:frozen_wolf",
+    "the_boreal:night_deer"
+  ]
+}

@@ -87,6 +87,9 @@ public class BorealBlockStateProvider extends BlockStateProvider {
         blockItem(BorealBlocks.STRIPPED_AURORA_WOOD);
 
         leavesBlock(BorealBlocks.AURORA_LEAVES);
+
+        simpleBlock(BorealBlocks.BOREAL_ESSENCE_TABLE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/boreal_essence_table")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

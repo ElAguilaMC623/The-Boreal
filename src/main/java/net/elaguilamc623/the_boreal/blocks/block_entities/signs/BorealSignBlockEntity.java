@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.blocks.entities;
+package net.elaguilamc623.the_boreal.blocks.block_entities.signs;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.minecraft.core.BlockPos;

@@ -63,6 +63,7 @@ public class BorealItemModelProvider extends ItemModelProvider {
         simpleItem(BorealItems.AURORAL_HANGING_SIGN);
         simpleItem(BorealItems.AURORAL_BOAT);
         simpleItem(BorealItems.AURORAL_CHEST_BOAT);
+        simpleItem(BorealItems.BOREAL_ESSENCE);
 
         handheldItem(BorealItems.AURORAL_STICK);
         handheldItem(BorealItems.GLACIAL_TORCH_ITEM);
@@ -136,6 +137,9 @@ public class BorealItemModelProvider extends ItemModelProvider {
         fenceItem(BorealBlocks.AURORAL_FENCE, BorealBlocks.AURORA_PLANKS);
         buttonItem(BorealBlocks.AURORAL_BUTTON, BorealBlocks.AURORA_PLANKS);
         trapdoorItem(BorealBlocks.AURORAL_TRAPDOOR);
+
+        withExistingParent("boreal_essence_table",
+                modLoc("block/boreal_essence_table"));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

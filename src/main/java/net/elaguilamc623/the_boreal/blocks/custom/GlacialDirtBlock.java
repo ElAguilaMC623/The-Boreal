@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.blocks;
+package net.elaguilamc623.the_boreal.blocks.custom;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.world.item.context.UseOnContext;

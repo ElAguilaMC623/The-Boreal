@@ -395,6 +395,16 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .unlockedBy("has_glacial_wheat", has(BorealItems.GLACIAL_WHEAT.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BorealBlocks.BOREAL_ESSENCE_TABLE.get())
+                .pattern(" C ")
+                .pattern("BDB")
+                .pattern("AAA")
+                .define('A', BorealBlocks.BOREAL_CHISELED_STONE.get())
+                .define('B', BorealItems.DIORIUM_GEM.get())
+                .define('C', BorealItems.ANCIENT_ICE_FRAGMENT.get())
+                .define('D', BorealItems.DIORIUM_INGOT.get())
+                .unlockedBy("has_ancient_ice_fragment", has(BorealItems.DIORIUM_GEM.get()))
+                .save(consumer);
 
         oreSmelting(consumer,
                 List.of(BorealBlocks.BOREAL_COBBLESTONE.get()),

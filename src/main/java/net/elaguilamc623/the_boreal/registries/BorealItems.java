@@ -98,7 +98,7 @@ public class BorealItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> DIORIUM_GEM = ITEMS.register("diorium_gem",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> TALISMANDIUM_SWORD = ITEMS.register("talismandium_sword",
             () -> new SwordItem(BorealTiers.TALISMANDIUM, 6, -2.4F, new Item.Properties()));
@@ -186,6 +186,9 @@ public class BorealItems {
 
     public static final RegistryObject<Item> GLACIAL_CRYSTAL_SHARD = ITEMS.register("glacial_crystal_shard",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BOREAL_ESSENCE = ITEMS.register("boreal_essence",
+            () -> new BorealEssenceItem(new Item.Properties().rarity(Rarity.RARE)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

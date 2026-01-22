@@ -1,13 +1,13 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.blocks.*;
+import net.elaguilamc623.the_boreal.blocks.block_entities.BorealEssenceTableBlock;
+import net.elaguilamc623.the_boreal.blocks.custom.*;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -231,6 +231,9 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> GLACIAL_LANTERN = registerBlock("glacial_lantern",
             () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 15).noOcclusion()));
+
+    public static final RegistryObject<Block> BOREAL_ESSENCE_TABLE = registerBlock("boreal_essence_table",
+            () -> new BorealEssenceTableBlock(BlockBehaviour.Properties.copy(BorealBlocks.AURORA_PLANKS.get()).noOcclusion().lightLevel(state -> 6)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
