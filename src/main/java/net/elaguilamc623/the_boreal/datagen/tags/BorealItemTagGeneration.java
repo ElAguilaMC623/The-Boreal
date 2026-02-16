@@ -35,18 +35,36 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
                 .add(BorealItems.AURORAL_STICK.get());
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
-                .add(BorealItems.TALISMANDIUM_HELMET.get(),
-                        BorealItems.TALISMANDIUM_CHESTPLATE.get(),
-                        BorealItems.TALISMANDIUM_LEGGINGS.get(),
-                        BorealItems.TALISMANDIUM_BOOTS.get(),
-                        BorealItems.CHRODIUM_HELMET.get(),
-                        BorealItems.CHRODIUM_CHESTPLATE.get(),
-                        BorealItems.CHRODIUM_LEGGINGS.get(),
-                        BorealItems.CHRODIUM_BOOTS.get(),
+                .add(BorealItems.TALISMANDIUM_ARMOR.getHelmet().get(),
+                        BorealItems.TALISMANDIUM_ARMOR.getChestplate().get(),
+                        BorealItems.TALISMANDIUM_ARMOR.getLeggings().get(),
+                        BorealItems.TALISMANDIUM_ARMOR.getBoots().get(),
+                        BorealItems.CHRODIUM_ARMOR.getHelmet().get(),
+                        BorealItems.CHRODIUM_ARMOR.getChestplate().get(),
+                        BorealItems.CHRODIUM_ARMOR.getLeggings().get(),
+                        BorealItems.CHRODIUM_ARMOR.getBoots().get(),
                         BorealItems.DIORIUM_HELMET.get(),
                         BorealItems.DIORIUM_CHESTPLATE.get(),
                         BorealItems.DIORIUM_LEGGINGS.get(),
                         BorealItems.DIORIUM_BOOTS.get()
+                );
+
+        this.tag(BorealTags.BOREAL_WEAPONS)
+                .add(BorealItems.TALISMANDIUM_TOOLS.getSword().get(),
+                        BorealItems.TALISMANDIUM_TOOLS.getAxe().get(),
+                        BorealItems.TALISMANDIUM_TOOLS.getPickaxe().get(),
+                        BorealItems.TALISMANDIUM_TOOLS.getShovel().get(),
+                        BorealItems.TALISMANDIUM_TOOLS.getHoe().get(),
+                        BorealItems.CHRODIUM_TOOLS.getSword().get(),
+                        BorealItems.CHRODIUM_TOOLS.getAxe().get(),
+                        BorealItems.CHRODIUM_TOOLS.getPickaxe().get(),
+                        BorealItems.CHRODIUM_TOOLS.getShovel().get(),
+                        BorealItems.CHRODIUM_TOOLS.getHoe().get(),
+                        BorealItems.DIORIUM_SWORD.get(),
+                        BorealItems.DIORIUM_PICKAXE.get(),
+                        BorealItems.DIORIUM_AXE.get(),
+                        BorealItems.DIORIUM_SHOVEL.get(),
+                        BorealItems.DIORIUM_HOE.get()
                 );
     }
 }

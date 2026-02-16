@@ -7,7 +7,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,42 +15,33 @@ import net.minecraftforge.fml.common.Mod;
 public class BorealForgeEvents {
 
     @SubscribeEvent
-    public static void onDamage(LivingDamageEvent event) {
+    public static void onPlayerAttack(LivingHurtEvent event) {
+
         if (!(event.getSource().getEntity() instanceof Player player)) return;
 
         ItemStack weapon = player.getMainHandItem();
-        int level = weapon.getEnchantmentLevel(BorealEnchantments.BOREAL_CURSE.get());
-        if (level <= 0) return;
 
-        if (!event.getEntity().getType().is(BorealTags.BOREAL_MOBS)) return;
+        int curseLevel = weapon.getEnchantmentLevel(BorealEnchantments.BOREAL_CURSE.get());
 
-        float base = event.getAmount();
-        float extra = 2.0f * level;
+        if (curseLevel > 0 && event.getEntity().getType().is(BorealTags.BOREAL_MOBS)) {
+            float extra = 2.0f * curseLevel;
+            event.setAmount(event.getAmount() + extra);
+        }
 
-        event.setAmount(base + extra);
-    }
+        int critLevel = weapon.getEnchantmentLevel(BorealEnchantments.RANDOM_CRIT.get());
 
-    @SubscribeEvent
-    public static void onAttack(LivingHurtEvent event) {
-        if (!(event.getSource().getEntity() instanceof Player player)) return;
+        if (critLevel > 0) {
+            float chance = 0.10f * critLevel;
 
-        ItemStack weapon = player.getMainHandItem();
-        if (weapon.getEnchantmentLevel(BorealEnchantments.RANDOM_CRIT.get()) > 0) {
+            if (player.getRandom().nextFloat() < chance) {
+                float multiplier = 1.25f + (0.25f * critLevel);
 
-            if (player.getRandom().nextFloat() < 0.15f) {
-                event.setAmount(event.getAmount() * 1.5f);
+                event.setAmount(event.getAmount() * multiplier);
             }
         }
-    }
 
-    @SubscribeEvent
-    public static void onHitGlow(LivingHurtEvent event) {
-        if (!(event.getSource().getEntity() instanceof Player player)) return;
-
-        ItemStack weapon = player.getMainHandItem();
         if (weapon.getEnchantmentLevel(BorealEnchantments.EMISSIVE.get()) > 0) {
-
-            if (player.getRandom().nextFloat() < 0.25f) { // 25%
+            if (player.getRandom().nextFloat() < 0.25f) {
                 event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 100, 0));
             }
         }

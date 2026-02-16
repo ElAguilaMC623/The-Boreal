@@ -1,5 +1,7 @@
 package net.elaguilamc623.the_boreal.registries;
 
+import net.elaguilamc623.complementary_core.utils.ArmorSetBuilder;
+import net.elaguilamc623.complementary_core.utils.ToolSetBuilder;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
@@ -26,7 +28,7 @@ public class BorealItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> FROZEN_AMULET = ITEMS.register("frozen_amulet",
-            () -> new FrozenAmuletItem(new Item.Properties()));
+            () -> new FrozenAmuletItem(new Item.Properties().rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> BOREAL_ROCK = ITEMS.register("boreal_rock",
             () -> new BorealRockItem(new Item.Properties()));
@@ -100,35 +102,11 @@ public class BorealItems {
     public static final RegistryObject<Item> DIORIUM_GEM = ITEMS.register("diorium_gem",
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
-    public static final RegistryObject<Item> TALISMANDIUM_SWORD = ITEMS.register("talismandium_sword",
-            () -> new SwordItem(BorealTiers.TALISMANDIUM, 6, -2.4F, new Item.Properties()));
+    public static final ToolSetBuilder TALISMANDIUM_TOOLS = ToolSetBuilder.create("talismandium",
+            BorealItems.ITEMS, BorealTiers.TALISMANDIUM).sword().axe().pickaxe().shovel().hoe();
 
-    public static final RegistryObject<Item> TALISMANDIUM_PICKAXE = ITEMS.register("talismandium_pickaxe",
-            () -> new PickaxeItem(BorealTiers.TALISMANDIUM, 4, -2.8F, new Item.Properties()));
-
-    public static final RegistryObject<Item> TALISMANDIUM_AXE = ITEMS.register("talismandium_axe",
-            () -> new AxeItem(BorealTiers.TALISMANDIUM, 8, -3.0F, new Item.Properties()));
-
-    public static final RegistryObject<Item> TALISMANDIUM_SHOVEL = ITEMS.register("talismandium_shovel",
-            () -> new ShovelItem(BorealTiers.TALISMANDIUM, 4.5F, -3.0F, new Item.Properties()));
-
-    public static final RegistryObject<Item> TALISMANDIUM_HOE = ITEMS.register("talismandium_hoe",
-            () -> new HoeItem(BorealTiers.TALISMANDIUM, 0, 0, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_SWORD = ITEMS.register("chrodium_sword",
-            () -> new SwordItem(BorealTiers.CHRODIUM, 7, -2.4F, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_PICKAXE = ITEMS.register("chrodium_pickaxe",
-            () -> new PickaxeItem(BorealTiers.CHRODIUM, 5, -2.8F, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_AXE = ITEMS.register("chrodium_axe",
-            () -> new AxeItem(BorealTiers.CHRODIUM, 8.5F, -2.9F, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_SHOVEL = ITEMS.register("chrodium_shovel",
-            () -> new ShovelItem(BorealTiers.CHRODIUM, 6, -3.0F, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_HOE = ITEMS.register("chrodium_hoe",
-            () -> new HoeItem(BorealTiers.CHRODIUM, 0, 0, new Item.Properties()));
+    public static final ToolSetBuilder CHRODIUM_TOOLS = ToolSetBuilder.create("chrodium",
+            BorealItems.ITEMS, BorealTiers.CHRODIUM).sword().axe().pickaxe().shovel().hoe();
 
     public static final RegistryObject<Item> DIORIUM_SWORD = ITEMS.register("diorium_sword",
             () -> new BorealSwordItem(BorealTiers.DIORIUM, 9, -2.4F, new BorealItemProperties().unbreakable().stacksTo(1)));
@@ -145,29 +123,11 @@ public class BorealItems {
     public static final RegistryObject<Item> DIORIUM_HOE = ITEMS.register("diorium_hoe",
             () -> new BorealHoeItem(BorealTiers.DIORIUM, 0, 0, new BorealItemProperties().unbreakable().stacksTo(1)));
 
-    public static final RegistryObject<Item> TALISMANDIUM_HELMET = ITEMS.register("talismandium_helmet",
-            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final ArmorSetBuilder TALISMANDIUM_ARMOR = ArmorSetBuilder.create("talismandium",
+            BorealItems.ITEMS, BorealArmorMaterials.TALISMANDIUM).helmet().chestplate().leggings().boots();
 
-    public static final RegistryObject<Item> TALISMANDIUM_CHESTPLATE = ITEMS.register("talismandium_chestplate",
-            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-
-    public static final RegistryObject<Item> TALISMANDIUM_LEGGINGS = ITEMS.register("talismandium_leggings",
-            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-
-    public static final RegistryObject<Item> TALISMANDIUM_BOOTS = ITEMS.register("talismandium_boots",
-            () -> new ArmorItem(BorealArmorMaterials.TALISMANDIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_HELMET = ITEMS.register("chrodium_helmet",
-            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.HELMET, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_CHESTPLATE = ITEMS.register("chrodium_chestplate",
-            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_LEGGINGS = ITEMS.register("chrodium_leggings",
-            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-
-    public static final RegistryObject<Item> CHRODIUM_BOOTS = ITEMS.register("chrodium_boots",
-            () -> new ArmorItem(BorealArmorMaterials.CHRODIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final ArmorSetBuilder CHRODIUM_ARMOR = ArmorSetBuilder.create("chrodium",
+            BorealItems.ITEMS, BorealArmorMaterials.CHRODIUM).helmet().chestplate().leggings().boots();
 
     public static final RegistryObject<Item> DIORIUM_HELMET = ITEMS.register("diorium_helmet",
             () -> new BorealArmorItem(BorealArmorMaterials.DIORIUM, ArmorItem.Type.HELMET, new BorealItemProperties().unbreakable().stacksTo(1)));
@@ -192,5 +152,9 @@ public class BorealItems {
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        TALISMANDIUM_TOOLS.register();
+        CHRODIUM_TOOLS.register();
+        TALISMANDIUM_ARMOR.register();
+        CHRODIUM_ARMOR.register();
     }
 }

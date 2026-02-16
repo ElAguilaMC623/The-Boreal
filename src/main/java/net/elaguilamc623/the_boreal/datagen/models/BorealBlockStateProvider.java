@@ -90,6 +90,9 @@ public class BorealBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(BorealBlocks.BOREAL_ESSENCE_TABLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/boreal_essence_table")));
+
+        simpleBlock(BorealBlocks.BOREAL_INFUSER.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/boreal_infuser")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

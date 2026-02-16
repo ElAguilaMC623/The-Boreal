@@ -2,18 +2,15 @@ package net.elaguilamc623.the_boreal.client;
 
 import net.elaguilamc623.the_boreal.client.render.BorealEffects;
 import net.elaguilamc623.the_boreal.client.render.BorealModelLayers;
+import net.elaguilamc623.the_boreal.client.render.blocks.BorealInfuserRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.FrozenBearRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.GlacialArrowRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialSkeletonRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialWolfRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialZombieRenderer;
-import net.elaguilamc623.the_boreal.entities.custom.NightDeerEntity;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
-import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
-import net.elaguilamc623.the_boreal.registries.BorealMenus;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
@@ -57,6 +54,7 @@ public class BorealClientEvents {
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_HANGING_SIGN.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_INFUSER.get(), BorealInfuserRenderer::new);
     }
 
     @SubscribeEvent

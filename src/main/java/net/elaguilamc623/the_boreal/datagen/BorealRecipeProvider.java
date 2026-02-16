@@ -1,5 +1,6 @@
 package net.elaguilamc623.the_boreal.datagen;
 
+import net.elaguilamc623.complementary_core.datagen.recipes.CCRecipeProvider;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class BorealRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public class BorealRecipeProvider extends CCRecipeProvider implements IConditionBuilder {
 
     private void generateStonecutterRecipes(Consumer<FinishedRecipe> consumer,
                                             ItemLike base,
@@ -37,67 +38,6 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                     .unlockedBy(getHasName(base), has(base))
                     .save(consumer, getConversionRecipeName(result, base) + "_stonecutting");
         }
-    }
-
-    private void slabRecipe(Consumer<FinishedRecipe> consumer, ItemLike base, ItemLike slab) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
-                .pattern("###")
-                .define('#', base)
-                .unlockedBy(getHasName(base), has(base))
-                .save(consumer);
-    }
-
-    private void stairsRecipe(Consumer<FinishedRecipe> consumer, ItemLike base, ItemLike stairs) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairs, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .define('#', base)
-                .unlockedBy(getHasName(base), has(base))
-                .save(consumer);
-    }
-
-    private void wallRecipe(Consumer<FinishedRecipe> consumer, ItemLike base, ItemLike wall) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wall, 6)
-                .pattern("###")
-                .pattern("###")
-                .define('#', base)
-                .unlockedBy(getHasName(base), has(base))
-                .save(consumer);
-    }
-
-    private void bricksRecipe(Consumer<FinishedRecipe> consumer,
-                                 ItemLike input, ItemLike output,
-                                 String unlockName) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, output, 4)
-                .pattern("##")
-                .pattern("##")
-                .define('#', input)
-                .unlockedBy(unlockName, has(input))
-                .save(consumer);
-    }
-
-    private void chiseledRecipe(Consumer<FinishedRecipe> consumer,
-                                    ItemLike slab, ItemLike output,
-                                    String unlockName) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, output)
-                .pattern("#")
-                .pattern("#")
-                .define('#', slab)
-                .unlockedBy(unlockName, has(slab))
-                .save(consumer);
-    }
-
-    private void mossyBlockRecipe(Consumer<FinishedRecipe> consumer,
-                             ItemLike base, ItemLike output,
-                             String unlockName) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, output)
-                .pattern("S")
-                .pattern("V")
-                .define('S', base)
-                .define('V', Items.VINE)
-                .unlockedBy(unlockName, has(Items.VINE))
-                .save(consumer);
     }
 
     private void simpleWoodFamilyRecipes(Consumer<FinishedRecipe> consumer,
@@ -181,62 +121,6 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
-    private void buttonRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, output)
-                .requires(planks)
-                .unlockedBy("has_planks", has(planks))
-                .save(consumer);
-    }
-
-    private void pressurePlateRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, output)
-                .define('#', planks)
-                .pattern("##")
-                .unlockedBy("has_planks", has(planks))
-                .save(consumer);
-    }
-
-    private void fenceAndGateRecipes(Consumer<FinishedRecipe> consumer,
-                                     ItemLike planks,
-                                     ItemLike fence,
-                                     ItemLike fenceGate) {
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, fence, 3)
-                .define('#', planks)
-                .define('X', Items.STICK)
-                .pattern("#X#")
-                .pattern("#X#")
-                .unlockedBy("has_planks", has(planks))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, fenceGate)
-                .define('#', planks)
-                .define('X', Items.STICK)
-                .pattern("X#X")
-                .pattern("X#X")
-                .unlockedBy("has_planks", has(planks))
-                .save(consumer);
-    }
-
-    private void doorRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, output, 3)
-                .define('#', planks)
-                .pattern("##")
-                .pattern("##")
-                .pattern("##")
-                .unlockedBy("has_planks", has(planks))
-                .save(consumer);
-    }
-
-    private void trapdoorRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, output, 2)
-                .define('#', planks)
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_planks", has(planks))
-                .save(consumer);
-    }
-
     public void toolRecipe(Consumer<FinishedRecipe> consumer,
                            ItemLike result,
                            ItemLike material,
@@ -291,87 +175,6 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(consumer);
     }
 
-    private void helmetRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
-                .define('#', mineral)
-                .pattern("###")
-                .pattern("# #")
-                .unlockedBy("has_mineral", has(mineral))
-                .save(consumer);
-    }
-
-    private void chestplateRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
-                .define('#', mineral)
-                .pattern("# #")
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_mineral", has(mineral))
-                .save(consumer);
-    }
-
-    private void leggingsRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
-                .define('#', mineral)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("# #")
-                .unlockedBy("has_mineral", has(mineral))
-                .save(consumer);
-    }
-
-    private void bootsRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike mineral) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
-                .define('#', mineral)
-                .pattern("# #")
-                .pattern("# #")
-                .unlockedBy("has_mineral", has(mineral))
-                .save(consumer);
-    }
-
-    private void torchRecipe(Consumer<FinishedRecipe> consumer,
-                                 ItemLike result,
-                                 ItemLike top,
-                                 ItemLike bottom,
-                                 int count,
-                                 String unlockName) {
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result, count)
-                .pattern("C")
-                .pattern("S")
-                .define('C', top)
-                .define('S', bottom)
-                .unlockedBy(unlockName, has(top))
-                .save(consumer);
-    }
-
-    private void lanternRecipe(Consumer<FinishedRecipe> consumer,
-                                   ItemLike result,
-                                   ItemLike center,
-                                   ItemLike nugget,
-                                   String unlockName) {
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result)
-                .pattern("NNN")
-                .pattern("NTN")
-                .pattern("NNN")
-                .define('N', nugget)
-                .define('T', center)
-                .unlockedBy(unlockName, has(center))
-                .save(consumer);
-    }
-
-    private void nuggetFromIngotRecipe(Consumer<FinishedRecipe> consumer,
-                                       ItemLike nugget,
-                                       ItemLike ingot,
-                                       String unlockName) {
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, nugget, 9)
-                .requires(ingot)
-                .unlockedBy(unlockName, has(ingot))
-                .save(consumer);
-    }
-
 
     public BorealRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -404,6 +207,17 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 .define('C', BorealItems.ANCIENT_ICE_FRAGMENT.get())
                 .define('D', BorealItems.DIORIUM_INGOT.get())
                 .unlockedBy("has_ancient_ice_fragment", has(BorealItems.DIORIUM_GEM.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BorealBlocks.BOREAL_INFUSER.get())
+                .pattern("CDC")
+                .pattern(" B ")
+                .pattern("AAA")
+                .define('A', BorealBlocks.PERMAFROST.get())
+                .define('B', BorealBlocks.GLACIAL_CRYSTAL.get())
+                .define('C', BorealItems.GLACIAL_CRYSTAL_SHARD.get())
+                .define('D', BorealItems.BOREAL_ESSENCE.get())
+                .unlockedBy("has_boreal_essence", has(BorealItems.BOREAL_ESSENCE.get()))
                 .save(consumer);
 
         oreSmelting(consumer,
@@ -652,61 +466,61 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 0.9f, 100,
                 "diorium");
 
-        toolRecipe(consumer, BorealItems.TALISMANDIUM_SWORD.get(),
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_TOOLS.getSword().get(),
                 BorealItems.TALISMANDIUM_INGOT.get(),
                 BorealTags.BOREAL_STICKS,
                 "X", "X", "#",
                 "talismandium_sword");
 
-        toolRecipe(consumer, BorealItems.TALISMANDIUM_PICKAXE.get(),
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_TOOLS.getPickaxe().get(),
                 BorealItems.TALISMANDIUM_INGOT.get(),
                 BorealTags.BOREAL_STICKS,
                 "XXX", " # ", " # ",
                 "talismandium_pickaxe");
 
-        toolRecipe(consumer, BorealItems.TALISMANDIUM_AXE.get(),
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_TOOLS.getAxe().get(),
                 BorealItems.TALISMANDIUM_INGOT.get(),
                 BorealTags.BOREAL_STICKS,
                 "XX ", "X# ", " # ",
                 "talismandium_axe");
 
-        toolRecipe(consumer, BorealItems.TALISMANDIUM_SHOVEL.get(),
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_TOOLS.getShovel().get(),
                 BorealItems.TALISMANDIUM_INGOT.get(),
                 BorealTags.BOREAL_STICKS,
                 "X", "#", "#",
                 "talismandium_shovel");
 
-        toolRecipe(consumer, BorealItems.TALISMANDIUM_HOE.get(),
+        toolRecipe(consumer, BorealItems.TALISMANDIUM_TOOLS.getHoe().get(),
                 BorealItems.TALISMANDIUM_INGOT.get(),
                 BorealTags.BOREAL_STICKS,
                 "XX ", " # ", " # ",
                 "talismandium_hoe");
 
-        toolRecipe(consumer, BorealItems.CHRODIUM_SWORD.get(),
+        toolRecipe(consumer, BorealItems.CHRODIUM_TOOLS.getSword().get(),
                 BorealItems.CHRODIUM.get(),
                 BorealTags.BOREAL_STICKS,
                 "X", "X", "#",
                 "chrodium_sword");
 
-        toolRecipe(consumer, BorealItems.CHRODIUM_PICKAXE.get(),
+        toolRecipe(consumer, BorealItems.CHRODIUM_TOOLS.getPickaxe().get(),
                 BorealItems.CHRODIUM.get(),
                 BorealTags.BOREAL_STICKS,
                 "XXX", " # ", " # ",
                 "chrodium_pickaxe");
 
-        toolRecipe(consumer, BorealItems.CHRODIUM_AXE.get(),
+        toolRecipe(consumer, BorealItems.CHRODIUM_TOOLS.getAxe().get(),
                 BorealItems.CHRODIUM.get(),
                 BorealTags.BOREAL_STICKS,
                 "XX ", "X# ", " # ",
                 "chrodium_axe");
 
-        toolRecipe(consumer, BorealItems.CHRODIUM_SHOVEL.get(),
+        toolRecipe(consumer, BorealItems.CHRODIUM_TOOLS.getShovel().get(),
                 BorealItems.CHRODIUM.get(),
                 BorealTags.BOREAL_STICKS,
                 "X", "#", "#",
                 "chrodium_shovel");
 
-        toolRecipe(consumer, BorealItems.CHRODIUM_HOE.get(),
+        toolRecipe(consumer, BorealItems.CHRODIUM_TOOLS.getHoe().get(),
                 BorealItems.CHRODIUM.get(),
                 BorealTags.BOREAL_STICKS,
                 "XX ", " # ", " # ",
@@ -757,17 +571,17 @@ public class BorealRecipeProvider extends RecipeProvider implements IConditionBu
                 "A A",
                 null);
 
-        helmetRecipe(consumer, BorealItems.TALISMANDIUM_HELMET.get(), BorealItems.TALISMANDIUM_INGOT.get());
-        helmetRecipe(consumer, BorealItems.CHRODIUM_HELMET.get(), BorealItems.CHRODIUM.get());
+        helmetRecipe(consumer, BorealItems.TALISMANDIUM_ARMOR.getHelmet().get(), BorealItems.TALISMANDIUM_INGOT.get());
+        helmetRecipe(consumer, BorealItems.CHRODIUM_ARMOR.getHelmet().get(), BorealItems.CHRODIUM.get());
 
-        chestplateRecipe(consumer, BorealItems.TALISMANDIUM_CHESTPLATE.get(), BorealItems.TALISMANDIUM_INGOT.get());
-        chestplateRecipe(consumer, BorealItems.CHRODIUM_CHESTPLATE.get(), BorealItems.CHRODIUM.get());
+        chestplateRecipe(consumer, BorealItems.TALISMANDIUM_ARMOR.getChestplate().get(), BorealItems.TALISMANDIUM_INGOT.get());
+        chestplateRecipe(consumer, BorealItems.CHRODIUM_ARMOR.getChestplate().get(), BorealItems.CHRODIUM.get());
 
-        leggingsRecipe(consumer, BorealItems.TALISMANDIUM_LEGGINGS.get(), BorealItems.TALISMANDIUM_INGOT.get());
-        leggingsRecipe(consumer, BorealItems.CHRODIUM_LEGGINGS.get(), BorealItems.CHRODIUM.get());
+        leggingsRecipe(consumer, BorealItems.TALISMANDIUM_ARMOR.getLeggings().get(), BorealItems.TALISMANDIUM_INGOT.get());
+        leggingsRecipe(consumer, BorealItems.CHRODIUM_ARMOR.getLeggings().get(), BorealItems.CHRODIUM.get());
 
-        bootsRecipe(consumer, BorealItems.TALISMANDIUM_BOOTS.get(), BorealItems.TALISMANDIUM_INGOT.get());
-        bootsRecipe(consumer, BorealItems.CHRODIUM_BOOTS.get(), BorealItems.CHRODIUM.get());
+        bootsRecipe(consumer, BorealItems.TALISMANDIUM_ARMOR.getBoots().get(), BorealItems.TALISMANDIUM_INGOT.get());
+        bootsRecipe(consumer, BorealItems.CHRODIUM_ARMOR.getBoots().get(), BorealItems.CHRODIUM.get());
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
                 .requires(BorealItems.GLACIAL_BONE.get())

@@ -24,6 +24,9 @@ public class BorealTags {
     public static final TagKey<Item> BOREAL_STICKS =
             TagKey.create(Registries.ITEM, new ResourceLocation("the_boreal", "boreal_sticks"));
 
+    public static final TagKey<Item> BOREAL_WEAPONS =
+            TagKey.create(Registries.ITEM, new ResourceLocation("the_boreal", "boreal_weapons"));
+
     public static final TagKey<Block> NEEDS_TALISMANDIUM_TOOL =
             TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "needs_talismandium_tool"));
 

@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealEssenceTableBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.block_entities.BorealInfuserBlockEntity;
 import net.elaguilamc623.the_boreal.blocks.block_entities.signs.BorealHangingSignBlockEntity;
 import net.elaguilamc623.the_boreal.blocks.block_entities.signs.BorealSignBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -29,6 +30,11 @@ public class BorealBlockEntities {
             BLOCK_ENTITIES.register("gem_polishing_be", () ->
                     BlockEntityType.Builder.of(BorealEssenceTableBlockEntity::new,
                             BorealBlocks.BOREAL_ESSENCE_TABLE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BorealInfuserBlockEntity>> BOREAL_INFUSER =
+            BLOCK_ENTITIES.register("boreal_infuser", () ->
+                    BlockEntityType.Builder.of(BorealInfuserBlockEntity::new,
+                            BorealBlocks.BOREAL_INFUSER.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

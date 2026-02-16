@@ -11,7 +11,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 
 public class BorealSpawnRules {
-    public static boolean borealWolfRules(EntityType<? extends Mob> type,
+    public static boolean frozenBearRules(EntityType<? extends Mob> type,
                                           LevelAccessor level,
                                           MobSpawnType spawnType,
                                           BlockPos pos,
@@ -24,6 +24,46 @@ public class BorealSpawnRules {
         if (!level.getBlockState(pos.below()).is(BorealTags.MOBS_SPAWNABLE_ON)) return false;
 
         if (!level.getBlockState(pos).getCollisionShape(level, pos).isEmpty()) return false;
+
+        return true;
+    }
+
+    public static boolean borealWolfRules(EntityType<? extends Mob> type,
+                                          LevelAccessor level,
+                                          MobSpawnType spawnType,
+                                          BlockPos pos,
+                                          RandomSource random) {
+
+        ServerLevelAccessor serverLevel = (ServerLevelAccessor) level;
+
+        if (!Mob.checkMobSpawnRules(type, serverLevel, spawnType, pos, random))
+            return false;
+
+        if (!level.getBlockState(pos.below()).is(BorealTags.MOBS_SPAWNABLE_ON))
+            return false;
+
+        if (!level.getBlockState(pos).getCollisionShape(level, pos).isEmpty())
+            return false;
+
+        return true;
+    }
+
+    public static boolean nightDeerRules(EntityType<? extends Mob> type,
+                                         LevelAccessor level,
+                                         MobSpawnType spawnType,
+                                         BlockPos pos,
+                                         RandomSource random) {
+
+        ServerLevelAccessor serverLevel = (ServerLevelAccessor) level;
+
+        if (!Mob.checkMobSpawnRules(type, serverLevel, spawnType, pos, random))
+            return false;
+
+        if (!level.getBlockState(pos.below()).is(BorealTags.MOBS_SPAWNABLE_ON))
+            return false;
+
+        if (!level.getBlockState(pos).getCollisionShape(level, pos).isEmpty())
+            return false;
 
         return true;
     }

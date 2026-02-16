@@ -68,6 +68,7 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.POLISHED_TARNITE_STAIRS.get());
         this.dropSelf(BorealBlocks.GLACIAL_LANTERN.get());
         this.dropSelf(BorealBlocks.BOREAL_ESSENCE_TABLE.get());
+        this.dropSelf(BorealBlocks.BOREAL_INFUSER.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.BOREAL_STONE_SLAB.get(), block -> createSlabItemTable(block));

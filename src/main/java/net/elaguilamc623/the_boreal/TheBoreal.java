@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
 import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
+import net.elaguilamc623.the_boreal.gui.boreal_infuser.BorealInfuserScreen;
 import net.elaguilamc623.the_boreal.registries.*;
 import net.elaguilamc623.the_boreal.registries.worldgen.BorealFeatures;
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
@@ -76,6 +77,7 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
             MenuScreens.register(BorealMenus.BOREAL_ESSENCE_TABLE.get(), BorealEssenceTableScreen::new);
+            MenuScreens.register(BorealMenus.BOREAL_INFUSER.get(), BorealInfuserScreen::new);
         }
     }
 }

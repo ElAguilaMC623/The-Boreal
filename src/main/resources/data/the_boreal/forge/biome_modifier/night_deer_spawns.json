@@ -1,11 +1,11 @@
 {
   "type": "forge:add_spawns",
-  "biomes": "#the_boreal:boreal_biomes/is_boreal",
+  "biomes": "#the_boreal:boreal_biomes/is_auroral",
   "spawners": [
     {
       "type": "the_boreal:glacial_wolf",
-      "weight": 35,
-      "minCount": 3,
+      "weight": 200,
+      "minCount": 1,
       "maxCount": 5,
       "category": "monster"
     }

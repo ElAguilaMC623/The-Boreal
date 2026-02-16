@@ -70,7 +70,7 @@ public class BorealEntityEvents {
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     (type, level, spawnType, pos, random) ->
-                            pos.getY() < 140 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
+                            pos.getY() < 55 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
             );
 
             SpawnPlacements.register(
@@ -78,7 +78,7 @@ public class BorealEntityEvents {
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     (type, level, spawnType, pos, random) ->
-                            pos.getY() < 140 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
+                            pos.getY() < 55 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
             );
 
             SpawnPlacements.register(
@@ -92,7 +92,14 @@ public class BorealEntityEvents {
                     BorealEntities.FROZEN_BEAR.get(),
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    BorealSpawnRules::borealWolfRules
+                    BorealSpawnRules::frozenBearRules
+            );
+
+            SpawnPlacements.register(
+                    BorealEntities.NIGHT_DEER.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    BorealSpawnRules::nightDeerRules
             );
         });
     }

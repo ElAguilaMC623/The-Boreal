@@ -7,9 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -18,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
 public class NightDeerEntity extends Animal {
@@ -46,6 +45,7 @@ public class NightDeerEntity extends Animal {
         this.goalSelector.addGoal(0, new LookAtPlayerGoal(this, Player.class, 3f));
         this.goalSelector.addGoal(0, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(0, new PanicGoal(this, 2.0D));
+        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1.0D));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -83,5 +83,15 @@ public class NightDeerEntity extends Animal {
     @Override
     protected @Nullable SoundEvent getDeathSound() {
         return SoundEvents.GOAT_HURT;
+    }
+
+    @Override
+    public MobCategory getClassification(boolean forSpawnCount) {
+        return MobCategory.MONSTER;
+    }
+
+    @Override
+    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
+        return true;
     }
 }

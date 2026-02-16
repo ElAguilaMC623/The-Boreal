@@ -6,8 +6,10 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Wolf;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
@@ -33,6 +35,7 @@ public class GlacialWolfEntity extends Wolf {
                 this.navigation.stop();
                 this.setTarget(null);
                 this.level().broadcastEntityEvent(this, (byte)7);
+                this.setAggressive(true);
             }
             return InteractionResult.SUCCESS;
         }
@@ -49,6 +52,18 @@ public class GlacialWolfEntity extends Wolf {
 
     }
 
+    @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2D, true));
+        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+    }
+
     private boolean customAngry;
 
     public boolean isCustomAngry() {
@@ -62,16 +77,6 @@ public class GlacialWolfEntity extends Wolf {
     @Override
     public void tick() {
         super.tick();
-
-        if (this.level().isClientSide && this.tickCount == 20) {
-            Player player = this.level().getNearestPlayer(this, 20);
-            if (player != null) {
-                System.out.println("Mob category is "+ this.getType().getCategory());
-                player.sendSystemMessage(
-                        Component.literal("Categoría real del GlacialWolf: " + this.getType().getCategory())
-                );
-            }
-        }
 
         Player nearest = this.level().getNearestPlayer(this, 10.0D);
         if (nearest != null && !this.isTame()) {
@@ -100,5 +105,10 @@ public class GlacialWolfEntity extends Wolf {
     @Override
     public MobCategory getClassification(boolean forSpawnCount) {
         return MobCategory.MONSTER;
+    }
+
+    @Override
+    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
+        return true;
     }
 }

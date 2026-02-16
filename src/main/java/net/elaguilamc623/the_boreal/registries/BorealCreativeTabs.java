@@ -42,32 +42,32 @@ public class BorealCreativeTabs {
     public static RegistryObject<CreativeModeTab> BOREAL_TOOLS_COMBAT_TAB =
             CREATIVE_MODE_TABS.register("the_boreal_tools_combat_tab", () ->
                     CreativeModeTab.builder()
-                            .icon(() -> new ItemStack(BorealItems.TALISMANDIUM_SWORD.get()))
+                            .icon(() -> new ItemStack(BorealItems.TALISMANDIUM_TOOLS.getSword().get()))
                             .title(Component.literal("The Boreal Tools and Combat"))
                             .displayItems((pParameters, pOutput) -> {
-                                pOutput.accept(BorealItems.TALISMANDIUM_SWORD.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_PICKAXE.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_AXE.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_SHOVEL.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_HOE.get());
-                                pOutput.accept(BorealItems.CHRODIUM_SWORD.get());
-                                pOutput.accept(BorealItems.CHRODIUM_PICKAXE.get());
-                                pOutput.accept(BorealItems.CHRODIUM_AXE.get());
-                                pOutput.accept(BorealItems.CHRODIUM_SHOVEL.get());
-                                pOutput.accept(BorealItems.CHRODIUM_HOE.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getSword().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getPickaxe().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getAxe().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getShovel().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getHoe().get());
+                                pOutput.accept(BorealItems.CHRODIUM_TOOLS.getSword().get());
+                                pOutput.accept(BorealItems.CHRODIUM_TOOLS.getPickaxe().get());
+                                pOutput.accept(BorealItems.CHRODIUM_TOOLS.getAxe().get());
+                                pOutput.accept(BorealItems.CHRODIUM_TOOLS.getShovel().get());
+                                pOutput.accept(BorealItems.CHRODIUM_TOOLS.getHoe().get());
                                 pOutput.accept(BorealItems.DIORIUM_SWORD.get());
                                 pOutput.accept(BorealItems.DIORIUM_PICKAXE.get());
                                 pOutput.accept(BorealItems.DIORIUM_AXE.get());
                                 pOutput.accept(BorealItems.DIORIUM_SHOVEL.get());
                                 pOutput.accept(BorealItems.DIORIUM_HOE.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_HELMET.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_CHESTPLATE.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_LEGGINGS.get());
-                                pOutput.accept(BorealItems.TALISMANDIUM_BOOTS.get());
-                                pOutput.accept(BorealItems.CHRODIUM_HELMET.get());
-                                pOutput.accept(BorealItems.CHRODIUM_CHESTPLATE.get());
-                                pOutput.accept(BorealItems.CHRODIUM_LEGGINGS.get());
-                                pOutput.accept(BorealItems.CHRODIUM_BOOTS.get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_ARMOR.getHelmet().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_ARMOR.getChestplate().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_ARMOR.getLeggings().get());
+                                pOutput.accept(BorealItems.TALISMANDIUM_ARMOR.getBoots().get());
+                                pOutput.accept(BorealItems.CHRODIUM_ARMOR.getHelmet().get());
+                                pOutput.accept(BorealItems.CHRODIUM_ARMOR.getChestplate().get());
+                                pOutput.accept(BorealItems.CHRODIUM_ARMOR.getLeggings().get());
+                                pOutput.accept(BorealItems.CHRODIUM_ARMOR.getBoots().get());
                                 pOutput.accept(BorealItems.DIORIUM_HELMET.get());
                                 pOutput.accept(BorealItems.DIORIUM_CHESTPLATE.get());
                                 pOutput.accept(BorealItems.DIORIUM_LEGGINGS.get());
@@ -171,6 +171,7 @@ public class BorealCreativeTabs {
                             .title(Component.literal("The Boreal Functional Blocks"))
                             .displayItems((pParameters, pOutput) -> {
                                 pOutput.accept(BorealBlocks.BOREAL_ESSENCE_TABLE.get());
+                                pOutput.accept(BorealBlocks.BOREAL_INFUSER.get());
                                 pOutput.accept(BorealItems.AURORAL_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_SIGN.get());

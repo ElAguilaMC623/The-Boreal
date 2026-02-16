@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealEssenceTableBlock;
+import net.elaguilamc623.the_boreal.blocks.block_entities.BorealInfuserBlock;
 import net.elaguilamc623.the_boreal.blocks.custom.*;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
@@ -234,6 +235,10 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> BOREAL_ESSENCE_TABLE = registerBlock("boreal_essence_table",
             () -> new BorealEssenceTableBlock(BlockBehaviour.Properties.copy(BorealBlocks.AURORA_PLANKS.get()).noOcclusion().lightLevel(state -> 6)));
+
+    public static final RegistryObject<Block> BOREAL_INFUSER = registerBlock("boreal_infuser",
+            () -> new BorealInfuserBlock(BlockBehaviour.Properties.copy(Blocks.ENCHANTING_TABLE).noOcclusion().lightLevel(state -> 10)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
