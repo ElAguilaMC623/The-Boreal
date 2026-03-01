@@ -29,7 +29,7 @@ public class BorealChestLootTables implements LootTableSubProvider {
         table.withPool(LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1))
                 .add(LootItem.lootTableItem(BorealItems.DIORIUM_GEM.get())
-                        .when(LootItemRandomChanceCondition.randomChance(0.7f))
+                        .when(LootItemRandomChanceCondition.randomChance(0.5f))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))));
 
         table.withPool(LootPool.lootPool()

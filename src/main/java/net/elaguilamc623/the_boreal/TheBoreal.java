@@ -2,6 +2,7 @@ package net.elaguilamc623.the_boreal;
 
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
+import net.elaguilamc623.the_boreal.client.render.entities.mobs.BorealGolemRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
 import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.gui.boreal_infuser.BorealInfuserScreen;
@@ -78,6 +79,7 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.AURORAL_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, false));
             EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
+            EntityRenderers.register(BorealEntities.BOREAL_GOLEM.get(), BorealGolemRenderer::new);
             MenuScreens.register(BorealMenus.BOREAL_ESSENCE_TABLE.get(), BorealEssenceTableScreen::new);
             MenuScreens.register(BorealMenus.BOREAL_INFUSER.get(), BorealInfuserScreen::new);
 

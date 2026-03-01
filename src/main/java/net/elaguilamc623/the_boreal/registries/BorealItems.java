@@ -57,6 +57,9 @@ public class BorealItems {
     public static final RegistryObject<Item> NIGHT_DEER_SPAWN_EGG = ITEMS.register("night_deer_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.NIGHT_DEER, 0x5d296f, 0x26d2d6, new Item.Properties()));
 
+    public static final RegistryObject<Item> BOREAL_GOLEM_SPAWN_EGG = ITEMS.register("boreal_golem_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.BOREAL_GOLEM, 0x1A2E4A, 0x0D1A2B, new Item.Properties()));
+
     public static final RegistryObject<Item> GLACIAL_ROTTEN_FLESH = ITEMS.register("glacial_rotten_flesh",
             () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_ROTTEN_FLESH)));
 

@@ -1,16 +1,10 @@
 package net.elaguilamc623.the_boreal.events;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
-import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.elaguilamc623.the_boreal.worldgen.spawns.BorealSpawnRules;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
@@ -31,6 +25,7 @@ public class BorealEntityEvents {
                         .add(Attributes.MOVEMENT_SPEED, 0.23D)
                         .build()
         );
+
         event.put(BorealEntities.GLACIAL_WOLF.get(),
                 Wolf.createAttributes()
                         .add(Attributes.MAX_HEALTH, 40.0D)
@@ -60,6 +55,15 @@ public class BorealEntityEvents {
                 Wolf.createAttributes().build()
         );
 
+        event.put(BorealEntities.BOREAL_GOLEM.get(),
+                Wolf.createAttributes()
+                        .add(Attributes.MAX_HEALTH, 70.0D)
+                        .add(Attributes.ATTACK_DAMAGE, 15.0D)
+                        .add(Attributes.MOVEMENT_SPEED, 0.23)
+                        .add(Attributes.FOLLOW_RANGE, 20.0D)
+                        .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
+                        .build()
+        );
     }
 
     @SubscribeEvent

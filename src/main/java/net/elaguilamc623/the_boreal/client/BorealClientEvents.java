@@ -8,6 +8,7 @@ import net.elaguilamc623.the_boreal.client.render.entities.GlacialArrowRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialSkeletonRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialWolfRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialZombieRenderer;
+import net.elaguilamc623.the_boreal.entities.model.BorealGolemModel;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
@@ -62,5 +63,6 @@ public class BorealClientEvents {
         event.registerLayerDefinition(BorealModelLayers.AURORAL_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(BorealModelLayers.AURORAL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(BorealModelLayers.NIGHT_DEER_LAYER, NightDeerModel::createBodyLayer);
+        event.registerLayerDefinition(BorealModelLayers.BOREAL_GOLEM_LAYER, BorealGolemModel::createBodyLayer);
     }
 }

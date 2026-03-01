@@ -79,6 +79,7 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         withExistingParent(BorealItems.GLACIAL_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.FROZEN_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.NIGHT_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         wallItem(BorealBlocks.BOREAL_COBBLESTONE_WALL, BorealBlocks.BOREAL_COBBLESTONE);
         wallItem(BorealBlocks.BOREAL_DEEP_STONE_WALL, BorealBlocks.BOREAL_DEEP_STONE);

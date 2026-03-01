@@ -37,7 +37,7 @@ public class GlacialZombieEntity extends Zombie {
     protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
         super.dropCustomDeathLoot(source, looting, recentlyHit);
 
-        int amount = this.random.nextInt(2 + looting); // 0–1 + looting
+        int amount = this.random.nextInt(2 + looting);
         if (amount > 0) {
             this.spawnAtLocation(new ItemStack(BorealItems.GLACIAL_ROTTEN_FLESH.get(), amount));
         }

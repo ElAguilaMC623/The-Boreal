@@ -2,7 +2,7 @@ package net.elaguilamc623.the_boreal.entities.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.elaguilamc623.the_boreal.entities.animations.NightDeerAnimations;
+import net.elaguilamc623.the_boreal.entities.animations.BorealAnimationDefinitions;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -95,7 +95,7 @@ public class NightDeerModel<T extends Entity> extends HierarchicalModel<T> {
 	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
-        this.animateWalk(NightDeerAnimations.NIGHT_DEER_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
+        this.animateWalk(BorealAnimationDefinitions.NIGHT_DEER_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
 	}
 
     private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
