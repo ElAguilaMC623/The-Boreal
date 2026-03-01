@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.registries;
 
-import net.elaguilamc623.complementary_core.utils.ArmorSetBuilder;
-import net.elaguilamc623.complementary_core.utils.ToolSetBuilder;
+import net.elaguilamc623.complementary_core.utils.armors.ArmorSetBuilder;
+import net.elaguilamc623.complementary_core.utils.weapons.ToolSetBuilder;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
@@ -149,6 +149,12 @@ public class BorealItems {
 
     public static final RegistryObject<Item> BOREAL_ESSENCE = ITEMS.register("boreal_essence",
             () -> new BorealEssenceItem(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> BOREAL_SHARD = ITEMS.register("boreal_shard",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> PRISON_LOCATOR = ITEMS.register("prison_locator",
+            () -> new PrisonLocatorItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

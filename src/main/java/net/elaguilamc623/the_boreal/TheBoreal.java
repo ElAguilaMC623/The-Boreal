@@ -11,6 +11,8 @@ import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructu
 import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -78,6 +80,13 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
             MenuScreens.register(BorealMenus.BOREAL_ESSENCE_TABLE.get(), BorealEssenceTableScreen::new);
             MenuScreens.register(BorealMenus.BOREAL_INFUSER.get(), BorealInfuserScreen::new);
+
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(
+                        BorealBlocks.TALISMANDIUM_BARS.get(),
+                        RenderType.cutout()
+                );
+            });
         }
     }
 }

@@ -88,6 +88,12 @@ public class BorealBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(BorealBlocks.AURORA_LEAVES);
 
+        paneBlock(
+                (IronBarsBlock) BorealBlocks.TALISMANDIUM_BARS.get(),
+                modLoc("block/talismandium_bars"),
+                modLoc("block/talismandium_bars")
+        );
+
         simpleBlock(BorealBlocks.BOREAL_ESSENCE_TABLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/boreal_essence_table")));
 

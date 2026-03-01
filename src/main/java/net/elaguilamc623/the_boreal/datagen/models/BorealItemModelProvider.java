@@ -40,6 +40,8 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.AURORAL_BOAT);
         simpleItem(BorealItems.AURORAL_CHEST_BOAT);
         simpleItem(BorealItems.BOREAL_ESSENCE);
+        simpleItem(BorealItems.BOREAL_SHARD);
+        simpleItem(BorealItems.PRISON_LOCATOR);
 
         handheldItem(BorealItems.AURORAL_STICK);
         handheldItem(BorealItems.GLACIAL_TORCH_ITEM);
@@ -118,6 +120,13 @@ public class BorealItemModelProvider extends CCItemModelProvider {
                 modLoc("block/boreal_essence_table"));
         withExistingParent("boreal_infuser",
                 modLoc("block/boreal_infuser"));
+
+        singleTexture(
+                BorealBlocks.TALISMANDIUM_BARS.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/talismandium_bars")
+        );
     }
 
     private void evenSimplerBlockItem(RegistryObject<Block> block) {

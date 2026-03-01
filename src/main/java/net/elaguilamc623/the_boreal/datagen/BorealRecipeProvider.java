@@ -220,6 +220,15 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .unlockedBy("has_boreal_essence", has(BorealItems.BOREAL_ESSENCE.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BorealItems.PRISON_LOCATOR.get())
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('B', BorealItems.BOREAL_ESSENCE.get())
+                .define('A', BorealItems.TALISMANDIUM_INGOT.get())
+                .unlockedBy("has_boreal_essence", has(BorealItems.BOREAL_ESSENCE.get()))
+                .save(consumer);
+
         oreSmelting(consumer,
                 List.of(BorealBlocks.BOREAL_COBBLESTONE.get()),
                 RecipeCategory.BUILDING_BLOCKS,
@@ -611,6 +620,13 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 BorealItems.TALISMANDIUM_INGOT.get(),
                 "has_talismandium_ingot"
         );
+
+        barsRecipe(
+                consumer,
+                BorealBlocks.TALISMANDIUM_BARS.get(),
+                BorealItems.TALISMANDIUM_INGOT.get()
+        );
+
     }
 
 

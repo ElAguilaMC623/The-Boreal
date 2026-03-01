@@ -239,6 +239,8 @@ public class BorealBlocks {
     public static final RegistryObject<Block> BOREAL_INFUSER = registerBlock("boreal_infuser",
             () -> new BorealInfuserBlock(BlockBehaviour.Properties.copy(Blocks.ENCHANTING_TABLE).noOcclusion().lightLevel(state -> 10)));
 
+    public static final RegistryObject<IronBarsBlock> TALISMANDIUM_BARS = registerBlock("talismandium_bars",
+            () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

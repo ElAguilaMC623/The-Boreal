@@ -35,6 +35,8 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.DIORIUM_INGOT.get());
                                 pOutput.accept(BorealItems.DIORIUM_GEM.get());
                                 pOutput.accept(BorealItems.BOREAL_ESSENCE.get());
+                                pOutput.accept(BorealItems.BOREAL_SHARD.get());
+                                pOutput.accept(BorealItems.PRISON_LOCATOR.get());
                             })
                             .build()
             );
@@ -160,6 +162,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.AURORAL_TRAPDOOR.get());
                                 pOutput.accept(BorealBlocks.AURORAL_BUTTON.get());
                                 pOutput.accept(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
+                                pOutput.accept(BorealBlocks.TALISMANDIUM_BARS.get());
                             })
                             .build()
             );

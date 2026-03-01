@@ -1,0 +1,60 @@
+{
+  "name": "the_boreal:boreal_prison/small_corridors",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_small_corridor",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_small_intersection_1",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_small_intersection_2",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_small_intersection_3",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_small_cells_1",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_small_cells_2",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

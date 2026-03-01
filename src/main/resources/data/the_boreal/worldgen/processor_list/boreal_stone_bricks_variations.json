@@ -15,19 +15,6 @@
           "output_state": {
             "Name": "the_boreal:boreal_mossy_stone_bricks"
           }
-        },
-        {
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "input_predicate": {
-            "predicate_type": "minecraft:random_block_match",
-            "block": "the_boreal:boreal_stone_brick_slab",
-            "probability": 0.33
-          },
-          "output_state": {
-            "Name": "the_boreal:boreal_mossy_stone_brick_slab"
-          }
         }
       ]
     }

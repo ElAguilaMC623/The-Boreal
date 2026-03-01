@@ -1,0 +1,24 @@
+{
+  "name": "the_boreal:boreal_prison/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_tree",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "the_boreal:prison_corridor_1",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

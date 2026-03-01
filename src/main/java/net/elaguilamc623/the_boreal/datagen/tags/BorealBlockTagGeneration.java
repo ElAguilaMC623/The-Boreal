@@ -65,7 +65,8 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.PERMAFROST.get(),
                         BorealBlocks.GLACIAL_CRYSTAL.get(),
                         BorealBlocks.BOREAL_ESSENCE_TABLE.get(),
-                        BorealBlocks.BOREAL_INFUSER.get()
+                        BorealBlocks.BOREAL_INFUSER.get(),
+                        BorealBlocks.TALISMANDIUM_BARS.get()
                         );
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -116,7 +117,8 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.BOREAL_STONE_BRICK_WALL.get(),
                         BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get(),
                         BorealBlocks.VERNITE_WALL.get(),
-                        BorealBlocks.TARNITE_WALL.get()
+                        BorealBlocks.TARNITE_WALL.get(),
+                        BorealBlocks.TALISMANDIUM_BARS.get()
                         );
 
 
@@ -160,5 +162,6 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.GLACIAL_GRASS.get(),
                         Blocks.SNOW
                 );
+
     }
 }

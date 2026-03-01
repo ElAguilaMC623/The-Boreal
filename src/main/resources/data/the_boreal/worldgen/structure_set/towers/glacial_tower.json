@@ -6,7 +6,7 @@
     }
   ],
   "placement": {
-    "salt": 421749085,
+    "salt": 421749078,
     "custom_exclusion_zone": {
       "sets": ["#the_boreal:all_structures"],
       "radius": 4
