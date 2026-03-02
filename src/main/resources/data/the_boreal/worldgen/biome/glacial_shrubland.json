@@ -54,6 +54,7 @@
   "features": [
     ["minecraft:spring_water", "minecraft:spring_lava"],
     ["the_boreal:auroral_bush_dense"],
-    ["the_boreal:glacial_grass_patch"]
+    ["the_boreal:glacial_grass_patch"], ["the_boreal:glacial_tall_grass_patch"],
+    ["the_boreal:borealight_shroom_patch"], ["the_boreal:glacialight_shroom_patch"]
   ]
 }

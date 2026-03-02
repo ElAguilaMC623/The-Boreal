@@ -70,8 +70,8 @@ public class TheBoreal
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(BorealWoodTypes.AURORAL);
@@ -86,6 +86,18 @@ public class TheBoreal
             event.enqueueWork(() -> {
                 ItemBlockRenderTypes.setRenderLayer(
                         BorealBlocks.TALISMANDIUM_BARS.get(),
+                        RenderType.cutout()
+                );
+                ItemBlockRenderTypes.setRenderLayer(
+                        BorealBlocks.GLACIAL_TALL_GRASS.get(),
+                        RenderType.cutout()
+                );
+                ItemBlockRenderTypes.setRenderLayer(
+                        BorealBlocks.BOREALIGHT_SHROOM.get(),
+                        RenderType.cutout()
+                );
+                ItemBlockRenderTypes.setRenderLayer(
+                        BorealBlocks.GLACIALIGHT_SHROOM.get(),
                         RenderType.cutout()
                 );
             });

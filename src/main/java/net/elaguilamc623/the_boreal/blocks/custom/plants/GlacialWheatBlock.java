@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.blocks.custom;
+package net.elaguilamc623.the_boreal.blocks.custom.plants;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;

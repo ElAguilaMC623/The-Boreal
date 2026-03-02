@@ -87,7 +87,7 @@ public class NightDeerEntity extends Animal {
 
     @Override
     public MobCategory getClassification(boolean forSpawnCount) {
-        return MobCategory.MONSTER;
+        return MobCategory.CREATURE;
     }
 
     @Override

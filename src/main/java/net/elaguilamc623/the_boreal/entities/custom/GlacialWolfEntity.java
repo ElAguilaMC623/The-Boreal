@@ -103,11 +103,6 @@ public class GlacialWolfEntity extends Wolf {
     }
 
     @Override
-    public MobCategory getClassification(boolean forSpawnCount) {
-        return MobCategory.MONSTER;
-    }
-
-    @Override
     public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
         return true;
     }

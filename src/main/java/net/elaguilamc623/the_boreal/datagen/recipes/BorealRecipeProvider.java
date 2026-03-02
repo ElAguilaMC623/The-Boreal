@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.datagen;
+package net.elaguilamc623.the_boreal.datagen.recipes;
 
 import net.elaguilamc623.complementary_core.datagen.recipes.CCRecipeProvider;
 import net.elaguilamc623.the_boreal.TheBoreal;
@@ -625,6 +625,12 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 consumer,
                 BorealBlocks.TALISMANDIUM_BARS.get(),
                 BorealItems.TALISMANDIUM_INGOT.get()
+        );
+
+        defaultCrystalBlockRecipe(
+                consumer,
+                BorealBlocks.GLACIAL_CRYSTAL.get(),
+                BorealItems.GLACIAL_CRYSTAL_SHARD.get()
         );
 
     }

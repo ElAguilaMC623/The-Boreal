@@ -27,13 +27,13 @@ public class BorealEntities {
 
     public static final RegistryObject<EntityType<GlacialWolfEntity>> GLACIAL_WOLF =
             ENTITY_TYPES.register("glacial_wolf", () -> EntityType.Builder
-                    .of(GlacialWolfEntity::new, MobCategory.MONSTER)
+                    .of(GlacialWolfEntity::new, MobCategory.CREATURE)
                     .sized(0.8f, 1.0f)
                     .build("glacial_wolf"));
 
     public static final RegistryObject<EntityType<FrozenBearEntity>> FROZEN_BEAR =
             ENTITY_TYPES.register("frozen_bear", () -> EntityType.Builder
-                    .of(FrozenBearEntity::new, MobCategory.MONSTER)
+                    .of(FrozenBearEntity::new, MobCategory.CREATURE)
                     .sized(1.6F, 1.6F)
                     .build("frozen_bear"));
 
@@ -45,7 +45,7 @@ public class BorealEntities {
 
     public static final RegistryObject<EntityType<NightDeerEntity>> NIGHT_DEER =
             ENTITY_TYPES.register("night_deer", () -> EntityType.Builder
-                    .of(NightDeerEntity::new, MobCategory.MONSTER)
+                    .of(NightDeerEntity::new, MobCategory.CREATURE)
                     .sized(1.0F, 2.0F)
                     .build("night_deer"));
 

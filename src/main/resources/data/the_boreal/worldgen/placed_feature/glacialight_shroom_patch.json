@@ -1,9 +1,9 @@
 {
-  "feature": "the_boreal:glacial_grass_patch",
+  "feature": "the_boreal:glacialight_shroom_patch",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 3
+      "count": 14
     },
     {
       "type": "minecraft:in_square"

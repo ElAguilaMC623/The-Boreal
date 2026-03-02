@@ -1,17 +1,19 @@
 package net.elaguilamc623.the_boreal.datagen.models;
 
+import net.elaguilamc623.complementary_core.datagen.models.CCBlockStateProvider;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class BorealBlockStateProvider extends BlockStateProvider {
+public class BorealBlockStateProvider extends CCBlockStateProvider {
     public BorealBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, TheBoreal.MOD_ID, exFileHelper);
     }
@@ -87,6 +89,9 @@ public class BorealBlockStateProvider extends BlockStateProvider {
         blockItem(BorealBlocks.STRIPPED_AURORA_WOOD);
 
         leavesBlock(BorealBlocks.AURORA_LEAVES);
+        doublePlant(BorealBlocks.GLACIAL_TALL_GRASS.get());
+        simpleCrossBlock(BorealBlocks.BOREALIGHT_SHROOM.get());
+        simpleCrossBlock(BorealBlocks.GLACIALIGHT_SHROOM.get());
 
         paneBlock(
                 (IronBarsBlock) BorealBlocks.TALISMANDIUM_BARS.get(),
@@ -99,15 +104,6 @@ public class BorealBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(BorealBlocks.BOREAL_INFUSER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/boreal_infuser")));
-    }
-
-    private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
-    }
-
-    private void blockItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(TheBoreal.MOD_ID +
-                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
@@ -125,5 +121,18 @@ public class BorealBlockStateProvider extends BlockStateProvider {
         horizontalBlock(wallTorch,
                 models().torchWall(name + "_wall", modLoc("block/" + name)),
                 90);
+    }
+
+    private void doublePlant(Block block) {
+        String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
+
+        ModelFile bottom = models().cross(name + "_bottom", modLoc("block/" + name + "_bottom"));
+        ModelFile top = models().cross(name + "_top", modLoc("block/" + name + "_top"));
+
+        getVariantBuilder(block)
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)
+                .setModels(new ConfiguredModel(bottom))
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)
+                .setModels(new ConfiguredModel(top));
     }
 }

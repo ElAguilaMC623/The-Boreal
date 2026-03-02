@@ -20,7 +20,7 @@ license="MIT License"
 # The modid of the mod
 modId="the_boreal" #mandatory
 # The version number of the mod
-version="0.0.4.1-alpha" #mandatory
+version="0.0.4.2-alpha" #mandatory
 # A display name for the mod
 displayName="The Boreal" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
@@ -69,7 +69,7 @@ description='''This mod adds a whole new dimension to your world'''
 [[dependencies.the_boreal]]
 modId="complementary_core"
 mandatory=true
-versionRange="[1.2.2,)"
+versionRange="[1.2.5,)"
 ordering="NONE"
 side="BOTH"
 

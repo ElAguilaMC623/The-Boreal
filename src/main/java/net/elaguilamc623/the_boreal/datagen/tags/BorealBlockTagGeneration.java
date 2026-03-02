@@ -160,6 +160,7 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(),
                         BorealBlocks.GLACIAL_DIRT.get(),
                         BorealBlocks.GLACIAL_GRASS.get(),
+                        BorealBlocks.PERMAFROST.get(),
                         Blocks.SNOW
                 );
 

@@ -1,6 +1,6 @@
 package net.elaguilamc623.the_boreal.datagen.loot_tables;
 
-import net.elaguilamc623.the_boreal.blocks.custom.GlacialWheatBlock;
+import net.elaguilamc623.the_boreal.blocks.custom.plants.GlacialWheatBlock;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -70,6 +70,8 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.BOREAL_ESSENCE_TABLE.get());
         this.dropSelf(BorealBlocks.BOREAL_INFUSER.get());
         this.dropSelf(BorealBlocks.TALISMANDIUM_BARS.get());
+        this.dropSelf(BorealBlocks.BOREALIGHT_SHROOM.get());
+        this.dropSelf(BorealBlocks.GLACIALIGHT_SHROOM.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.BOREAL_STONE_SLAB.get(), block -> createSlabItemTable(block));
@@ -91,6 +93,10 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
                         LootItem.lootTableItem(BorealBlocks.BOREAL_COBBLESTONE.get())));
 
         this.add(BorealBlocks.GLACIAL_GRASS.get(), block ->
+                createSingleItemTableWithSilkTouch(block,
+                        BorealItems.GLACIAL_SEED.get()));
+
+        this.add(BorealBlocks.GLACIAL_TALL_GRASS.get(), block ->
                 createSingleItemTableWithSilkTouch(block,
                         BorealItems.GLACIAL_SEED.get()));
 

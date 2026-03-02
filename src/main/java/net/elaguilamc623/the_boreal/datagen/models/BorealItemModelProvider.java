@@ -128,6 +128,27 @@ public class BorealItemModelProvider extends CCItemModelProvider {
                 "layer0",
                 modLoc("block/talismandium_bars")
         );
+
+        singleTexture(
+                BorealBlocks.GLACIAL_TALL_GRASS.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/glacial_tall_grass_top")
+        );
+
+        singleTexture(
+                BorealBlocks.BOREALIGHT_SHROOM.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/borealight_shroom")
+        );
+
+        singleTexture(
+                BorealBlocks.GLACIALIGHT_SHROOM.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/glacialight_shroom")
+        );
     }
 
     private void evenSimplerBlockItem(RegistryObject<Block> block) {

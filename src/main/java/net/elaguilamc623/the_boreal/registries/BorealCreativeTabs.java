@@ -87,6 +87,9 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_DIRT.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_GRASS.get());
+                                pOutput.accept(BorealBlocks.GLACIAL_TALL_GRASS.get());
+                                pOutput.accept(BorealBlocks.BOREALIGHT_SHROOM.get());
+                                pOutput.accept(BorealBlocks.GLACIALIGHT_SHROOM.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_CRYSTAL.get());
                                 pOutput.accept(BorealBlocks.PERMAFROST.get());
                                 pOutput.accept(BorealItems.GLACIAL_SEED.get());

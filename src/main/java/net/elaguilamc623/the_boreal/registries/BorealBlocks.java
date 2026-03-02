@@ -4,9 +4,11 @@ import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealEssenceTableBlock;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealInfuserBlock;
 import net.elaguilamc623.the_boreal.blocks.custom.*;
-import net.elaguilamc623.the_boreal.blocks.signs.BorealHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.custom.plants.*;
+import net.elaguilamc623.the_boreal.blocks.custom.GlacialGrassBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.hanging.BorealHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
-import net.elaguilamc623.the_boreal.blocks.signs.BorealWallHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.hanging.BorealWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
 import net.minecraft.core.particles.ParticleTypes;
@@ -66,7 +68,7 @@ public class BorealBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));
 
     public static final RegistryObject<Block> BOREAL_STONE_BRICKS_STAIRS = registerBlock("boreal_stone_brick_stairs",
-                    () -> new StairBlock(() -> BOREAL_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
+            () -> new StairBlock(() -> BOREAL_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
 
     public static final RegistryObject<Block> BOREAL_STONE_BRICK_WALL = registerBlock("boreal_stone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
@@ -157,6 +159,15 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> GLACIAL_GRASS = registerBlock("glacial_grass",
             () -> new GlacialGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).replaceable()));
+
+    public static final RegistryObject<Block> GLACIAL_TALL_GRASS = registerBlock("glacial_tall_grass",
+            () -> new GlacialTallGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS).replaceable()));
+
+    public static final RegistryObject<Block> BOREALIGHT_SHROOM = registerBlock("borealight_shroom",
+            () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> GLACIALIGHT_SHROOM = registerBlock("glacialight_shroom",
+            () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
 
     public static final RegistryObject<Block> GLACIAL_WHEAT_PLANT = BLOCKS.register("glacial_wheat_plant",
             () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
