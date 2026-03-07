@@ -1,14 +1,17 @@
 package net.elaguilamc623.the_boreal.blocks.custom;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LightEngine;
+import net.minecraftforge.common.IPlantable;
 
 public class GlacialGrassBlock extends SpreadingSnowyDirtBlock {
 
@@ -62,5 +65,10 @@ public class GlacialGrassBlock extends SpreadingSnowyDirtBlock {
         BlockPos above = pos.above();
         return canSurviveGrass(state, level, pos)
                 && !level.getBlockState(above).getFluidState().isSource();
+    }
+
+    @Override
+    public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction direction, IPlantable plantable) {
+        return state.is(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON);
     }
 }

@@ -8,6 +8,8 @@ import net.elaguilamc623.the_boreal.entities.custom.boats.BorealChestBoatEntity;
 import net.elaguilamc623.the_boreal.entities.custom.projectiles.GlacialSkeletonArrowEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.animal.Fox;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

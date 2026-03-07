@@ -169,6 +169,9 @@ public class BorealBlocks {
     public static final RegistryObject<Block> GLACIALIGHT_SHROOM = registerBlock("glacialight_shroom",
             () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
 
+    public static final RegistryObject<Block> GLACIAL_BERRY_BUSH = registerBlock("glacial_berries_bush",
+            () -> new GlacialBerryBushBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion().noCollission()));
+
     public static final RegistryObject<Block> GLACIAL_WHEAT_PLANT = BLOCKS.register("glacial_wheat_plant",
             () -> new GlacialWheatBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 

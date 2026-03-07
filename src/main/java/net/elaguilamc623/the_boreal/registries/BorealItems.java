@@ -7,6 +7,7 @@ import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
 import net.elaguilamc623.the_boreal.items.BorealItemProperties;
 import net.elaguilamc623.the_boreal.items.custom.*;
+import net.elaguilamc623.the_boreal.items.custom.nature.GlacialSeedItem;
 import net.elaguilamc623.the_boreal.items.custom.weapons.*;
 import net.elaguilamc623.the_boreal.items.tiers.BorealArmorMaterials;
 import net.elaguilamc623.the_boreal.items.tiers.BorealTiers;
@@ -41,6 +42,9 @@ public class BorealItems {
 
     public static final RegistryObject<Item> GLACIAL_BREAD = ITEMS.register("glacial_bread",
             () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_BREAD)));
+
+    public static final RegistryObject<Item> GLACIAL_BERRIES = ITEMS.register("glacial_berries",
+            () -> new ItemNameBlockItem(BorealBlocks.GLACIAL_BERRY_BUSH.get(), new Item.Properties().food(BorealFoodProperties.GLACIAL_BERRIES)));
 
     public static final RegistryObject<Item> GLACIAL_ZOMBIE_SPAWN_EGG = ITEMS.register("glacial_zombie_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.GLACIAL_ZOMBIE, 0x3A6BAF, 0xFFFFFFFF, new Item.Properties()));
@@ -158,6 +162,18 @@ public class BorealItems {
 
     public static final RegistryObject<Item> PRISON_LOCATOR = ITEMS.register("prison_locator",
             () -> new PrisonLocatorItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> FROZEN_FUR = ITEMS.register("frozen_fur",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> NIGHT_HORNS = ITEMS.register("night_horns",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> NIGHT_MEAT = ITEMS.register("night_meat",
+            () -> new Item(new Item.Properties().food(BorealFoodProperties.NIGHT_MEET)));
+
+    public static final RegistryObject<Item> COOKED_NIGHT_MEAT = ITEMS.register("cooked_night_meat",
+            () -> new Item(new Item.Properties().food(BorealFoodProperties.COOKED_NIGHT_MEET)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

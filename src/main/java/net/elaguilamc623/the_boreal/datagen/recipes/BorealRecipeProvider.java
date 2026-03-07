@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class BorealRecipeProvider extends CCRecipeProvider implements IConditionBuilder {
@@ -164,14 +165,28 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .pattern(p2);
 
         if (p3 == null) {
-            builder.pattern("   ");
         } else {
             builder.pattern(p3);
         }
 
-        builder.define('A', BorealItems.DIORIUM_INGOT.get())
-                .define('B', BorealItems.DIORIUM_GEM.get())
-                .unlockedBy("has_diorium_ingot", has(BorealItems.DIORIUM_INGOT.get()))
+        Predicate<Character> used = c ->
+                p1.indexOf(c) >= 0 ||
+                        p2.indexOf(c) >= 0 ||
+                        (p3 != null && p3.indexOf(c) >= 0);
+
+        if (used.test('A'))
+            builder.define('A', BorealItems.DIORIUM_INGOT.get());
+
+        if (used.test('B'))
+            builder.define('B', BorealItems.DIORIUM_GEM.get());
+
+        if (used.test('C'))
+            builder.define('C', BorealItems.NIGHT_HORNS.get());
+
+        if (used.test('D'))
+            builder.define('D', BorealItems.FROZEN_FUR.get());
+
+        builder.unlockedBy("has_diorium_ingot", has(BorealItems.DIORIUM_INGOT.get()))
                 .save(consumer);
     }
 
@@ -561,19 +576,19 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 " C ");
 
         dioriumArmorRecipe(consumer, BorealItems.DIORIUM_HELMET.get(),
-                "ABA",
+                "BCB",
                 "A A",
                 null);
 
         dioriumArmorRecipe(consumer, BorealItems.DIORIUM_CHESTPLATE.get(),
                 "A A",
-                "ABA",
+                "ADA",
                 "BAB");
 
         dioriumArmorRecipe(consumer, BorealItems.DIORIUM_LEGGINGS.get(),
                 "ABA",
                 "A A",
-                "B B");
+                "D D");
 
         dioriumArmorRecipe(consumer, BorealItems.DIORIUM_BOOTS.get(),
                 "B B",
@@ -633,6 +648,29 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 BorealItems.GLACIAL_CRYSTAL_SHARD.get()
         );
 
+        oreCooking(
+                consumer,
+                RecipeSerializer.SMELTING_RECIPE,
+                List.of(BorealItems.NIGHT_MEAT.get()),
+                RecipeCategory.FOOD,
+                BorealItems.COOKED_NIGHT_MEAT.get(),
+                0.35f,
+                200,
+                "night_meat",
+                "_from_smelting"
+        );
+
+        oreCooking(
+                consumer,
+                RecipeSerializer.SMOKING_RECIPE,
+                List.of(BorealItems.NIGHT_MEAT.get()),
+                RecipeCategory.FOOD,
+                BorealItems.COOKED_NIGHT_MEAT.get(),
+                0.35f,
+                100,
+                "night_meat",
+                "_from_smoking"
+        );
     }
 
 

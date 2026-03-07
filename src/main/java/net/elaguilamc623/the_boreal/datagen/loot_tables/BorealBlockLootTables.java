@@ -1,5 +1,6 @@
 package net.elaguilamc623.the_boreal.datagen.loot_tables;
 
+import net.elaguilamc623.the_boreal.blocks.custom.plants.GlacialBerryBushBlock;
 import net.elaguilamc623.the_boreal.blocks.custom.plants.GlacialWheatBlock;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
@@ -166,7 +167,9 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.add(BorealBlocks.GLACIAL_WHEAT_PLANT.get(),
                 block -> createGlacialWheatLoot(block));
 
-        dropGlacialCrystal(
+        this.add(BorealBlocks.GLACIAL_BERRY_BUSH.get(), this::createGlacialBerryBushLoot);
+
+        this.dropGlacialCrystal(
                 BorealBlocks.GLACIAL_CRYSTAL.get(),
                 BorealItems.GLACIAL_CRYSTAL_SHARD.get()
         );
@@ -201,5 +204,30 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         return BorealBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
                 .toList();
+    }
+
+    private LootTable.Builder createGlacialBerryBushLoot(Block block) {
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .add(applyExplosionDecay(block,
+                                LootItem.lootTableItem(BorealItems.GLACIAL_BERRIES.get())
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                        .hasProperty(GlacialBerryBushBlock.AGE, 2)
+                                                )
+                                        )
+                        ))
+                        .add(applyExplosionDecay(block,
+                                LootItem.lootTableItem(BorealItems.GLACIAL_BERRIES.get())
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                        .hasProperty(GlacialBerryBushBlock.AGE, 3)
+                                                )
+                                        )
+                        ))
+                );
     }
 }

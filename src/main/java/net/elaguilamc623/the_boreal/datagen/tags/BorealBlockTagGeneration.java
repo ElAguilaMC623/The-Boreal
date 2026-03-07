@@ -140,6 +140,7 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get())
                 .add(BorealBlocks.GLACIAL_DIRT.get())
                 .add(BorealBlocks.GLACIAL_GRASS.get());
+
         this.tag(BlockTags.REPLACEABLE_BY_TREES)
                 .add(Blocks.SNOW)
                 .add(BorealBlocks.GLACIAL_GRASS.get());
@@ -164,5 +165,12 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         Blocks.SNOW
                 );
 
+        this.tag(BorealTags.CAN_SUSTAIN_ON_GLACIAL_GRASS)
+                .add(BorealBlocks.GLACIAL_GRASS.get(),
+                        BorealBlocks.GLACIAL_TALL_GRASS.get(),
+                        BorealBlocks.GLACIALIGHT_SHROOM.get(),
+                        BorealBlocks.BOREALIGHT_SHROOM.get(),
+                        BorealBlocks.GLACIAL_BERRY_BUSH.get()
+                );
     }
 }

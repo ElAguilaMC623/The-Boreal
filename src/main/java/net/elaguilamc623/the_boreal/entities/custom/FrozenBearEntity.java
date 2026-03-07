@@ -1,5 +1,7 @@
 package net.elaguilamc623.the_boreal.entities.custom;
 
+import net.elaguilamc623.the_boreal.registries.BorealItems;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.goal.*;
@@ -30,5 +32,22 @@ public class FrozenBearEntity extends PolarBear {
     @Override
     public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
         return true;
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
+
+        int min = 0;
+        int max = 2;
+
+        int count = this.random.nextInt(max - min + 1) + min;
+
+        if (looting > 0) {
+            count += this.random.nextInt(looting + 1);
+        }
+
+        for (int i = 0; i < count; i++) {
+            this.spawnAtLocation(BorealItems.FROZEN_FUR.get());
+        }
     }
 }

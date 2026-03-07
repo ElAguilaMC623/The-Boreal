@@ -15,6 +15,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
@@ -93,5 +94,28 @@ public class NightDeerEntity extends Animal {
     @Override
     public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
         return true;
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
+
+        this.spawnAtLocation(BorealItems.NIGHT_HORNS.get());
+
+        int min = 1;
+        int max = 3;
+
+        int count = this.random.nextInt(max - min + 1) + min;
+
+        if (looting > 0) {
+            count += this.random.nextInt(looting + 1);
+        }
+
+        ItemLike meat = this.isOnFire()
+                ? BorealItems.COOKED_NIGHT_MEAT.get()
+                : BorealItems.NIGHT_MEAT.get();
+
+        for (int i = 0; i < count; i++) {
+            this.spawnAtLocation(meat);
+        }
     }
 }

@@ -42,6 +42,11 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.BOREAL_ESSENCE);
         simpleItem(BorealItems.BOREAL_SHARD);
         simpleItem(BorealItems.PRISON_LOCATOR);
+        simpleItem(BorealItems.GLACIAL_BERRIES);
+        simpleItem(BorealItems.NIGHT_HORNS);
+        simpleItem(BorealItems.NIGHT_MEAT);
+        simpleItem(BorealItems.COOKED_NIGHT_MEAT);
+        simpleItem(BorealItems.FROZEN_FUR);
 
         handheldItem(BorealItems.AURORAL_STICK);
         handheldItem(BorealItems.GLACIAL_TORCH_ITEM);

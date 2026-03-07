@@ -27,6 +27,10 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.GLACIAL_CRYSTAL_SHARD.get());
                                 pOutput.accept(BorealItems.AURORAL_STICK.get());
                                 pOutput.accept(BorealItems.GLACIAL_BREAD.get());
+                                pOutput.accept(BorealItems.NIGHT_HORNS.get());
+                                pOutput.accept(BorealItems.NIGHT_MEAT.get());
+                                pOutput.accept(BorealItems.COOKED_NIGHT_MEAT.get());
+                                pOutput.accept(BorealItems.FROZEN_FUR.get());
                                 pOutput.accept(BorealItems.RAW_TALISMANDIUM.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_INGOT.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_NUGGET.get());
@@ -94,6 +98,10 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.PERMAFROST.get());
                                 pOutput.accept(BorealItems.GLACIAL_SEED.get());
                                 pOutput.accept(BorealItems.GLACIAL_WHEAT.get());
+                                pOutput.accept(BorealItems.GLACIAL_BERRIES.get());
+                                pOutput.accept(BorealItems.NIGHT_HORNS.get());
+                                pOutput.accept(BorealItems.NIGHT_MEAT.get());
+                                pOutput.accept(BorealItems.FROZEN_FUR.get());
                                 pOutput.accept(BorealBlocks.BOREAL_STONE.get());
                                 pOutput.accept(BorealBlocks.TARNITE.get());
                                 pOutput.accept(BorealBlocks.VERNITE.get());

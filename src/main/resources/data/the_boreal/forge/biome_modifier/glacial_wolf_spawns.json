@@ -4,7 +4,7 @@
   "spawners": [
     {
       "type": "the_boreal:glacial_wolf",
-      "weight": 50,
+      "weight": 60,
       "minCount": 3,
       "maxCount": 5,
       "category": "creature"
