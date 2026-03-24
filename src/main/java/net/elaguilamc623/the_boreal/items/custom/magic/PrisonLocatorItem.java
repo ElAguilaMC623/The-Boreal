@@ -1,6 +1,7 @@
-package net.elaguilamc623.the_boreal.items.custom;
+package net.elaguilamc623.the_boreal.items.custom.magic;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -14,8 +15,12 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.structure.Structure;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class PrisonLocatorItem extends Item {
     public PrisonLocatorItem(Properties pProperties) {
@@ -59,5 +64,10 @@ public class PrisonLocatorItem extends Item {
         }
 
         return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.the_boreal.prison_locator").withStyle(ChatFormatting.GRAY));
     }
 }

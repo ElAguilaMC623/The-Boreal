@@ -3,11 +3,8 @@ package net.elaguilamc623.the_boreal.client;
 import net.elaguilamc623.the_boreal.client.render.BorealEffects;
 import net.elaguilamc623.the_boreal.client.render.BorealModelLayers;
 import net.elaguilamc623.the_boreal.client.render.blocks.BorealInfuserRenderer;
-import net.elaguilamc623.the_boreal.client.render.entities.mobs.FrozenBearRenderer;
+import net.elaguilamc623.the_boreal.client.render.entities.mobs.*;
 import net.elaguilamc623.the_boreal.client.render.entities.GlacialArrowRenderer;
-import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialSkeletonRenderer;
-import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialWolfRenderer;
-import net.elaguilamc623.the_boreal.client.render.entities.mobs.GlacialZombieRenderer;
 import net.elaguilamc623.the_boreal.entities.model.BorealGolemModel;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
@@ -49,6 +46,12 @@ public class BorealClientEvents {
                 BorealEntities.GLACIAL_ARROW.get(),
                 GlacialArrowRenderer::new
         );
+
+        event.registerEntityRenderer(BorealEntities.GREAT_BOREAL_GOLEM.get(),
+                GreatBorealGolemRenderer::new);
+
+        event.registerEntityRenderer(BorealEntities.SUMMONED_BOREAL_GOLEM.get(),
+                SummonedBorealGolemRenderer::new);
     }
 
     @SubscribeEvent

@@ -12,8 +12,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
-public class FrozenBearEntity extends PolarBear {
-    public FrozenBearEntity(EntityType<? extends PolarBear> type, Level pLevel) {
+public class FrozenBear extends PolarBear {
+    public FrozenBear(EntityType<? extends PolarBear> type, Level pLevel) {
         super(type, pLevel);
     }
 

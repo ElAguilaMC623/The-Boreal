@@ -3,6 +3,15 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
+      "element": {
+        "location": "the_boreal:boss_room",
+        "processors": "the_boreal:boreal_stone_bricks_variations",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    },
+    {
       "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
@@ -57,7 +66,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "the_boreal:prison_playground",

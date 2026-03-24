@@ -1,0 +1,26 @@
+{
+  "parent": "the_boreal:the_essence_extractor",
+  "display": {
+    "icon": {
+      "item": "the_boreal:boreal_essence"
+    },
+    "title": "A Mysterious Essence",
+    "description": "Obtain your first Boreal Essence",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_fragment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["the_boreal:boreal_essence"]
+          }
+        ]
+      }
+    }
+  }
+}

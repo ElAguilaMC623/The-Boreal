@@ -11,7 +11,7 @@
       "sets": ["#the_boreal:all_structures"],
       "radius": 4
     },
-    "spacing": 53,
+    "spacing": 43,
     "separation": 23,
     "type": "the_boreal:advanced_structure_placement",
     "frequency": 1.0

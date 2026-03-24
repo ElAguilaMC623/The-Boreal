@@ -1,0 +1,26 @@
+{
+  "parent": "the_boreal:a_boreal_world",
+  "display": {
+    "icon": {
+      "item": "the_boreal:boreal_essence_table"
+    },
+    "title": "The Essence Extractor",
+    "description": "Craft the Boreal Essence Table",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_fragment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["the_boreal:boreal_essence_table"]
+          }
+        ]
+      }
+    }
+  }
+}

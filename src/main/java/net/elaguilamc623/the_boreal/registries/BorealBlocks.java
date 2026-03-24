@@ -256,6 +256,9 @@ public class BorealBlocks {
     public static final RegistryObject<IronBarsBlock> TALISMANDIUM_BARS = registerBlock("talismandium_bars",
             () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS)));
 
+    public static final RegistryObject<Block> BOREAL_ALTAR = registerBlock("boreal_altar",
+            () -> new BorealAltarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_DEEPSLATE).strength(-1.0F, 3600000.0F)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

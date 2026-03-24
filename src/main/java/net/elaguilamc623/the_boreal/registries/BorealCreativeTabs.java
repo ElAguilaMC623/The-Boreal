@@ -40,7 +40,9 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.DIORIUM_GEM.get());
                                 pOutput.accept(BorealItems.BOREAL_ESSENCE.get());
                                 pOutput.accept(BorealItems.BOREAL_SHARD.get());
+                                pOutput.accept(BorealItems.BOREAL_ENCHANTED_SHARD.get());
                                 pOutput.accept(BorealItems.PRISON_LOCATOR.get());
+                                pOutput.accept(BorealItems.GLACIAL_STAR_AMULET.get());
                             })
                             .build()
             );
@@ -51,6 +53,7 @@ public class BorealCreativeTabs {
                             .icon(() -> new ItemStack(BorealItems.TALISMANDIUM_TOOLS.getSword().get()))
                             .title(Component.literal("The Boreal Tools and Combat"))
                             .displayItems((pParameters, pOutput) -> {
+                                pOutput.accept(BorealItems.BOREAL_SUMMONER_STAFF.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getSword().get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getPickaxe().get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getAxe().get());
@@ -186,6 +189,7 @@ public class BorealCreativeTabs {
                             .displayItems((pParameters, pOutput) -> {
                                 pOutput.accept(BorealBlocks.BOREAL_ESSENCE_TABLE.get());
                                 pOutput.accept(BorealBlocks.BOREAL_INFUSER.get());
+                                pOutput.accept(BorealBlocks.BOREAL_ALTAR.get());
                                 pOutput.accept(BorealItems.AURORAL_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_SIGN.get());
@@ -208,6 +212,8 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.GLACIAL_SKELETON_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.NIGHT_DEER_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.BOREAL_GOLEM_SPAWN_EGG.get());
+                                pOutput.accept(BorealItems.SUMMONED_BOREAL_GOLEM_SPAWN_EGG.get());
+                                pOutput.accept(BorealItems.GREAT_BOREAL_GOLEM_SPAWN_EGG.get());
                             })
                             .build()
             );

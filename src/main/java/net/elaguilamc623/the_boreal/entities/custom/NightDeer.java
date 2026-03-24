@@ -20,8 +20,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
-public class NightDeerEntity extends Animal {
-    public NightDeerEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
+public class NightDeer extends Animal {
+    public NightDeer(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 

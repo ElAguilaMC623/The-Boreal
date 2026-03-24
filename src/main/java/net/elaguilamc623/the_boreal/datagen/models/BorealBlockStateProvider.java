@@ -104,6 +104,18 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
 
         simpleBlock(BorealBlocks.BOREAL_INFUSER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/boreal_infuser")));
+
+        simpleBlock(BorealBlocks.BOREAL_ALTAR.get(),
+                models().cube("boreal_altar",
+                        modLoc("block/boreal_chiseled_stone"),
+                        modLoc("block/boreal_altar_top"),
+                        modLoc("block/boreal_chiseled_stone"),
+                        modLoc("block/boreal_chiseled_stone"),
+                        modLoc("block/boreal_chiseled_stone"),
+                        modLoc("block/boreal_chiseled_stone")
+                ).texture("particle", modLoc("block/boreal_chiseled_stone"))
+        );
+
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {

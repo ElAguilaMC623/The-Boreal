@@ -7,6 +7,7 @@ import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
 import net.elaguilamc623.the_boreal.items.BorealFoodProperties;
 import net.elaguilamc623.the_boreal.items.BorealItemProperties;
 import net.elaguilamc623.the_boreal.items.custom.*;
+import net.elaguilamc623.the_boreal.items.custom.magic.*;
 import net.elaguilamc623.the_boreal.items.custom.nature.GlacialSeedItem;
 import net.elaguilamc623.the_boreal.items.custom.weapons.*;
 import net.elaguilamc623.the_boreal.items.tiers.BorealArmorMaterials;
@@ -63,6 +64,12 @@ public class BorealItems {
 
     public static final RegistryObject<Item> BOREAL_GOLEM_SPAWN_EGG = ITEMS.register("boreal_golem_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.BOREAL_GOLEM, 0x1A2E4A, 0x0D1A2B, new Item.Properties()));
+
+    public static final RegistryObject<Item> SUMMONED_BOREAL_GOLEM_SPAWN_EGG = ITEMS.register("summoned_boreal_golem_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.SUMMONED_BOREAL_GOLEM, 0x1A2E4A, 0x0D1A2B, new Item.Properties()));
+
+    public static final RegistryObject<Item> GREAT_BOREAL_GOLEM_SPAWN_EGG = ITEMS.register("great_boreal_golem_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.GREAT_BOREAL_GOLEM, 0x0A1A2F, 0x000000, new Item.Properties()));
 
     public static final RegistryObject<Item> GLACIAL_ROTTEN_FLESH = ITEMS.register("glacial_rotten_flesh",
             () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_ROTTEN_FLESH)));
@@ -174,6 +181,15 @@ public class BorealItems {
 
     public static final RegistryObject<Item> COOKED_NIGHT_MEAT = ITEMS.register("cooked_night_meat",
             () -> new Item(new Item.Properties().food(BorealFoodProperties.COOKED_NIGHT_MEET)));
+
+    public static final RegistryObject<Item> GLACIAL_STAR_AMULET = ITEMS.register("glacial_star_amulet",
+            () -> new GlacialStarAmuletItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> BOREAL_ENCHANTED_SHARD = ITEMS.register("boreal_enchanted_shard",
+            () -> new BorealEnchantedShardItem(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> BOREAL_SUMMONER_STAFF = ITEMS.register("boreal_summoner_staff",
+            () -> new BorealSummonerStaffItem(new Item.Properties().rarity(Rarity.RARE)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

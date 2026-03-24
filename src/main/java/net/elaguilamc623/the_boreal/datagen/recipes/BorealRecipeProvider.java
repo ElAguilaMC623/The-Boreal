@@ -16,6 +16,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import java.util.List;
@@ -122,6 +123,25 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .save(consumer);
     }
 
+    private void boatRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, output, 1)
+                .define('#', planks)
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
+    private void chestBoatRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, output, 1)
+                .define('#', planks)
+                .define('X', Blocks.CHEST)
+                .pattern("#X#")
+                .pattern("###")
+                .unlockedBy("has_planks", has(planks))
+                .save(consumer);
+    }
+
     public void toolRecipe(Consumer<FinishedRecipe> consumer,
                            ItemLike result,
                            ItemLike material,
@@ -202,8 +222,8 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .pattern(" A ")
                 .pattern("ABA")
                 .pattern(" A ")
-                .define('A', BorealItems.ANCIENT_ICE_FRAGMENT.get())
-                .define('B', Items.BLUE_ICE)
+                .define('A', Items.PRISMARINE_SHARD)
+                .define('B', BorealItems.ANCIENT_ICE_FRAGMENT.get())
                 .unlockedBy("has_ancient_ice_fragment", has(BorealItems.ANCIENT_ICE_FRAGMENT.get()))
                 .save(consumer);
 
@@ -221,7 +241,7 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .define('B', BorealItems.DIORIUM_GEM.get())
                 .define('C', BorealItems.ANCIENT_ICE_FRAGMENT.get())
                 .define('D', BorealItems.DIORIUM_INGOT.get())
-                .unlockedBy("has_ancient_ice_fragment", has(BorealItems.DIORIUM_GEM.get()))
+                .unlockedBy("has_diorium_gem", has(BorealItems.DIORIUM_GEM.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BorealBlocks.BOREAL_INFUSER.get())
@@ -242,6 +262,24 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .define('B', BorealItems.BOREAL_ESSENCE.get())
                 .define('A', BorealItems.TALISMANDIUM_INGOT.get())
                 .unlockedBy("has_boreal_essence", has(BorealItems.BOREAL_ESSENCE.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BorealItems.GLACIAL_STAR_AMULET.get())
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', BorealItems.BOREAL_SHARD.get())
+                .define('B', BorealItems.FROZEN_AMULET.get())
+                .unlockedBy("has_boreal_shard", has(BorealItems.BOREAL_SHARD.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, BorealItems.BOREAL_SUMMONER_STAFF.get())
+                .pattern("  B")
+                .pattern(" A ")
+                .pattern("A  ")
+                .define('A', BorealItems.AURORAL_STICK.get())
+                .define('B', BorealItems.BOREAL_ENCHANTED_SHARD.get())
+                .unlockedBy("has_boreal_enchanted_shard", has(BorealItems.BOREAL_ENCHANTED_SHARD.get()))
                 .save(consumer);
 
         oreSmelting(consumer,
@@ -412,6 +450,9 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
 
         signRecipe(consumer, BorealItems.AURORAL_SIGN.get(), BorealBlocks.AURORA_PLANKS.get());
         hangingSignRecipe(consumer, BorealItems.AURORAL_HANGING_SIGN.get(), BorealBlocks.STRIPPED_AURORA_LOG.get());
+
+        boatRecipe(consumer, BorealItems.AURORAL_BOAT.get(), BorealBlocks.AURORA_PLANKS.get());
+        chestBoatRecipe(consumer, BorealItems.AURORAL_CHEST_BOAT.get(), BorealBlocks.AURORA_PLANKS.get());
 
         buttonRecipe(consumer, BorealBlocks.AURORAL_BUTTON.get(), BorealBlocks.AURORA_PLANKS.get());
         pressurePlateRecipe(consumer, BorealBlocks.AURORAL_PRESSURE_PLATE.get(), BorealBlocks.AURORA_PLANKS.get());

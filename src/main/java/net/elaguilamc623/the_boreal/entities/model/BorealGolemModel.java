@@ -3,7 +3,7 @@ package net.elaguilamc623.the_boreal.entities.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.elaguilamc623.the_boreal.entities.animations.BorealAnimationDefinitions;
-import net.elaguilamc623.the_boreal.entities.custom.BorealGolemEntity;
+import net.elaguilamc623.the_boreal.entities.custom.BorealGolem;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.AnimationState;
 
-public class BorealGolemModel extends HierarchicalModel<BorealGolemEntity> {
+public class BorealGolemModel extends HierarchicalModel<BorealGolem> {
 
     private final AnimationState attackState = new AnimationState();
 
@@ -80,7 +80,7 @@ public class BorealGolemModel extends HierarchicalModel<BorealGolemEntity> {
 	}
 
 	@Override
-    public void setupAnim(BorealGolemEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(BorealGolem entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
@@ -96,7 +96,7 @@ public class BorealGolemModel extends HierarchicalModel<BorealGolemEntity> {
     }
 
     @Override
-    public void prepareMobModel(BorealGolemEntity entity, float limbSwing, float limbSwingAmount, float partialTicks) {
+    public void prepareMobModel(BorealGolem entity, float limbSwing, float limbSwingAmount, float partialTicks) {
         super.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 
         int i = entity.getAttackAnimationTick();

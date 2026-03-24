@@ -1,10 +1,9 @@
 package net.elaguilamc623.the_boreal.entities.custom;
 
-import net.minecraft.network.chat.Component;
+import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -14,14 +13,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 import java.util.List;
 
-public class GlacialWolfEntity extends Wolf {
-    public GlacialWolfEntity(EntityType<? extends Wolf> type, Level level) {
+public class GlacialWolf extends Wolf {
+    public GlacialWolf(EntityType<? extends Wolf> type, Level level) {
         super(type, level);
     }
 
@@ -29,7 +27,7 @@ public class GlacialWolfEntity extends Wolf {
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
 
-        if (itemstack.is(Items.BONE)) {
+        if (itemstack.is(BorealItems.GLACIAL_BONE.get())) {
             if (!this.level().isClientSide) {
                 this.tame(player);
                 this.navigation.stop();
@@ -85,12 +83,12 @@ public class GlacialWolfEntity extends Wolf {
                 this.setCustomAngry(true);
                 this.setTarget(nearest);
 
-                List<GlacialWolfEntity> nearbyWolves = this.level().getEntitiesOfClass(
-                        GlacialWolfEntity.class,
+                List<GlacialWolf> nearbyWolves = this.level().getEntitiesOfClass(
+                        GlacialWolf.class,
                         this.getBoundingBox().inflate(30.0D)
                 );
 
-                for (GlacialWolfEntity wolf : nearbyWolves) {
+                for (GlacialWolf wolf : nearbyWolves) {
                     if (!wolf.isTame()) {
                         wolf.setCustomAngry(true);
                         wolf.setTarget(nearest);

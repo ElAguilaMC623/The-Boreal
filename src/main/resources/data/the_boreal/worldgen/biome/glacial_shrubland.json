@@ -8,7 +8,6 @@
     "fog_color": 2507703,
     "water_color": 5718385,
     "water_fog_color": 2561575,
-    "grass_color": 9794291,
     "foliage_color": 9794291,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -25,16 +24,16 @@
     "misc": [],
     "monster": [
       {
+        "type": "the_boreal:frozen_bear",
+        "weight": 150,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
         "type": "the_boreal:glacial_wolf",
         "weight": 10,
         "minCount": 1,
         "maxCount": 3
-      },
-      {
-        "type": "the_boreal:frozen_bear",
-        "weight": 15,
-        "minCount": 1,
-        "maxCount": 2
       }
     ],
     "underground_water_creature": [],

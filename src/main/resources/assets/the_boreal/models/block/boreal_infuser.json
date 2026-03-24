@@ -4,7 +4,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "the_boreal:block/boreal_infuser",
-		"particle": "block/texture"
+        "particle": "the_boreal:block/boreal_chiseled_stone"
 	},
 	"elements": [
 		{

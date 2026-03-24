@@ -1,0 +1,26 @@
+{
+  "parent": "the_boreal:a_mysterious_essence",
+  "display": {
+    "icon": {
+      "item": "the_boreal:prison_locator"
+    },
+    "title": "The Path to an Ancient Prison",
+    "description": "Obtain the Prison Locator",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_fragment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["the_boreal:prison_locator"]
+          }
+        ]
+      }
+    }
+  }
+}

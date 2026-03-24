@@ -4,7 +4,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "the_boreal:block/boreal_essence_table",
-		"particle": "boreal_chiseled_stone"
+		"particle": "the_boreal:block/boreal_chiseled_stone"
 	},
 	"elements": [
 		{

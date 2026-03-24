@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.items.custom;
+package net.elaguilamc623.the_boreal.items.custom.magic;
 
 import net.elaguilamc623.the_boreal.worldgen.dimension.BorealDimension;
 import net.minecraft.ChatFormatting;
@@ -98,6 +98,6 @@ public class FrozenAmuletItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.the_boreal.frozen_amulet").withStyle(ChatFormatting.AQUA));
+        tooltip.add(Component.translatable("tooltip.the_boreal.frozen_amulet").withStyle(ChatFormatting.GRAY));
     }
 }

@@ -41,12 +41,14 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.AURORAL_CHEST_BOAT);
         simpleItem(BorealItems.BOREAL_ESSENCE);
         simpleItem(BorealItems.BOREAL_SHARD);
+        simpleItem(BorealItems.BOREAL_ENCHANTED_SHARD);
         simpleItem(BorealItems.PRISON_LOCATOR);
         simpleItem(BorealItems.GLACIAL_BERRIES);
         simpleItem(BorealItems.NIGHT_HORNS);
         simpleItem(BorealItems.NIGHT_MEAT);
         simpleItem(BorealItems.COOKED_NIGHT_MEAT);
         simpleItem(BorealItems.FROZEN_FUR);
+        simpleItem(BorealItems.GLACIAL_STAR_AMULET);
 
         handheldItem(BorealItems.AURORAL_STICK);
         handheldItem(BorealItems.GLACIAL_TORCH_ITEM);
@@ -65,6 +67,7 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         handheldItem(BorealItems.DIORIUM_AXE);
         handheldItem(BorealItems.DIORIUM_SHOVEL);
         handheldItem(BorealItems.DIORIUM_HOE);
+        handheldItem(BorealItems.BOREAL_SUMMONER_STAFF);
 
         trimmedArmorItem(BorealItems.TALISMANDIUM_ARMOR.getHelmet());
         trimmedArmorItem(BorealItems.TALISMANDIUM_ARMOR.getChestplate());
@@ -85,6 +88,8 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         withExistingParent(BorealItems.FROZEN_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.NIGHT_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.SUMMONED_BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.GREAT_BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         wallItem(BorealBlocks.BOREAL_COBBLESTONE_WALL, BorealBlocks.BOREAL_COBBLESTONE);
         wallItem(BorealBlocks.BOREAL_DEEP_STONE_WALL, BorealBlocks.BOREAL_DEEP_STONE);
@@ -154,11 +159,11 @@ public class BorealItemModelProvider extends CCItemModelProvider {
                 "layer0",
                 modLoc("block/glacialight_shroom")
         );
-    }
 
-    private void evenSimplerBlockItem(RegistryObject<Block> block) {
-        this.withExistingParent(TheBoreal.MOD_ID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
-                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
+        withExistingParent(
+                BorealBlocks.BOREAL_ALTAR.getId().getPath(),
+                modLoc("block/boreal_altar")
+        );
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
@@ -171,5 +176,10 @@ public class BorealItemModelProvider extends CCItemModelProvider {
     public void torchItem(Block torch) {
         String name = ForgeRegistries.BLOCKS.getKey(torch).getPath();
         withExistingParent(name, modLoc("block/" + name));
+    }
+
+    public void evenSimplerBlockItem(RegistryObject<Block> block) {
+        this.withExistingParent(TheBoreal.MOD_ID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
     }
 }

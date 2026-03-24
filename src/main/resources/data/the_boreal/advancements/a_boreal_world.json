@@ -1,0 +1,22 @@
+{
+  "parent": "the_boreal:ice_from_ancient_times",
+  "display": {
+    "icon": {
+      "item": "the_boreal:glacial_grass_block"
+    },
+    "title": "A Boreal World",
+    "description": "Enter the Boreal dimension",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_boreal": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "the_boreal:boreal"
+      }
+    }
+  }
+}

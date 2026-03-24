@@ -20,8 +20,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class GlacialSkeletonEntity extends Skeleton {
-    public GlacialSkeletonEntity(EntityType<? extends Skeleton> type, Level pLevel) {
+public class GlacialSkeleton extends Skeleton {
+    public GlacialSkeleton(EntityType<? extends Skeleton> type, Level pLevel) {
         super(type, pLevel);
     }
 

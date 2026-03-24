@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_boreal:frozen_amulet"
+    },
+    "title": "The Boreal",
+    "description": "A beatiful but mysterious boreal world",
+    "background": "the_boreal:textures/gui/advancements/boreal_background.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

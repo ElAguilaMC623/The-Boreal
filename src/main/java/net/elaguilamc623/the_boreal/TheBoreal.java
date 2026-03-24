@@ -28,6 +28,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 @Mod(TheBoreal.MOD_ID)
 public class TheBoreal
@@ -40,6 +41,7 @@ public class TheBoreal
     public TheBoreal(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+        GeckoLib.initialize();
         modEventBus.addListener(this::commonSetup);
 
         BorealMenus.MENUS.register(modEventBus);

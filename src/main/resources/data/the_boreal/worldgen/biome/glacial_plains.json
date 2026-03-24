@@ -25,16 +25,16 @@
     "misc": [],
     "monster": [
       {
-        "type": "the_boreal:glacial_wolf",
-        "weight": 1000,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
         "type": "the_boreal:frozen_bear",
-        "weight": 5,
+        "weight": 150,
         "minCount": 1,
         "maxCount": 2
+      },
+      {
+        "type": "the_boreal:glacial_wolf",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
       }
     ],
     "underground_water_creature": [],

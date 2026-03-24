@@ -1,10 +1,10 @@
 {
   "type": "forge:add_spawns",
-  "biomes": "#the_boreal:boreal_biomes/is_boreal",
+  "biomes": "#the_boreal:boreal_biomes/is_glacial",
   "spawners": [
     {
       "type": "the_boreal:frozen_bear",
-      "weight": 100,
+      "weight": 1000,
       "minCount": 1,
       "maxCount": 3,
       "category": "creature"

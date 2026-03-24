@@ -6,6 +6,7 @@ import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -171,6 +172,11 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.GLACIALIGHT_SHROOM.get(),
                         BorealBlocks.BOREALIGHT_SHROOM.get(),
                         BorealBlocks.GLACIAL_BERRY_BUSH.get()
+                );
+
+        this.tag(BlockTags.STONE_BRICKS)
+                .add(BorealBlocks.BOREAL_STONE_BRICKS.get(),
+                        BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()
                 );
     }
 }

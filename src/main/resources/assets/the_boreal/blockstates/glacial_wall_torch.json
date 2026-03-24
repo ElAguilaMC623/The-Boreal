@@ -1,8 +1,8 @@
 {
   "variants": {
-    "facing=north": { "model": "the_boreal:block/glacial_torch_wall", "y": 180 },
-    "facing=south": { "model": "the_boreal:block/glacial_torch_wall" },
-    "facing=west":  { "model": "the_boreal:block/glacial_torch_wall", "y": 90 },
-    "facing=east":  { "model": "the_boreal:block/glacial_torch_wall", "y": 270 }
+    "facing=east":  { "model": "the_boreal:block/glacial_wall_torch"},
+    "facing=west":  { "model": "the_boreal:block/glacial_wall_torch", "y": 180 },
+    "facing=south": { "model": "the_boreal:block/glacial_wall_torch", "y": 90 },
+    "facing=north": { "model": "the_boreal:block/glacial_wall_torch", "y": 270 }
   }
 }

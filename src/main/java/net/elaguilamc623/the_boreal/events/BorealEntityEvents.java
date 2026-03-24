@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.events;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.entities.custom.bosses.GreatBorealGolemBoss;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.worldgen.spawns.BorealSpawnRules;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -64,6 +65,20 @@ public class BorealEntityEvents {
                         .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
                         .build()
         );
+
+        event.put(BorealEntities.SUMMONED_BOREAL_GOLEM.get(),
+                Wolf.createAttributes()
+                        .add(Attributes.MAX_HEALTH, 70.0D)
+                        .add(Attributes.ATTACK_DAMAGE, 15.0D)
+                        .add(Attributes.MOVEMENT_SPEED, 0.23)
+                        .add(Attributes.FOLLOW_RANGE, 20.0D)
+                        .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
+                        .build()
+        );
+
+        event.put(BorealEntities.GREAT_BOREAL_GOLEM.get(),
+                GreatBorealGolemBoss.createAttributes().build());
+
     }
 
     @SubscribeEvent
@@ -72,7 +87,7 @@ public class BorealEntityEvents {
             SpawnPlacements.register(
                     BorealEntities.GLACIAL_ZOMBIE.get(),
                     SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Heightmap.Types.OCEAN_FLOOR,
                     (type, level, spawnType, pos, random) ->
                             pos.getY() < 55 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
             );
@@ -80,7 +95,7 @@ public class BorealEntityEvents {
             SpawnPlacements.register(
                     BorealEntities.GLACIAL_SKELETON.get(),
                     SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Heightmap.Types.OCEAN_FLOOR,
                     (type, level, spawnType, pos, random) ->
                             pos.getY() < 55 && Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random)
             );
@@ -89,14 +104,14 @@ public class BorealEntityEvents {
                     BorealEntities.GLACIAL_WOLF.get(),
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    BorealSpawnRules::borealWolfRules
+                    BorealSpawnRules::glacialWolfRules
             );
 
             SpawnPlacements.register(
                     BorealEntities.FROZEN_BEAR.get(),
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    BorealSpawnRules::frozenBearRules
+                    BorealSpawnRules::glacialWolfRules
             );
 
             SpawnPlacements.register(

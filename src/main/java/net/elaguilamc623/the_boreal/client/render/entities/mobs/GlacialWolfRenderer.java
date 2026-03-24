@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.client.render.entities.mobs;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.elaguilamc623.the_boreal.entities.custom.GlacialWolfEntity;
+import net.elaguilamc623.the_boreal.entities.custom.GlacialWolf;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.WolfRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -29,7 +29,7 @@ public class GlacialWolfRenderer extends WolfRenderer {
     public ResourceLocation getTextureLocation(Wolf entity) {
         if (entity.isTame()) {
             return TAME_TEXTURE;
-        } else if (entity instanceof GlacialWolfEntity gw && gw.isCustomAngry()) {
+        } else if (entity instanceof GlacialWolf gw && gw.isCustomAngry()) {
             return ANGRY_TEXTURE;
         } else {
             return NORMAL_TEXTURE;

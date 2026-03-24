@@ -16,9 +16,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class BorealGolemEntity extends Monster {
+public class BorealGolem extends Monster {
 
-    public BorealGolemEntity(EntityType<? extends Monster> entityType, Level level) {
+    public BorealGolem(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
         this.setMaxUpStep(1.0F);
     }

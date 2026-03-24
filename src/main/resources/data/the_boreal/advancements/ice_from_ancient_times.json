@@ -1,0 +1,26 @@
+{
+  "parent": "the_boreal:root",
+  "display": {
+    "icon": {
+      "item": "the_boreal:ancient_ice_fragment"
+    },
+    "title": "Ice From Ancient Times",
+    "description": "Obtain an Ancient Ice Fragment",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_fragment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["the_boreal:ancient_ice_fragment"]
+          }
+        ]
+      }
+    }
+  }
+}
