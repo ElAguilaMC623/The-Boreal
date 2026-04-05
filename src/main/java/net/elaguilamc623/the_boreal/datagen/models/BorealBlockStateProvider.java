@@ -38,6 +38,8 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         blockWithItem(BorealBlocks.DEEP_DIORIUM_ORE);
         blockWithItem(BorealBlocks.AURORA_PLANKS);
         blockWithItem(BorealBlocks.GLACIAL_DIRT);
+        blockWithItem(BorealBlocks.NOCTURNAL_MUD);
+        blockWithItem(BorealBlocks.GLACIAL_SOIL);
         blockWithItem(BorealBlocks.PERMAFROST);
         blockWithItem(BorealBlocks.GLACIAL_CRYSTAL);
 
@@ -90,8 +92,14 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
 
         leavesBlock(BorealBlocks.AURORA_LEAVES);
         doublePlant(BorealBlocks.GLACIAL_TALL_GRASS.get());
+        doublePlant(BorealBlocks.NOCTURNAL_TALL_GRASS.get());
+        simpleCrossBlock(BorealBlocks.NOCTURNAL_GRASS.get());
+        simpleCrossBlock(BorealBlocks.NOCTURNALIGHT_SHROOM.get());
+        simpleCrossBlock(BorealBlocks.NOCTURNALWEED.get());
         simpleCrossBlock(BorealBlocks.BOREALIGHT_SHROOM.get());
         simpleCrossBlock(BorealBlocks.GLACIALIGHT_SHROOM.get());
+        simpleCrossBlock(BorealBlocks.STARLIGHT_SHROOM.get());
+        simpleCrossBlock(BorealBlocks.GLACIALWEED.get());
 
         paneBlock(
                 (IronBarsBlock) BorealBlocks.TALISMANDIUM_BARS.get(),
@@ -104,6 +112,9 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
 
         simpleBlock(BorealBlocks.BOREAL_INFUSER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/boreal_infuser")));
+
+        simpleBlock(BorealBlocks.BOREAL_ROCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/boreal_rock_block")));
 
         simpleBlock(BorealBlocks.BOREAL_ALTAR.get(),
                 models().cube("boreal_altar",

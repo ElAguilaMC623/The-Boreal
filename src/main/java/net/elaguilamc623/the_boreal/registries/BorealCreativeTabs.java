@@ -25,6 +25,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.FROZEN_AMULET.get());
                                 pOutput.accept(BorealItems.BOREAL_ROCK.get());
                                 pOutput.accept(BorealItems.GLACIAL_CRYSTAL_SHARD.get());
+                                pOutput.accept(BorealItems.PURIFIED_GLACIAL_CRYSTAL_SHARD.get());
                                 pOutput.accept(BorealItems.AURORAL_STICK.get());
                                 pOutput.accept(BorealItems.GLACIAL_BREAD.get());
                                 pOutput.accept(BorealItems.NIGHT_HORNS.get());
@@ -93,10 +94,19 @@ public class BorealCreativeTabs {
                             .displayItems((pParameters, pOutput) -> {
                                 pOutput.accept(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_DIRT.get());
+                                pOutput.accept(BorealBlocks.GLACIAL_SOIL.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_MUD.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_GRASS.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_TALL_GRASS.get());
-                                pOutput.accept(BorealBlocks.BOREALIGHT_SHROOM.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_GRASS.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_TALL_GRASS.get());
+                                pOutput.accept(BorealBlocks.GLACIALWEED.get());
                                 pOutput.accept(BorealBlocks.GLACIALIGHT_SHROOM.get());
+                                pOutput.accept(BorealBlocks.BOREALIGHT_SHROOM.get());
+                                pOutput.accept(BorealBlocks.STARLIGHT_SHROOM.get());
+                                pOutput.accept(BorealBlocks.NOCTURNALIGHT_SHROOM.get());
+                                pOutput.accept(BorealBlocks.NOCTURNALWEED.get());
+                                pOutput.accept(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_CRYSTAL.get());
                                 pOutput.accept(BorealBlocks.PERMAFROST.get());
                                 pOutput.accept(BorealItems.GLACIAL_SEED.get());
@@ -211,6 +221,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.FROZEN_BEAR_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.GLACIAL_SKELETON_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.NIGHT_DEER_SPAWN_EGG.get());
+                                pOutput.accept(BorealItems.CRYSTALIZED_FOX_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.BOREAL_GOLEM_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.SUMMONED_BOREAL_GOLEM_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.GREAT_BOREAL_GOLEM_SPAWN_EGG.get());

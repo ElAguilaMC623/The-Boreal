@@ -55,6 +55,7 @@
     ["the_boreal:auroral_bush_dense"],
     ["the_boreal:glacial_berries_bush_common_placed"],
     ["the_boreal:glacial_grass_patch"], ["the_boreal:glacial_tall_grass_patch"],
-    ["the_boreal:borealight_shroom_patch"], ["the_boreal:glacialight_shroom_patch"]
+    ["the_boreal:borealight_shroom_patch"], ["the_boreal:glacialight_shroom_patch"],
+    ["the_boreal:starlight_shroom_patch"], ["the_boreal:nocturnalweed_patch"]
   ]
 }

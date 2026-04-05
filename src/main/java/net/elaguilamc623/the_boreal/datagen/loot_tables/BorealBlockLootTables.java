@@ -43,6 +43,8 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get());
         this.dropSelf(BorealBlocks.BOREAL_CHISELED_STONE.get());
         this.dropSelf(BorealBlocks.GLACIAL_DIRT.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_MUD.get());
+        this.dropSelf(BorealBlocks.GLACIAL_SOIL.get());
         this.dropSelf(BorealBlocks.PERMAFROST.get());
         this.dropSelf(BorealBlocks.GLACIAL_CRYSTAL.get());
         this.dropSelf(BorealBlocks.AURORA_LOG.get());
@@ -73,6 +75,11 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.TALISMANDIUM_BARS.get());
         this.dropSelf(BorealBlocks.BOREALIGHT_SHROOM.get());
         this.dropSelf(BorealBlocks.GLACIALIGHT_SHROOM.get());
+        this.dropSelf(BorealBlocks.GLACIALWEED.get());
+        this.dropSelf(BorealBlocks.STARLIGHT_SHROOM.get());
+        this.dropSelf(BorealBlocks.NOCTURNALIGHT_SHROOM.get());
+        this.dropSelf(BorealBlocks.NOCTURNALWEED.get());
+        this.dropSelf(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get());
         this.dropSelf(BorealBlocks.BOREAL_ALTAR.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
@@ -85,6 +92,9 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.add(BorealBlocks.TARNITE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.POLISHED_TARNITE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.AURORAL_SLAB.get(), block -> createSlabItemTable(block));
+
+        this.add(BorealBlocks.NOCTURNAL_GRASS.get(), LootTable.lootTable());
+        this.add(BorealBlocks.NOCTURNAL_TALL_GRASS.get(), LootTable.lootTable());
 
         this.add(BorealBlocks.AURORA_LEAVES.get(),
                 block -> createLeavesDrops(block,
@@ -175,6 +185,8 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
                 BorealItems.GLACIAL_CRYSTAL_SHARD.get()
         );
 
+        this.add(BorealBlocks.BOREAL_ROCK.get(),
+                block -> createSingleItemTable(BorealItems.BOREAL_ROCK.get()));
     }
 
     private void dropGlacialCrystal(Block block, ItemLike shard) {

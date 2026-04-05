@@ -42,6 +42,9 @@ public class BorealTags {
     public static final TagKey<Block> CAN_SUSTAIN_ON_GLACIAL_GRASS =
             TagKey.create(Registries.BLOCK, new ResourceLocation("the_boreal", "can_sustain_on_glacial_grass"));
 
+    public static final TagKey<Item> CRYSTALIZED_FOX_FOOD =
+            TagKey.create(Registries.ITEM, new ResourceLocation("the_boreal", "crystalized_fox_food"));
+
     public static final TagKey<EntityType<?>> BOREAL_MOBS =
             TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(TheBoreal.MOD_ID, "boreal_mobs"));
 }

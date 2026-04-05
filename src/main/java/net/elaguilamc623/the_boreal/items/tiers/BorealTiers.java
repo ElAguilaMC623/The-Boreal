@@ -9,13 +9,13 @@ import net.minecraftforge.common.ForgeTier;
 public enum BorealTiers implements Tier {
 
     TALISMANDIUM(new ForgeTier(
-            3, 1700, 3.0F, 0.0F, 12,
+            3, 1700, 3.0F, 3.0F, 12,
             BorealTags.NEEDS_TALISMANDIUM_TOOL,
             () -> Ingredient.of(BorealItems.TALISMANDIUM_INGOT.get())
     )),
 
     CHRODIUM(new ForgeTier(
-            4, 2500, 4.5F, 0.0F, 18,
+            4, 2500, 4.5F, 4.2F, 18,
             BorealTags.NEEDS_CHRODIUM_TOOL,
             () -> Ingredient.of(BorealItems.CHRODIUM.get())
     )),

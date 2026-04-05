@@ -3,7 +3,9 @@ package net.elaguilamc623.the_boreal;
 import com.mojang.logging.LogUtils;
 import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.BorealGolemRenderer;
+import net.elaguilamc623.the_boreal.client.render.entities.mobs.CrystalizedFoxRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
+import net.elaguilamc623.the_boreal.config.BorealConfig;
 import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.gui.boreal_infuser.BorealInfuserScreen;
 import net.elaguilamc623.the_boreal.registries.*;
@@ -17,11 +19,13 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,8 +42,7 @@ public class TheBoreal
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public TheBoreal(FMLJavaModLoadingContext context)
-    {
+    public TheBoreal(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         GeckoLib.initialize();
         modEventBus.addListener(this::commonSetup);
@@ -55,11 +58,12 @@ public class TheBoreal
         BorealStructureGeneration.register(modEventBus);
         BorealFeatures.FEATURES.register(modEventBus);
         BorealEnchantments.ENCHANTMENTS.register(modEventBus);
+        BorealParticles.PARTICLES.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BorealConfig.CLIENT_SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -82,6 +86,7 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
             EntityRenderers.register(BorealEntities.BOREAL_GOLEM.get(), BorealGolemRenderer::new);
+            EntityRenderers.register(BorealEntities.CRYSTALIZED_FOX.get(), CrystalizedFoxRenderer::new);
             MenuScreens.register(BorealMenus.BOREAL_ESSENCE_TABLE.get(), BorealEssenceTableScreen::new);
             MenuScreens.register(BorealMenus.BOREAL_INFUSER.get(), BorealInfuserScreen::new);
 
@@ -95,6 +100,14 @@ public class TheBoreal
                         RenderType.cutout()
                 );
                 ItemBlockRenderTypes.setRenderLayer(
+                        BorealBlocks.NOCTURNAL_GRASS.get(),
+                        RenderType.cutout()
+                );
+                ItemBlockRenderTypes.setRenderLayer(
+                        BorealBlocks.NOCTURNAL_TALL_GRASS.get(),
+                        RenderType.cutout()
+                );
+                ItemBlockRenderTypes.setRenderLayer(
                         BorealBlocks.BOREALIGHT_SHROOM.get(),
                         RenderType.cutout()
                 );
@@ -102,7 +115,19 @@ public class TheBoreal
                         BorealBlocks.GLACIALIGHT_SHROOM.get(),
                         RenderType.cutout()
                 );
+
+                setRenderTypeCutout(BorealBlocks.NOCTURNALIGHT_SHROOM.get());
+                setRenderTypeCutout(BorealBlocks.NOCTURNALWEED.get());
+                setRenderTypeCutout(BorealBlocks.GLACIALWEED.get());
+                setRenderTypeCutout(BorealBlocks.STARLIGHT_SHROOM.get());
             });
         }
+    }
+
+    private static void setRenderTypeCutout(Block block) {
+        ItemBlockRenderTypes.setRenderLayer(
+                block,
+                RenderType.cutout()
+        );
     }
 }

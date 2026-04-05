@@ -6,9 +6,12 @@ import net.elaguilamc623.the_boreal.client.render.blocks.BorealInfuserRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.*;
 import net.elaguilamc623.the_boreal.client.render.entities.GlacialArrowRenderer;
 import net.elaguilamc623.the_boreal.entities.model.BorealGolemModel;
+import net.elaguilamc623.the_boreal.entities.model.CrystalizedFoxModel;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
+import net.elaguilamc623.the_boreal.particles.GlacialDustParticle;
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
+import net.elaguilamc623.the_boreal.registries.BorealParticles;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
@@ -17,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterDimensionSpecialEffectsEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -52,6 +56,9 @@ public class BorealClientEvents {
 
         event.registerEntityRenderer(BorealEntities.SUMMONED_BOREAL_GOLEM.get(),
                 SummonedBorealGolemRenderer::new);
+
+        event.registerEntityRenderer(BorealEntities.CRYSTALIZED_FOX.get(),
+                CrystalizedFoxRenderer::new);
     }
 
     @SubscribeEvent
@@ -67,5 +74,14 @@ public class BorealClientEvents {
         event.registerLayerDefinition(BorealModelLayers.AURORAL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(BorealModelLayers.NIGHT_DEER_LAYER, NightDeerModel::createBodyLayer);
         event.registerLayerDefinition(BorealModelLayers.BOREAL_GOLEM_LAYER, BorealGolemModel::createBodyLayer);
+        event.registerLayerDefinition(BorealModelLayers.CRYSTALIZED_FOX_LAYER, CrystalizedFoxModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(
+                BorealParticles.GLACIAL_DUST.get(),
+                GlacialDustParticle.Provider::new
+        );
     }
 }

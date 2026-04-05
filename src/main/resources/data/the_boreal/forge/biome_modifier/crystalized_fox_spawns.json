@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_boreal:glacial_desert",
+  "spawners": [
+    {
+      "type": "the_boreal:crystalized_fox",
+      "weight": 80,
+      "minCount": 1,
+      "maxCount": 5,
+      "category": "creature"
+    }
+  ]
+}

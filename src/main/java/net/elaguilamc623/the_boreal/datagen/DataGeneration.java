@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.datagen;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.datagen.worldgen.BorealWorldgenProvider;
 import net.elaguilamc623.the_boreal.datagen.loot_tables.BorealLootTableProvider;
 import net.elaguilamc623.the_boreal.datagen.models.BorealBlockStateProvider;
 import net.elaguilamc623.the_boreal.datagen.models.BorealItemModelProvider;
@@ -42,6 +43,8 @@ public class DataGeneration {
 
         generator.addProvider(event.includeClient(),
                 new BorealItemModelProvider(packOutput, existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new BorealWorldgenProvider(packOutput, lookupProvider));
 
         RegistrySetBuilder builder = new RegistrySetBuilder();
     }

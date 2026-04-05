@@ -68,6 +68,12 @@ public class BorealEntities {
                     .sized(2.0F, 3.7F)
                     .build("great_boreal_golem"));
 
+    public static final RegistryObject<EntityType<CrystalizedFox>> CRYSTALIZED_FOX =
+            ENTITY_TYPES.register("crystalized_fox", () -> EntityType.Builder
+                    .of(CrystalizedFox::new, MobCategory.CREATURE)
+                    .sized(0.8f, 1.0f)
+                    .build("crystalized_fox"));
+
     public static final RegistryObject<EntityType<GlacialSkeletonArrowEntity>> GLACIAL_ARROW =
             ENTITY_TYPES.register("glacial_arrow",
                     () -> EntityType.Builder.<GlacialSkeletonArrowEntity>of(GlacialSkeletonArrowEntity::new, MobCategory.MISC)

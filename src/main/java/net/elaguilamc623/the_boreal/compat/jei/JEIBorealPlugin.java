@@ -8,7 +8,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.compat.jei.category.BorealEssenceTableCategory;
 import net.elaguilamc623.the_boreal.compat.jei.recipes.BorealEssenceRecipeMaker;
-import net.elaguilamc623.the_boreal.compat.jei.recipes.BorealJEIRecipeTypes;
+import net.elaguilamc623.the_boreal.compat.jei.recipes.JEIBorealRecipeTypes;
 import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.minecraft.resources.ResourceLocation;
 
@@ -30,7 +30,7 @@ public class JEIBorealPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         registration.addRecipes(
-                BorealJEIRecipeTypes.ESSENCE,
+                JEIBorealRecipeTypes.ESSENCE,
                 BorealEssenceRecipeMaker.getRecipes()
         );
     }
@@ -40,7 +40,7 @@ public class JEIBorealPlugin implements IModPlugin {
         registration.addRecipeClickArea(
                 BorealEssenceTableScreen.class,
                 80, 20, 20, 20,
-                BorealJEIRecipeTypes.ESSENCE
+                JEIBorealRecipeTypes.ESSENCE
         );
     }
 }

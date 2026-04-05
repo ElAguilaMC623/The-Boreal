@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.blocks.custom.plants;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
@@ -20,11 +21,9 @@ public class BorealightShroomBlock extends BushBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-        Block block = state.getBlock();
-        return block == BorealBlocks.GLACIAL_GRASS_BLOCK.get()
-                || block == BorealBlocks.GLACIAL_DIRT.get();
-
+        return state.is(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON);
     }
+
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
         return true;

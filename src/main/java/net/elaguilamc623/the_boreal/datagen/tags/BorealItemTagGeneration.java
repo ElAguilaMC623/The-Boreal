@@ -67,5 +67,9 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
                         BorealItems.DIORIUM_SHOVEL.get(),
                         BorealItems.DIORIUM_HOE.get()
                 );
+
+        this.tag(BorealTags.CRYSTALIZED_FOX_FOOD)
+                .add(BorealItems.GLACIAL_BERRIES.get()
+                );
     }
 }

@@ -6,7 +6,6 @@ import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -134,17 +133,26 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.AURORA_PLANKS.get());
 
         this.tag(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON)
-                .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get());
+                .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get())
+                .add(BorealBlocks.GLACIAL_DIRT.get())
+                .add(BorealBlocks.NOCTURNAL_MUD.get())
+                .add(BorealBlocks.GLACIAL_SOIL.get());
 
         this.tag(TREE_REPLACEABLE)
                 .add(Blocks.SNOW)
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get())
                 .add(BorealBlocks.GLACIAL_DIRT.get())
-                .add(BorealBlocks.GLACIAL_GRASS.get());
+                .add(BorealBlocks.NOCTURNAL_MUD.get())
+                .add(BorealBlocks.GLACIAL_GRASS.get())
+                .add(BorealBlocks.GLACIAL_TALL_GRASS.get())
+                .add(BorealBlocks.BOREAL_ROCK.get())
+                .add(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get());
 
         this.tag(BlockTags.REPLACEABLE_BY_TREES)
                 .add(Blocks.SNOW)
-                .add(BorealBlocks.GLACIAL_GRASS.get());
+                .add(BorealBlocks.GLACIAL_GRASS.get())
+                .add(BorealBlocks.BOREAL_ROCK.get())
+                .add(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get());
 
         this.tag(BlockTags.FENCES)
                 .add(BorealBlocks.AURORAL_FENCE.get());
@@ -161,6 +169,8 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
         this.tag(BorealTags.MOBS_SPAWNABLE_ON)
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(),
                         BorealBlocks.GLACIAL_DIRT.get(),
+                        BorealBlocks.GLACIAL_SOIL.get(),
+                        BorealBlocks.NOCTURNAL_MUD.get(),
                         BorealBlocks.GLACIAL_GRASS.get(),
                         BorealBlocks.PERMAFROST.get(),
                         Blocks.SNOW

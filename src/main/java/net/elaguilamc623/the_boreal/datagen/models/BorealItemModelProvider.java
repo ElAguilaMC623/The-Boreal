@@ -23,6 +23,7 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.FROZEN_AMULET);
         simpleItem(BorealItems.BOREAL_ROCK);
         simpleItem(BorealItems.GLACIAL_CRYSTAL_SHARD);
+        simpleItem(BorealItems.PURIFIED_GLACIAL_CRYSTAL_SHARD);
         simpleItem(BorealItems.GLACIAL_SEED);
         simpleItem(BorealItems.GLACIAL_WHEAT);
         simpleItem(BorealItems.GLACIAL_BREAD);
@@ -87,6 +88,7 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         withExistingParent(BorealItems.GLACIAL_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.FROZEN_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.NIGHT_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.CRYSTALIZED_FOX_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.SUMMONED_BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.GREAT_BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -147,6 +149,20 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         );
 
         singleTexture(
+                BorealBlocks.NOCTURNAL_GRASS.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/nocturnal_grass")
+        );
+
+        singleTexture(
+                BorealBlocks.NOCTURNAL_TALL_GRASS.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/nocturnal_tall_grass_top")
+        );
+
+        singleTexture(
                 BorealBlocks.BOREALIGHT_SHROOM.getId().getPath(),
                 mcLoc("item/generated"),
                 "layer0",
@@ -158,6 +174,34 @@ public class BorealItemModelProvider extends CCItemModelProvider {
                 mcLoc("item/generated"),
                 "layer0",
                 modLoc("block/glacialight_shroom")
+        );
+
+        singleTexture(
+                BorealBlocks.STARLIGHT_SHROOM.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/starlight_shroom")
+        );
+
+        singleTexture(
+                BorealBlocks.NOCTURNALIGHT_SHROOM.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/nocturnalight_shroom")
+        );
+
+        singleTexture(
+                BorealBlocks.NOCTURNALWEED.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/nocturnalweed")
+        );
+
+        singleTexture(
+                BorealBlocks.GLACIALWEED.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/glacialweed")
         );
 
         withExistingParent(

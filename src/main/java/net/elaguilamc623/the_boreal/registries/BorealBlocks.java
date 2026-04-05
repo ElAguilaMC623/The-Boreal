@@ -28,6 +28,9 @@ public class BorealBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, TheBoreal.MOD_ID);
 
+    public static final RegistryObject<Block> BOREAL_ROCK = BLOCKS.register("boreal_rock",
+            () -> new BorealRockBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_CARPET).sound(SoundType.STONE)));
+
     public static final RegistryObject<Block> BOREAL_COBBLESTONE = registerBlock("boreal_cobblestone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
 
@@ -154,6 +157,12 @@ public class BorealBlocks {
     public static final RegistryObject<Block> GLACIAL_DIRT = registerBlock("glacial_dirt",
             () -> new GlacialDirtBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 
+    public static final RegistryObject<Block> NOCTURNAL_MUD = registerBlock("nocturnal_mud",
+            () -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.MUD)));
+
+    public static final RegistryObject<Block> GLACIAL_SOIL = registerBlock("glacial_soil",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SOUL_SOIL)));
+
     public static final RegistryObject<Block> GLACIAL_FARMLAND = registerBlock("glacial_farmland",
             () -> new GlacialFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND)));
 
@@ -163,11 +172,32 @@ public class BorealBlocks {
     public static final RegistryObject<Block> GLACIAL_TALL_GRASS = registerBlock("glacial_tall_grass",
             () -> new GlacialTallGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS).replaceable()));
 
+    public static final RegistryObject<Block> NOCTURNAL_GRASS = registerBlock("nocturnal_grass",
+            () -> new GlacialGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).replaceable()));
+
+    public static final RegistryObject<Block> NOCTURNAL_TALL_GRASS = registerBlock("nocturnal_tall_grass",
+            () -> new GlacialTallGrassPlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS).replaceable()));
+
     public static final RegistryObject<Block> BOREALIGHT_SHROOM = registerBlock("borealight_shroom",
             () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
 
     public static final RegistryObject<Block> GLACIALIGHT_SHROOM = registerBlock("glacialight_shroom",
             () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> STARLIGHT_SHROOM = registerBlock("starlight_shroom",
+            () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> NOCTURNALIGHT_SHROOM = registerBlock("nocturnalight_shroom",
+            () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> GLACIALWEED = registerBlock("glacialweed",
+            () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> NOCTURNALWEED = registerBlock("nocturnalweed",
+            () -> new BorealightShroomBlock(BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY).replaceable().lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> CRYSTALIZED_DEAD_BUSH = registerBlock("crystalized_dead_bush",
+            () -> new CrystalizedDeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH).replaceable().lightLevel(state -> 4)));
 
     public static final RegistryObject<Block> GLACIAL_BERRY_BUSH = registerBlock("glacial_berries_bush",
             () -> new GlacialBerryBushBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion().noCollission()));

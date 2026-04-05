@@ -269,7 +269,7 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .pattern("ABA")
                 .pattern(" A ")
                 .define('A', BorealItems.BOREAL_SHARD.get())
-                .define('B', BorealItems.FROZEN_AMULET.get())
+                .define('B', BorealItems.PURIFIED_GLACIAL_CRYSTAL_SHARD.get())
                 .unlockedBy("has_boreal_shard", has(BorealItems.BOREAL_SHARD.get()))
                 .save(consumer);
 

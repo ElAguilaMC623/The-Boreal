@@ -1,9 +1,0 @@
-{
-  "type": "the_boreal:glacial_crystal_spike",
-  "config": {
-    "min_height": 5,
-    "max_height": 12,
-    "min_radius": 1,
-    "max_radius": 3
-  }
-}

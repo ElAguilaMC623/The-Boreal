@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 public class BorealEssenceRecipeMaker {
-    public static List<BorealEssenceTableRecipe> getRecipes() {
-        List<BorealEssenceTableRecipe> list = new ArrayList<>();
+    public static List<BorealEssenceRecipe> getRecipes() {
+        List<BorealEssenceRecipe> list = new ArrayList<>();
 
         for (Map.Entry<Item, Item> entry : BorealConversions.BOREAL_TO_VANILLA.entrySet()) {
             ItemStack boreal = new ItemStack(entry.getKey());
             ItemStack vanilla = new ItemStack(entry.getValue());
 
-            list.add(new BorealEssenceTableRecipe(
+            list.add(new BorealEssenceRecipe(
                     boreal,
                     new ItemStack(BorealItems.DIORIUM_GEM.get()),
                     vanilla,

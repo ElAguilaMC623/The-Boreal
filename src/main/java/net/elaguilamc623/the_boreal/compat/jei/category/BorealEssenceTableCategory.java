@@ -9,14 +9,14 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.compat.jei.recipes.BorealEssenceTableRecipe;
-import net.elaguilamc623.the_boreal.compat.jei.recipes.BorealJEIRecipeTypes;
+import net.elaguilamc623.the_boreal.compat.jei.recipes.BorealEssenceRecipe;
+import net.elaguilamc623.the_boreal.compat.jei.recipes.JEIBorealRecipeTypes;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-public class BorealEssenceTableCategory implements IRecipeCategory<BorealEssenceTableRecipe> {
+public class BorealEssenceTableCategory implements IRecipeCategory<BorealEssenceRecipe> {
 
     public static final ResourceLocation UID = new ResourceLocation(TheBoreal.MOD_ID, "boreal_essence_table");
 
@@ -36,8 +36,8 @@ public class BorealEssenceTableCategory implements IRecipeCategory<BorealEssence
     }
 
     @Override
-    public RecipeType<BorealEssenceTableRecipe> getRecipeType() {
-        return BorealJEIRecipeTypes.ESSENCE;
+    public RecipeType<BorealEssenceRecipe> getRecipeType() {
+        return JEIBorealRecipeTypes.ESSENCE;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class BorealEssenceTableCategory implements IRecipeCategory<BorealEssence
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, BorealEssenceTableRecipe recipe, IFocusGroup focuses) {
+    public void setRecipe(IRecipeLayoutBuilder builder, BorealEssenceRecipe recipe, IFocusGroup focuses) {
 
         builder.addSlot(RecipeIngredientRole.INPUT, 30, 30)
                 .addItemStack(recipe.getBorealInput());

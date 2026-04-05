@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "the_boreal:particle",
+      "prefix": "particle/"
+    }
+  ]
+}

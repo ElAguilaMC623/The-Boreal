@@ -3,7 +3,10 @@ package net.elaguilamc623.the_boreal.events;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.bosses.GreatBorealGolemBoss;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
+import net.elaguilamc623.the_boreal.worldgen.dimension.BorealDimension;
 import net.elaguilamc623.the_boreal.worldgen.spawns.BorealSpawnRules;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Wolf;
@@ -14,6 +17,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.RegisterEvent;
 
 @Mod.EventBusSubscriber(modid = TheBoreal.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BorealEntityEvents {
@@ -79,6 +83,13 @@ public class BorealEntityEvents {
         event.put(BorealEntities.GREAT_BOREAL_GOLEM.get(),
                 GreatBorealGolemBoss.createAttributes().build());
 
+        event.put(BorealEntities.CRYSTALIZED_FOX.get(),
+                Wolf.createAttributes()
+                        .add(Attributes.MAX_HEALTH, 40.0D)
+                        .add(Attributes.ATTACK_DAMAGE, 2.0D)
+                        .add(Attributes.MOVEMENT_SPEED, 0.4)
+                        .build()
+        );
     }
 
     @SubscribeEvent
@@ -120,7 +131,13 @@ public class BorealEntityEvents {
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     BorealSpawnRules::nightDeerRules
             );
+
+            SpawnPlacements.register(
+                    BorealEntities.CRYSTALIZED_FOX.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    BorealSpawnRules::nightDeerRules
+            );
         });
     }
-
 }
