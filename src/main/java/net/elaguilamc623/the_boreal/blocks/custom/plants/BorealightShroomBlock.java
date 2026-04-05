@@ -1,5 +1,6 @@
 package net.elaguilamc623.the_boreal.blocks.custom.plants;
 
+import net.elaguilamc623.the_boreal.config.BorealConfig;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.BlockPos;
@@ -31,19 +32,21 @@ public class BorealightShroomBlock extends BushBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (random.nextFloat() < 0.3F) {
+        if (BorealConfig.CLIENT.plantParticles.get()) {
+            if (random.nextFloat() < 0.3F) {
 
-            int radius = 2;
+                int radius = 2;
 
-            double x = pos.getX() + 0.5 + (random.nextDouble() * radius * 2 - radius);
-            double y = pos.getY() + 0.8 + random.nextDouble() * 0.6;
-            double z = pos.getZ() + 0.5 + (random.nextDouble() * radius * 2 - radius);
+                double x = pos.getX() + 0.5 + (random.nextDouble() * radius * 2 - radius);
+                double y = pos.getY() + 0.8 + random.nextDouble() * 0.6;
+                double z = pos.getZ() + 0.5 + (random.nextDouble() * radius * 2 - radius);
 
-            double vx = 0;
-            double vy = 0.02 + random.nextDouble() * 0.02;
-            double vz = 0;
+                double vx = 0;
+                double vy = 0.02 + random.nextDouble() * 0.02;
+                double vz = 0;
 
-            level.addParticle(ParticleTypes.END_ROD, x, y, z, vx, vy, vz);
+                level.addParticle(ParticleTypes.END_ROD, x, y, z, vx, vy, vz);
+            }
         }
     }
 }
