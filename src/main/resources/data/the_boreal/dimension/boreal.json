@@ -89,18 +89,6 @@
             "temperature": [-0.2, 0.15],
             "weirdness": 0.0
           }
-        },
-        {
-          "biome": "the_boreal:glacial_deep_ocean",
-          "parameters": {
-            "continentalness": [-1.0, -0.9],
-            "depth": 0.0,
-            "erosion": 0.0,
-            "humidity": 0.0,
-            "offset": 0.0,
-            "temperature": 0.0,
-            "weirdness": 0.0
-          }
         }
       ]
     }

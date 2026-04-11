@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.particles;
+package net.elaguilamc623.the_boreal.client.render.particles;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;

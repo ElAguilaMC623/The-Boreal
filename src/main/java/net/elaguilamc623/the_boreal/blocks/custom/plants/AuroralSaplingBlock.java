@@ -1,7 +1,7 @@
 package net.elaguilamc623.the_boreal.blocks.custom.plants;
 
 import net.elaguilamc623.the_boreal.registries.BorealTags;
-import net.elaguilamc623.the_boreal.worldgen.features.custom.AuroralTreeGrower;
+import net.elaguilamc623.the_boreal.worldgen.features.growers.AuroralTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;

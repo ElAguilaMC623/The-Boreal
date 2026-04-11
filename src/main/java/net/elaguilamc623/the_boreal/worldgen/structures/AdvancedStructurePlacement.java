@@ -2,7 +2,7 @@ package net.elaguilamc623.the_boreal.worldgen.structures;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
+import net.elaguilamc623.the_boreal.registries.world.structures.BorealStructurePlacements;
 import net.elaguilamc623.the_boreal.worldgen.structures.utils.CustomExclusionZone;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Vec3i;

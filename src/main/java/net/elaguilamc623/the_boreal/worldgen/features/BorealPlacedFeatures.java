@@ -1,9 +1,9 @@
 package net.elaguilamc623.the_boreal.worldgen.features;
 
-import net.elaguilamc623.complementary_core.world.features.CCFeatureConfiguration;
-import net.elaguilamc623.complementary_core.world.features.CCPlacedFeaturesTemplates;
-import net.elaguilamc623.complementary_core.world.features.custom.DeltaFeatures;
-import net.elaguilamc623.complementary_core.world.features.custom.OreFeatures;
+import net.elaguilamc623.complementary_core.world.features.config.CCFeatureConfiguration;
+import net.elaguilamc623.complementary_core.world.features.templates.CCPlacedFeaturesTemplates;
+import net.elaguilamc623.complementary_core.world.features.templates.DeltaFeatures;
+import net.elaguilamc623.complementary_core.world.features.templates.OreFeatures;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.core.HolderGetter;
@@ -122,6 +122,10 @@ public class BorealPlacedFeatures {
     public static final ResourceKey<PlacedFeature> NOCTURNALWEED_PATCH_PLACED =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "nocturnalweed_patch"));
+
+    public static final ResourceKey<PlacedFeature> HUGE_NOCTURNAL_FUNGUS_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "huge_nocturnal_fungus_placed"));
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -327,5 +331,16 @@ public class BorealPlacedFeatures {
                 CCPlacedFeaturesTemplates.patchFeaturePlacedWithCount(configured,
                         BorealConfiguredFeatures.NOCTURNALWEED_PATCH, 6, 2)
         );
+
+
+        context.register(BorealPlacedFeatures.HUGE_NOCTURNAL_FUNGUS_PLACED, new PlacedFeature(
+                configured.getOrThrow(BorealConfiguredFeatures.HUGE_NOCTURNAL_FUNGUS),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                )
+        ));
     }
 }

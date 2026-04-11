@@ -5,13 +5,13 @@ import net.elaguilamc623.the_boreal.client.render.entities.BorealBoatRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.BorealGolemRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.CrystalizedFoxRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
-import net.elaguilamc623.the_boreal.config.BorealConfig;
+import net.elaguilamc623.the_boreal.client.config.BorealClientConfig;
 import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.gui.boreal_infuser.BorealInfuserScreen;
 import net.elaguilamc623.the_boreal.registries.*;
-import net.elaguilamc623.the_boreal.registries.worldgen.BorealFeatures;
-import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructureGeneration;
-import net.elaguilamc623.the_boreal.registries.worldgen.structures.BorealStructurePlacements;
+import net.elaguilamc623.the_boreal.registries.world.BorealFeatures;
+import net.elaguilamc623.the_boreal.registries.world.structures.BorealStructureGeneration;
+import net.elaguilamc623.the_boreal.registries.world.structures.BorealStructurePlacements;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -63,7 +63,7 @@ public class TheBoreal
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BorealConfig.CLIENT_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BorealClientConfig.CLIENT_SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -120,6 +120,7 @@ public class TheBoreal
                 setRenderTypeCutout(BorealBlocks.NOCTURNALWEED.get());
                 setRenderTypeCutout(BorealBlocks.GLACIALWEED.get());
                 setRenderTypeCutout(BorealBlocks.STARLIGHT_SHROOM.get());
+                setRenderTypeCutout(BorealBlocks.NOCTURNAL_FUNGUS.get());
             });
         }
     }

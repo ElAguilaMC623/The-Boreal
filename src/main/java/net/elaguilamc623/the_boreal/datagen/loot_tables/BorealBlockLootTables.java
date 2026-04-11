@@ -81,6 +81,7 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.NOCTURNALWEED.get());
         this.dropSelf(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get());
         this.dropSelf(BorealBlocks.BOREAL_ALTAR.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_FUNGUS.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.BOREAL_STONE_SLAB.get(), block -> createSlabItemTable(block));
@@ -187,6 +188,12 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
 
         this.add(BorealBlocks.BOREAL_ROCK.get(),
                 block -> createSingleItemTable(BorealItems.BOREAL_ROCK.get()));
+
+        this.add(BorealBlocks.NOCTURNAL_FUNGUS_CAP.get(),
+                block -> createOreDrop(block, BorealBlocks.NOCTURNAL_FUNGUS.get().asItem()));
+
+        this.add(BorealBlocks.NOCTURNAL_FUNGUS_STEM.get(),
+                block -> createOreDrop(block, BorealBlocks.NOCTURNAL_FUNGUS.get().asItem()));
     }
 
     private void dropGlacialCrystal(Block block, ItemLike shard) {

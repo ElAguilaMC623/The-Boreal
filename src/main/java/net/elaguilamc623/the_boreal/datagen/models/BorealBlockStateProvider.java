@@ -2,16 +2,23 @@ package net.elaguilamc623.the_boreal.datagen.models;
 
 import net.elaguilamc623.complementary_core.datagen.models.CCBlockStateProvider;
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.blocks.custom.NocturnalFungusCapBlock;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class BorealBlockStateProvider extends CCBlockStateProvider {
     public BorealBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -42,6 +49,7 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         blockWithItem(BorealBlocks.GLACIAL_SOIL);
         blockWithItem(BorealBlocks.PERMAFROST);
         blockWithItem(BorealBlocks.GLACIAL_CRYSTAL);
+        blockWithItem(BorealBlocks.NOCTURNAL_FUNGUS_STEM);
 
         stairsBlock(((StairBlock)BorealBlocks.BOREAL_COBBLESTONE_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
         slabBlock(((SlabBlock) BorealBlocks.BOREAL_COBBLESTONE_SLAB.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
@@ -90,6 +98,7 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         blockItem(BorealBlocks.STRIPPED_AURORA_LOG);
         blockItem(BorealBlocks.STRIPPED_AURORA_WOOD);
 
+        nocturnalFungusCapBlock(BorealBlocks.NOCTURNAL_FUNGUS_CAP);
         leavesBlock(BorealBlocks.AURORA_LEAVES);
         doublePlant(BorealBlocks.GLACIAL_TALL_GRASS.get());
         doublePlant(BorealBlocks.NOCTURNAL_TALL_GRASS.get());
@@ -100,6 +109,7 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         simpleCrossBlock(BorealBlocks.GLACIALIGHT_SHROOM.get());
         simpleCrossBlock(BorealBlocks.STARLIGHT_SHROOM.get());
         simpleCrossBlock(BorealBlocks.GLACIALWEED.get());
+        simpleCrossBlock(BorealBlocks.NOCTURNAL_FUNGUS.get());
 
         paneBlock(
                 (IronBarsBlock) BorealBlocks.TALISMANDIUM_BARS.get(),
@@ -157,5 +167,64 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
                 .setModels(new ConfiguredModel(bottom))
                 .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)
                 .setModels(new ConfiguredModel(top));
+    }
+
+    private void nocturnalFungusCapBlock(RegistryObject<? extends Block> blockReg) {
+        Block block = blockReg.get();
+        if (!(block instanceof NocturnalFungusCapBlock)) {
+            return;
+        }
+
+        NocturnalFungusCapBlock b = (NocturnalFungusCapBlock) block;
+        StateDefinition<Block, BlockState> states = b.getStateDefinition();
+        VariantBlockStateBuilder builder = getVariantBuilder(b);
+
+        String baseName = blockReg.getId().getPath();
+        ResourceLocation capTex = modLoc("block/" + baseName);
+        ResourceLocation innerTex = modLoc("block/" + baseName + "_inner");
+
+        for (BlockState state : states.getPossibleStates()) {
+            boolean up = state.getValue(NocturnalFungusCapBlock.UP);
+            boolean down = state.getValue(NocturnalFungusCapBlock.DOWN);
+            boolean north = state.getValue(NocturnalFungusCapBlock.NORTH);
+            boolean south = state.getValue(NocturnalFungusCapBlock.SOUTH);
+            boolean east = state.getValue(NocturnalFungusCapBlock.EAST);
+            boolean west = state.getValue(NocturnalFungusCapBlock.WEST);
+
+            ResourceLocation upTex = up ? capTex : innerTex;
+            ResourceLocation downTex = down ? capTex : innerTex;
+            ResourceLocation northTex = north ? capTex : innerTex;
+            ResourceLocation southTex = south ? capTex : innerTex;
+            ResourceLocation eastTex = east ? capTex : innerTex;
+            ResourceLocation westTex = west ? capTex : innerTex;
+
+            String suffix = "";
+            if (!up) suffix += "u";
+            if (!down) suffix += "d";
+            if (!north) suffix += "n";
+            if (!east) suffix += "e";
+            if (!south) suffix += "s";
+            if (!west) suffix += "w";
+            if (suffix.isEmpty()) suffix = "all";
+
+            BlockModelBuilder model = models().cube(
+                    baseName + "_" + suffix,
+                    downTex, upTex, northTex, southTex, eastTex, westTex
+            ).texture("particle", innerTex);
+
+            builder.partialState()
+                    .with(NocturnalFungusCapBlock.UP, up)
+                    .with(NocturnalFungusCapBlock.DOWN, down)
+                    .with(NocturnalFungusCapBlock.NORTH, north)
+                    .with(NocturnalFungusCapBlock.SOUTH, south)
+                    .with(NocturnalFungusCapBlock.EAST, east)
+                    .with(NocturnalFungusCapBlock.WEST, west)
+                    .modelForState()
+                    .modelFile(model)
+                    .addModel();
+
+            itemModels().withExistingParent(baseName,
+                    modLoc("block/" + baseName + "_all"));
+        }
     }
 }

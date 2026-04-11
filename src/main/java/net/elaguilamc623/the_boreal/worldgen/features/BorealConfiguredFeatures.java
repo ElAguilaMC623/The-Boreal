@@ -1,15 +1,16 @@
 package net.elaguilamc623.the_boreal.worldgen.features;
 
-import net.elaguilamc623.complementary_core.world.features.CCBaseFeatures;
-import net.elaguilamc623.complementary_core.world.features.CCFeatureConfiguration;
-import net.elaguilamc623.complementary_core.world.features.custom.DeltaFeatures;
-import net.elaguilamc623.complementary_core.world.features.custom.OreFeatures;
-import net.elaguilamc623.complementary_core.world.features.custom.PatchFeature;
+import net.elaguilamc623.complementary_core.world.features.config.CCFeatureConfiguration;
+import net.elaguilamc623.complementary_core.world.features.config.custom.FallenLogConfig;
+import net.elaguilamc623.complementary_core.world.features.registry.CCFeatureRegistry;
+import net.elaguilamc623.complementary_core.world.features.templates.DeltaFeatures;
+import net.elaguilamc623.complementary_core.world.features.templates.OreFeatures;
+import net.elaguilamc623.complementary_core.world.features.templates.PatchFeature;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.custom.plants.GlacialBerryBushBlock;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealTags;
-import net.elaguilamc623.the_boreal.registries.worldgen.BorealFeatures;
+import net.elaguilamc623.the_boreal.registries.world.BorealFeatures;
 import net.elaguilamc623.the_boreal.worldgen.features.custom.GlacialCrystalSpikeFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -19,10 +20,10 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
@@ -129,6 +130,10 @@ public class BorealConfiguredFeatures {
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "nocturnalweed_patch"));
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_NOCTURNAL_FUNGUS =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "huge_nocturnal_fungus"));
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
         context.register(AURORAL_TREE_LARGE,
@@ -201,11 +206,11 @@ public class BorealConfiguredFeatures {
         CCFeatureConfiguration.register(
                 context,
                 AURORAL_FALLEN_LOG,
-                CCBaseFeatures.FALLEN_LOG.get(),
-                new SimpleBlockConfiguration(
-                        SimpleStateProvider.simple(
-                                BorealBlocks.AURORA_LOG.get().defaultBlockState()
-                        )
+                CCFeatureRegistry.FALLEN_LOG.get(),
+                new FallenLogConfig(
+                        BlockStateProvider.simple(BorealBlocks.AURORA_LOG.get()),
+                        BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON,
+                        ConstantInt.of(4)
                 )
         );
 
@@ -359,5 +364,14 @@ public class BorealConfiguredFeatures {
                 .state(BorealBlocks.GLACIALWEED.get().defaultBlockState())
                 .below(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON)
                 .register();
+
+        context.register(BorealConfiguredFeatures.HUGE_NOCTURNAL_FUNGUS, new ConfiguredFeature<>(
+                (Feature<HugeMushroomFeatureConfiguration>)BorealFeatures.HUGE_NOCTURNAL_FUNGUS_FEATURE.get(),
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(BorealBlocks.NOCTURNAL_FUNGUS_CAP.get()),
+                        BlockStateProvider.simple(BorealBlocks.NOCTURNAL_FUNGUS_STEM.get()),
+                        2
+                )
+        ));
     }
 }

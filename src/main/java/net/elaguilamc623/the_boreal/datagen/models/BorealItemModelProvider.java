@@ -204,6 +204,13 @@ public class BorealItemModelProvider extends CCItemModelProvider {
                 modLoc("block/glacialweed")
         );
 
+        singleTexture(
+                BorealBlocks.NOCTURNAL_FUNGUS.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/nocturnal_fungus")
+        );
+
         withExistingParent(
                 BorealBlocks.BOREAL_ALTAR.getId().getPath(),
                 modLoc("block/boreal_altar")

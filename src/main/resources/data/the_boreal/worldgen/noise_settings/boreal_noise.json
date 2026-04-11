@@ -522,8 +522,7 @@
         "if_true": {
           "type": "minecraft:biome",
           "biome_is": [
-            "the_boreal:nocturnal_marsh",
-            "the_boreal:glacial_deep_ocean"
+            "the_boreal:nocturnal_marsh"
           ]
         },
         "then_run": {

@@ -11,6 +11,7 @@ import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.hanging.BorealWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
+import net.elaguilamc623.the_boreal.worldgen.features.BorealConfiguredFeatures;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -288,6 +289,15 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> BOREAL_ALTAR = registerBlock("boreal_altar",
             () -> new BorealAltarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_DEEPSLATE).strength(-1.0F, 3600000.0F)));
+
+    public static final RegistryObject<Block> NOCTURNAL_FUNGUS = registerBlock("nocturnal_fungus",
+            () -> new NocturnalFungusBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)));
+
+    public static final RegistryObject<Block> NOCTURNAL_FUNGUS_CAP = registerBlock("nocturnal_fungus_cap",
+            () -> new NocturnalFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK)));
+
+    public static final RegistryObject<Block> NOCTURNAL_FUNGUS_STEM = registerBlock("nocturnal_fungus_stem",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

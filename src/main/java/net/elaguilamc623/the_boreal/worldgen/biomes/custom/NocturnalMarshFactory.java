@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.worldgen.biomes.custom;
 
 import net.elaguilamc623.the_boreal.worldgen.biomes.AbstractBorealBiomeFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.util.BorealBiomeDefaultFeatures;
 import net.elaguilamc623.the_boreal.worldgen.features.BorealPlacedFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.world.level.biome.Biome;
@@ -41,12 +42,12 @@ public class NocturnalMarshFactory extends AbstractBorealBiomeFactory {
         var builder = super.defaultGenerationSettings(context);
 
         builder.addFeature(GenerationStep.Decoration.LAKES, BorealPlacedFeatures.NOCTURNAL_DELTA);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.NOCTURNAL_TALL_GRASS_PATCH_PLACED);
+        BorealBiomeDefaultFeatures.addNocturnalGrass(builder);
 
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.NOCTURNALIGHT_SHROOM_PATCH_PLACED);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.NOCTURNALWEED_PATCH_PLACED);
+        BorealBiomeDefaultFeatures.addNocturnalPlants(builder);
+        BorealBiomeDefaultFeatures.addAuroralPlants(builder);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.HUGE_NOCTURNAL_FUNGUS_PLACED);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.GLACIALWEED_PATCH_UNCOMMON_PLACED);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.BOREALIGHT_SHROOM_PATCH_PLACED);
 
         return builder;
     }

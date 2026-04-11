@@ -100,6 +100,9 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.GLACIAL_TALL_GRASS.get());
                                 pOutput.accept(BorealBlocks.NOCTURNAL_GRASS.get());
                                 pOutput.accept(BorealBlocks.NOCTURNAL_TALL_GRASS.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_FUNGUS_CAP.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_FUNGUS_STEM.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_FUNGUS.get());
                                 pOutput.accept(BorealBlocks.GLACIALWEED.get());
                                 pOutput.accept(BorealBlocks.GLACIALIGHT_SHROOM.get());
                                 pOutput.accept(BorealBlocks.BOREALIGHT_SHROOM.get());

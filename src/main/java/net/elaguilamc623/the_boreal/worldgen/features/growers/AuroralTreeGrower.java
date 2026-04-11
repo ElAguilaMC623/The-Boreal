@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.worldgen.features.custom;
+package net.elaguilamc623.the_boreal.worldgen.features.growers;
 
 import net.elaguilamc623.the_boreal.worldgen.features.BorealConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;

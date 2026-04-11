@@ -1,7 +1,6 @@
 package net.elaguilamc623.the_boreal.blocks.custom.plants;
 
-import net.elaguilamc623.the_boreal.config.BorealConfig;
-import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.client.config.BorealClientConfig;
 import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -9,7 +8,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,7 +30,7 @@ public class BorealightShroomBlock extends BushBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (BorealConfig.CLIENT.plantParticles.get()) {
+        if (BorealClientConfig.CLIENT.plantParticles.get()) {
             if (random.nextFloat() < 0.3F) {
 
                 int radius = 2;

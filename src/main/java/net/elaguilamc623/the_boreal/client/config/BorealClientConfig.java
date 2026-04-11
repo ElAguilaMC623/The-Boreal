@@ -1,8 +1,8 @@
-package net.elaguilamc623.the_boreal.config;
+package net.elaguilamc623.the_boreal.client.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class BorealConfig {
+public class BorealClientConfig {
 
     public static class Client {
         public final ForgeConfigSpec.BooleanValue plantParticles;

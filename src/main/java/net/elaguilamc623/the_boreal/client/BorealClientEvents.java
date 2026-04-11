@@ -8,7 +8,7 @@ import net.elaguilamc623.the_boreal.client.render.entities.GlacialArrowRenderer;
 import net.elaguilamc623.the_boreal.entities.model.BorealGolemModel;
 import net.elaguilamc623.the_boreal.entities.model.CrystalizedFoxModel;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
-import net.elaguilamc623.the_boreal.particles.GlacialDustParticle;
+import net.elaguilamc623.the_boreal.client.render.particles.GlacialDustParticle;
 import net.elaguilamc623.the_boreal.registries.BorealBlockEntities;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.registries.BorealParticles;
