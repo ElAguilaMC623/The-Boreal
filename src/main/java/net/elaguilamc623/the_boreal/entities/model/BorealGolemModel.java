@@ -3,7 +3,7 @@ package net.elaguilamc623.the_boreal.entities.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.elaguilamc623.the_boreal.entities.animations.BorealAnimationDefinitions;
-import net.elaguilamc623.the_boreal.entities.custom.BorealGolem;
+import net.elaguilamc623.the_boreal.entities.custom.monsters.BorealGolem;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;

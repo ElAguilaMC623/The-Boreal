@@ -299,6 +299,10 @@ public class BorealBlocks {
     public static final RegistryObject<Block> NOCTURNAL_FUNGUS_STEM = registerBlock("nocturnal_fungus_stem",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
 
+    public static final RegistryObject<Block> NOCTURNAL_SHROOMLIGHT = registerBlock("nocturnal_shroomlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PEARLESCENT_FROGLIGHT).lightLevel(state -> 15)));
+
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

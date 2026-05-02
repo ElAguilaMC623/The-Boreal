@@ -50,6 +50,7 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         blockWithItem(BorealBlocks.PERMAFROST);
         blockWithItem(BorealBlocks.GLACIAL_CRYSTAL);
         blockWithItem(BorealBlocks.NOCTURNAL_FUNGUS_STEM);
+        blockWithItem(BorealBlocks.NOCTURNAL_SHROOMLIGHT);
 
         stairsBlock(((StairBlock)BorealBlocks.BOREAL_COBBLESTONE_STAIRS.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));
         slabBlock(((SlabBlock) BorealBlocks.BOREAL_COBBLESTONE_SLAB.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()), blockTexture(BorealBlocks.BOREAL_COBBLESTONE.get()));

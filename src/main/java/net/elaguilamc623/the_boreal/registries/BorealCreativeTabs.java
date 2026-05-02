@@ -32,6 +32,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.NIGHT_MEAT.get());
                                 pOutput.accept(BorealItems.COOKED_NIGHT_MEAT.get());
                                 pOutput.accept(BorealItems.FROZEN_FUR.get());
+                                pOutput.accept(BorealItems.NOCTURNAL_CREAM.get());
                                 pOutput.accept(BorealItems.RAW_TALISMANDIUM.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_INGOT.get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_NUGGET.get());
@@ -190,6 +191,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.AURORAL_BUTTON.get());
                                 pOutput.accept(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
                                 pOutput.accept(BorealBlocks.TALISMANDIUM_BARS.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_SHROOMLIGHT.get());
                             })
                             .build()
             );
@@ -225,6 +227,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.GLACIAL_SKELETON_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.NIGHT_DEER_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.CRYSTALIZED_FOX_SPAWN_EGG.get());
+                                pOutput.accept(BorealItems.NOCTURNAL_CUBE_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.BOREAL_GOLEM_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.SUMMONED_BOREAL_GOLEM_SPAWN_EGG.get());
                                 pOutput.accept(BorealItems.GREAT_BOREAL_GOLEM_SPAWN_EGG.get());

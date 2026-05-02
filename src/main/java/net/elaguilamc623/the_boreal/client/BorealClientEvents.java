@@ -14,6 +14,8 @@ import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.registries.BorealParticles;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
+import net.minecraft.client.model.SlimeModel;
+import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -59,6 +61,9 @@ public class BorealClientEvents {
 
         event.registerEntityRenderer(BorealEntities.CRYSTALIZED_FOX.get(),
                 CrystalizedFoxRenderer::new);
+
+        event.registerEntityRenderer(BorealEntities.NOCTURNAL_CUBE.get(),
+                NocturnalCubeRenderer::new);
     }
 
     @SubscribeEvent
@@ -75,6 +80,7 @@ public class BorealClientEvents {
         event.registerLayerDefinition(BorealModelLayers.NIGHT_DEER_LAYER, NightDeerModel::createBodyLayer);
         event.registerLayerDefinition(BorealModelLayers.BOREAL_GOLEM_LAYER, BorealGolemModel::createBodyLayer);
         event.registerLayerDefinition(BorealModelLayers.CRYSTALIZED_FOX_LAYER, CrystalizedFoxModel::createBodyLayer);
+        event.registerLayerDefinition(BorealModelLayers.NOCTURNAL_CUBE_OUTER_LAYER, SlimeModel::createOuterBodyLayer);
     }
 
     @SubscribeEvent

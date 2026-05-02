@@ -90,6 +90,13 @@ public class BorealEntityEvents {
                         .add(Attributes.MOVEMENT_SPEED, 0.4)
                         .build()
         );
+
+        event.put(BorealEntities.NOCTURNAL_CUBE.get(),
+                Wolf.createAttributes()
+                        .add(Attributes.MAX_HEALTH, 40.0D)
+                        .add(Attributes.MOVEMENT_SPEED, 0.2D)
+                        .build()
+        );
     }
 
     @SubscribeEvent
@@ -134,6 +141,13 @@ public class BorealEntityEvents {
 
             SpawnPlacements.register(
                     BorealEntities.CRYSTALIZED_FOX.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    BorealSpawnRules::nightDeerRules
+            );
+
+            SpawnPlacements.register(
+                    BorealEntities.NOCTURNAL_CUBE.get(),
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     BorealSpawnRules::nightDeerRules

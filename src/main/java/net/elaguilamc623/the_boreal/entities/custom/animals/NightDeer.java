@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.entities.custom;
+package net.elaguilamc623.the_boreal.entities.custom.animals;
 
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.registries.BorealItems;

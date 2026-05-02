@@ -689,6 +689,12 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 BorealItems.GLACIAL_CRYSTAL_SHARD.get()
         );
 
+        defaultCrystalBlockRecipe(
+                consumer,
+                BorealBlocks.NOCTURNAL_SHROOMLIGHT.get(),
+                BorealItems.NOCTURNAL_CREAM.get()
+        );
+
         oreCooking(
                 consumer,
                 RecipeSerializer.SMELTING_RECIPE,

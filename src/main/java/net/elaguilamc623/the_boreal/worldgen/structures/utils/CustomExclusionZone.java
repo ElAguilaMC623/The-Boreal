@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 
+@SuppressWarnings("removal")
 public record CustomExclusionZone(HolderSet<StructureSet> sets, int radius) {
     public static final Codec<CustomExclusionZone> CODEC = RecordCodecBuilder.create(builder
             -> builder.group(RegistryCodecs.homogeneousList(

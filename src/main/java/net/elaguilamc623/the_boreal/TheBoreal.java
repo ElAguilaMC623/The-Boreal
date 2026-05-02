@@ -6,6 +6,7 @@ import net.elaguilamc623.the_boreal.client.render.entities.mobs.BorealGolemRende
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.CrystalizedFoxRenderer;
 import net.elaguilamc623.the_boreal.client.render.entities.mobs.NightDeerRenderer;
 import net.elaguilamc623.the_boreal.client.config.BorealClientConfig;
+import net.elaguilamc623.the_boreal.client.render.entities.mobs.NocturnalCubeRenderer;
 import net.elaguilamc623.the_boreal.gui.boreal_essence_table.BorealEssenceTableScreen;
 import net.elaguilamc623.the_boreal.gui.boreal_infuser.BorealInfuserScreen;
 import net.elaguilamc623.the_boreal.registries.*;
@@ -87,35 +88,17 @@ public class TheBoreal
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
             EntityRenderers.register(BorealEntities.BOREAL_GOLEM.get(), BorealGolemRenderer::new);
             EntityRenderers.register(BorealEntities.CRYSTALIZED_FOX.get(), CrystalizedFoxRenderer::new);
+            EntityRenderers.register(BorealEntities.NOCTURNAL_CUBE.get(), NocturnalCubeRenderer::new);
             MenuScreens.register(BorealMenus.BOREAL_ESSENCE_TABLE.get(), BorealEssenceTableScreen::new);
             MenuScreens.register(BorealMenus.BOREAL_INFUSER.get(), BorealInfuserScreen::new);
 
             event.enqueueWork(() -> {
-                ItemBlockRenderTypes.setRenderLayer(
-                        BorealBlocks.TALISMANDIUM_BARS.get(),
-                        RenderType.cutout()
-                );
-                ItemBlockRenderTypes.setRenderLayer(
-                        BorealBlocks.GLACIAL_TALL_GRASS.get(),
-                        RenderType.cutout()
-                );
-                ItemBlockRenderTypes.setRenderLayer(
-                        BorealBlocks.NOCTURNAL_GRASS.get(),
-                        RenderType.cutout()
-                );
-                ItemBlockRenderTypes.setRenderLayer(
-                        BorealBlocks.NOCTURNAL_TALL_GRASS.get(),
-                        RenderType.cutout()
-                );
-                ItemBlockRenderTypes.setRenderLayer(
-                        BorealBlocks.BOREALIGHT_SHROOM.get(),
-                        RenderType.cutout()
-                );
-                ItemBlockRenderTypes.setRenderLayer(
-                        BorealBlocks.GLACIALIGHT_SHROOM.get(),
-                        RenderType.cutout()
-                );
-
+                setRenderTypeCutout(BorealBlocks.TALISMANDIUM_BARS.get());
+                setRenderTypeCutout(BorealBlocks.GLACIAL_TALL_GRASS.get());
+                setRenderTypeCutout(BorealBlocks.NOCTURNAL_GRASS.get());
+                setRenderTypeCutout(BorealBlocks.NOCTURNAL_TALL_GRASS.get());
+                setRenderTypeCutout(BorealBlocks.BOREALIGHT_SHROOM.get());
+                setRenderTypeCutout(BorealBlocks.GLACIALIGHT_SHROOM.get());
                 setRenderTypeCutout(BorealBlocks.NOCTURNALIGHT_SHROOM.get());
                 setRenderTypeCutout(BorealBlocks.NOCTURNALWEED.get());
                 setRenderTypeCutout(BorealBlocks.GLACIALWEED.get());

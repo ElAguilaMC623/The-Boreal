@@ -3,7 +3,7 @@ package net.elaguilamc623.the_boreal.client.render.entities.mobs;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.client.render.BorealModelLayers;
-import net.elaguilamc623.the_boreal.entities.custom.NightDeer;
+import net.elaguilamc623.the_boreal.entities.custom.animals.NightDeer;
 import net.elaguilamc623.the_boreal.entities.model.NightDeerModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

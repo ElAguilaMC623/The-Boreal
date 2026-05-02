@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 
+@SuppressWarnings("removal")
 public class BorealBiomes {
     public static final ResourceKey<Biome> GLACIAL_TUNDRA =
             ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "glacial_tundra"));

@@ -2,6 +2,13 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.entities.custom.*;
+import net.elaguilamc623.the_boreal.entities.custom.animals.CrystalizedFox;
+import net.elaguilamc623.the_boreal.entities.custom.animals.FrozenBear;
+import net.elaguilamc623.the_boreal.entities.custom.animals.GlacialWolf;
+import net.elaguilamc623.the_boreal.entities.custom.monsters.BorealGolem;
+import net.elaguilamc623.the_boreal.entities.custom.monsters.GlacialSkeleton;
+import net.elaguilamc623.the_boreal.entities.custom.monsters.GlacialZombie;
+import net.elaguilamc623.the_boreal.entities.custom.animals.NightDeer;
 import net.elaguilamc623.the_boreal.entities.custom.bosses.GreatBorealGolemBoss;
 import net.elaguilamc623.the_boreal.entities.custom.projectiles.BorealRockEntity;
 import net.elaguilamc623.the_boreal.entities.custom.boats.BorealBoatEntity;
@@ -73,6 +80,12 @@ public class BorealEntities {
                     .of(CrystalizedFox::new, MobCategory.CREATURE)
                     .sized(0.8f, 1.0f)
                     .build("crystalized_fox"));
+
+    public static final RegistryObject<EntityType<NocturnalCube>> NOCTURNAL_CUBE =
+            ENTITY_TYPES.register("nocturnal_cube", () -> EntityType.Builder
+                    .of(NocturnalCube::new, MobCategory.CREATURE)
+                    .sized(0.8f, 1.0f)
+                    .build("nocturnal_cube"));
 
     public static final RegistryObject<EntityType<GlacialSkeletonArrowEntity>> GLACIAL_ARROW =
             ENTITY_TYPES.register("glacial_arrow",

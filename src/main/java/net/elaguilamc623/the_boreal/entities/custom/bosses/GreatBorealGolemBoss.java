@@ -2,7 +2,7 @@ package net.elaguilamc623.the_boreal.entities.custom.bosses;
 
 import net.elaguilamc623.complementary_core.entities.bosses.DefaultBossEntity;
 import net.elaguilamc623.the_boreal.entities.ai.GreatBorealGolemMeleeAttackGoal;
-import net.elaguilamc623.the_boreal.entities.custom.BorealGolem;
+import net.elaguilamc623.the_boreal.entities.custom.monsters.BorealGolem;
 import net.elaguilamc623.the_boreal.registries.BorealEntities;
 import net.elaguilamc623.the_boreal.registries.BorealItems;
 import net.minecraft.core.particles.ParticleTypes;

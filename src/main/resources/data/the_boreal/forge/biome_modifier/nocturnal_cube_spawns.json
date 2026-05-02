@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_boreal:nocturnal_marsh",
+  "spawners": [
+    {
+      "type": "the_boreal:nocturnal_cube",
+      "weight": 80,
+      "minCount": 1,
+      "maxCount": 5,
+      "category": "creature"
+    }
+  ]
+}

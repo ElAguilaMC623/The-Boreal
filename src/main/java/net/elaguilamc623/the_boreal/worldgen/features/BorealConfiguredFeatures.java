@@ -33,9 +33,9 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
-
 import java.util.List;
 
+@SuppressWarnings("removal")
 public class BorealConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> AURORAL_TREE_LARGE =

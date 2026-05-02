@@ -1,6 +1,6 @@
 {
   "type": "forge:add_spawns",
-  "biomes": "#the_boreal:boreal_biomes/is_boreal",
+  "biomes": "#the_boreal:boreal_biomes/is_boreal_without_marsh",
   "spawners": [
     {
       "type": "the_boreal:glacial_wolf",

@@ -1,13 +1,12 @@
 package net.elaguilamc623.the_boreal.entities.model;
 
 import com.google.common.collect.ImmutableList;
-import net.elaguilamc623.the_boreal.entities.custom.CrystalizedFox;
+import net.elaguilamc623.the_boreal.entities.custom.animals.CrystalizedFox;
 import net.minecraft.client.model.AgeableListModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.animal.Fox;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 

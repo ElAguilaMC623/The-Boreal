@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
 
+@SuppressWarnings("removal")
 public class BorealPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> AURORAL_TREE_SMALL_PLACED =

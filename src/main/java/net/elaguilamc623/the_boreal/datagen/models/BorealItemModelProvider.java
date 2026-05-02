@@ -50,6 +50,7 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.COOKED_NIGHT_MEAT);
         simpleItem(BorealItems.FROZEN_FUR);
         simpleItem(BorealItems.GLACIAL_STAR_AMULET);
+        simpleItem(BorealItems.NOCTURNAL_CREAM);
 
         handheldItem(BorealItems.AURORAL_STICK);
         handheldItem(BorealItems.GLACIAL_TORCH_ITEM);
@@ -89,6 +90,7 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         withExistingParent(BorealItems.FROZEN_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.NIGHT_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.CRYSTALIZED_FOX_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BorealItems.NOCTURNAL_CUBE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.SUMMONED_BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BorealItems.GREAT_BOREAL_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

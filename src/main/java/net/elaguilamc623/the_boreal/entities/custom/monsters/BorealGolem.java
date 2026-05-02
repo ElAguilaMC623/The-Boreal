@@ -1,4 +1,4 @@
-package net.elaguilamc623.the_boreal.entities.custom;
+package net.elaguilamc623.the_boreal.entities.custom.monsters;
 
 import net.elaguilamc623.the_boreal.entities.ai.BorealGolemAttackGoal;
 import net.elaguilamc623.the_boreal.registries.BorealItems;

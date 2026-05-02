@@ -75,6 +75,9 @@ public class BorealItems {
     public static final RegistryObject<Item> CRYSTALIZED_FOX_SPAWN_EGG = ITEMS.register("crystalized_fox_spawn_egg",
             () -> new ForgeSpawnEggItem(BorealEntities.CRYSTALIZED_FOX, 0x0A1A2F, 0x000000, new Item.Properties()));
 
+    public static final RegistryObject<Item> NOCTURNAL_CUBE_SPAWN_EGG = ITEMS.register("nocturnal_cube_spawn_egg",
+            () -> new ForgeSpawnEggItem(BorealEntities.NOCTURNAL_CUBE, 0x0A1A2F, 0x000000, new Item.Properties()));
+
     public static final RegistryObject<Item> GLACIAL_ROTTEN_FLESH = ITEMS.register("glacial_rotten_flesh",
             () -> new Item(new Item.Properties().food(BorealFoodProperties.GLACIAL_ROTTEN_FLESH)));
 
@@ -197,6 +200,10 @@ public class BorealItems {
 
     public static final RegistryObject<Item> BOREAL_SUMMONER_STAFF = ITEMS.register("boreal_summoner_staff",
             () -> new BorealSummonerStaffItem(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> NOCTURNAL_CREAM = ITEMS.register("nocturnal_cream",
+            () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -1,7 +1,8 @@
 package net.elaguilamc623.the_boreal.client.render.entities.mobs;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.elaguilamc623.the_boreal.entities.custom.GlacialWolf;
+import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.entities.custom.animals.GlacialWolf;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.WolfRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -9,11 +10,11 @@ import net.minecraft.world.entity.animal.Wolf;
 
 public class GlacialWolfRenderer extends WolfRenderer {
     private static final ResourceLocation NORMAL_TEXTURE =
-            new ResourceLocation("the_boreal", "textures/entity/glacial_wolf/glacial_wolf.png");
+            new ResourceLocation(TheBoreal.MOD_ID, "textures/entity/glacial_wolf/glacial_wolf.png");
     private static final ResourceLocation ANGRY_TEXTURE =
-            new ResourceLocation("the_boreal", "textures/entity/glacial_wolf/glacial_wolf_angry.png");
+            new ResourceLocation(TheBoreal.MOD_ID, "textures/entity/glacial_wolf/glacial_wolf_angry.png");
     private static final ResourceLocation TAME_TEXTURE =
-            new ResourceLocation("the_boreal", "textures/entity/glacial_wolf/glacial_wolf_tame.png");
+            new ResourceLocation(TheBoreal.MOD_ID, "textures/entity/glacial_wolf/glacial_wolf_tame.png");
 
     public GlacialWolfRenderer(EntityRendererProvider.Context context) {
         super(context);

@@ -20,4 +20,7 @@ public class BorealModelLayers {
 
     public static final ModelLayerLocation CRYSTALIZED_FOX_LAYER = new ModelLayerLocation(
             new ResourceLocation(TheBoreal.MOD_ID,"crystalized_fox"), "main");
+
+    public static final ModelLayerLocation NOCTURNAL_CUBE_OUTER_LAYER = new ModelLayerLocation(
+            new ResourceLocation(TheBoreal.MOD_ID,"nocturnal_cube"), "outer");
 }

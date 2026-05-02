@@ -2,7 +2,7 @@ package net.elaguilamc623.the_boreal.client.render.layers;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.elaguilamc623.the_boreal.entities.custom.CrystalizedFox;
+import net.elaguilamc623.the_boreal.entities.custom.animals.CrystalizedFox;
 import net.elaguilamc623.the_boreal.entities.model.CrystalizedFoxModel;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
