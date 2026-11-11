@@ -10,11 +10,11 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum BorealArmorMaterials implements ArmorMaterial {
-    TALISMANDIUM("talismandium", 33, new int[]{ 3, 6, 8, 3 }, 20,
+    TALISMANDIUM("talismandium", 33, new int[]{ 3, 8, 6, 3 }, 20,
             SoundEvents.ARMOR_EQUIP_DIAMOND, 2, 0, () ->  Ingredient.of((BorealItems.TALISMANDIUM_INGOT.get()))),
-    CHRODIUM("chrodium", 40, new int[]{ 4, 6, 7, 4 }, 20,
+    CHRODIUM("chrodium", 40, new int[]{ 4, 7, 6, 4 }, 20,
             SoundEvents.ARMOR_EQUIP_DIAMOND, 3, 0, () ->  Ingredient.of((BorealItems.CHRODIUM.get()))),
-    DIORIUM("diorium", 26, new int[]{ 6, 7, 8, 5 }, 25,
+    DIORIUM("diorium", 26, new int[]{ 6, 8, 7, 5 }, 25,
             SoundEvents.ARMOR_EQUIP_NETHERITE, 4, 0.05F, () ->  Ingredient.of((BorealItems.DIORIUM_INGOT.get())));
 
     private final String name;

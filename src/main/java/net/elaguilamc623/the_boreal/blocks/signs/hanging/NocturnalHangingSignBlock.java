@@ -1,19 +1,19 @@
 package net.elaguilamc623.the_boreal.blocks.signs.hanging;
 
-import net.elaguilamc623.the_boreal.blocks.block_entities.signs.BorealHangingSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.block_entities.signs.NocturnalHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
-public class BorealHangingSignBlock extends CeilingHangingSignBlock {
-    public BorealHangingSignBlock(Properties pProperties, WoodType pTypes) {
+public class NocturnalHangingSignBlock extends CeilingHangingSignBlock {
+    public NocturnalHangingSignBlock(Properties pProperties, WoodType pTypes) {
         super(pProperties, pTypes);
     }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new BorealHangingSignBlockEntity(pPos, pState);
+        return new NocturnalHangingSignBlockEntity(pPos, pState);
     }
 }

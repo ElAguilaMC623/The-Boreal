@@ -4,6 +4,7 @@ import net.elaguilamc623.the_boreal.TheBoreal;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
+@SuppressWarnings("removal")
 public class BorealModelLayers {
 
     public static final ModelLayerLocation AURORAL_BOAT_LAYER = new ModelLayerLocation(
@@ -11,6 +12,12 @@ public class BorealModelLayers {
 
     public static final ModelLayerLocation AURORAL_CHEST_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(TheBoreal.MOD_ID,"chest_boat/auroral"), "main");
+
+    public static final ModelLayerLocation NOCTURNAL_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(TheBoreal.MOD_ID,"boat/nocturnal"), "main");
+
+    public static final ModelLayerLocation NOCTURNAL_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(TheBoreal.MOD_ID,"chest_boat/nocturnal"), "main");
 
     public static final ModelLayerLocation NIGHT_DEER_LAYER = new ModelLayerLocation(
             new ResourceLocation(TheBoreal.MOD_ID,"night_deer_layer"), "main");

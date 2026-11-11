@@ -9,6 +9,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+@SuppressWarnings("removal")
 public class BorealTags {
     public static class Blocks {
         public static final TagKey<Block> AURORA_SAPLING_CAN_PLANT_ON =
@@ -17,6 +18,9 @@ public class BorealTags {
 
     public static final TagKey<Block> TREE_REPLACEABLE =
             TagKey.create(Registries.BLOCK, new ResourceLocation(TheBoreal.MOD_ID, "tree_replaceable"));
+
+    public static final TagKey<Block> NATURAL_STONES_AND_PERMAFROST =
+            TagKey.create(Registries.BLOCK, new ResourceLocation(TheBoreal.MOD_ID, "natural_stones"));
 
     public static final TagKey<Item> STICKS =
             TagKey.create(Registries.ITEM, new ResourceLocation("minecraft", "sticks"));

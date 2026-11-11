@@ -8,10 +8,10 @@
     "fog_color": 2507703,
     "water_color": 5718385,
     "water_fog_color": 2561575,
-    "grass_color": 9794291,
+    "grass_color": 6734565,
     "foliage_color": 9794291,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
+      "sound": "the_boreal:boreal_ambience",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
@@ -53,7 +53,9 @@
   },
   "features": [
     ["minecraft:spring_water", "minecraft:spring_lava"],
+    ["the_boreal:boreal_cobblestone_pile_rare_placed"],
     ["the_boreal:auroral_bush_spread"],
+    ["the_boreal:dry_nocturnal_tree_placed_spared"],
     ["the_boreal:glacial_grass_patch"], ["the_boreal:glacial_tall_grass_patch"],
     ["the_boreal:glacialight_shroom_patch"], ["the_boreal:glacialweed_patch_common_placed"],
     ["the_boreal:nocturnalight_shroom_patch"], ["the_boreal:nocturnalweed_patch"],

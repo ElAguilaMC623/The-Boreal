@@ -8,10 +8,10 @@
     "fog_color": 2507703,
     "water_color": 5718385,
     "water_fog_color": 2561575,
-    "grass_color": 9794291,
+    "grass_color": 6734565,
     "foliage_color": 9794291,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
+      "sound": "the_boreal:boreal_ambience",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0

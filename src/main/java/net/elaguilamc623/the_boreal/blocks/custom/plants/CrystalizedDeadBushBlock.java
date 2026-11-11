@@ -1,6 +1,7 @@
 package net.elaguilamc623.the_boreal.blocks.custom.plants;
 
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.DeadBushBlock;
@@ -13,6 +14,6 @@ public class CrystalizedDeadBushBlock extends DeadBushBlock {
     }
 
     protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return blockState.is(BorealBlocks.PERMAFROST.get());
+        return blockState.is(BorealTags.NATURAL_STONES_AND_PERMAFROST);
     }
 }

@@ -11,7 +11,6 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
-import static net.elaguilamc623.the_boreal.registries.BorealTags.*;
 
 public class BorealBlockTagGeneration extends BlockTagsProvider {
     public BorealBlockTagGeneration(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
@@ -72,7 +71,9 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get(),
                         BorealBlocks.GLACIAL_DIRT.get(),
-                        BorealBlocks.GLACIAL_FARMLAND.get()
+                        BorealBlocks.GLACIAL_FARMLAND.get(),
+                        BorealBlocks.GLACIAL_SOIL.get(),
+                        BorealBlocks.NOCTURNAL_MUD.get()
                 );
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
@@ -92,7 +93,24 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                         BorealBlocks.AURORAL_SIGN.get(),
                         BorealBlocks.AURORAL_WALL_SIGN.get(),
                         BorealBlocks.AURORAL_HANGING_SIGN.get(),
-                        BorealBlocks.AURORAL_WALL_HANGING_SIGN.get()
+                        BorealBlocks.AURORAL_WALL_HANGING_SIGN.get(),
+                        BorealBlocks.NOCTURNAL_LOG.get(),
+                        BorealBlocks.NOCTURNAL_WOOD.get(),
+                        BorealBlocks.STRIPPED_NOCTURNAL_LOG.get(),
+                        BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get(),
+                        BorealBlocks.NOCTURNAL_PLANKS.get(),
+                        BorealBlocks.NOCTURNAL_STAIRS.get(),
+                        BorealBlocks.NOCTURNAL_SLAB.get(),
+                        BorealBlocks.NOCTURNAL_FENCE.get(),
+                        BorealBlocks.NOCTURNAL_FENCE_GATE.get(),
+                        BorealBlocks.NOCTURNAL_BUTTON.get(),
+                        BorealBlocks.NOCTURNAL_PRESSURE_PLATE.get(),
+                        BorealBlocks.NOCTURNAL_DOOR.get(),
+                        BorealBlocks.NOCTURNAL_TRAPDOOR.get(),
+                        BorealBlocks.NOCTURNAL_SIGN.get(),
+                        BorealBlocks.NOCTURNAL_WALL_SIGN.get(),
+                        BorealBlocks.NOCTURNAL_HANGING_SIGN.get(),
+                        BorealBlocks.NOCTURNAL_WALL_HANGING_SIGN.get()
                 );
 
 
@@ -126,11 +144,16 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.AURORA_LOG.get(),
                         BorealBlocks.AURORA_WOOD.get(),
                         BorealBlocks.STRIPPED_AURORA_LOG.get(),
-                        BorealBlocks.STRIPPED_AURORA_WOOD.get()
+                        BorealBlocks.STRIPPED_AURORA_WOOD.get(),
+                        BorealBlocks.NOCTURNAL_LOG.get(),
+                        BorealBlocks.NOCTURNAL_WOOD.get(),
+                        BorealBlocks.STRIPPED_NOCTURNAL_LOG.get(),
+                        BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get()
                         );
 
         this.tag(BlockTags.PLANKS)
-                .add(BorealBlocks.AURORA_PLANKS.get());
+                .add(BorealBlocks.AURORA_PLANKS.get())
+                .add(BorealBlocks.NOCTURNAL_PLANKS.get());
 
         this.tag(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON)
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get())
@@ -138,7 +161,7 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.NOCTURNAL_MUD.get())
                 .add(BorealBlocks.GLACIAL_SOIL.get());
 
-        this.tag(TREE_REPLACEABLE)
+        this.tag(BorealTags.TREE_REPLACEABLE)
                 .add(Blocks.SNOW)
                 .add(BorealBlocks.GLACIAL_GRASS_BLOCK.get())
                 .add(BorealBlocks.GLACIAL_DIRT.get())
@@ -155,11 +178,14 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get());
 
         this.tag(BlockTags.FENCES)
-                .add(BorealBlocks.AURORAL_FENCE.get());
+                .add(BorealBlocks.AURORAL_FENCE.get(),
+                        BorealBlocks.NOCTURNAL_FENCE.get());
         this.tag(BlockTags.WOODEN_FENCES)
-                .add(BorealBlocks.AURORAL_FENCE.get());
+                .add(BorealBlocks.AURORAL_FENCE.get(),
+                        BorealBlocks.NOCTURNAL_FENCE.get());
         this.tag(BlockTags.FENCE_GATES)
-                .add(BorealBlocks.AURORAL_FENCE_GATE.get());
+                .add(BorealBlocks.AURORAL_FENCE_GATE.get(),
+                        BorealBlocks.NOCTURNAL_FENCE_GATE.get());
 
         this.tag(BlockTags.STONE_ORE_REPLACEABLES)
                 .add(BorealBlocks.BOREAL_STONE.get(),
@@ -188,5 +214,12 @@ public class BorealBlockTagGeneration extends BlockTagsProvider {
                 .add(BorealBlocks.BOREAL_STONE_BRICKS.get(),
                         BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()
                 );
+
+        this.tag(BorealTags.NATURAL_STONES_AND_PERMAFROST)
+                .add(BorealBlocks.BOREAL_STONE.get(),
+                        BorealBlocks.BOREAL_DEEP_STONE.get(),
+                        BorealBlocks.TARNITE.get(),
+                        BorealBlocks.VERNITE.get(),
+                        BorealBlocks.PERMAFROST.get());
     }
 }

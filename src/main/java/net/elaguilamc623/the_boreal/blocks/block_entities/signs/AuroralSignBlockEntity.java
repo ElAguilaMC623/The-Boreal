@@ -6,13 +6,13 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BorealSignBlockEntity extends SignBlockEntity {
-    public BorealSignBlockEntity(BlockPos pPos, BlockState pBlockstate) {
-        super(BorealBlockEntities.BOREAL_SIGN.get(), pPos, pBlockstate);
+public class AuroralSignBlockEntity extends SignBlockEntity {
+    public AuroralSignBlockEntity(BlockPos pPos, BlockState pBlockstate) {
+        super(BorealBlockEntities.AURORAL_SIGN.get(), pPos, pBlockstate);
     }
 
     @Override
     public BlockEntityType<?> getType() {
-        return BorealBlockEntities.BOREAL_SIGN.get();
+        return BorealBlockEntities.AURORAL_SIGN.get();
     }
 }

@@ -80,7 +80,7 @@ public class BorealBoatItem extends Item {
     }
 
     private Boat getBoat(Level pLevel, HitResult pResult) {
-        return (Boat)(this.hasChest ? new BorealChestBoatEntity(pLevel, pResult.getLocation().x, pResult.getLocation().y, pResult.getLocation().z) :
-                new BorealBoatEntity(pLevel, pResult.getLocation().x, pResult.getLocation().y, pResult.getLocation().z));
+        return (Boat)(this.hasChest ? new BorealChestBoatEntity(pLevel, pResult.getLocation().x, pResult.getLocation().y, pResult.getLocation().z, this.type) :
+                new BorealBoatEntity(pLevel, pResult.getLocation().x, pResult.getLocation().y, pResult.getLocation().z, this.type));
     }
 }

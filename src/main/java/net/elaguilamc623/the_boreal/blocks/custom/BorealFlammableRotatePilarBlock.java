@@ -43,6 +43,14 @@ public class BorealFlammableRotatePilarBlock extends RotatedPillarBlock {
             if(state.is(BorealBlocks.AURORA_WOOD.get())) {
                 return BorealBlocks.STRIPPED_AURORA_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
+
+            if(state.is(BorealBlocks.NOCTURNAL_LOG.get())) {
+                return BorealBlocks.STRIPPED_NOCTURNAL_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+
+            if(state.is(BorealBlocks.NOCTURNAL_WOOD.get())) {
+                return BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }

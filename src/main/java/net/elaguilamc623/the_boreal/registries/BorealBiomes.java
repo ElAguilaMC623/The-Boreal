@@ -2,7 +2,12 @@ package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.complementary_core.world.biomes.CCBiomeBuilder;
 import net.elaguilamc623.the_boreal.TheBoreal;
-import net.elaguilamc623.the_boreal.worldgen.biomes.custom.NocturnalMarshFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.surface.BorealWastelandFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.surface.NocturnalDeadForestFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.surface.NocturnalForestFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.underground.BorealCavesFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.underground.CrystalDepthsFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.surface.NocturnalMarshFactory;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -15,7 +20,7 @@ public class BorealBiomes {
             ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "glacial_tundra"));
 
     public static final ResourceKey<Biome> GLACIAL_OCEAN =
-            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_marsh"));
+            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "glacial_ocean"));
 
     public static final ResourceKey<Biome> GLACIAL_DEEP_OCEAN =
             ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "glacial_deep_ocean"));
@@ -38,10 +43,39 @@ public class BorealBiomes {
     public static final ResourceKey<Biome> NOCTURNAL_MARSH =
             ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_marsh"));
 
+    public static final ResourceKey<Biome> BOREAL_CAVES =
+            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "boreal_caves"));
+
+    public static final ResourceKey<Biome> CRYSTAL_DEPTHS =
+            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "crystal_depths"));
+
+    public static final ResourceKey<Biome> NOCTURNAL_FOREST =
+            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_forest"));
+
+    public static final ResourceKey<Biome> BOREAL_WASTELAND =
+            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "boreal_wastelands"));
+
+    public static final ResourceKey<Biome> NOCTURNAL_DEAD_FOREST =
+            ResourceKey.create(Registries.BIOME, new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_dead_forest"));
+
     public static void bootstrap(BootstapContext<Biome> context) {
 
         context.register(BorealBiomes.NOCTURNAL_MARSH,
-                new CCBiomeBuilder(NocturnalMarshFactory::new).build(context)
-        );
+                new CCBiomeBuilder(NocturnalMarshFactory::new).build(context));
+
+        context.register(BorealBiomes.BOREAL_CAVES,
+                new CCBiomeBuilder(BorealCavesFactory::new).build(context));
+
+        context.register(BorealBiomes.CRYSTAL_DEPTHS,
+                new CCBiomeBuilder(CrystalDepthsFactory::new).build(context));
+
+        context.register(BorealBiomes.NOCTURNAL_FOREST,
+                new CCBiomeBuilder(NocturnalForestFactory::new).build(context));
+
+        context.register(BorealBiomes.BOREAL_WASTELAND,
+                new CCBiomeBuilder(BorealWastelandFactory::new).build(context));
+
+        context.register(BorealBiomes.NOCTURNAL_DEAD_FOREST,
+                new CCBiomeBuilder(NocturnalDeadForestFactory::new).build(context));
     }
 }

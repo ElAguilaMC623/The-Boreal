@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_boreal:boreal/biomes/is_boreal",
+  "features": "the_boreal:cave_crystal_spike",
+  "step": "underground_decoration"
+}

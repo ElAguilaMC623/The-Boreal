@@ -37,9 +37,13 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.DIORIUM_INGOT);
         simpleItem(BorealItems.DIORIUM_GEM);
         simpleItem(BorealItems.AURORAL_SIGN);
+        simpleItem(BorealItems.NOCTURNAL_SIGN);
         simpleItem(BorealItems.AURORAL_HANGING_SIGN);
+        simpleItem(BorealItems.NOCTURNAL_HANGING_SIGN);
         simpleItem(BorealItems.AURORAL_BOAT);
+        simpleItem(BorealItems.NOCTURNAL_BOAT);
         simpleItem(BorealItems.AURORAL_CHEST_BOAT);
+        simpleItem(BorealItems.NOCTURNAL_CHEST_BOAT);
         simpleItem(BorealItems.BOREAL_ESSENCE);
         simpleItem(BorealItems.BOREAL_SHARD);
         simpleItem(BorealItems.BOREAL_ENCHANTED_SHARD);
@@ -51,9 +55,13 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         simpleItem(BorealItems.FROZEN_FUR);
         simpleItem(BorealItems.GLACIAL_STAR_AMULET);
         simpleItem(BorealItems.NOCTURNAL_CREAM);
-
-        handheldItem(BorealItems.AURORAL_STICK);
+        handheldItem(BorealItems.BOREAL_STICK);
         handheldItem(BorealItems.GLACIAL_TORCH_ITEM);
+        handheldItem(BorealItems.BOREAL_STONE_TOOLS.getSword());
+        handheldItem(BorealItems.BOREAL_STONE_TOOLS.getPickaxe());
+        handheldItem(BorealItems.BOREAL_STONE_TOOLS.getAxe());
+        handheldItem(BorealItems.BOREAL_STONE_TOOLS.getShovel());
+        handheldItem(BorealItems.BOREAL_STONE_TOOLS.getHoe());
         handheldItem(BorealItems.TALISMANDIUM_TOOLS.getSword());
         handheldItem(BorealItems.TALISMANDIUM_TOOLS.getPickaxe());
         handheldItem(BorealItems.TALISMANDIUM_TOOLS.getAxe());
@@ -113,9 +121,13 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         evenSimplerBlockItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_STAIRS);
         evenSimplerBlockItem(BorealBlocks.BOREAL_MOSSY_STONE_BRICK_SLAB);
         evenSimplerBlockItem(BorealBlocks.AURORAL_STAIRS);
+        evenSimplerBlockItem(BorealBlocks.NOCTURNAL_STAIRS);
         evenSimplerBlockItem(BorealBlocks.AURORAL_SLAB);
+        evenSimplerBlockItem(BorealBlocks.NOCTURNAL_SLAB);
         evenSimplerBlockItem(BorealBlocks.AURORAL_FENCE_GATE);
+        evenSimplerBlockItem(BorealBlocks.NOCTURNAL_FENCE_GATE);
         evenSimplerBlockItem(BorealBlocks.AURORAL_PRESSURE_PLATE);
+        evenSimplerBlockItem(BorealBlocks.NOCTURNAL_PRESSURE_PLATE);
         evenSimplerBlockItem(BorealBlocks.VERNITE_STAIRS);
         evenSimplerBlockItem(BorealBlocks.VERNITE_SLAB);
         evenSimplerBlockItem(BorealBlocks.POLISHED_VERNITE_STAIRS);
@@ -126,10 +138,14 @@ public class BorealItemModelProvider extends CCItemModelProvider {
         evenSimplerBlockItem(BorealBlocks.POLISHED_TARNITE_SLAB);
 
         simpleBlockItem(BorealBlocks.AURORAL_DOOR);
+        simpleBlockItem(BorealBlocks.NOCTURNAL_DOOR);
 
         fenceItem(BorealBlocks.AURORAL_FENCE, BorealBlocks.AURORA_PLANKS);
+        fenceItem(BorealBlocks.NOCTURNAL_FENCE, BorealBlocks.NOCTURNAL_PLANKS);
         buttonItem(BorealBlocks.AURORAL_BUTTON, BorealBlocks.AURORA_PLANKS);
+        buttonItem(BorealBlocks.NOCTURNAL_BUTTON, BorealBlocks.NOCTURNAL_PLANKS);
         trapdoorItem(BorealBlocks.AURORAL_TRAPDOOR);
+        trapdoorItem(BorealBlocks.NOCTURNAL_TRAPDOOR);
 
         withExistingParent("boreal_essence_table",
                 modLoc("block/boreal_essence_table"));
@@ -141,6 +157,13 @@ public class BorealItemModelProvider extends CCItemModelProvider {
                 mcLoc("item/generated"),
                 "layer0",
                 modLoc("block/talismandium_bars")
+        );
+
+        singleTexture(
+                BorealBlocks.BOREAL_POINTED_DRIPSTONE.getId().getPath(),
+                mcLoc("item/generated"),
+                "layer0",
+                modLoc("block/boreal_pointed_dripstone")
         );
 
         singleTexture(

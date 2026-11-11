@@ -12,5 +12,16 @@
       "the_boreal:night_deer_hurt_2",
       "the_boreal:night_deer_hurt_3"
     ]
+  },
+
+  "boreal_ambience": {
+    "subtitles": "sounds.the_boreal.boreal_ambience",
+    "sounds": [
+      "the_boreal:boreal_ambience_1",
+      "the_boreal:boreal_ambience_2",
+      "the_boreal:boreal_ambience_3",
+      "the_boreal:boreal_ambience_4",
+      "the_boreal:boreal_ambience_5"
+    ]
   }
 }

@@ -1,10 +1,10 @@
-package net.elaguilamc623.the_boreal.worldgen.biomes;
+package net.elaguilamc623.the_boreal.worldgen.biomes.custom;
 
 import net.elaguilamc623.complementary_core.world.biomes.AbstractBiomeFactory;
+import net.elaguilamc623.the_boreal.registries.BorealSounds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.Carvers;
-import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -23,11 +23,11 @@ public abstract class AbstractBorealBiomeFactory extends AbstractBiomeFactory {
                 .fogColor(2507703)
                 .waterColor(5718385)
                 .waterFogColor(2561575)
-                .grassColorOverride(9794291)
+                .grassColorOverride(6734565)
                 .foliageColorOverride(9794291)
                 .ambientMoodSound(
                         new AmbientMoodSettings(
-                                SoundEvents.AMBIENT_CAVE,
+                                BorealSounds.BOREAL_AMBIENCE.getHolder().orElseThrow(),
                                 6000,
                                 8,
                                 2.0
@@ -52,9 +52,6 @@ public abstract class AbstractBorealBiomeFactory extends AbstractBiomeFactory {
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
-
-        builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
-        builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_LAVA);
 
         return builder;
     }

@@ -3,8 +3,10 @@ package net.elaguilamc623.the_boreal.registries;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealEssenceTableBlockEntity;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealInfuserBlockEntity;
-import net.elaguilamc623.the_boreal.blocks.block_entities.signs.BorealHangingSignBlockEntity;
-import net.elaguilamc623.the_boreal.blocks.block_entities.signs.BorealSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.block_entities.signs.AuroralHangingSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.block_entities.signs.AuroralSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.block_entities.signs.NocturnalHangingSignBlockEntity;
+import net.elaguilamc623.the_boreal.blocks.block_entities.signs.NocturnalSignBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,15 +18,25 @@ public class BorealBlockEntities {
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, TheBoreal.MOD_ID);
 
 
-    public static final RegistryObject<BlockEntityType<BorealSignBlockEntity>> BOREAL_SIGN =
+    public static final RegistryObject<BlockEntityType<AuroralSignBlockEntity>> AURORAL_SIGN =
             BLOCK_ENTITIES.register("auroral_sign", () ->
-                    BlockEntityType.Builder.of(BorealSignBlockEntity::new,
+                    BlockEntityType.Builder.of(AuroralSignBlockEntity::new,
                             BorealBlocks.AURORAL_SIGN.get(), BorealBlocks.AURORAL_WALL_SIGN.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BorealHangingSignBlockEntity>> BOREAL_HANGING_SIGN =
+    public static final RegistryObject<BlockEntityType<AuroralHangingSignBlockEntity>> AURORAL_HANGING_SIGN =
             BLOCK_ENTITIES.register("auroral_hanging_sign", () ->
-                    BlockEntityType.Builder.of(BorealHangingSignBlockEntity::new,
+                    BlockEntityType.Builder.of(AuroralHangingSignBlockEntity::new,
                             BorealBlocks.AURORAL_HANGING_SIGN.get(), BorealBlocks.AURORAL_WALL_HANGING_SIGN.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<NocturnalSignBlockEntity>> NOCTURNAL_SIGN =
+            BLOCK_ENTITIES.register("nocturnal_sign", () ->
+                    BlockEntityType.Builder.of(NocturnalSignBlockEntity::new,
+                            BorealBlocks.NOCTURNAL_SIGN.get(), BorealBlocks.NOCTURNAL_WALL_SIGN.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<NocturnalHangingSignBlockEntity>> NOCTURNAL_HANGING_SIGN =
+            BLOCK_ENTITIES.register("nocturnal_hanging_sign", () ->
+                    BlockEntityType.Builder.of(NocturnalHangingSignBlockEntity::new,
+                            BorealBlocks.NOCTURNAL_HANGING_SIGN.get(), BorealBlocks.NOCTURNAL_WALL_HANGING_SIGN.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BorealEssenceTableBlockEntity>> BOREAL_ESSENCE_TABLE =
             BLOCK_ENTITIES.register("gem_polishing_be", () ->

@@ -100,9 +100,20 @@ public class BorealEntities {
                     1.375f, 0.5625f)
                     .build("auroral_boat"));
 
-    public static final RegistryObject<EntityType<BorealChestBoatEntity>> AURORAL_CHEST_BOAT =
-            ENTITY_TYPES.register("auroral_chest_boat", () -> EntityType.Builder.<BorealChestBoatEntity>of(BorealChestBoatEntity::new, MobCategory.MISC)
-                    .sized(1.375f, 0.5625f).build("auroral_chest_boat"));
+    public static final RegistryObject<EntityType<BorealChestBoatEntity>> AURORAL_CHEST_BOAT = ENTITY_TYPES.register("auroral_chest_boat",
+            () -> EntityType.Builder.<BorealChestBoatEntity>of(BorealChestBoatEntity::new, MobCategory.MISC).sized(
+                    1.375f, 0.5625f)
+                    .build("auroral_chest_boat"));
+
+    public static final RegistryObject<EntityType<BorealBoatEntity>> NOCTURNAL_BOAT = ENTITY_TYPES.register("nocturnal_boat",
+            () -> EntityType.Builder.<BorealBoatEntity>of(BorealBoatEntity::new, MobCategory.MISC).sized(
+                    1.375f, 0.5625f)
+                    .build("nocturnal_boat"));
+
+    public static final RegistryObject<EntityType<BorealChestBoatEntity>> NOCTURNAL_CHEST_BOAT = ENTITY_TYPES.register("nocturnal_chest_boat",
+            () -> EntityType.Builder.<BorealChestBoatEntity>of(BorealChestBoatEntity::new, MobCategory.MISC).sized(
+                    1.375f, 0.5625f)
+                    .build("nocturnal_chest_boat"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

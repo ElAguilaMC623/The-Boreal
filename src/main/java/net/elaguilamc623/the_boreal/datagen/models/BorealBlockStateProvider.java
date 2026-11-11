@@ -4,12 +4,15 @@ import net.elaguilamc623.complementary_core.datagen.models.CCBlockStateProvider;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.blocks.custom.NocturnalFungusCapBlock;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -17,8 +20,6 @@ import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.function.Supplier;
 
 public class BorealBlockStateProvider extends CCBlockStateProvider {
     public BorealBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -44,6 +45,7 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         blockWithItem(BorealBlocks.DIORIUM_ORE);
         blockWithItem(BorealBlocks.DEEP_DIORIUM_ORE);
         blockWithItem(BorealBlocks.AURORA_PLANKS);
+        blockWithItem(BorealBlocks.NOCTURNAL_PLANKS);
         blockWithItem(BorealBlocks.GLACIAL_DIRT);
         blockWithItem(BorealBlocks.NOCTURNAL_MUD);
         blockWithItem(BorealBlocks.GLACIAL_SOIL);
@@ -68,6 +70,8 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         wallBlock(((WallBlock) BorealBlocks.BOREAL_MOSSY_STONE_BRICK_WALL.get()), blockTexture(BorealBlocks.BOREAL_MOSSY_STONE_BRICKS.get()));
         stairsBlock(((StairBlock)BorealBlocks.AURORAL_STAIRS.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
         slabBlock(((SlabBlock)BorealBlocks.AURORAL_SLAB.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        stairsBlock(((StairBlock)BorealBlocks.NOCTURNAL_STAIRS.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()));
+        slabBlock(((SlabBlock)BorealBlocks.NOCTURNAL_SLAB.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()));
         stairsBlock(((StairBlock)BorealBlocks.VERNITE_STAIRS.get()), blockTexture(BorealBlocks.VERNITE.get()));
         slabBlock(((SlabBlock)BorealBlocks.VERNITE_SLAB.get()), blockTexture(BorealBlocks.VERNITE.get()), blockTexture(BorealBlocks.VERNITE.get()));
         wallBlock(((WallBlock) BorealBlocks.VERNITE_WALL.get()), blockTexture(BorealBlocks.VERNITE.get()));
@@ -80,27 +84,41 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
         slabBlock(((SlabBlock)BorealBlocks.POLISHED_TARNITE_SLAB.get()), blockTexture(BorealBlocks.POLISHED_TARNITE.get()), blockTexture(BorealBlocks.POLISHED_TARNITE.get()));
 
         buttonBlock(((ButtonBlock)BorealBlocks.AURORAL_BUTTON.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        buttonBlock(((ButtonBlock)BorealBlocks.NOCTURNAL_BUTTON.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()));
         pressurePlateBlock(((PressurePlateBlock)BorealBlocks.AURORAL_PRESSURE_PLATE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock)BorealBlocks.NOCTURNAL_PRESSURE_PLATE.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()));
 
         fenceBlock(((FenceBlock)BorealBlocks.AURORAL_FENCE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        fenceBlock(((FenceBlock)BorealBlocks.NOCTURNAL_FENCE.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()));
         fenceGateBlock(((FenceGateBlock) BorealBlocks.AURORAL_FENCE_GATE.get()), blockTexture(BorealBlocks.AURORA_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) BorealBlocks.NOCTURNAL_FENCE_GATE.get()), blockTexture(BorealBlocks.NOCTURNAL_PLANKS.get()));
 
         doorBlockWithRenderType(((DoorBlock)BorealBlocks.AURORAL_DOOR.get()), modLoc("block/auroral_door_bottom"), modLoc("block/auroral_door_top"), "cutout");
+        doorBlockWithRenderType(((DoorBlock)BorealBlocks.NOCTURNAL_DOOR.get()), modLoc("block/nocturnal_door_bottom"), modLoc("block/nocturnal_door_top"), "cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) BorealBlocks.AURORAL_TRAPDOOR.get()), modLoc("block/auroral_trapdoor"), true, "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) BorealBlocks.NOCTURNAL_TRAPDOOR.get()), modLoc("block/nocturnal_trapdoor"), true, "cutout");
 
         logBlock(((RotatedPillarBlock) BorealBlocks.AURORA_LOG.get()));
+        logBlock(((RotatedPillarBlock) BorealBlocks.NOCTURNAL_LOG.get()));
         axisBlock(((RotatedPillarBlock) BorealBlocks.AURORA_WOOD.get()), blockTexture(BorealBlocks.AURORA_LOG.get()), blockTexture(BorealBlocks.AURORA_LOG.get()));
-
+        axisBlock(((RotatedPillarBlock) BorealBlocks.NOCTURNAL_WOOD.get()), blockTexture(BorealBlocks.NOCTURNAL_LOG.get()), blockTexture(BorealBlocks.NOCTURNAL_LOG.get()));
         axisBlock(((RotatedPillarBlock) BorealBlocks.STRIPPED_AURORA_LOG.get()), blockTexture(BorealBlocks.STRIPPED_AURORA_LOG.get()), new ResourceLocation(TheBoreal.MOD_ID, "block/stripped_auroral_log_top"));
+        axisBlock(((RotatedPillarBlock) BorealBlocks.STRIPPED_NOCTURNAL_LOG.get()), blockTexture(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get()), new ResourceLocation(TheBoreal.MOD_ID, "block/stripped_nocturnal_log_top"));
         axisBlock(((RotatedPillarBlock) BorealBlocks.STRIPPED_AURORA_WOOD.get()), blockTexture(BorealBlocks.STRIPPED_AURORA_LOG.get()), blockTexture(BorealBlocks.STRIPPED_AURORA_LOG.get()));
+        axisBlock(((RotatedPillarBlock) BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get()), blockTexture(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get()), blockTexture(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get()));
 
         blockItem(BorealBlocks.AURORA_LOG);
+        blockItem(BorealBlocks.NOCTURNAL_LOG);
         blockItem(BorealBlocks.AURORA_WOOD);
+        blockItem(BorealBlocks.NOCTURNAL_WOOD);
         blockItem(BorealBlocks.STRIPPED_AURORA_LOG);
+        blockItem(BorealBlocks.STRIPPED_NOCTURNAL_LOG);
         blockItem(BorealBlocks.STRIPPED_AURORA_WOOD);
+        blockItem(BorealBlocks.STRIPPED_NOCTURNAL_WOOD);
 
         nocturnalFungusCapBlock(BorealBlocks.NOCTURNAL_FUNGUS_CAP);
         leavesBlock(BorealBlocks.AURORA_LEAVES);
+        leavesBlock(BorealBlocks.NOCTURNAL_LEAVES);
         doublePlant(BorealBlocks.GLACIAL_TALL_GRASS.get());
         doublePlant(BorealBlocks.NOCTURNAL_TALL_GRASS.get());
         simpleCrossBlock(BorealBlocks.NOCTURNAL_GRASS.get());
@@ -137,6 +155,21 @@ public class BorealBlockStateProvider extends CCBlockStateProvider {
                         modLoc("block/boreal_chiseled_stone")
                 ).texture("particle", modLoc("block/boreal_chiseled_stone"))
         );
+
+        getVariantBuilder(BorealBlocks.BOREAL_POINTED_DRIPSTONE.get()).forAllStates(state -> {
+            Direction direction = state.getValue(BlockStateProperties.VERTICAL_DIRECTION);
+            DripstoneThickness thickness = state.getValue(PointedDripstoneBlock.THICKNESS);
+
+            String dirStr = direction.getSerializedName();
+            String thickStr = thickness.getSerializedName();
+
+            String modelName = "block/boreal_pointed_dripstone_" + dirStr + "_" + thickStr;
+
+            ModelFile model = models().withExistingParent(modelName, "minecraft:block/pointed_dripstone")
+                    .texture("cross", modLoc("block/boreal_pointed_dripstone_" + dirStr + "_" + thickStr));
+
+            return ConfiguredModel.builder().modelFile(model).build();
+        });
 
     }
 

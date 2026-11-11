@@ -44,7 +44,7 @@ public class BorealChestLootTables implements LootTableSubProvider {
 
         table.withPool(LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1))
-                .add(LootItem.lootTableItem(BorealItems.AURORAL_STICK.get())
+                .add(LootItem.lootTableItem(BorealItems.BOREAL_STICK.get())
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5)))));
 
         table.withPool(LootPool.lootPool()

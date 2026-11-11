@@ -19,8 +19,8 @@ public class BorealChestBoatEntity extends ChestBoat {
         super(pEntityType, pLevel);
     }
 
-    public BorealChestBoatEntity(Level pLevel, double pX, double pY, double pZ) {
-        this(BorealEntities.AURORAL_CHEST_BOAT.get(), pLevel);
+    public BorealChestBoatEntity(Level pLevel, double pX, double pY, double pZ, BorealBoatEntity.Type pVariant) {
+        this(getChestBoatEntityType(pVariant), pLevel);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
         this.yo = pY;
@@ -33,8 +33,18 @@ public class BorealChestBoatEntity extends ChestBoat {
             case AURORAL -> {
                 return BorealItems.AURORAL_CHEST_BOAT.get();
             }
+            case NOCTURNAL -> {
+                return BorealItems.NOCTURNAL_CHEST_BOAT.get();
+            }
         }
         return super.getDropItem();
+    }
+
+    private static EntityType<? extends ChestBoat> getChestBoatEntityType(BorealBoatEntity.Type pVariant) {
+        return switch (pVariant) {
+            case AURORAL -> BorealEntities.AURORAL_CHEST_BOAT.get();
+            case NOCTURNAL -> BorealEntities.NOCTURNAL_CHEST_BOAT.get();
+        };
     }
 
     public void setVariant(BorealBoatEntity.Type pVariant) {

@@ -6,11 +6,9 @@ import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import java.util.concurrent.CompletableFuture;
-import static net.elaguilamc623.the_boreal.registries.BorealTags.BOREAL_STICKS;
 
 public class BorealItemTagGeneration extends ItemTagsProvider {
     public BorealItemTagGeneration(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, CompletableFuture<TagLookup<Block>> pFuture) {
@@ -23,17 +21,22 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
                 .add(BorealBlocks.AURORA_LOG.get().asItem())
                 .add(BorealBlocks.AURORA_WOOD.get().asItem())
                 .add(BorealBlocks.STRIPPED_AURORA_LOG.get().asItem())
-                .add(BorealBlocks.STRIPPED_AURORA_WOOD.get().asItem());
+                .add(BorealBlocks.STRIPPED_AURORA_WOOD.get().asItem())
+                .add(BorealBlocks.NOCTURNAL_LOG.get().asItem())
+                .add(BorealBlocks.NOCTURNAL_WOOD.get().asItem())
+                .add(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get().asItem())
+                .add(BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get().asItem());
 
         this.tag(ItemTags.PLANKS)
-                .add(BorealBlocks.AURORA_PLANKS.get().asItem());
+                .add(BorealBlocks.AURORA_PLANKS.get().asItem())
+                .add(BorealBlocks.NOCTURNAL_PLANKS.get().asItem());
 
-        tag(BorealTags.STICKS)
+        this.tag(BorealTags.STICKS)
                 .replace(false)
-                .add(BorealItems.AURORAL_STICK.get());
+                .add(BorealItems.BOREAL_STICK.get());
 
-        tag(BOREAL_STICKS)
-                .add(BorealItems.AURORAL_STICK.get());
+        this.tag(BorealTags.BOREAL_STICKS)
+                .add(BorealItems.BOREAL_STICK.get());
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(BorealItems.TALISMANDIUM_ARMOR.getHelmet().get(),
@@ -51,7 +54,12 @@ public class BorealItemTagGeneration extends ItemTagsProvider {
                 );
 
         this.tag(BorealTags.BOREAL_WEAPONS)
-                .add(BorealItems.TALISMANDIUM_TOOLS.getSword().get(),
+                .add(BorealItems.BOREAL_STONE_TOOLS.getSword().get(),
+                        BorealItems.BOREAL_STONE_TOOLS.getPickaxe().get(),
+                        BorealItems.BOREAL_STONE_TOOLS.getAxe().get(),
+                        BorealItems.BOREAL_STONE_TOOLS.getShovel().get(),
+                        BorealItems.BOREAL_STONE_TOOLS.getHoe().get(),
+                        BorealItems.TALISMANDIUM_TOOLS.getSword().get(),
                         BorealItems.TALISMANDIUM_TOOLS.getAxe().get(),
                         BorealItems.TALISMANDIUM_TOOLS.getPickaxe().get(),
                         BorealItems.TALISMANDIUM_TOOLS.getShovel().get(),

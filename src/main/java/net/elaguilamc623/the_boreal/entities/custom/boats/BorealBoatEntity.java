@@ -16,6 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.IntFunction;
+import java.util.function.Supplier;
 
 public class BorealBoatEntity extends Boat {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
@@ -24,8 +25,8 @@ public class BorealBoatEntity extends Boat {
         super(pEntityType, pLevel);
     }
 
-    public BorealBoatEntity(Level level, double pX, double pY, double pZ) {
-        this(BorealEntities.AURORAL_BOAT.get(), level);
+    public BorealBoatEntity(Level level, double pX, double pY, double pZ, Type pVariant) {
+        this(pVariant.getEntityType(), level);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
         this.yo = pY;
@@ -36,6 +37,7 @@ public class BorealBoatEntity extends Boat {
     public Item getDropItem() {
         return switch (getModVariant()) {
             case AURORAL -> BorealItems.AURORAL_BOAT.get();
+            case NOCTURNAL -> BorealItems.NOCTURNAL_BOAT.get();
         };
     }
 
@@ -64,16 +66,19 @@ public class BorealBoatEntity extends Boat {
 
 
     public static enum Type implements StringRepresentable {
-        AURORAL(BorealBlocks.AURORA_PLANKS.get(), "auroral");
+        AURORAL(BorealBlocks.AURORA_PLANKS.get(), "auroral", () -> BorealEntities.AURORAL_BOAT.get()),
+        NOCTURNAL(BorealBlocks.NOCTURNAL_PLANKS.get(), "nocturnal", () -> BorealEntities.NOCTURNAL_BOAT.get());
 
         private final String name;
         private final Block planks;
+        private final Supplier<EntityType<? extends Boat>> entityTypeSupplier;
         public static final StringRepresentable.EnumCodec<BorealBoatEntity.Type> CODEC = StringRepresentable.fromEnum(BorealBoatEntity.Type::values);
         private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
-        private Type(Block pPlanks, String pName) {
+        private Type(Block pPlanks, String pName, Supplier<EntityType<? extends Boat>> entityTypeSupplier) {
             this.name = pName;
             this.planks = pPlanks;
+            this.entityTypeSupplier = entityTypeSupplier;
         }
 
         public String getSerializedName() {
@@ -98,6 +103,10 @@ public class BorealBoatEntity extends Boat {
 
         public static BorealBoatEntity.Type byName(String pName) {
             return CODEC.byName(pName, AURORAL);
+        }
+
+        public EntityType<? extends Boat> getEntityType() {
+            return this.entityTypeSupplier.get();
         }
     }
 }

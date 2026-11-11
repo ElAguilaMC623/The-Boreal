@@ -4,7 +4,7 @@
   "spawners": [
     {
       "type": "the_boreal:frozen_bear",
-      "weight": 1000,
+      "weight": 100,
       "minCount": 1,
       "maxCount": 3,
       "category": "creature"

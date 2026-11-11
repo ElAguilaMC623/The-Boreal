@@ -7,4 +7,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 public class BorealWoodTypes {
     public static final WoodType AURORAL = WoodType.register(new WoodType(
             TheBoreal.MOD_ID + ":auroral", BlockSetType.OAK));
+
+    public static final WoodType NOCTURNAL = WoodType.register(new WoodType(
+            TheBoreal.MOD_ID + ":nocturnal", BlockSetType.OAK));
 }

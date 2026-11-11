@@ -26,7 +26,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.BOREAL_ROCK.get());
                                 pOutput.accept(BorealItems.GLACIAL_CRYSTAL_SHARD.get());
                                 pOutput.accept(BorealItems.PURIFIED_GLACIAL_CRYSTAL_SHARD.get());
-                                pOutput.accept(BorealItems.AURORAL_STICK.get());
+                                pOutput.accept(BorealItems.BOREAL_STICK.get());
                                 pOutput.accept(BorealItems.GLACIAL_BREAD.get());
                                 pOutput.accept(BorealItems.NIGHT_HORNS.get());
                                 pOutput.accept(BorealItems.NIGHT_MEAT.get());
@@ -56,6 +56,11 @@ public class BorealCreativeTabs {
                             .title(Component.literal("The Boreal Tools and Combat"))
                             .displayItems((pParameters, pOutput) -> {
                                 pOutput.accept(BorealItems.BOREAL_SUMMONER_STAFF.get());
+                                pOutput.accept(BorealItems.BOREAL_STONE_TOOLS.getSword().get());
+                                pOutput.accept(BorealItems.BOREAL_STONE_TOOLS.getPickaxe().get());
+                                pOutput.accept(BorealItems.BOREAL_STONE_TOOLS.getAxe().get());
+                                pOutput.accept(BorealItems.BOREAL_STONE_TOOLS.getShovel().get());
+                                pOutput.accept(BorealItems.BOREAL_STONE_TOOLS.getHoe().get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getSword().get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getPickaxe().get());
                                 pOutput.accept(BorealItems.TALISMANDIUM_TOOLS.getAxe().get());
@@ -120,6 +125,7 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.NIGHT_MEAT.get());
                                 pOutput.accept(BorealItems.FROZEN_FUR.get());
                                 pOutput.accept(BorealBlocks.BOREAL_STONE.get());
+                                pOutput.accept(BorealBlocks.BOREAL_POINTED_DRIPSTONE.get());
                                 pOutput.accept(BorealBlocks.TARNITE.get());
                                 pOutput.accept(BorealBlocks.VERNITE.get());
                                 pOutput.accept(BorealBlocks.TALISMANDIUM_ORE.get());
@@ -131,6 +137,9 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.AURORA_LOG.get());
                                 pOutput.accept(BorealBlocks.AURORA_SAPLING.get());
                                 pOutput.accept(BorealBlocks.AURORA_LEAVES.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_LOG.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_SAPLING.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_LEAVES.get());
                                 pOutput.accept(BorealItems.GLACIAL_ROTTEN_FLESH.get());
                                 pOutput.accept(BorealItems.GLACIAL_BONE.get());
                             })
@@ -190,6 +199,19 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealBlocks.AURORAL_TRAPDOOR.get());
                                 pOutput.accept(BorealBlocks.AURORAL_BUTTON.get());
                                 pOutput.accept(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_LOG.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_WOOD.get());
+                                pOutput.accept(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get());
+                                pOutput.accept(BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_PLANKS.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_STAIRS.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_SLAB.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_FENCE.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_FENCE_GATE.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_DOOR.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_TRAPDOOR.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_BUTTON.get());
+                                pOutput.accept(BorealBlocks.NOCTURNAL_PRESSURE_PLATE.get());
                                 pOutput.accept(BorealBlocks.TALISMANDIUM_BARS.get());
                                 pOutput.accept(BorealBlocks.NOCTURNAL_SHROOMLIGHT.get());
                             })
@@ -209,6 +231,10 @@ public class BorealCreativeTabs {
                                 pOutput.accept(BorealItems.AURORAL_CHEST_BOAT.get());
                                 pOutput.accept(BorealItems.AURORAL_SIGN.get());
                                 pOutput.accept(BorealItems.AURORAL_HANGING_SIGN.get());
+                                pOutput.accept(BorealItems.NOCTURNAL_BOAT.get());
+                                pOutput.accept(BorealItems.NOCTURNAL_CHEST_BOAT.get());
+                                pOutput.accept(BorealItems.NOCTURNAL_SIGN.get());
+                                pOutput.accept(BorealItems.NOCTURNAL_HANGING_SIGN.get());
                                 pOutput.accept(BorealItems.GLACIAL_TORCH_ITEM.get());
                                 pOutput.accept(BorealBlocks.GLACIAL_LANTERN.get());
                             })

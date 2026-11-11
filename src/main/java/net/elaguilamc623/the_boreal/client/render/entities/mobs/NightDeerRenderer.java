@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class NightDeerRenderer extends MobRenderer<NightDeer, NightDeerModel<NightDeer>> {
     public NightDeerRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new NightDeerModel<>(pContext.bakeLayer(BorealModelLayers.NIGHT_DEER_LAYER)), 2f);
+        super(pContext, new NightDeerModel<>(pContext.bakeLayer(BorealModelLayers.NIGHT_DEER_LAYER)), 0.75f);
     }
 
     @Override

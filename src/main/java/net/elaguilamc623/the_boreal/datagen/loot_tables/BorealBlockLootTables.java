@@ -59,6 +59,18 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.AURORA_SAPLING.get());
         this.dropSelf(BorealBlocks.AURORAL_BUTTON.get());
         this.dropSelf(BorealBlocks.AURORAL_PRESSURE_PLATE.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_LOG.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_WOOD.get());
+        this.dropSelf(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get());
+        this.dropSelf(BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_PLANKS.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_STAIRS.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_FENCE.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_FENCE_GATE.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_TRAPDOOR.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_SAPLING.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_BUTTON.get());
+        this.dropSelf(BorealBlocks.NOCTURNAL_PRESSURE_PLATE.get());
         this.dropSelf(BorealBlocks.VERNITE.get());
         this.dropSelf(BorealBlocks.VERNITE_STAIRS.get());
         this.dropSelf(BorealBlocks.VERNITE_WALL.get());
@@ -83,6 +95,7 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BorealBlocks.BOREAL_ALTAR.get());
         this.dropSelf(BorealBlocks.NOCTURNAL_FUNGUS.get());
         this.dropSelf(BorealBlocks.NOCTURNAL_SHROOMLIGHT.get());
+        this.dropSelf(BorealBlocks.BOREAL_POINTED_DRIPSTONE.get());
 
         this.add(BorealBlocks.BOREAL_COBBLESTONE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.BOREAL_STONE_SLAB.get(), block -> createSlabItemTable(block));
@@ -94,6 +107,7 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.add(BorealBlocks.TARNITE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.POLISHED_TARNITE_SLAB.get(), block -> createSlabItemTable(block));
         this.add(BorealBlocks.AURORAL_SLAB.get(), block -> createSlabItemTable(block));
+        this.add(BorealBlocks.NOCTURNAL_SLAB.get(), block -> createSlabItemTable(block));
 
         this.add(BorealBlocks.NOCTURNAL_GRASS.get(), LootTable.lootTable());
         this.add(BorealBlocks.NOCTURNAL_TALL_GRASS.get(), LootTable.lootTable());
@@ -101,6 +115,9 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
         this.add(BorealBlocks.AURORA_LEAVES.get(),
                 block -> createLeavesDrops(block,
                         BorealBlocks.AURORA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(BorealBlocks.NOCTURNAL_LEAVES.get(),
+                block -> createLeavesDrops(block,
+                        BorealBlocks.NOCTURNAL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.add(BorealBlocks.BOREAL_STONE.get(),
                 block -> createSilkTouchDispatchTable(block,
@@ -158,6 +175,19 @@ public class BorealBlockLootTables extends BlockLootSubProvider {
 
         this.add(BorealBlocks.AURORAL_DOOR.get(),
                 block -> createDoorTable(BorealBlocks.AURORAL_DOOR.get()));
+
+        this.add(BorealBlocks.NOCTURNAL_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.NOCTURNAL_SIGN.get()));
+        this.add(BorealBlocks.NOCTURNAL_WALL_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.NOCTURNAL_SIGN.get()));
+
+        this.add(BorealBlocks.NOCTURNAL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.NOCTURNAL_HANGING_SIGN.get()));
+        this.add(BorealBlocks.NOCTURNAL_WALL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(BorealItems.NOCTURNAL_HANGING_SIGN.get()));
+
+        this.add(BorealBlocks.NOCTURNAL_DOOR.get(),
+                block -> createDoorTable(BorealBlocks.NOCTURNAL_DOOR.get()));
 
         this.add(BorealBlocks.TALISMANDIUM_ORE.get(),
                 block -> createOreDrop(block, BorealItems.RAW_TALISMANDIUM.get()));

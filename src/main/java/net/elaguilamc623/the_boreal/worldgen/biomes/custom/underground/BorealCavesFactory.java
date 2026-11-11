@@ -1,20 +1,18 @@
-package net.elaguilamc623.the_boreal.worldgen.biomes.custom;
+package net.elaguilamc623.the_boreal.worldgen.biomes.custom.underground;
 
-import net.elaguilamc623.the_boreal.worldgen.biomes.AbstractBorealBiomeFactory;
+import net.elaguilamc623.the_boreal.worldgen.biomes.custom.AbstractBorealBiomeFactory;
 import net.elaguilamc623.the_boreal.worldgen.biomes.util.BorealBiomeDefaultFeatures;
-import net.elaguilamc623.the_boreal.worldgen.features.BorealPlacedFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
-import net.minecraft.world.level.levelgen.GenerationStep;
 
-public class NocturnalMarshFactory extends AbstractBorealBiomeFactory {
+public class BorealCavesFactory extends AbstractBorealBiomeFactory {
 
     @Override
     public float temperature(BootstapContext<Biome> context) {
-        return 0.2F;
+        return 0.3F;
     }
 
     @Override
@@ -41,13 +39,7 @@ public class NocturnalMarshFactory extends AbstractBorealBiomeFactory {
     public BiomeGenerationSettings.Builder defaultGenerationSettings(BootstapContext<Biome> context) {
         var builder = super.defaultGenerationSettings(context);
 
-        builder.addFeature(GenerationStep.Decoration.LAKES, BorealPlacedFeatures.NOCTURNAL_DELTA);
-        BorealBiomeDefaultFeatures.addNocturnalGrass(builder);
-
-        BorealBiomeDefaultFeatures.addNocturnalPlants(builder);
-        BorealBiomeDefaultFeatures.addAuroralPlants(builder);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.HUGE_NOCTURNAL_FUNGUS_PLACED);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BorealPlacedFeatures.GLACIALWEED_PATCH_UNCOMMON_PLACED);
+        BorealBiomeDefaultFeatures.addAllCaveOres(builder);
 
         return builder;
     }

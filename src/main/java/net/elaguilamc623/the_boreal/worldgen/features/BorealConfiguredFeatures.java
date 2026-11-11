@@ -1,7 +1,9 @@
 package net.elaguilamc623.the_boreal.worldgen.features;
 
 import net.elaguilamc623.complementary_core.world.features.config.CCFeatureConfiguration;
+import net.elaguilamc623.complementary_core.world.features.config.custom.DefaultCustomDripstoneConfiguration;
 import net.elaguilamc623.complementary_core.world.features.config.custom.FallenLogConfig;
+import net.elaguilamc623.complementary_core.world.features.config.custom.PileFeatureConfiguration;
 import net.elaguilamc623.complementary_core.world.features.registry.CCFeatureRegistry;
 import net.elaguilamc623.complementary_core.world.features.templates.DeltaFeatures;
 import net.elaguilamc623.complementary_core.world.features.templates.OreFeatures;
@@ -12,6 +14,7 @@ import net.elaguilamc623.the_boreal.registries.BorealBlocks;
 import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.elaguilamc623.the_boreal.registries.world.BorealFeatures;
 import net.elaguilamc623.the_boreal.worldgen.features.custom.GlacialCrystalSpikeFeature;
+import net.elaguilamc623.the_boreal.worldgen.features.custom.config.NocturnalTreeConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -22,10 +25,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
@@ -110,6 +110,14 @@ public class BorealConfiguredFeatures {
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_delta"));
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NOCTURNAL_GRASS_DENSE_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_grass_dense_patch"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NOCTURNAL_GRASS_SPARE_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_grass_spare_patch"));
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> NOCTURNAL_TALL_GRASS_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_tall_grass_patch"));
@@ -133,6 +141,24 @@ public class BorealConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_NOCTURNAL_FUNGUS =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "huge_nocturnal_fungus"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CAVE_CRYSTAL_SPIKE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "cave_crystal_spike"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BOREAL_POINTED_DRIPSTONE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "boreal_pointed_dripstone"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NOCTURNAL_TREE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_tree"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DRY_NOCTURNAL_TREE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(TheBoreal.MOD_ID, "dry_nocturnal_tree"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BOREAL_COBBLESTONE_PILE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(TheBoreal.MOD_ID, "boreal_cobblestone_pile"));
+
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -245,12 +271,12 @@ public class BorealConfiguredFeatures {
 
         PatchFeature.individualPatch(context, BOREAL_ROCK_PATCH)
                 .state(BorealBlocks.BOREAL_ROCK.get().defaultBlockState())
-                .below(BorealBlocks.PERMAFROST.get())
+                .below(BorealTags.NATURAL_STONES_AND_PERMAFROST)
                 .register();
 
         PatchFeature.individualPatch(context, CRYSTALIZED_DEAD_BUSH_PATCH)
                 .state(BorealBlocks.CRYSTALIZED_DEAD_BUSH.get().defaultBlockState())
-                .below(BorealBlocks.PERMAFROST.get())
+                .below(BorealTags.NATURAL_STONES_AND_PERMAFROST)
                 .register();
 
         context.register(
@@ -315,7 +341,7 @@ public class BorealConfiguredFeatures {
                 GLACIAL_CRYSTAL_SPIKE,
                 new ConfiguredFeature<>(
                         BorealFeatures.GLACIAL_CRYSTAL_SPIKE.get(),
-                        new GlacialCrystalSpikeFeature.Config(
+                        new GlacialCrystalSpikeFeature.GlacialCrystalSpikeConfig(
                                 5,
                                 12,
                                 1,
@@ -335,6 +361,20 @@ public class BorealConfiguredFeatures {
                         UniformInt.of(0, 2)
                 )
         );
+
+        PatchFeature.collectivePatch(context, NOCTURNAL_GRASS_DENSE_PATCH)
+                .state(BorealBlocks.NOCTURNAL_GRASS.get().defaultBlockState())
+                .below(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON)
+                .tries(96)
+                .spread(7, 3)
+                .register();
+
+        PatchFeature.collectivePatch(context, NOCTURNAL_GRASS_SPARE_PATCH)
+                .state(BorealBlocks.NOCTURNAL_GRASS.get().defaultBlockState())
+                .below(BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON)
+                .tries(30)
+                .spread(5, 3)
+                .register();
 
         CCFeatureConfiguration.registerConfigured(
                 context,
@@ -373,5 +413,60 @@ public class BorealConfiguredFeatures {
                         2
                 )
         ));
+
+        context.register(
+                CAVE_CRYSTAL_SPIKE,
+                new ConfiguredFeature<>(
+                        BorealFeatures.GLACIAL_CRYSTAL_SPIKE.get(),
+                        new GlacialCrystalSpikeFeature.GlacialCrystalSpikeConfig(
+                                3,
+                                6,
+                                1,
+                                2
+                        )
+                )
+        );
+
+        context.register(
+                BOREAL_POINTED_DRIPSTONE,
+                new ConfiguredFeature<>(
+                        CCFeatureRegistry.DEFAULT_CUSTOM_DRIPSTONE_FEATURE.get(),
+                        new DefaultCustomDripstoneConfiguration(
+                                BorealBlocks.BOREAL_POINTED_DRIPSTONE.get().defaultBlockState(),
+                                UniformInt.of(1, 4),
+                                0.65F,
+                                0.50F
+        )));
+
+        context.register(
+                BorealConfiguredFeatures.NOCTURNAL_TREE,
+                new ConfiguredFeature<>(
+                        BorealFeatures.NOCTURNAL_TREE_FEATURE.get(),
+                        new NocturnalTreeConfig(
+                                BlockStateProvider.simple(BorealBlocks.NOCTURNAL_LOG.get()),
+                                BlockStateProvider.simple(BorealBlocks.NOCTURNAL_LEAVES.get()),
+                                BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON,
+                                UniformInt.of(6, 11)
+        )));
+
+        context.register(
+                BorealConfiguredFeatures.DRY_NOCTURNAL_TREE,
+                new ConfiguredFeature<>(
+                        BorealFeatures.NOCTURNAL_TREE_FEATURE.get(),
+                        new NocturnalTreeConfig(
+                                BlockStateProvider.simple(BorealBlocks.NOCTURNAL_LOG.get()),
+                                BlockStateProvider.simple(Blocks.AIR),
+                                BorealTags.Blocks.AURORA_SAPLING_CAN_PLANT_ON,
+                                UniformInt.of(3, 6)
+                        )));
+
+        context.register(
+                BorealConfiguredFeatures.BOREAL_COBBLESTONE_PILE,
+                new ConfiguredFeature<>(
+                        CCFeatureRegistry.PILE_FEATURE.get(),
+                        new PileFeatureConfiguration(
+                                BlockStateProvider.simple(BorealBlocks.BOREAL_COBBLESTONE.get()),
+                                1.0F
+                        )));
     }
 }

@@ -6,6 +6,7 @@ import net.elaguilamc623.complementary_core.world.features.templates.DeltaFeatur
 import net.elaguilamc623.complementary_core.world.features.templates.OreFeatures;
 import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -13,6 +14,8 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
@@ -100,6 +103,14 @@ public class BorealPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_delta"));
 
+    public static final ResourceKey<PlacedFeature> NOCTURNAL_GRASS_DENSE_PATCH_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_grass_dense_patch"));
+
+    public static final ResourceKey<PlacedFeature> NOCTURNAL_GRASS_SPARE_PATCH_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_grass_spare_patch"));
+
     public static final ResourceKey<PlacedFeature> NOCTURNAL_TALL_GRASS_PATCH_PLACED =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_tall_grass_patch"));
@@ -127,6 +138,35 @@ public class BorealPlacedFeatures {
     public static final ResourceKey<PlacedFeature> HUGE_NOCTURNAL_FUNGUS_PLACED =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     new ResourceLocation(TheBoreal.MOD_ID, "huge_nocturnal_fungus_placed"));
+
+    public static final ResourceKey<PlacedFeature> CAVE_CRYSTAL_SPIKE_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "cave_crystal_spike"));
+
+    public static final ResourceKey<PlacedFeature> BOREAL_POINTED_DRIPSTONE =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "boreal_pointed_dripstone"));
+
+    public static final ResourceKey<PlacedFeature> NOCTURNAL_TREE_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "nocturnal_tree_placed"));
+
+    public static final ResourceKey<PlacedFeature> DRY_NOCTURNAL_TREE_PLACED_DENSE =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "dry_nocturnal_tree_placed_dense"));
+
+    public static final ResourceKey<PlacedFeature> DRY_NOCTURNAL_TREE_PLACED_SPARED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "dry_nocturnal_tree_placed_spared"));
+
+
+    public static final ResourceKey<PlacedFeature> BOREAL_COBBLESTONE_PILE_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "boreal_cobblestone_pile_placed"));
+
+    public static final ResourceKey<PlacedFeature> BOREAL_COBBLESTONE_PILE_RARE_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    new ResourceLocation(TheBoreal.MOD_ID, "boreal_cobblestone_pile_rare_placed"));
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -264,7 +304,7 @@ public class BorealPlacedFeatures {
         context.register(
                 TALISMANDIUM_ORE_PLACED,
                 OreFeatures.orePlacedFeature(configured,
-                        BorealConfiguredFeatures.TALISMANDIUM_ORE, 13, -52, 40)
+                        BorealConfiguredFeatures.TALISMANDIUM_ORE, 13, -52, 90)
         );
 
         context.register(
@@ -288,6 +328,18 @@ public class BorealPlacedFeatures {
                         HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR_WG),
                         BiomeFilter.biome()
                 )
+        );
+
+        context.register(
+                NOCTURNAL_GRASS_DENSE_PATCH_PLACED,
+                CCPlacedFeaturesTemplates.patchFeaturePlacedWithCount(configured,
+                        BorealConfiguredFeatures.NOCTURNAL_GRASS_DENSE_PATCH, 3, 2)
+        );
+
+        context.register(
+                NOCTURNAL_GRASS_SPARE_PATCH_PLACED,
+                CCPlacedFeaturesTemplates.patchFeaturePlacedWithCount(configured,
+                        BorealConfiguredFeatures.NOCTURNAL_GRASS_SPARE_PATCH, 2 , 2)
         );
 
         CCFeatureConfiguration.registerPlaced(
@@ -343,5 +395,96 @@ public class BorealPlacedFeatures {
                         BiomeFilter.biome()
                 )
         ));
+
+        context.register(
+                CAVE_CRYSTAL_SPIKE_PLACED,
+                new PlacedFeature(configured.getOrThrow(BorealConfiguredFeatures.CAVE_CRYSTAL_SPIKE),
+                        List.of(
+                                CountPlacement.of(2),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                                BiomeFilter.biome(),
+                                HeightRangePlacement.uniform(
+                                        VerticalAnchor.absolute(-64),
+                                        VerticalAnchor.absolute(40)
+                                ),
+
+                                EnvironmentScanPlacement.scanningFor(
+                                        Direction.DOWN,
+                                        BlockPredicate.solid(),
+                                        12
+                                ),
+                                BiomeFilter.biome()
+                        )
+                )
+        );
+
+        context.register(
+                BOREAL_POINTED_DRIPSTONE,
+                new PlacedFeature(configured.getOrThrow(BorealConfiguredFeatures.BOREAL_POINTED_DRIPSTONE),
+                        List.of(
+                                CountPlacement.of(20),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+                                BiomeFilter.biome()
+                        )));
+
+        context.register(
+                NOCTURNAL_TREE_PLACED,
+                CCPlacedFeaturesTemplates.treePlacedFeature(
+                        configured,
+                        BorealConfiguredFeatures.NOCTURNAL_TREE,
+                        10,
+                        BorealBlocks.NOCTURNAL_SAPLING.get()
+                )
+        );
+
+        context.register(
+                DRY_NOCTURNAL_TREE_PLACED_DENSE,
+                CCPlacedFeaturesTemplates.treePlacedFeature(
+                        configured,
+                        BorealConfiguredFeatures.DRY_NOCTURNAL_TREE,
+                        1,
+                        BorealBlocks.NOCTURNAL_SAPLING.get()
+                )
+        );
+
+        context.register(
+                DRY_NOCTURNAL_TREE_PLACED_SPARED,
+                CCPlacedFeaturesTemplates.treePlacedFeatureWithRarity(
+                        configured,
+                        BorealConfiguredFeatures.DRY_NOCTURNAL_TREE,
+                        1,
+                        10,
+                        BorealBlocks.NOCTURNAL_SAPLING.get()
+                )
+        );
+
+        context.register(
+                BOREAL_COBBLESTONE_PILE_PLACED,
+                new PlacedFeature(
+                        configured.getOrThrow(BorealConfiguredFeatures.BOREAL_COBBLESTONE_PILE),
+                        List.of(
+                                CountPlacement.of(1),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                                BiomeFilter.biome()
+                        )
+                )
+        );
+
+        context.register(
+                BOREAL_COBBLESTONE_PILE_RARE_PLACED,
+                new PlacedFeature(
+                        configured.getOrThrow(BorealConfiguredFeatures.BOREAL_COBBLESTONE_PILE),
+                        List.of(
+                                RarityFilter.onAverageOnceEvery(3),
+                                CountPlacement.of(1),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                                BiomeFilter.biome()
+                        )
+                )
+        );
     }
 }

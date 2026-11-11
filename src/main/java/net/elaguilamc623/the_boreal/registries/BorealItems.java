@@ -84,7 +84,7 @@ public class BorealItems {
     public static final RegistryObject<Item> GLACIAL_BONE = ITEMS.register("glacial_bone",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> AURORAL_STICK = ITEMS.register("auroral_stick",
+    public static final RegistryObject<Item> BOREAL_STICK = ITEMS.register("boreal_stick",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> AURORA_SAPLING_ITEM = ITEMS.register("aurora_sapling",
@@ -101,6 +101,21 @@ public class BorealItems {
 
     public static final RegistryObject<Item> AURORAL_CHEST_BOAT = ITEMS.register("auroral_chest_boat",
             () -> new BorealBoatItem(true, BorealBoatEntity.Type.AURORAL, new Item.Properties()));
+
+    public static final RegistryObject<Item> NOCTURNAL_SAPLING_ITEM = ITEMS.register("nocturnal_sapling",
+            () -> new BlockItem(BorealBlocks.NOCTURNAL_SAPLING.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> NOCTURNAL_BOAT = ITEMS.register("nocturnal_boat",
+            () -> new BorealBoatItem(false, BorealBoatEntity.Type.NOCTURNAL, new Item.Properties()));
+
+    public static final RegistryObject<Item> NOCTURNAL_CHEST_BOAT = ITEMS.register("nocturnal_chest_boat",
+            () -> new BorealBoatItem(true, BorealBoatEntity.Type.NOCTURNAL, new Item.Properties()));
+
+    public static final RegistryObject<Item> NOCTURNAL_SIGN = ITEMS.register("nocturnal_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), BorealBlocks.NOCTURNAL_SIGN.get(), BorealBlocks.NOCTURNAL_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> NOCTURNAL_HANGING_SIGN = ITEMS.register("nocturnal_hanging_sign",
+            () -> new HangingSignItem(BorealBlocks.NOCTURNAL_HANGING_SIGN.get(), BorealBlocks.NOCTURNAL_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> RAW_TALISMANDIUM = ITEMS.register("raw_talismandium",
             () -> new Item(new Item.Properties()));
@@ -123,6 +138,9 @@ public class BorealItems {
     public static final RegistryObject<Item> DIORIUM_GEM = ITEMS.register("diorium_gem",
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
+    public static final ToolSetBuilder BOREAL_STONE_TOOLS = ToolSetBuilder.create("boreal_stone",
+            BorealItems.ITEMS, Tiers.STONE).sword().axe().pickaxe().shovel().hoe();
+
     public static final ToolSetBuilder TALISMANDIUM_TOOLS = ToolSetBuilder.create("talismandium",
             BorealItems.ITEMS, BorealTiers.TALISMANDIUM).sword().axe().pickaxe().shovel().hoe();
 
@@ -136,7 +154,7 @@ public class BorealItems {
             () -> new BorealPickaxeItem(BorealTiers.DIORIUM, 7, -2.8F, new BorealItemProperties().unbreakable().stacksTo(1)));
 
     public static final RegistryObject<Item> DIORIUM_AXE = ITEMS.register("diorium_axe",
-            () -> new BorealAxeItem(BorealTiers.DIORIUM, 10, -2.9F, new BorealItemProperties().unbreakable().stacksTo(1)));
+            () -> new BorealAxeItem(BorealTiers.DIORIUM, 11, -2.9F, new BorealItemProperties().unbreakable().stacksTo(1)));
 
     public static final RegistryObject<Item> DIORIUM_SHOVEL = ITEMS.register("diorium_shovel",
             () -> new BorealShovelItem(BorealTiers.DIORIUM, 7.5F, -3.0F, new BorealItemProperties().unbreakable().stacksTo(1)));
@@ -207,6 +225,7 @@ public class BorealItems {
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        BOREAL_STONE_TOOLS.register();
         TALISMANDIUM_TOOLS.register();
         CHRODIUM_TOOLS.register();
         TALISMANDIUM_ARMOR.register();

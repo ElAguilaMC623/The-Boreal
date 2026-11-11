@@ -1,17 +1,23 @@
 package net.elaguilamc623.the_boreal.registries;
 
 import net.elaguilamc623.the_boreal.TheBoreal;
+import net.elaguilamc623.the_boreal.blocks.custom.BorealPointedDripstoneBlock;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealEssenceTableBlock;
 import net.elaguilamc623.the_boreal.blocks.block_entities.BorealInfuserBlock;
 import net.elaguilamc623.the_boreal.blocks.custom.*;
 import net.elaguilamc623.the_boreal.blocks.custom.plants.*;
 import net.elaguilamc623.the_boreal.blocks.custom.GlacialGrassBlock;
-import net.elaguilamc623.the_boreal.blocks.signs.hanging.BorealHangingSignBlock;
-import net.elaguilamc623.the_boreal.blocks.signs.BorealStandingSignBlock;
-import net.elaguilamc623.the_boreal.blocks.signs.hanging.BorealWallHangingSignBlock;
-import net.elaguilamc623.the_boreal.blocks.signs.BorealWallSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.NocturnalStandingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.NocturnalWallSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.hanging.AuroralHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.AuroralStandingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.hanging.AuroralWallHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.AuroralWallSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.hanging.NocturnalHangingSignBlock;
+import net.elaguilamc623.the_boreal.blocks.signs.hanging.NocturnalWallHangingSignBlock;
 import net.elaguilamc623.the_boreal.utils.BorealWoodTypes;
-import net.elaguilamc623.the_boreal.worldgen.features.BorealConfiguredFeatures;
+import net.elaguilamc623.the_boreal.worldgen.features.growers.AuroralTreeGrower;
+import net.elaguilamc623.the_boreal.worldgen.features.growers.NocturnalTreeGrower;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -23,6 +29,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
 import java.util.function.Supplier;
 
 public class BorealBlocks {
@@ -91,6 +98,9 @@ public class BorealBlocks {
 
     public static final RegistryObject<Block> BOREAL_CHISELED_STONE = registerBlock("boreal_chiseled_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
+
+    public static final RegistryObject<Block> BOREAL_POINTED_DRIPSTONE = registerBlock("boreal_pointed_dripstone",
+            () -> new BorealPointedDripstoneBlock(BlockBehaviour.Properties.copy(Blocks.POINTED_DRIPSTONE)));
 
     public static final RegistryObject<Block> VERNITE = registerBlock("vernite",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
@@ -231,7 +241,7 @@ public class BorealBlocks {
             () -> new BorealLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     public static final RegistryObject<Block> AURORA_SAPLING = BLOCKS.register("aurora_sapling",
-            () -> new AuroralSaplingBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
+            () -> new BorealSaplingBlock(new AuroralTreeGrower(), BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
 
     public static final RegistryObject<Block> AURORAL_SLAB = registerBlock("auroral_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
@@ -252,21 +262,78 @@ public class BorealBlocks {
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
 
     public static final RegistryObject<Block> AURORAL_SIGN = BLOCKS.register("auroral_sign",
-            () -> new BorealStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BorealWoodTypes.AURORAL));
+            () -> new AuroralStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BorealWoodTypes.AURORAL));
 
     public static final RegistryObject<Block> AURORAL_WALL_SIGN = BLOCKS.register("auroral_wall_sign",
-            () -> new BorealWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BorealWoodTypes.AURORAL));
+            () -> new AuroralWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BorealWoodTypes.AURORAL));
 
     public static final RegistryObject<Block> AURORAL_HANGING_SIGN = BLOCKS.register("auroral_hanging_sign",
-            () -> new BorealHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BorealWoodTypes.AURORAL));
+            () -> new AuroralHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BorealWoodTypes.AURORAL));
 
     public static final RegistryObject<Block> AURORAL_WALL_HANGING_SIGN = BLOCKS.register("auroral_wall_hanging_sign",
-            () -> new BorealWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BorealWoodTypes.AURORAL));
+            () -> new AuroralWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BorealWoodTypes.AURORAL));
 
     public static final RegistryObject<Block> AURORAL_BUTTON = registerBlock("auroral_button",
             () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 
     public static final RegistryObject<Block> AURORAL_PRESSURE_PLATE = registerBlock("auroral_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> NOCTURNAL_LOG = registerBlock("nocturnal_log",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).strength(3F)));
+
+    public static final RegistryObject<Block> NOCTURNAL_WOOD = registerBlock("nocturnal_wood",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WOOD).strength(3F)));
+
+    public static final RegistryObject<Block> STRIPPED_NOCTURNAL_LOG = registerBlock("stripped_nocturnal_log",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3F)));
+
+    public static final RegistryObject<Block> STRIPPED_NOCTURNAL_WOOD = registerBlock("stripped_nocturnal_wood",
+            () -> new BorealFlammableRotatePilarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3F)));
+
+    public static final RegistryObject<Block> NOCTURNAL_PLANKS = registerBlock("nocturnal_planks",
+            () -> new BorealPlanksBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> NOCTURNAL_LEAVES = registerBlock("nocturnal_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> NOCTURNAL_SAPLING = BLOCKS.register("nocturnal_sapling",
+            () -> new BorealSaplingBlock(new NocturnalTreeGrower(), BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
+
+    public static final RegistryObject<Block> NOCTURNAL_SLAB = registerBlock("nocturnal_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> NOCTURNAL_STAIRS = registerBlock("nocturnal_stairs",
+            () -> new StairBlock(() -> NOCTURNAL_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+
+    public static final RegistryObject<Block> NOCTURNAL_FENCE = registerBlock("nocturnal_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+
+    public static final RegistryObject<Block> NOCTURNAL_FENCE_GATE = registerBlock("nocturnal_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+
+    public static final RegistryObject<Block> NOCTURNAL_DOOR = registerBlock("nocturnal_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> NOCTURNAL_TRAPDOOR = registerBlock("nocturnal_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> NOCTURNAL_SIGN = BLOCKS.register("nocturnal_sign",
+            () -> new NocturnalStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BorealWoodTypes.NOCTURNAL));
+
+    public static final RegistryObject<Block> NOCTURNAL_WALL_SIGN = BLOCKS.register("nocturnal_wall_sign",
+            () -> new NocturnalWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BorealWoodTypes.NOCTURNAL));
+
+    public static final RegistryObject<Block> NOCTURNAL_HANGING_SIGN = BLOCKS.register("nocturnal_hanging_sign",
+            () -> new NocturnalHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BorealWoodTypes.NOCTURNAL));
+
+    public static final RegistryObject<Block> NOCTURNAL_WALL_HANGING_SIGN = BLOCKS.register("nocturnal_wall_hanging_sign",
+            () -> new NocturnalWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BorealWoodTypes.NOCTURNAL));
+
+    public static final RegistryObject<Block> NOCTURNAL_BUTTON = registerBlock("nocturnal_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
+
+    public static final RegistryObject<Block> NOCTURNAL_PRESSURE_PLATE = registerBlock("nocturnal_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
 
     public static final RegistryObject<Block> GLACIAL_TORCH = BLOCKS.register("glacial_torch",

@@ -6,6 +6,8 @@
     "the_boreal:glacial_tundra",
     "the_boreal:glacial_shrubland",
     "the_boreal:glacial_desert",
-    "the_boreal:nocturnal_marsh"
+    "the_boreal:nocturnal_marsh",
+    "the_boreal:nocturnal_forest",
+    "the_boreal:boreal_wastelands"
   ]
 }

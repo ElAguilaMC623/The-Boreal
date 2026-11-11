@@ -47,31 +47,32 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                                          Supplier<Block> wood,
                                          Supplier<Block> strippedLog,
                                          Supplier<Block> strippedWood,
-                                         Supplier<Block> planks) {
+                                         Supplier<Block> planks,
+                                         String woodType) {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
                 .requires(log.get())
                 .group("planks")
                 .unlockedBy("has_log", has(log.get()))
-                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_log");
+                .save(consumer, TheBoreal.MOD_ID + ":" + woodType + "_planks_from_log");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
                 .requires(wood.get())
                 .group("planks")
                 .unlockedBy("has_wood", has(wood.get()))
-                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_wood");
+                .save(consumer, TheBoreal.MOD_ID + ":" + woodType + "_planks_from_wood");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
                 .requires(strippedLog.get())
                 .group("planks")
                 .unlockedBy("has_stripped_log", has(strippedLog.get()))
-                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_stripped_log");
+                .save(consumer, TheBoreal.MOD_ID + ":" + woodType + "_planks_from_stripped_log");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks.get(), 4)
                 .requires(strippedWood.get())
                 .group("planks")
                 .unlockedBy("has_stripped_wood", has(strippedWood.get()))
-                .save(consumer, TheBoreal.MOD_ID + ":aurora_planks_from_stripped_wood");
+                .save(consumer, TheBoreal.MOD_ID + ":" + woodType + "_planks_from_stripped_wood");
     }
 
     private void woodFromLogs(Consumer<FinishedRecipe> consumer,
@@ -98,7 +99,7 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .pattern("A")
                 .define('A', plank)
                 .unlockedBy("has_" + name, has(plank))
-                .save(consumer, new ResourceLocation("the_boreal", name + "_stick"));
+                .save(consumer, new ResourceLocation(TheBoreal.MOD_ID, name + "_stick"));
     }
 
     private void signRecipe(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike planks) {
@@ -171,7 +172,7 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .pattern(p3)
                 .define('A', BorealItems.DIORIUM_INGOT.get())
                 .define('B', BorealItems.DIORIUM_GEM.get())
-                .define('C', BorealItems.AURORAL_STICK.get())
+                .define('C', BorealItems.BOREAL_STICK.get())
                 .unlockedBy("has_diorium_ingot", has(BorealItems.DIORIUM_INGOT.get()))
                 .save(consumer);
     }
@@ -277,9 +278,17 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 .pattern("  B")
                 .pattern(" A ")
                 .pattern("A  ")
-                .define('A', BorealItems.AURORAL_STICK.get())
+                .define('A', BorealItems.BOREAL_STICK.get())
                 .define('B', BorealItems.BOREAL_ENCHANTED_SHARD.get())
                 .unlockedBy("has_boreal_enchanted_shard", has(BorealItems.BOREAL_ENCHANTED_SHARD.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.FURNACE)
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern("AAA")
+                .define('A', BorealBlocks.BOREAL_COBBLESTONE.get())
+                .unlockedBy("has_boreal_cobblestone", has(BorealBlocks.BOREAL_COBBLESTONE.get()))
                 .save(consumer);
 
         oreSmelting(consumer,
@@ -428,7 +437,17 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 BorealBlocks.AURORA_WOOD,
                 BorealBlocks.STRIPPED_AURORA_LOG,
                 BorealBlocks.STRIPPED_AURORA_WOOD,
-                BorealBlocks.AURORA_PLANKS
+                BorealBlocks.AURORA_PLANKS,
+                "auroral"
+        );
+
+        simpleWoodFamilyRecipes(consumer,
+                BorealBlocks.NOCTURNAL_LOG,
+                BorealBlocks.NOCTURNAL_WOOD,
+                BorealBlocks.STRIPPED_NOCTURNAL_LOG,
+                BorealBlocks.STRIPPED_NOCTURNAL_WOOD,
+                BorealBlocks.NOCTURNAL_PLANKS,
+                "nocturnal"
         );
 
         woodFromLogs(consumer,
@@ -437,35 +456,67 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
         );
 
         woodFromLogs(consumer,
+                BorealBlocks.NOCTURNAL_LOG,
+                BorealBlocks.NOCTURNAL_WOOD
+        );
+
+        woodFromLogs(consumer,
                 BorealBlocks.STRIPPED_AURORA_LOG,
                 BorealBlocks.STRIPPED_AURORA_WOOD
         );
 
+        woodFromLogs(consumer,
+                BorealBlocks.STRIPPED_NOCTURNAL_LOG,
+                BorealBlocks.STRIPPED_NOCTURNAL_WOOD
+        );
+
         stickRecipe(consumer,
                 BorealBlocks.AURORA_PLANKS.get(),
-                BorealItems.AURORAL_STICK.get(),
+                BorealItems.BOREAL_STICK.get(),
                 4,
                 "auroral"
         );
 
+        stickRecipe(consumer,
+                BorealBlocks.NOCTURNAL_PLANKS.get(),
+                BorealItems.BOREAL_STICK.get(),
+                4,
+                "nocturnal"
+        );
+
         signRecipe(consumer, BorealItems.AURORAL_SIGN.get(), BorealBlocks.AURORA_PLANKS.get());
+        signRecipe(consumer, BorealItems.NOCTURNAL_SIGN.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
         hangingSignRecipe(consumer, BorealItems.AURORAL_HANGING_SIGN.get(), BorealBlocks.STRIPPED_AURORA_LOG.get());
+        hangingSignRecipe(consumer, BorealItems.NOCTURNAL_HANGING_SIGN.get(), BorealBlocks.STRIPPED_NOCTURNAL_LOG.get());
 
         boatRecipe(consumer, BorealItems.AURORAL_BOAT.get(), BorealBlocks.AURORA_PLANKS.get());
+        boatRecipe(consumer, BorealItems.NOCTURNAL_BOAT.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
         chestBoatRecipe(consumer, BorealItems.AURORAL_CHEST_BOAT.get(), BorealBlocks.AURORA_PLANKS.get());
+        chestBoatRecipe(consumer, BorealItems.NOCTURNAL_CHEST_BOAT.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
 
         buttonRecipe(consumer, BorealBlocks.AURORAL_BUTTON.get(), BorealBlocks.AURORA_PLANKS.get());
+        buttonRecipe(consumer, BorealBlocks.NOCTURNAL_BUTTON.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
         pressurePlateRecipe(consumer, BorealBlocks.AURORAL_PRESSURE_PLATE.get(), BorealBlocks.AURORA_PLANKS.get());
+        pressurePlateRecipe(consumer, BorealBlocks.NOCTURNAL_PRESSURE_PLATE.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
 
-        fenceAndGateRecipes(
-                consumer,
+        fenceAndGateRecipes(consumer,
                 BorealBlocks.AURORA_PLANKS.get(),
                 BorealBlocks.AURORAL_FENCE.get(),
-                BorealBlocks.AURORAL_FENCE_GATE.get()
+                BorealBlocks.AURORAL_FENCE_GATE.get(),
+                BorealItems.BOREAL_STICK.get()
+        );
+
+        fenceAndGateRecipes(consumer,
+                BorealBlocks.NOCTURNAL_PLANKS.get(),
+                BorealBlocks.NOCTURNAL_FENCE.get(),
+                BorealBlocks.NOCTURNAL_FENCE_GATE.get(),
+                BorealItems.BOREAL_STICK.get()
         );
 
         doorRecipe(consumer, BorealBlocks.AURORAL_DOOR.get(), BorealBlocks.AURORA_PLANKS.get());
+        doorRecipe(consumer, BorealBlocks.NOCTURNAL_DOOR.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
         trapdoorRecipe(consumer, BorealBlocks.AURORAL_TRAPDOOR.get(), BorealBlocks.AURORA_PLANKS.get());
+        trapdoorRecipe(consumer, BorealBlocks.NOCTURNAL_TRAPDOOR.get(), BorealBlocks.NOCTURNAL_PLANKS.get());
 
         oreSmelting(consumer,
                 List.of(
@@ -530,6 +581,36 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 BorealItems.DIORIUM_INGOT.get(),
                 0.9f, 100,
                 "diorium");
+
+        toolRecipe(consumer, BorealItems.BOREAL_STONE_TOOLS.getSword().get(),
+                BorealBlocks.BOREAL_COBBLESTONE.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "X", "#",
+                "boreal_stone_sword");
+
+        toolRecipe(consumer, BorealItems.BOREAL_STONE_TOOLS.getPickaxe().get(),
+                BorealBlocks.BOREAL_COBBLESTONE.get(),
+                BorealTags.BOREAL_STICKS,
+                "XXX", " # ", " # ",
+                "boreal_stone_pickaxe");
+
+        toolRecipe(consumer, BorealItems.BOREAL_STONE_TOOLS.getAxe().get(),
+                BorealBlocks.BOREAL_COBBLESTONE.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", "X# ", " # ",
+                "boreal_stone_axe");
+
+        toolRecipe(consumer, BorealItems.BOREAL_STONE_TOOLS.getShovel().get(),
+                BorealBlocks.BOREAL_COBBLESTONE.get(),
+                BorealTags.BOREAL_STICKS,
+                "X", "#", "#",
+                "boreal_stone_shovel");
+
+        toolRecipe(consumer, BorealItems.BOREAL_STONE_TOOLS.getHoe().get(),
+                BorealBlocks.BOREAL_COBBLESTONE.get(),
+                BorealTags.BOREAL_STICKS,
+                "XX ", " # ", " # ",
+                "boreal_stone_hoe");
 
         toolRecipe(consumer, BorealItems.TALISMANDIUM_TOOLS.getSword().get(),
                 BorealItems.TALISMANDIUM_INGOT.get(),
@@ -657,7 +738,7 @@ public class BorealRecipeProvider extends CCRecipeProvider implements ICondition
                 consumer,
                 BorealItems.GLACIAL_TORCH_ITEM.get(),   
                 BorealItems.GLACIAL_CRYSTAL_SHARD.get(),  
-                BorealItems.AURORAL_STICK.get(),          
+                BorealItems.BOREAL_STICK.get(),
                 4,                                     
                 "has_glacial_shard"                     
         );

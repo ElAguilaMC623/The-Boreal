@@ -7,10 +7,11 @@
     "sky_color": 1980488,
     "fog_color": 2507703,
     "water_color": 5718385,
+    "grass_color": 6734565,
     "water_fog_color": 2561575,
     "foliage_color": 9794291,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
+      "sound": "the_boreal:boreal_ambience",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
@@ -25,7 +26,7 @@
     "monster": [
       {
         "type": "the_boreal:frozen_bear",
-        "weight": 150,
+        "weight": 80,
         "minCount": 1,
         "maxCount": 2
       },

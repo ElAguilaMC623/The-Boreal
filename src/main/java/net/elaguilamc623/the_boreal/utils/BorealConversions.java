@@ -21,8 +21,14 @@ public class BorealConversions {
                     .put(BorealBlocks.AURORA_WOOD.get().asItem(), Items.OAK_WOOD)
                     .put(BorealBlocks.STRIPPED_AURORA_WOOD.get().asItem(), Items.STRIPPED_OAK_WOOD)
                     .put(BorealBlocks.AURORA_PLANKS.get().asItem(), Items.OAK_PLANKS)
+                    .put(BorealBlocks.NOCTURNAL_LOG.get().asItem(), Items.SPRUCE_LOG)
+                    .put(BorealBlocks.STRIPPED_NOCTURNAL_LOG.get().asItem(), Items.STRIPPED_SPRUCE_LOG)
+                    .put(BorealBlocks.NOCTURNAL_WOOD.get().asItem(), Items.SPRUCE_WOOD)
+                    .put(BorealBlocks.STRIPPED_NOCTURNAL_WOOD.get().asItem(), Items.STRIPPED_SPRUCE_WOOD)
+                    .put(BorealBlocks.NOCTURNAL_PLANKS.get().asItem(), Items.SPRUCE_PLANKS)
                     .put(BorealItems.GLACIAL_ROTTEN_FLESH.get(), Items.ROTTEN_FLESH)
                     .put(BorealItems.GLACIAL_BONE.get(), Items.BONE)
                     .put(BorealItems.GLACIAL_BERRIES.get(), Items.SWEET_BERRIES)
+                    .put(BorealItems.TALISMANDIUM_INGOT.get(), Items.IRON_INGOT)
                     .build();
 }

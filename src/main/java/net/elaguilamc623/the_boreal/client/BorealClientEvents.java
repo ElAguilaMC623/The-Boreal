@@ -1,5 +1,6 @@
 package net.elaguilamc623.the_boreal.client;
 
+import net.elaguilamc623.the_boreal.TheBoreal;
 import net.elaguilamc623.the_boreal.client.render.BorealEffects;
 import net.elaguilamc623.the_boreal.client.render.BorealModelLayers;
 import net.elaguilamc623.the_boreal.client.render.blocks.BorealInfuserRenderer;
@@ -15,7 +16,6 @@ import net.elaguilamc623.the_boreal.registries.BorealParticles;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.SlimeModel;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -26,12 +26,13 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = "the_boreal", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@SuppressWarnings("removal")
+@Mod.EventBusSubscriber(modid = TheBoreal.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class BorealClientEvents {
 
     @SubscribeEvent
     public static void registerDimensionEffects(RegisterDimensionSpecialEffectsEvent e) {
-        e.register(new ResourceLocation("the_boreal", "boreal_effects"), new BorealEffects());
+        e.register(new ResourceLocation(TheBoreal.MOD_ID, "boreal_effects"), new BorealEffects());
     }
 
     @SubscribeEvent
@@ -68,8 +69,10 @@ public class BorealClientEvents {
 
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_SIGN.get(), SignRenderer::new);
-        event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_HANGING_SIGN.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(BorealBlockEntities.AURORAL_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(BorealBlockEntities.AURORAL_HANGING_SIGN.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(BorealBlockEntities.NOCTURNAL_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(BorealBlockEntities.NOCTURNAL_HANGING_SIGN.get(), HangingSignRenderer::new);
         event.registerBlockEntityRenderer(BorealBlockEntities.BOREAL_INFUSER.get(), BorealInfuserRenderer::new);
     }
 
@@ -77,6 +80,8 @@ public class BorealClientEvents {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(BorealModelLayers.AURORAL_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(BorealModelLayers.AURORAL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(BorealModelLayers.NOCTURNAL_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(BorealModelLayers.NOCTURNAL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(BorealModelLayers.NIGHT_DEER_LAYER, NightDeerModel::createBodyLayer);
         event.registerLayerDefinition(BorealModelLayers.BOREAL_GOLEM_LAYER, BorealGolemModel::createBodyLayer);
         event.registerLayerDefinition(BorealModelLayers.CRYSTALIZED_FOX_LAYER, CrystalizedFoxModel::createBodyLayer);

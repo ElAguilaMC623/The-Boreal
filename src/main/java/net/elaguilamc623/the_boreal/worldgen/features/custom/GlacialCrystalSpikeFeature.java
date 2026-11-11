@@ -3,6 +3,7 @@ package net.elaguilamc623.the_boreal.worldgen.features.custom;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.elaguilamc623.the_boreal.registries.BorealBlocks;
+import net.elaguilamc623.the_boreal.registries.BorealTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
@@ -12,27 +13,27 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
-public class GlacialCrystalSpikeFeature extends Feature<GlacialCrystalSpikeFeature.Config> {
+public class GlacialCrystalSpikeFeature extends Feature<GlacialCrystalSpikeFeature.GlacialCrystalSpikeConfig> {
 
     private static final BlockState SPIKE = BorealBlocks.GLACIAL_CRYSTAL.get().defaultBlockState();
 
-    public GlacialCrystalSpikeFeature(Codec<Config> codec) {
+    public GlacialCrystalSpikeFeature(Codec<GlacialCrystalSpikeConfig> codec) {
         super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<Config> context) {
+    public boolean place(FeaturePlaceContext<GlacialCrystalSpikeConfig> context) {
         WorldGenLevel world = context.level();
         BlockPos origin = context.origin();
         RandomSource random = world.getRandom();
-        Config config = context.config();
+        GlacialCrystalSpikeConfig config = context.config();
 
         int startY = -1;
         for (int i = 0; i < 30; i++) {
             BlockPos check = origin.above(i);
             BlockPos below = check.below();
 
-            if (world.getBlockState(below).is(BorealBlocks.PERMAFROST.get())
+            if (world.getBlockState(below).is(BorealTags.NATURAL_STONES_AND_PERMAFROST)
                     && world.isEmptyBlock(check)) {
                 startY = i;
                 break;
@@ -85,15 +86,15 @@ public class GlacialCrystalSpikeFeature extends Feature<GlacialCrystalSpikeFeatu
         world.setBlock(pos, state, 2);
     }
 
-    public static class Config implements FeatureConfiguration {
+    public static class GlacialCrystalSpikeConfig implements FeatureConfiguration {
 
-        public static final Codec<Config> CODEC = RecordCodecBuilder.create(instance ->
+        public static final Codec<GlacialCrystalSpikeConfig> CODEC = RecordCodecBuilder.create(instance ->
                 instance.group(
                         Codec.INT.fieldOf("min_height").forGetter(c -> c.minHeight),
                         Codec.INT.fieldOf("max_height").forGetter(c -> c.maxHeight),
                         Codec.INT.fieldOf("min_radius").forGetter(c -> c.minRadius),
                         Codec.INT.fieldOf("max_radius").forGetter(c -> c.maxRadius)
-                ).apply(instance, Config::new)
+                ).apply(instance, GlacialCrystalSpikeConfig::new)
         );
 
         public final int minHeight;
@@ -101,7 +102,7 @@ public class GlacialCrystalSpikeFeature extends Feature<GlacialCrystalSpikeFeatu
         public final int minRadius;
         public final int maxRadius;
 
-        public Config(int minHeight, int maxHeight, int minRadius, int maxRadius) {
+        public GlacialCrystalSpikeConfig(int minHeight, int maxHeight, int minRadius, int maxRadius) {
             this.minHeight = minHeight;
             this.maxHeight = maxHeight;
             this.minRadius = minRadius;

@@ -41,7 +41,7 @@ public class TheBoreal
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "the_boreal";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public TheBoreal(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
@@ -82,9 +82,12 @@ public class TheBoreal
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(BorealWoodTypes.AURORAL);
+            Sheets.addWoodType(BorealWoodTypes.NOCTURNAL);
             EntityRenderers.register(BorealEntities.BOREAL_ROCK_ENTITY.get(), ThrownItemRenderer::new);
             EntityRenderers.register(BorealEntities.AURORAL_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, false));
             EntityRenderers.register(BorealEntities.AURORAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
+            EntityRenderers.register(BorealEntities.NOCTURNAL_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, false));
+            EntityRenderers.register(BorealEntities.NOCTURNAL_CHEST_BOAT.get(), pContext -> new BorealBoatRenderer(pContext, true));
             EntityRenderers.register(BorealEntities.NIGHT_DEER.get(), NightDeerRenderer::new);
             EntityRenderers.register(BorealEntities.BOREAL_GOLEM.get(), BorealGolemRenderer::new);
             EntityRenderers.register(BorealEntities.CRYSTALIZED_FOX.get(), CrystalizedFoxRenderer::new);
@@ -104,6 +107,7 @@ public class TheBoreal
                 setRenderTypeCutout(BorealBlocks.GLACIALWEED.get());
                 setRenderTypeCutout(BorealBlocks.STARLIGHT_SHROOM.get());
                 setRenderTypeCutout(BorealBlocks.NOCTURNAL_FUNGUS.get());
+                setRenderTypeCutout(BorealBlocks.BOREAL_POINTED_DRIPSTONE.get());
             });
         }
     }

@@ -10,8 +10,8 @@
           "biome": "the_boreal:snowy_auroral_forest",
           "parameters": {
             "continentalness": 0.5,
-            "depth": 0.0,
-            "erosion": -0.6,
+            "depth": [0.0, 0.2],
+            "erosion": -0.4,
             "humidity": -0.2,
             "offset": 0.0,
             "temperature": -0.6,
@@ -22,7 +22,7 @@
           "biome": "the_boreal:glacial_tundra",
           "parameters": {
             "continentalness": 0.3,
-            "depth": 0.0,
+            "depth": [0.0, 0.2],
             "erosion": 0.3,
             "humidity": 0.3,
             "offset": 0.0,
@@ -34,7 +34,7 @@
           "biome": "the_boreal:glacial_shrubland",
           "parameters": {
             "continentalness": 0.6,
-            "depth": 0.0,
+            "depth": [0.0, 0.2],
             "erosion": 0.2,
             "humidity": 0.4,
             "offset": 0.0,
@@ -46,7 +46,7 @@
           "biome": "the_boreal:auroral_forest",
           "parameters": {
             "continentalness": 0.6,
-            "depth": 0.0,
+            "depth": [0.0, 0.2],
             "erosion": 0.3,
             "humidity": -0.3,
             "offset": 0.0,
@@ -58,7 +58,7 @@
           "biome": "the_boreal:glacial_plains",
           "parameters": {
             "continentalness": 0.4,
-            "depth": 0.0,
+            "depth": [0.0, 0.2],
             "erosion": 0.3,
             "humidity": 0.45,
             "offset": 0.0,
@@ -70,7 +70,7 @@
           "biome": "the_boreal:glacial_desert",
           "parameters": {
             "continentalness": 0.6,
-            "depth": 0.0,
+            "depth": [0.0, 0.2],
             "erosion": 0.2,
             "humidity": -0.4,
             "offset": 0.0,
@@ -88,6 +88,30 @@
             "offset": 0.0,
             "temperature": [-0.2, 0.15],
             "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "the_boreal:nocturnal_forest",
+          "parameters": {
+            "continentalness": -0.5,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.4,
+            "offset": 0.0,
+            "temperature": 0.5,
+            "weirdness": [0.3, 0.5]
+          }
+        },
+        {
+          "biome": "the_boreal:boreal_wastelands",
+          "parameters": {
+            "continentalness": 0.6,
+            "depth": 0.0,
+            "erosion": 0.4,
+            "humidity": -0.1,
+            "offset": 0.0,
+            "temperature": 0.35,
+            "weirdness": 0.5
           }
         }
       ]
